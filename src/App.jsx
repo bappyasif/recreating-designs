@@ -8,14 +8,14 @@ import { SpecialOffer } from './components/specialOffer'
 
 function App() {
   return (
-    <>
+    <div className='flex flex-col items-center'>
       <Header />
       <HeroContent />
       <ProductsListings />
       <SpecialOffer />
       <ContactInfo />
       <FooterContent />
-    </>
+    </div>
   )
 }
 

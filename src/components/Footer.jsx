@@ -1,12 +1,13 @@
 import React from 'react'
-import { navsLeft, navsRight, socials } from '../data/forRendering'
-import {MdEmail} from "react-icons/md"
+import { navsLeft, navsRight } from '../data/forRendering'
+import {MdEmail, MdFacebook, MdMyLocation} from "react-icons/md"
+import { FiInstagram } from 'react-icons/fi'
 
 
 
 export const FooterContent = () => {
     return (
-        <footer>
+        <footer className='flex flex-col items-center'>
             <div className='flex gap-6'>
                 <RenderCompanyLogo />
                 <p><span>Subscribe for deals,</span><span>offers & upcoming events</span></p>
@@ -19,7 +20,7 @@ export const FooterContent = () => {
 
 const MoreContents = () => {
     return (
-        <div>
+        <div className='flex gap-4 justify-between my-4 w-3/4'>
             <SubscriptionLink />
             <SocialLinks />
         </div>
@@ -27,9 +28,14 @@ const MoreContents = () => {
 }
 
 const SocialLinks = () => {
-    const renderLinks = () => socials.map(item => <a key={item.name}>{item.name[0]}</a>)
+    const socials = [
+        {name: "location", icon: <MdMyLocation />},
+        {name: "facebook", icon: <MdFacebook />},
+        {name: "instagram", icon: <FiInstagram />}
+    ]
+    const renderLinks = () => socials.map(item => <a className='text-2xl bg-yellow-400 rounded-full flex items-center p-1' key={item.name}>{item.icon}</a>)
     return (
-        <div>
+        <div className='flex gap-4'>
             {renderLinks()}
         </div>
     )
@@ -37,9 +43,9 @@ const SocialLinks = () => {
 
 const SubscriptionLink = () => {
     return (
-        <div className='flex gap-1'>
-            <input type="text" placeholder='Enter your email address'/>
-            <span className='text-4xl'><MdEmail /></span>
+        <div className='flex items-center gap-6 bg-yellow-600'>
+            <input className='text-xl w-fit h-full' type="text" placeholder='Enter your email address'/>
+            <span className='text-xl pr-5'><MdEmail /></span>
         </div>
     )
 }

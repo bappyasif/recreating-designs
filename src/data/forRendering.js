@@ -1,3 +1,6 @@
+import { FiInstagram } from "react-icons/fi"
+import { MdFacebook, MdMyLocation } from "react-icons/md"
+
 export const navsLeft = ["home", "menu", "order"]
 
 export const navsRight = ["catering", "about", "location"]
@@ -21,8 +24,8 @@ export const regualrs = [
     },
 ]
 
-export const socials = [
-    {name: "location", icon: null},
-    {name: "facebook", icon: null},
-    {name: "instagram", icon: null}
-]
+// export const socials = [
+//     {name: "location", icon: <MdMyLocation />},
+//     {name: "facebook", icon: <MdFacebook />},
+//     {name: "instagram", icon: <FiInstagram />}
+// ]

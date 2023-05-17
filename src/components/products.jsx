@@ -4,7 +4,7 @@ import { FiShoppingCart } from 'react-icons/fi'
 
 export const ProductsListings = () => {
     return (
-        <div>
+        <div className='my-4'>
             <h2 className='text-4xl my-2'>Genuine Japanese Ramen:</h2>
             <RenderRegularProducts />
         </div>
@@ -15,7 +15,7 @@ const RenderRegularProducts = () => {
     const renderProducts = () => regualrs.map(item => <RenderRegular key={item.name} item={item} />)
 
     return (
-        <div>
+        <div className='flex flex-col gap-4 w-full'>
             {renderProducts()}
         </div>
     )
@@ -23,15 +23,15 @@ const RenderRegularProducts = () => {
 
 const RenderRegular = ({ item }) => {
     const { name, ingredients } = item
-    const renderIngredients = () => ingredients.map(name => <span key={name}>{name}</span>)
+    const renderIngredients = () => ingredients.map(name => <span className='text-sm' key={name}>{name}</span>)
     return (
-        <div className='flex gap-4 items-start'>
-            <h2>{name}</h2>
+        <div className='flex gap-4 items-center justify-between'>
+            <h2 className='text-2xl w-2/6'>{name}</h2>
             <RenderIcons name={name} />
-            <div className='flex gap-2 flex-wrap w-2/4'>
+            <div className='flex gap-2 flex-wrap w-2/6'>
                 {renderIngredients()}
             </div>
-            <FiShoppingCart />
+            <span className='text-4xl bg-yellow-600 p-2 px-4 rounded-md'><FiShoppingCart /></span>
         </div>
     )
 }
@@ -39,22 +39,26 @@ const RenderRegular = ({ item }) => {
 const RenderIcons = ({ name }) => {
     const checkName = (chk) => name?.includes(chk)
     return (
-        checkName("Black")
-            ?
-            <div className='flex gap-1'>
-                <img src="./src/assets/chilli.png" alt="chilli" width={20} />
-                <img src="./src/assets/brocolli.png" alt="brocolli" width={20} />
-            </div>
-            :
-            checkName("Spicy")
-                ?
-                <div className='flex gap-1'>
-                    <img src="./src/assets/chilli.png" alt="chilli" width={20} />
-                </div>
-                :
-                <div className='flex gap-1'>
-                    <img src="./src/assets/brocolli.png" alt="brocolli" width={20} />
-                    <img src="./src/assets/meat.png" alt="meat" width={20} />
-                </div>
+        <div className='flex gap-2 mx-4'>
+            {
+                checkName("Black")
+                    ?
+                    <>
+                        <img src="./src/assets/chilli.png" alt="chilli" width={15} />
+                        <img src="./src/assets/brocolli.png" alt="brocolli" width={15} />
+                    </>
+                    : checkName("Spicy")
+                        ?
+                        <>
+                            <img src="./src/assets/chilli.png" alt="chilli" width={15} />
+                            <img className='invisible' src="./src/assets/meat.png" alt="meat" width={15} />
+                        </>
+                        :
+                        <>
+                            <img src="./src/assets/brocolli.png" alt="brocolli" width={15} />
+                            <img src="./src/assets/meat.png" alt="meat" width={15} />
+                        </>
+            }
+        </div>
     )
 }

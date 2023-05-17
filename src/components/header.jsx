@@ -4,7 +4,7 @@ import { navsLeft, navsRight } from '../data/forRendering'
 export const Header = () => {
     
   return (
-    <header className='flex'>
+    <header className='flex w-2/4 justify-between'>
         <RenderNavs navs={navsLeft} />
         <CompanyLogo /> 
         <RenderNavs navs={navsRight} />
@@ -17,7 +17,7 @@ const CompanyLogo = () => {
         <div className='flex gap-1'>
             {/* <img src="./src/assets/logo.jpg" alt="golden ramen logo" height={63} width={54} /> */}
             <img src="./src/assets/ramen.png" alt="golden ramen logo" height={63} width={54} />
-            <div className='flex flex-col gap-2 uppercase'>
+            <div className='flex flex-col gap-2 uppercase text-2xl font-extrabold'>
                 <span>Golden</span>
                 <span>Ramen</span>
             </div>
