@@ -1,14 +1,17 @@
 import React from 'react'
 import { navsLeft, navsRight, socials } from '../data/forRendering'
+import {MdEmail} from "react-icons/md"
 
 
 
 export const FooterContent = () => {
     return (
         <footer>
-            <RenderCompanyLogo />
-            <p><span>Subscribe for deals,</span><span>offers & upcoming events</span></p>
-            <RenderNavs />
+            <div className='flex gap-6'>
+                <RenderCompanyLogo />
+                <p><span>Subscribe for deals,</span><span>offers & upcoming events</span></p>
+                <RenderNavs />
+            </div>
             <MoreContents />
         </footer>
     )
@@ -34,9 +37,9 @@ const SocialLinks = () => {
 
 const SubscriptionLink = () => {
     return (
-        <div>
-            <input type="text" />
-            <span>"M"</span>
+        <div className='flex gap-1'>
+            <input type="text" placeholder='Enter your email address'/>
+            <span className='text-4xl'><MdEmail /></span>
         </div>
     )
 }
@@ -45,7 +48,7 @@ const RenderNavs = () => {
     const topLinks = () => navsLeft.map(name => <a key={name} className='bg-zinc-400 m-2 p-2' href="#">{name}</a>)
     const botLinks = () => navsRight.map(name => <a key={name} className='bg-zinc-400 m-2 p-2' href="#">{name}</a>)
     return (
-        <div>
+        <div className='flex flex-col gap-4'>
             <nav>{topLinks()}</nav>
             <nav>{botLinks()}</nav>
         </div>
@@ -54,9 +57,9 @@ const RenderNavs = () => {
 
 const RenderCompanyLogo = () => {
     return (
-        <div>
-            <img src="#" alt="company logo" />
-            <p><span>Golden</span><span>Ramen</span></p>
+        <div className='flex items-center text-2xl font-bold'>
+            <img src="./src/assets/ramen.png" alt="company logo" />
+            <p className='flex flex-col'><span>Golden</span><span>Ramen</span></p>
         </div>
     )
 }

@@ -10,12 +10,12 @@ export const ContactInfo = () => {
 }
 
 const RenderOfficeHours = () => {
-    <img src="#" alt="office hours" />
+    return <img src="./src/assets/timetable.jpg" alt="office hours" />
 }
 
 const TakeoutServiceHours = () => {
     return (
-        <div>
+        <div className='flex'>
             <div>
                 <h2>Take-out Service</h2>
                 <p><span>Available Daily</span> <span>5px - 9pm</span></p>
