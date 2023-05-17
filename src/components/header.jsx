@@ -1,10 +1,11 @@
 import React from 'react'
 import { navsLeft, navsRight } from '../data/forRendering'
+import { RenderLink } from './Footer'
 
 export const Header = () => {
     
   return (
-    <header className='flex w-2/4 justify-between'>
+    <header className='flex w-4/6 justify-between gap-4'>
         <RenderNavs navs={navsLeft} />
         <CompanyLogo /> 
         <RenderNavs navs={navsRight} />
@@ -26,16 +27,10 @@ const CompanyLogo = () => {
 }
 
 const RenderNavs = ({navs}) => {
-    const renderNavs = () => navs?.map(name => <RenderNavLink key={name} name={name} />)
+    const renderNavs = () => navs?.map(name => <RenderLink key={name} name={name} />)
     return (
-        <nav className='mt-2 font-bold'>
+        <nav className='font-bold flex gap-4'>
             {renderNavs()}
         </nav>
-    )
-}
-
-const RenderNavLink = ({name}) => {
-    return (
-        <a className='bg-zinc-400 m-2 p-2' href="#">{name}</a>
     )
 }

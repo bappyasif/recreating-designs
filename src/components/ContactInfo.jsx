@@ -3,7 +3,7 @@ import { MdChevronRight } from 'react-icons/md'
 
 export const ContactInfo = () => {
     return (
-        <div className='w-3/4 flex flex-col gap-4 justify-center items-center pb-4 mb-4 bg-red-800'>
+        <div className='w-4/6 flex flex-col gap-4 justify-center items-center pb-4 my-8 bg-red-800'>
             <RenderOfficeHours />
             <TakeoutServiceHours />
         </div>

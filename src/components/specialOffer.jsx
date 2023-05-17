@@ -3,7 +3,7 @@ import { MdArrowRight } from 'react-icons/md'
 
 export const SpecialOffer = () => {
     return (
-        <div className='flex items-center justify-center w-3/4 my-4 bg-gray-200'>
+        <div className='flex items-center justify-center w-4/6 my-8 bg-gray-200'>
             <LeftSide />
             <RightSide />
         </div>

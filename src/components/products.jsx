@@ -4,7 +4,7 @@ import { FiShoppingCart } from 'react-icons/fi'
 
 export const ProductsListings = () => {
     return (
-        <div className='my-4'>
+        <div className='my-4 w-4/6'>
             <h2 className='text-4xl my-2'>Genuine Japanese Ramen:</h2>
             <RenderRegularProducts />
         </div>
@@ -26,7 +26,7 @@ const RenderRegular = ({ item }) => {
     const renderIngredients = () => ingredients.map(name => <span className='text-sm' key={name}>{name}</span>)
     return (
         <div className='flex gap-4 items-center justify-between'>
-            <h2 className='text-2xl w-2/6'>{name}</h2>
+            <h2 className='text-xl w-2/6'>{name}</h2>
             <RenderIcons name={name} />
             <div className='flex gap-2 flex-wrap w-2/6'>
                 {renderIngredients()}

@@ -1,16 +1,16 @@
 import React from 'react'
 import { navsLeft, navsRight } from '../data/forRendering'
-import {MdEmail, MdFacebook, MdMyLocation} from "react-icons/md"
+import {MdArrowRight, MdDewPoint, MdEmail, MdFacebook, MdMyLocation, MdWifi1Bar} from "react-icons/md"
 import { FiInstagram } from 'react-icons/fi'
 
 
 
 export const FooterContent = () => {
     return (
-        <footer className='flex flex-col items-center'>
-            <div className='flex gap-6'>
+        <footer className='w-4/6 flex flex-col items-center'>
+            <div className='flex gap-6 justify-between w-full'>
                 <RenderCompanyLogo />
-                <p><span>Subscribe for deals,</span><span>offers & upcoming events</span></p>
+                <p className='flex flex-col gap-2 text-xl'><span>Subscribe for deals,</span><span>offers & upcoming events</span></p>
                 <RenderNavs />
             </div>
             <MoreContents />
@@ -33,7 +33,7 @@ const SocialLinks = () => {
         {name: "facebook", icon: <MdFacebook />},
         {name: "instagram", icon: <FiInstagram />}
     ]
-    const renderLinks = () => socials.map(item => <a className='text-2xl bg-yellow-400 rounded-full flex items-center p-1' key={item.name}>{item.icon}</a>)
+    const renderLinks = () => socials.map(item => <a className='text-2xl bg-yellow-600 text-red-900 rounded-full flex items-center p-2' key={item.name}>{item.icon}</a>)
     return (
         <div className='flex gap-4'>
             {renderLinks()}
@@ -43,21 +43,30 @@ const SocialLinks = () => {
 
 const SubscriptionLink = () => {
     return (
-        <div className='flex items-center gap-6 bg-yellow-600'>
+        <div className='flex items-center bg-yellow-600'>
             <input className='text-xl w-fit h-full' type="text" placeholder='Enter your email address'/>
-            <span className='text-xl pr-5'><MdEmail /></span>
+            <button className='p-0 py-2 bg-transparent px-2 text-2xl'><MdEmail /></button>
         </div>
     )
 }
 
 const RenderNavs = () => {
-    const topLinks = () => navsLeft.map(name => <a key={name} className='bg-zinc-400 m-2 p-2' href="#">{name}</a>)
-    const botLinks = () => navsRight.map(name => <a key={name} className='bg-zinc-400 m-2 p-2' href="#">{name}</a>)
+    const topLinks = () => navsLeft.map(name => <RenderLink key={name} name={name} />)
+    const botLinks = () => navsRight.map(name => <RenderLink key={name} name={name} />)
     return (
         <div className='flex flex-col gap-4'>
-            <nav>{topLinks()}</nav>
-            <nav>{botLinks()}</nav>
+            <nav className='flex gap-1'>{topLinks()}</nav>
+            <nav className='flex gap-1'>{botLinks()}</nav>
         </div>
+    )
+}
+
+export const RenderLink = ({name}) => {
+    return (
+        <a key={name} className='text-red-950 flex items-center justify-between' href="#">
+            <span className='px-2 text-2xl'><MdArrowRight /></span>
+            <span className='px-1'>{name}</span>
+        </a>
     )
 }
 
