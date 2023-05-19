@@ -1,20 +1,12 @@
 import './App.css'
-import { ContactInfo } from './components/ContactInfo'
-import { FooterContent } from './components/Footer'
-import { Header } from './components/header'
-import { HeroContent } from './components/heroContent'
-import { ProductsListings } from './components/products'
-import { SpecialOffer } from './components/specialOffer'
+import { Header } from './components/Header'
+import { HeroContent } from './components/HeroContent'
 
 function App() {
   return (
-    <div className='flex flex-col items-center'>
+    <div className='flex flex-col items-center w-full'>
       <Header />
       <HeroContent />
-      <ProductsListings />
-      <SpecialOffer />
-      <ContactInfo />
-      <FooterContent />
     </div>
   )
 }

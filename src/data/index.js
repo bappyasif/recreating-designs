@@ -1,0 +1,1 @@
+export const navs = ["Day Tours", "Multi-Day-tours", "themes", "attractions"]
