@@ -4,7 +4,6 @@ import { HiChevronDown } from 'react-icons/hi'
 export const ToursHero = () => {
     return (
         <section>
-            <div>ToursHero</div>
             <HeroInfo />
             <div className='flex justify-between'>
                 <RenderDropdowns />
@@ -18,9 +17,16 @@ export const ToursHero = () => {
 const HeroInfo = () => {
     return (
         <div>
-            <h1>Kingdom Of Volcanoes And Glaciers</h1>
-            <img src="#" alt="another scenic picture of iceland with mountains and glaciers" />
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias officiis aliquam eum aperiam, facilis recusandae, laboriosam velit doloribus nemo quia dolore, vitae qui excepturi corporis iure nulla cumque repudiandae ad?</p>
+            <h1 className='font-righteous text-center'>Kingdom Of Volcanoes And Glaciers</h1>
+            <img
+                src="../src/assets/tHero.jpg"
+                alt="another scenic picture of iceland with mountains and glaciers"
+                className='h-96 w-full'
+            />
+            <div className='text-center text-2xl font-serif font-bold'>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias officiis aliquam eum aperiam, facilis recusandae</p>
+                <p>laboriosam velit doloribus nemo quia dolore, vitae qui excepturi corporis iure nulla cumque repudiandae ad?</p>
+            </div>
         </div>
     )
 }
