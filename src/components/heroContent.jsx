@@ -3,7 +3,7 @@ import {FiArrowRight} from "react-icons/fi"
 
 export const HeroContent = () => {
   return (
-    <div className='flex w-4/6 gap-4 items-center my-8 justify-center'>
+    <div className='flex w-3/6 gap-1 items-center my-8 justify-center'>
         <RenderImage />
         <RenderSpecialOffer />
     </div>
@@ -15,14 +15,18 @@ const RenderImage = () => {
             src="./src/assets/hero.jpg" 
             alt="hero image" 
             width={"47"} 
-            className='w-4/6 rounded-sm' />
+            className='w-4/6 rounded-sm' 
+            style={{
+                maxHeight: "377px"
+            }}
+            />
     )
 }
 
 const RenderSpecialOffer = () => {
     return (
-        <div className='flex flex-col gap-4 w-1/3'>
-            <RenderContentText line1={"It's That"} line2={"Simple"} textSize={"text-6xl"} />
+        <div className='flex flex-col gap-4 w-full bg-yellow-200 items-center pb-2 rounded-sm font-righteous'>
+            <RenderContentText line1={"It's That"} line2={"Simple"} textSize={"text-5xl"} />
             <RenderContentText line1={"Featuring Our New"} line2={"Spring Specials"} textSize={"text-xl"} />
             <HeroContentButton />
         </div>

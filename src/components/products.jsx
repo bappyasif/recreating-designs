@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { regualrs } from '../data/forRendering'
 import { FiShoppingCart } from 'react-icons/fi'
 
 export const ProductsListings = () => {
     return (
-        <div className='my-4 w-4/6'>
+        <div className='my-4 w-4/6 font-righteous'>
             <h2 className='text-4xl my-2'>Genuine Japanese Ramen:</h2>
             <RenderRegularProducts />
         </div>
@@ -22,16 +22,20 @@ const RenderRegularProducts = () => {
 }
 
 const RenderRegular = ({ item }) => {
+    const [clicked, setClicked] = useState(false);
     const { name, ingredients } = item
     const renderIngredients = () => ingredients.map(name => <span className='text-sm' key={name}>{name}</span>)
     return (
-        <div className='flex gap-4 items-center justify-between'>
+        <div 
+            className={`flex gap-4 items-center justify-between px-2 py-1 ${clicked ? "bg-white" : ""}`}
+            onClick={() => setClicked(prev => !prev)}
+        >
             <h2 className='text-xl w-2/6'>{name}</h2>
             <RenderIcons name={name} />
             <div className='flex gap-2 flex-wrap w-2/6'>
                 {renderIngredients()}
             </div>
-            <span className='text-4xl bg-yellow-600 p-2 px-4 rounded-md'><FiShoppingCart /></span>
+            <span className={`text-4xl bg-yellow-600 p-2 px-4 rounded-md ${clicked ? "visible" : "invisible"}`}><FiShoppingCart /></span>
         </div>
     )
 }

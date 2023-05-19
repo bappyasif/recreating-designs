@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily :{
+        monoton: ["monoton-regular","sans-serif"],
+        righteous: ["righteous-regular","sans"],
+      }
+    },
   },
   plugins: [],
 }

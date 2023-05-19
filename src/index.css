@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "righteous-regular";
+  src: url("../public/fonts/Righteous-Regular.ttf");
+}
+@font-face {
+  font-family: "monoton-regular";
+  src: url("../public/fonts/Monoton-Regular.ttf");
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

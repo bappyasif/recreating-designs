@@ -3,7 +3,7 @@ import { MdArrowRight } from 'react-icons/md'
 
 export const SpecialOffer = () => {
     return (
-        <div className='flex items-center justify-center w-4/6 my-8 bg-gray-200'>
+        <div className='flex items-center justify-center w-4/6 my-8 font-righteous'>
             <LeftSide />
             <RightSide />
         </div>
@@ -16,14 +16,17 @@ const RightSide = () => {
             src='./src/assets/special.jpg'
             alt='spicy beef noodle'
             // width={"56%"}
-            className='min-h-full w-4/6'
+            className='w-3/6'
+            // style={{
+            //     maxHeight: "440px"
+            // }}
         />
     )
 }
 
 const LeftSide = () => {
     return (
-        <div className='w-2/5 flex flex-col gap-4 p-1 px-4 mr-4'>
+        <div className='w-1/3 flex flex-col gap-4 p-1 px-4 mr-1 bg-gray-200'>
             <TopPart />
             <h2 className='text-4xl'>Spicy Beef Noodle</h2>
             <p className='w-fit' style={{fontSize: ".6rem"}}>

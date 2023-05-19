@@ -11,22 +11,25 @@ export const ContactInfo = () => {
 }
 
 const RenderOfficeHours = () => {
-    return <img 
+    return <img
         className='w-full'
-        src="./src/assets/timetable.jpg" 
-        alt="office hours" 
-        />
+        src="./src/assets/timetable.jpg"
+        alt="office hours"
+        style={{
+            maxHeight: "404px"
+        }}
+    />
 }
 
 const TakeoutServiceHours = () => {
     return (
-        <div className='flex w-4/6 items-center justify-between gap-4 bg-yellow-400 pr-4 rounded-sm'>
+        <div className='flex w-4/6 items-center justify-between gap-4 bg-yellow-400 pr-4 rounded-sm font-righteous'>
             <div className='flex w-4/6 justify-center items-center flex-col gap-4 bg-white p-4 text-4xl font-extrabold'>
-                <h2>Take-out Service</h2>
+                <h2 className='font-monoton'>Take-out Service</h2>
                 <p className='flex gap-4 text-2xl'><span>Available Daily</span> <span>5pm - 9pm</span></p>
             </div>
             <div className='w-2/7 pr-2 pl-2'>
-                <button className='p-0 flex gap-4 w-fit items-center pl-4 rounded-sm'><span>Order online now!</span><span className='p-2 bg-yellow-600 rounded-sm text-4xl'><MdChevronRight /></span></button>
+                <button className='p-0 flex gap-4 items-center pl-4 rounded-sm text-sm'><span className='min-w-fit'>Order online now!</span><span className='p-2 bg-yellow-600 rounded-sm text-3xl'><MdChevronRight /></span></button>
             </div>
         </div>
     )

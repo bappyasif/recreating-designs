@@ -10,7 +10,7 @@ export const FooterContent = () => {
         <footer className='w-4/6 flex flex-col items-center'>
             <div className='flex gap-6 justify-between w-full'>
                 <RenderCompanyLogo />
-                <p className='flex flex-col gap-2 text-xl'><span>Subscribe for deals,</span><span>offers & upcoming events</span></p>
+                <p className='flex flex-col gap-2 text-xl font-righteous'><span>Subscribe for deals,</span><span>offers & upcoming events</span></p>
                 <RenderNavs />
             </div>
             <MoreContents />
@@ -54,7 +54,7 @@ const RenderNavs = () => {
     const topLinks = () => navsLeft.map(name => <RenderLink key={name} name={name} />)
     const botLinks = () => navsRight.map(name => <RenderLink key={name} name={name} />)
     return (
-        <div className='flex flex-col gap-4'>
+        <div className='flex flex-col gap-4 font-monoton'>
             <nav className='flex gap-1'>{topLinks()}</nav>
             <nav className='flex gap-1'>{botLinks()}</nav>
         </div>
@@ -72,7 +72,7 @@ export const RenderLink = ({name}) => {
 
 const RenderCompanyLogo = () => {
     return (
-        <div className='flex items-center text-2xl font-bold'>
+        <div className='flex items-center text-2xl font-bold font-monoton'>
             <img src="./src/assets/ramen.png" alt="company logo" />
             <p className='flex flex-col'><span>Golden</span><span>Ramen</span></p>
         </div>
