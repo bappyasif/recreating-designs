@@ -37,6 +37,8 @@ export const RenderDropdowns = ({ name, type, options }) => {
     const [openDD, setOpenDD] = useState(false);
     const [selectedVal, setSelectedVal] = useState(null)
 
+    let ref = useRef()
+
     const handleChange = (data) => setSelectedVal(data)
 
     const handleCloseDD = () => {
@@ -45,23 +47,27 @@ export const RenderDropdowns = ({ name, type, options }) => {
         console.log("close dd -- after", openDD)
     }
 
-    const handleOpenDD = () => setOpenDD(true)
+    const handleOpenDD = () => {
+        setOpenDD(true)
+    }
 
     const handleToggleDD = () => {
         setOpenDD(prev => !prev)
         console.log("toggle!!", openDD, selectedVal)
+        // ref?.current?.focus()
+        // console.log(ref?.current, ref?.current?.innerRef.show?.click())
+        // console.log(ref?.current, ref.current?.click())
+        ref.current?.showPicker()
     }
 
     return (
         <div className='flex gap-0 bg-slate-400'>
             <div 
                 className='w-full' 
-                // onClick={handleOpenDD}
             >
                 <p>{name || "Select type"}</p>
                 <div 
                     className='w-40 relative'
-                    // onClick={handleOpenDD}
                 >
                     {
                         !type 
@@ -70,11 +76,15 @@ export const RenderDropdowns = ({ name, type, options }) => {
                     }
                     {
                         type
-                            ? <input type={type} />
+                            ? <input 
+                                className='w-full bg-slate-300'
+                                type={type} 
+                                ref={ref}
+                                onClick={handleOpenDD} 
+                            />
                             : openDD
                                 ? <RenderOptions options={options} handleChange={handleChange} elemName={"passengers"} handleCloseDD={handleCloseDD} />
                                 : null
-                                // : "click and choose"
                     }
                 </div>
             </div>
@@ -84,41 +94,16 @@ export const RenderDropdowns = ({ name, type, options }) => {
 }
 
 const RenderOptions = ({ options, handleChange, elemName, handleCloseDD }) => {
-    // const [val, setVal] = useState(null)
     const handleClick = (evt) => {
         console.log(evt.target.value)
         handleChange({[elemName]: evt.target.value})
         handleCloseDD()
-        // setVal(evt.target.value)
     }
     const renderOptions = () => options?.map(opt => <option onClick={handleClick} key={opt} value={opt}>{opt}</option>)
 
     return (
         <div className='absolute left-0 bg-slate-500 w-full'>
-            {/* {val ? <p>{val}</p> : <p>{options[0]}</p>} */}
             {renderOptions()}
-        </div>
-    )
-}
-
-export const LegacyRenderDropdowns = ({ name, type, options }) => {
-    const ref = useRef();
-    const renderOptions = () => options?.map(opt => <option key={opt} value={opt}>{opt}</option>)
-    return (
-        <div className='flex gap-1' onClick={() => ref.current?.open()}>
-            <div className='w-full'>
-                <p>{name || "Select type"}</p>
-                {
-                    type
-                        ? <input type={type} />
-                        // : <Select options={options} ref={ref} />
-                        : <select ref={ref} className='appearance-none' name={name || "test"}>
-                            {renderOptions()}
-                        </select>
-                }
-                {/* <select name={name || "test"}></select> */}
-            </div>
-            <HiChevronDown />
         </div>
     )
 }
