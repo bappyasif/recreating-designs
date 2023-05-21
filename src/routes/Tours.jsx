@@ -9,12 +9,14 @@ import { PaymentInfo } from '../components/PaymentInfo'
 export const Tours = () => {
   return (
     <main>
-        <ToursHero />
+      <ToursHero />
+      <div className='w-5/6 m-auto'>
         <PickupInfo />
         <PassangerInfo />
         <BookingDetails />
-        <OrderSummary />
-        <PaymentInfo />
+      </div>
+      <OrderSummary />
+      <PaymentInfo />
     </main>
   )
 }

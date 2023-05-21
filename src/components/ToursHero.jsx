@@ -5,9 +5,9 @@ import Select from 'react-select'
 
 export const ToursHero = () => {
     return (
-        <section>
+        <section className='flex flex-col justify-center items-center'>
             <HeroInfo />
-            <div className='flex justify-between'>
+            <div className='flex justify-between w-2/4'>
                 <RenderDropdowns name={"Passengers"} options={passengers} />
                 <RenderDropdowns name={"Date"} type={"date"} />
                 <RenderDropdowns name={"Departure Time"} type={"time"} />
@@ -49,38 +49,45 @@ export const RenderDropdowns = ({ name, type, options }) => {
 
     const handleOpenDD = () => {
         setOpenDD(true)
+        ref.current?.showPicker()
+        // console.log("showing dd", openDD)
     }
 
     const handleToggleDD = () => {
         setOpenDD(prev => !prev)
-        console.log("toggle!!", openDD, selectedVal)
-        // ref?.current?.focus()
-        // console.log(ref?.current, ref?.current?.innerRef.show?.click())
-        // console.log(ref?.current, ref.current?.click())
+        // console.log("toggle!!", openDD, selectedVal)
         ref.current?.showPicker()
     }
 
     return (
         <div className='flex gap-0 bg-slate-400'>
-            <div 
-                className='w-full' 
+            <div
+                className='w-full'
             >
-                <p>{name || "Select type"}</p>
-                <div 
-                    className='w-40 relative'
+                <p className='px-1'>{name || "Select type"}</p>
+                <div
+                    className='w-full relative'
+                    // style={{minWidth: "180px"}}
+                    style={{minWidth: type === "time" ? "132px" : type === "date" ? "180px" : "130px"}}
                 >
                     {
-                        !type 
-                        ? <p onClick={handleOpenDD}>{selectedVal ? selectedVal?.passengers : options && options[0]}</p>
-                        : null
+                        !type
+                            ? <p className='px-2 outline outline-1 outline-gray-950' onClick={handleToggleDD}>{selectedVal ? selectedVal?.passengers : options && options[0]}</p>
+                            : null
                     }
                     {
                         type
-                            ? <input 
-                                className='w-full bg-slate-300'
-                                type={type} 
+                            ?
+                            <input
+                                className='w-full bg-slate-300 px-2'
+                                type={type}
                                 ref={ref}
-                                onClick={handleOpenDD} 
+                                onClick={handleOpenDD}
+                                // pattern="\d{4}-\d{2}-\d{2}"
+                                // pattern="mm-dd-yy"
+                                // placeholder={"Month dd, yyyy"}
+                                // placeholder="dd-mm-yyyy" 
+                                // value=""
                             />
                             : openDD
                                 ? <RenderOptions options={options} handleChange={handleChange} elemName={"passengers"} handleCloseDD={handleCloseDD} />
@@ -96,13 +103,13 @@ export const RenderDropdowns = ({ name, type, options }) => {
 const RenderOptions = ({ options, handleChange, elemName, handleCloseDD }) => {
     const handleClick = (evt) => {
         console.log(evt.target.value)
-        handleChange({[elemName]: evt.target.value})
+        handleChange({ [elemName]: evt.target.value })
         handleCloseDD()
     }
     const renderOptions = () => options?.map(opt => <option onClick={handleClick} key={opt} value={opt}>{opt}</option>)
 
     return (
-        <div className='absolute left-0 bg-slate-500 w-full'>
+        <div className='absolute left-0 bg-slate-500 w-full z-20'>
             {renderOptions()}
         </div>
     )
