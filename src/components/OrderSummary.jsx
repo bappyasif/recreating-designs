@@ -2,10 +2,10 @@ import React from 'react'
 
 export const OrderSummary = () => {
     return (
-        <div>
+        <div className='mt-2 w-full flex flex-col p-2 bg-slate-600'>
             <p className='text-2xl py-2'>Order Summary</p>
             <TableHeaders />
-            <div className='flex flex-col gap-2'>
+            <div className='flex flex-col gap-2 mb-4'>
                 <PassengerAmount />
                 <FoodAmount />
             </div>

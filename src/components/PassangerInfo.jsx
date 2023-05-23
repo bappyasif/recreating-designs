@@ -5,17 +5,20 @@ import { diets } from '../data'
 
 export const PassangerInfo = () => {
     return (
-        <section>
-            <div>Passanger Informations</div>
-            <PerPassenger />
-            <PerPassenger />
+        <section className='mt-2 w-full flex flex-col p-2 bg-slate-600'>
+            <div className='text-4xl py-2'>Passanger Informations</div>
+            <div className='flex flex-col gap-4 mb-4'>
+                <PerPassenger />
+                <PerPassenger />
+            </div>
+            {/* <p className='w-full h-1 bg-slate-400 my-6'></p> */}
         </section>
     )
 }
 
 const PerPassenger = () => {
     return (
-        <div>
+        <div className=''>
             <NameSection />
             <ExtraSection />
         </div>
@@ -24,9 +27,9 @@ const PerPassenger = () => {
 
 const ExtraSection = () => {
     return (
-        <div>
-            <h2>Extras</h2>
-            <div className='flex gap-8'>
+        <div className='w-full'>
+            <h2 className='text-2xl py-2'>Extras</h2>
+            <div className='flex gap-8 w-full px-4'>
                 <LeftSide />
                 <RightSide />
             </div>
@@ -36,7 +39,7 @@ const ExtraSection = () => {
 
 const RightSide = () => {
     return (
-        <div className='relative w-1/3 outline outline-gray-400 h-fit p-2 py-4 rounded'>
+        <div className='relative w-full h-fit p-2 py-4 rounded bg-lime-100'>
             <div className='text-xl'>
                 <p>Single supplement</p>
                 <p>$250</p>
@@ -48,7 +51,7 @@ const RightSide = () => {
 
 const LeftSide = () => {
     return (
-        <div className='w-1/4 text-xl bg-yellow-600'>
+        <div className='w-full text-xl bg-yellow-600'>
             <div className='flex justify-between py-4 px-4'>
                 <div className='mb-4'>
                     <p>Lunch for all days</p>
@@ -63,11 +66,11 @@ const LeftSide = () => {
 
 const NameSection = () => {
     return (
-        <div>
-            <p className='text-xl py-2'>Passanger (Adult)</p>
-            <div className='flex gap-2'>
-                <input className='text-2xl py-2' type="text" placeholder='first name' />
-                <input className='text-2xl' type="text" placeholder='last name' />
+        <div className=''>
+            <p className='text-2xl py-2'>Passanger (Adult)</p>
+            <div className='flex gap-2 px-4'>
+                <input className='text-2xl py-2 w-full' type="text" placeholder='first name' />
+                <input className='text-2xl py-2 w-full' type="text" placeholder='last name' />
             </div>
         </div>
     )

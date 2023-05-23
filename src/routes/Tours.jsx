@@ -8,15 +8,15 @@ import { PaymentInfo } from '../components/PaymentInfo'
 
 export const Tours = () => {
   return (
-    <main>
+    <main className='py-2'>
       <ToursHero />
-      <div className='w-5/6 m-auto'>
+      <div className='w-5/6 m-auto my-4 bg-gray-400 flex flex-col gap-2 items-center'>
         <PickupInfo />
         <PassangerInfo />
         <BookingDetails />
+        <OrderSummary />
+        <PaymentInfo />
       </div>
-      <OrderSummary />
-      <PaymentInfo />
     </main>
   )
 }

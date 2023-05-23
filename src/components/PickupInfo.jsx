@@ -4,39 +4,44 @@ import { cities } from '../data'
 
 export const PickupInfo = () => {
     return (
-        <section 
+        <section
             // className='flex flex-col items-center justify-center'
-            className='w-full my-4'
+            className='w-full flex flex-col p-2 bg-slate-600'
         >
-            <div className='text-4xl my-4'>PickupInfo</div>
-            <div className='flex justify-start gap-10'>
+            <div className='text-4xl my-2'>PickupInfo</div>
+            <div className='flex gap-10 my-2'>
                 <PickUp />
                 <DropOff />
             </div>
+            {/* <p className='w-full h-1 bg-slate-400 mt-6'></p> */}
         </section>
     )
 }
 
 const PickUp = () => {
     return (
-        <div className='w-1/4'>
-            <h2 className='text-2xl'>Pick Up</h2>
+        <div className='w-full'>
+            <h2 className='text-2xl py-2'>Pick Up</h2>
             {/* <AddressInfo options={cities} elemName={"pickUp"} /> */}
-            <RenderDropdowns options={cities} name={"pickUp"} />
+            <div className='px-4'>
+                <RenderDropdowns options={cities} name={"pickUp"} />
+            </div>
         </div>
     )
 }
 
 const DropOff = () => {
     return (
-        <div className='w-1/4'>
-            <h2 className='text-2xl'>Drop Off</h2>
+        <div className='w-full'>
+            <h2 className='text-2xl py-2'>Drop Off</h2>
+            <div className='px-4'>
             <RenderDropdowns options={cities} name={"dropOff"} />
+            </div>
         </div>
     )
 }
 
-const AddressInfo = ({options, elemName}) => {
+const AddressInfo = ({ options, elemName }) => {
     return (
         <>
             <RenderDropdowns options={options} name={elemName} />
