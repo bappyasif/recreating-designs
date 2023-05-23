@@ -76,7 +76,7 @@ const ContactInfo = () => {
 const RenderCodes = () => {
     const renderCodes = () => codes.map(item => item?.name.length < 12 && <option className='flex gap-2 w-full'><span className='mr-2'>{item.name}</span><span>{item.code}</span></option>)
     return (
-        <select className='w-2/6 py-2 px-1' name="country code" id="">
+        <select className='w-3/6 py-2 px-1' name="country code" id="">
             {renderCodes()}
         </select>
     )

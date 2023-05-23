@@ -28,7 +28,7 @@ const PickUp = () => {
             <div className='px-4 w-full'>
                 <RenderDropdowns options={cities} name={"pickUp"} />
                 
-                <input className='w-full text-2xl mt-4' type="text" placeholder='xxxx-xxxx-xxxx-xxxx' />
+                <input className='w-full text-2xl mt-4 py-2' type="text" placeholder='Pickup Place Name Here....' />
             </div>
         </div>
     )
@@ -40,7 +40,7 @@ const DropOff = () => {
             <h2 className='text-2xl py-2'>Drop Off</h2>
             <div className='px-4'>
                 <RenderDropdowns options={cities} name={"dropOff"} />
-                <input className='w-full text-2xl mt-4' type="text" placeholder='xxxx-xxxx-xxxx-xxxx' />
+                <input className='w-full text-2xl mt-4 py-2' type="text" placeholder='Dropoff Place Name Here....' />
             </div>
         </div>
     )

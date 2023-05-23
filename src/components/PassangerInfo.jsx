@@ -18,8 +18,9 @@ export const PassangerInfo = () => {
 
 const PerPassenger = () => {
     return (
-        <div className='outline outline-1 outline-slate-400 shadow-xl pb-4 px-2'>
+        <div className='outline outline-1 outline-slate-400 shadow-xl pb-4 px-2 flex flex-col gap-4'>
             <NameSection />
+            <p className='w-full bg-slate-400 mt-4' style={{height: ".6px"}}></p>
             <ExtraSection />
         </div>
     )
@@ -29,7 +30,7 @@ const ExtraSection = () => {
     return (
         <div className='w-full'>
             <h2 className='text-2xl py-2'>Extras</h2>
-            <div className='flex gap-8 w-full px-4'>
+            <div className='flex gap-10 w-full px-4'>
                 <LeftSide />
                 <RightSide />
             </div>
@@ -39,19 +40,19 @@ const ExtraSection = () => {
 
 const RightSide = () => {
     return (
-        <div className='relative w-full h-fit p-2 py-4 rounded bg-lime-100'>
+        <div className='relative w-full h-1/2 p-2 py-6 rounded bg-lime-100'>
             <div className='text-xl'>
                 <p>Single supplement</p>
                 <p>$250</p>
             </div>
-            <button className='absolute right-2 top-4 bg-yellow-600 w-44'>ADD</button>
+            <button className='absolute right-2 top-6 bg-yellow-600 w-44'>ADD</button>
         </div>
     )
 }
 
 const LeftSide = () => {
     return (
-        <div className='w-full text-xl bg-yellow-600'>
+        <div className='w-full text-xl bg-yellow-600 pb-4'>
             <div className='flex justify-between py-4 px-4'>
                 <div className='mb-4'>
                     <p>Lunch for all days</p>
@@ -59,7 +60,9 @@ const LeftSide = () => {
                 </div>
                 <HiDocumentRemove />
             </div>
-            <RenderDropdowns options={diets} name={"Dietary requirements"} />
+            <div className='px-4'>
+                <RenderDropdowns options={diets} name={"Dietary requirements"} />
+            </div>
         </div>
     )
 }
@@ -68,9 +71,9 @@ const NameSection = () => {
     return (
         <div className=''>
             <p className='text-2xl py-2'>Passanger (Adult)</p>
-            <div className='flex gap-2 px-4'>
-                <input className='text-2xl py-2 w-full' type="text" placeholder='first name' />
-                <input className='text-2xl py-2 w-full' type="text" placeholder='last name' />
+            <div className='flex gap-9 px-4'>
+                <input className='text-2xl py-2 w-full px-2' type="text" placeholder='first name' />
+                <input className='text-2xl py-2 w-full px-2' type="text" placeholder='last name' />
             </div>
         </div>
     )

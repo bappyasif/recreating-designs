@@ -5,7 +5,7 @@ export const OrderSummary = () => {
         <div className='mt-2 w-full flex flex-col p-2 bg-slate-600 outline outline-1 outline-slate-400 shadow-xl'>
             <p className='text-2xl py-2'>Order Summary</p>
             <TableHeaders />
-            <div className='flex flex-col gap-2 mb-4 px-4'>
+            <div className='flex flex-col gap-2 mb-4 px-4 text-slate-400'>
                 <PassengerAmount />
                 <FoodAmount />
             </div>
@@ -15,7 +15,7 @@ export const OrderSummary = () => {
 
 const FoodAmount = () => {
     return (
-        <div className='flex gap-2 outline outline-gray-400 py-2 my-1 px-2'>
+        <div className='flex gap-2 outline outline-gray-400 py-2 my-1 px-2 rounded-sm'>
             <div className='flex-grow'>
                 <p>Lucnch for all day - Adults (2)</p>
                 <p>unit price $250</p>
@@ -28,7 +28,7 @@ const FoodAmount = () => {
 
 const PassengerAmount = () => {
     return (
-        <div className='flex gap-2 outline outline-gray-400 py-2 my-1 px-2'>
+        <div className='flex gap-2 outline outline-gray-400 py-2 my-1 px-2 rounded-sm'>
             <div className='flex-grow'>
                 <p>Adults (2)</p>
                 <p>unit price $2450</p>
@@ -41,7 +41,7 @@ const PassengerAmount = () => {
 
 const TableHeaders = () => {
     return (
-        <div className='flex gap-2 text-2xl px-4'>
+        <div className='flex gap-2 text-2xl px-4 text-slate-200'>
             <p className='flex-grow'>item</p>
             <p className='w-1/6'>tax</p>
             <p className='w-1/6'>amount</p>

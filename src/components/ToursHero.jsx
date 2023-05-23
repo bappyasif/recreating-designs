@@ -8,9 +8,9 @@ export const ToursHero = () => {
         <section className='flex flex-col justify-center items-center'>
             <HeroInfo />
             <div className='flex justify-between w-2/4'>
-                <RenderDropdowns name={"Passengers"} options={passengers} />
-                <RenderDropdowns name={"Date"} type={"date"} />
-                <RenderDropdowns name={"Departure Time"} type={"time"} />
+                <RenderDropdowns ddText='text-sm' overallTextSize={"text-lg"} name={"Passengers"} options={passengers} />
+                <RenderDropdowns ddText='text-sm' overallTextSize={"text-lg"} name={"Date"} type={"date"} />
+                <RenderDropdowns ddText='text-sm' overallTextSize={"text-lg"} name={"Departure Time"} type={"time"} />
             </div>
         </section>
     )
@@ -33,7 +33,7 @@ const HeroInfo = () => {
     )
 }
 
-export const RenderDropdowns = ({ name, type, options }) => {
+export const RenderDropdowns = ({ name, type, options, overallTextSize="text-2xl", ddText="text-2xl" }) => {
     const [openDD, setOpenDD] = useState(false);
     const [selectedVal, setSelectedVal] = useState(null)
 
@@ -60,19 +60,19 @@ export const RenderDropdowns = ({ name, type, options }) => {
     }
 
     return (
-        <div className='flex gap-0 bg-slate-400'>
+        <div className={`flex gap-0 bg-slate-400 ${overallTextSize}`}>
             <div
                 className='w-full'
             >
-                <p className='px-1'>{name || "Select type"}</p>
+                <p className={`px-1 ${ddText}`} style={{borderBottom: "1px gray solid"}}>{name || "Select type"}</p>
                 <div
                     className='w-full relative'
                     // style={{minWidth: "180px"}}
-                    style={{minWidth: type === "time" ? "132px" : type === "date" ? "180px" : "130px"}}
+                    style={{minWidth: type === "time" ? "132px" : type === "date" ? "178px" : "130px"}}
                 >
                     {
                         !type
-                            ? <p className='px-2 outline outline-1 outline-gray-950' onClick={handleToggleDD}>{selectedVal ? selectedVal?.passengers : options && options[0]}</p>
+                            ? <p className='px-1' onClick={handleToggleDD}>{selectedVal ? selectedVal?.passengers : options && options[0]}</p>
                             : null
                     }
                     {
