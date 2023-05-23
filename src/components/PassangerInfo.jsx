@@ -7,7 +7,7 @@ export const PassangerInfo = () => {
     return (
         <section className='mt-2 w-full flex flex-col p-2 bg-slate-600'>
             <div className='text-4xl py-2'>Passanger Informations</div>
-            <div className='flex flex-col gap-4 mb-4'>
+            <div className='flex flex-col gap-4 mb-4 px-2 pb-4'>
                 <PerPassenger />
                 <PerPassenger />
             </div>
@@ -18,7 +18,7 @@ export const PassangerInfo = () => {
 
 const PerPassenger = () => {
     return (
-        <div className=''>
+        <div className='outline outline-1 outline-slate-400 shadow-xl pb-4 px-2'>
             <NameSection />
             <ExtraSection />
         </div>

@@ -3,7 +3,7 @@ import { codes } from '../data'
 
 export const BookingDetails = () => {
     return (
-        <section className='mt-2 w-full flex flex-col p-2 bg-slate-600'>
+        <section className='m-2 w-full flex flex-col p-2 bg-slate-600 outline outline-1 outline-slate-400 shadow-xl'>
             <div className='text-4xl'>Booking Details</div>
             <NameInfo />
             <ContactInfo />
@@ -86,9 +86,9 @@ const NameInfo = () => {
     return (
         <div className='w-full'>
             <p className='text-2xl py-2'>Primary Passenger Info</p>
-            <div className='flex gap-2 px-4'>
-                <input className='text-2xl py-2 w-full' type="text" placeholder='first name' />
-                <input className='text-2xl py-2 w-full' type="text" placeholder='last name' />
+            <div className='flex gap-16 px-4'>
+                <input className='text-2xl px-1 py-2 w-full' type="text" placeholder='first name' />
+                <input className='text-2xl px-1 py-2 w-full' type="text" placeholder='last name' />
             </div>
         </div>
     )

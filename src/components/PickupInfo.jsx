@@ -8,8 +8,10 @@ export const PickupInfo = () => {
             // className='flex flex-col items-center justify-center'
             className='w-full flex flex-col p-2 bg-slate-600'
         >
-            <div className='text-4xl my-2'>PickupInfo</div>
-            <div className='flex gap-10 my-2'>
+            <div className='text-4xl my-2'>Pickup Information</div>
+            <div 
+                className='flex gap-10 my-2 p-4 outline outline-1 outline-slate-400 mb-4 shadow-xl'
+            >
                 <PickUp />
                 <DropOff />
             </div>
@@ -23,8 +25,10 @@ const PickUp = () => {
         <div className='w-full'>
             <h2 className='text-2xl py-2'>Pick Up</h2>
             {/* <AddressInfo options={cities} elemName={"pickUp"} /> */}
-            <div className='px-4'>
+            <div className='px-4 w-full'>
                 <RenderDropdowns options={cities} name={"pickUp"} />
+                
+                <input className='w-full text-2xl mt-4' type="text" placeholder='xxxx-xxxx-xxxx-xxxx' />
             </div>
         </div>
     )
@@ -35,7 +39,8 @@ const DropOff = () => {
         <div className='w-full'>
             <h2 className='text-2xl py-2'>Drop Off</h2>
             <div className='px-4'>
-            <RenderDropdowns options={cities} name={"dropOff"} />
+                <RenderDropdowns options={cities} name={"dropOff"} />
+                <input className='w-full text-2xl mt-4' type="text" placeholder='xxxx-xxxx-xxxx-xxxx' />
             </div>
         </div>
     )

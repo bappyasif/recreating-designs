@@ -2,7 +2,7 @@ import React from 'react'
 
 export const PaymentInfo = () => {
   return (
-    <section className='flex flex-col gap-2 w-full bg-slate-600 mt-2 pb-4'>
+    <section className='flex flex-col gap-2 w-full bg-slate-600 mt-2 px-2 pb-4 outline outline-1 outline-slate-400 shadow-xl'>
         <div className='text-2xl py-2 my-2'>PaymentInfo</div>
         <div className='flex gap-4 text-2xl px-4'>
             <input className='w-3/5 text-2xl' type="text" placeholder='xxxx-xxxx-xxxx-xxxx' />
