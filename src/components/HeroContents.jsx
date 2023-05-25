@@ -3,7 +3,7 @@ import { heroTexts, numFacts, taskInfo } from '../data'
 
 export const HeroContents = () => {
     return (
-        <div>
+        <div className='flex justify-between'>
             <div>
                 <HeadingTexts />
                 <SomeNumbers />
@@ -15,7 +15,7 @@ export const HeroContents = () => {
 
 const HeroVisuals = () => {
     return (
-        <div>
+        <div className='flex'>
             <TaskView />
             <PortraitView />
         </div>
@@ -35,10 +35,15 @@ const PortraitView = () => {
 const TaskView = () => {
     const { date, title, meta } = taskInfo
     return (
-        <div>
-            <RenderTaskTextInfo item={date} />
-            <RenderTaskTextInfo item={title} />
-            <RenderTaskMetaData items={meta} />
+        <div className='bg-slate-400 h-fit'>
+            <div className='px-4 py-2'>
+                <RenderTaskTextInfo item={title} />
+                <div className='flex justify-between'>
+                    <RenderTaskTextInfo item={date} />
+                    <RenderTaskMetaData items={meta} />
+                </div>
+            </div>
+            <p className='bg-teal-200 p-2 text-slate-950'>4 subtasks (0/4 completed)</p>
         </div>
     )
 }
@@ -46,7 +51,7 @@ const TaskView = () => {
 const RenderTaskMetaData = ({ items }) => {
     const renderItem = () => items?.map((item, idx) => <RenderMetaItem key={idx} item={item} />)
     return (
-        <div>
+        <div className='flex gap-2 justify-end'>
             {renderItem()}
         </div>
     )
@@ -76,7 +81,7 @@ const RenderTaskTextInfo = ({ item }) => {
 const SomeNumbers = () => {
     const renderFacts = () => numFacts.map(item => <RenderFact key={item.name} item={item} />)
     return (
-        <div>
+        <div className='flex justify-between'>
             {renderFacts()}
         </div>
     )
@@ -86,9 +91,9 @@ const RenderFact = ({ item }) => {
     const { name, value } = item;
 
     return (
-        <div>
-            <p>{name}</p>
-            <p>{value}</p>
+        <div className='font-extrabold text-4xl'>
+            <p className='font-monoton'>{value}</p>
+            <p className='font-righteous'>{name}</p>
         </div>
     )
 }
@@ -97,7 +102,7 @@ const HeadingTexts = () => {
     return (
         <div>
             <TopTexts />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti commodi, culpa assumenda laborum provident iste quo facere fugiat sint ut alias repudiandae tempora hic sit omnis rem, dolores rerum vitae?</p>
+            <p className='font-sans'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti commodi, culpa assumenda laborum provident iste quo facere fugiat sint ut alias repudiandae tempora hic sit omnis rem, dolores rerum vitae?</p>
         </div>
     )
 }
@@ -105,7 +110,7 @@ const HeadingTexts = () => {
 const TopTexts = () => {
     const renderTexts = () => heroTexts.map(txt => <p>{txt}</p>)
     return (
-        <div>
+        <div className='flex flex-col gap-6 font-extrabold font-righteous text-7xl'>
             {renderTexts()}
         </div>
     )

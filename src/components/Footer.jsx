@@ -5,14 +5,14 @@ import { footers } from '../data'
 export const Footer = () => {
     const { product, company, additionals, newsletter } = footers
     return (
-        <div>
-            <div>
+        <div className='w-full'>
+            <div className='flex justify-between gap-4 font-righteous'>
                 <CompanyLogo />
                 <RenderNavs items={product} title={"Product"} />
                 <RenderNavs items={company} title={"Company"} />
                 <RenderNewsLetter item={newsletter} />
             </div>
-            <p>divider</p>
+            <p className='h-0.5 w-full bg-slate-200 my-4'></p>
             <RenderAdditionals items={additionals} />
         </div>
     )
@@ -22,7 +22,7 @@ const RenderAdditionals = ({ items }) => {
     const { moreLinks, links } = items;
 
     return (
-        <div>
+        <div className='flex gap-4 justify-center'>
             <RenderMoreLinks names={moreLinks} />
             <RenderSocials items={links} />
         </div>
@@ -33,7 +33,7 @@ const RenderSocials = ({ items }) => {
     const renderSocials = () => items?.map(item => <span>{item.icon}</span>)
 
     return (
-        <div>
+        <div className='flex gap-4 justify-between'>
             {renderSocials()}
         </div>
     )
@@ -42,7 +42,7 @@ const RenderSocials = ({ items }) => {
 const RenderMoreLinks = ({ names }) => {
     const renderNames = () => names?.map(name => <p key={name}>{name}</p>)
     return (
-        <div>
+        <div className='flex justify-between gap-6'>
             {renderNames()}
         </div>
     )
@@ -51,10 +51,10 @@ const RenderMoreLinks = ({ names }) => {
 const RenderNewsLetter = ({ item }) => {
     const { title, btnTxt } = item
     return (
-        <div>
-            <h2>{title}</h2>
-            <button>{btnTxt}</button>
-            <input type="text" placeholder='enter your email here....' />
+        <div className=''>
+            <h2 className=''>{title}</h2>
+            <button className='p-0 px-6 py-1 text-blue-950 rounded-xl'>{btnTxt}</button>
+            <input className='py-1 rounded' type="text" placeholder='enter your email here....' />
         </div>
     )
 }
@@ -64,7 +64,7 @@ const RenderNavs = ({ items, title }) => {
 
     return (
         <div>
-            <h2>{title}</h2>
+            <h2 className='text-2xl'>{title}</h2>
             <div>
                 {renderNavs()}
             </div>

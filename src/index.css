@@ -41,8 +41,9 @@ body {
   /* display: flex; */
   /* place-items: center; */
   /* min-width: 320px; */
-  background: darkolivegreen;
+  background: rgb(37, 35, 35);
   min-height: 100vh;
+  color: whitesmoke;
 }
 
 h1 {
