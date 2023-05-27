@@ -4,8 +4,8 @@ import imgSrc from "../assets/ladyLooking.jpg"
 
 export const HeroContents = () => {
     return (
-        <div className='flex justify-between'>
-            <div>
+        <div className='flex justify-between gap-6 px-4 relative'>
+            <div className='w-2/4 flex flex-col justify-center px-16' style={{minHeight: "540px"}}>
                 <HeadingTexts />
                 <SomeNumbers />
             </div>
@@ -16,7 +16,7 @@ export const HeroContents = () => {
 
 const HeroVisuals = () => {
     return (
-        <div className='flex w-3/4 items-center'>
+        <div className='flex items-center absolute right-20'>
             <TaskView />
             <PortraitView />
         </div>
@@ -41,7 +41,7 @@ const PortraitView = () => {
 const TaskView = () => {
     const { date, title, meta } = taskInfo
     return (
-        <div className='bg-slate-400 h-fit w-full rounded-lg'>
+        <div className='bg-slate-400 h-fit w-full rounded-lg opacity-60'>
             <div className='px-4 py-4 h-28 flex flex-col justify-around'>
                 <RenderTaskTextInfo item={title} />
                 <div className='flex justify-between w-full'>
@@ -87,7 +87,7 @@ const RenderTaskTextInfo = ({ item }) => {
 const SomeNumbers = () => {
     const renderFacts = () => numFacts.map(item => <RenderFact key={item.name} item={item} />)
     return (
-        <div className='flex justify-between'>
+        <div className='flex justify-between my-6'>
             {renderFacts()}
         </div>
     )
@@ -98,7 +98,7 @@ const RenderFact = ({ item }) => {
 
     return (
         <div className='font-extrabold text-4xl'>
-            <p className='font-monoton'>{value}</p>
+            <p className='font-monoton text-transparent bg-clip-text bg-gradient-to-br from-blue-200 to-lime-800'>{value}</p>
             <p className='font-righteous'>{name}</p>
         </div>
     )
@@ -114,7 +114,7 @@ const HeadingTexts = () => {
 }
 
 const TopTexts = () => {
-    const renderTexts = () => heroTexts.map(txt => <p key={txt}>{txt}</p>)
+    const renderTexts = () => heroTexts.map(txt => <p className='text-transparent bg-clip-text bg-gradient-to-tr from-slate-200 to-blue-800' key={txt}>{txt}</p>)
     return (
         <div className='flex flex-col gap-6 font-extrabold font-righteous text-7xl'>
             {renderTexts()}

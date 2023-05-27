@@ -54,12 +54,12 @@ export const weDo = [
     {
         icon: <BiSearchAlt2 />,
         title: "Research",
-        desc: "some Desc"
+        desc: "Candy canes macaroon bear claw halvah sugar plum cake marshmallow carrot cake carrot cake. Gummies apple pie tootsie roll gummies cookie sweet marshmallow. Sugar plum chocolate cake muffin wafer toffee jujubes."
     },
     {
         icon: <AiFillProfile />,
         title: "Development",
-        desc: "some Desc"
+        desc: "Pastry marzipan apple pie bear claw icing tart. Sugar plum biscuit lollipop sugar plum oat cake oat cake wafer gingerbread. Candy canes tart chocolate tart dragée gingerbread."
     }
 ];
 
@@ -80,7 +80,7 @@ export const projects = [
 
 export const testimonials = [
     {
-        text: "some trrext fasd ads asd asd ad sd afd dfg asffs favv faf",
+        text: "Halvah sweet chupa chups soufflé bear claw jelly beans jelly wafer. Chocolate cake carrot cake soufflé cake jelly-o dragée pastry. Tart cupcake jelly beans icing cake jelly oat cake topping",
         user: {
             name: "buns bugsy",
             title: "CTO, Founder",
@@ -88,7 +88,7 @@ export const testimonials = [
         }
     },
     {
-        text: "some trrext fasd ads asd asd ad sd afd dfg asffs favv faf",
+        text: "Soufflé liquorice danish pudding sugar plum. Sweet wafer cotton candy jelly-o cheesecake sugar plum soufflé. Caramels apple pie wafer marzipan icing marshmallow ice cream. Apple pie cake liquorice dragée gingerbread powder carrot cake tootsie roll soufflé",
         user: {
             name: "bugs bunny",
             title: "CEO, Founder",
@@ -100,7 +100,7 @@ export const testimonials = [
 export const blog = {
     date: "November 9, 2023",
     title: "Why do you need real estate enterprise solutions",
-    excerpt: "Reasl estate reastr jshbchj skjdbfkjb skjdfkjf kjsksjhgfk jukdijgk jb j nhj n,cj cckfjhkxf fj",
+    excerpt: "Marshmallow icing biscuit tootsie roll lemon drops bear claw sweet roll cake. Caramels bear claw macaroon apple pie icing ice cream gingerbread. Shortbread biscuit powder biscuit liquorice liquorice sugar plum pie tiramisu. Fruitcake cheesecake pudding sweet roll chocolate cake tiramisu....",
     url: "https://source.unsplash.com/random/1920x1080/?office,corporate"
 }
 

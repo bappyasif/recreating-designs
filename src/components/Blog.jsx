@@ -4,10 +4,10 @@ import { blog } from '../data'
 export const LatestBlog = () => {
     const { date, excerpt, title, url } = blog
     return (
-        <div className='flex flex-col font-righteous mb-6'>
-            <h2 className='text-6xl my-2 mb-4'>Latest Blog</h2>
-            <div className='flex gap-4 justify-center'>
-                <img className='w-1/4 h-1/4' style={{minHeight: "310px"}} src={"https://source.unsplash.com/random/1920x1080/?blog,latest"} alt={excerpt} />
+        <div className='flex flex-col font-righteous mb-20'>
+            <h2 className='text-6xl my-2 mb-4 text-transparent bg-clip-text bg-gradient-to-br from-slate-200 to-blue-800'>Latest Blog</h2>
+            <div className='flex gap-9 justify-center px-9'>
+                <img className='w-2/4 h-1/4 rounded-md' style={{minHeight: "310px"}} src={"https://source.unsplash.com/random/1920x1080/?blog,latest"} alt={excerpt} />
                 <div>
                     <p className='font-monoton'>{date}</p>
                     <h2 className='text-4xl'>{title}</h2>
