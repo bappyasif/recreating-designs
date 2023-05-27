@@ -41,7 +41,8 @@ body {
   /* display: flex; */
   /* place-items: center; */
   /* min-width: 320px; */
-  background: rgb(37, 35, 35);
+  /* background: rgb(37, 35, 35); */
+  background: black;
   min-height: 100vh;
   color: whitesmoke;
 }

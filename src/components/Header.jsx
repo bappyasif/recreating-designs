@@ -1,5 +1,7 @@
 import React from 'react'
 import { compLogo, topNavs } from '../data'
+// import imgSrc from "../assets/logo1.png"
+import imgSrc from "../assets/logo.png"
 
 export const Header = () => {
   return (
@@ -13,8 +15,8 @@ export const Header = () => {
 export const CompanyLogo = () => {
     const {name, icon} = compLogo[0]
     return (
-        <div className='flex gap-2'>
-            <img src="#" alt="logo" />
+        <div className='flex gap-2 h-fit items-center'>
+            <img className='bg-slate-400' src={imgSrc} alt="logo" />
             <h1 className='font-extrabold font-monoton'>{name}</h1>
         </div>
     )

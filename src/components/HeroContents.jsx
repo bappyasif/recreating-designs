@@ -1,5 +1,6 @@
 import React from 'react'
 import { heroTexts, numFacts, taskInfo } from '../data'
+import imgSrc from "../assets/ladyLooking.jpg"
 
 export const HeroContents = () => {
     return (
@@ -15,7 +16,7 @@ export const HeroContents = () => {
 
 const HeroVisuals = () => {
     return (
-        <div className='flex'>
+        <div className='flex w-3/4 items-center'>
             <TaskView />
             <PortraitView />
         </div>
@@ -24,26 +25,31 @@ const HeroVisuals = () => {
 
 const PortraitView = () => {
     return (
-        <div>
-            <span>elipse one</span>
-            <img src="#" alt="portait view" />
-            <span>elipse two</span>
+        <div className='m-2 w-full'>
+            <img className='rounded' src={imgSrc} alt="portait view" />
         </div>
+        // <div className='flex justify-between gap-2'>
+        //     <span className='block h-60 w-40 float-left bg-red-600 text-white' style={{clipPath: "ellipse(20px 50px at right)"}}></span>
+        //     <span className='block h-60 w-40 float-left text-white' style={{shapeOutside: "ellipse(20px 50px at right)"}}></span>
+        //     <img src="../assets/ladyLooking.jpg" alt="portait view" />
+        //     <img className='rounded w-full' src={imgSrc} alt="portait view" />
+        //     <span>elipse two</span>
+        // </div>
     )
 }
 
 const TaskView = () => {
     const { date, title, meta } = taskInfo
     return (
-        <div className='bg-slate-400 h-fit'>
-            <div className='px-4 py-2'>
+        <div className='bg-slate-400 h-fit w-full rounded-lg'>
+            <div className='px-4 py-4 h-28 flex flex-col justify-around'>
                 <RenderTaskTextInfo item={title} />
-                <div className='flex justify-between'>
+                <div className='flex justify-between w-full'>
                     <RenderTaskTextInfo item={date} />
                     <RenderTaskMetaData items={meta} />
                 </div>
             </div>
-            <p className='bg-teal-200 p-2 text-slate-950'>4 subtasks (0/4 completed)</p>
+            <p className='bg-teal-200 p-4 text-slate-950 rounded-lg'>4 subtasks (0/4 completed)</p>
         </div>
     )
 }
@@ -60,7 +66,7 @@ const RenderTaskMetaData = ({ items }) => {
 const RenderMetaItem = ({ item }) => {
     const { icon, value } = item;
     return (
-        <div>
+        <div className='flex gap-2 items-center'>
             <span>{icon}</span>
             <span>{value}</span>
         </div>
@@ -71,7 +77,7 @@ const RenderTaskTextInfo = ({ item }) => {
     const { name, icon } = item
 
     return (
-        <div>
+        <div className='flex gap-4 items-center'>
             <span>{icon}</span>
             <span>{name}</span>
         </div>
@@ -108,7 +114,7 @@ const HeadingTexts = () => {
 }
 
 const TopTexts = () => {
-    const renderTexts = () => heroTexts.map(txt => <p>{txt}</p>)
+    const renderTexts = () => heroTexts.map(txt => <p key={txt}>{txt}</p>)
     return (
         <div className='flex flex-col gap-6 font-extrabold font-righteous text-7xl'>
             {renderTexts()}

@@ -5,7 +5,7 @@ import { footers } from '../data'
 export const Footer = () => {
     const { product, company, additionals, newsletter } = footers
     return (
-        <div className='w-full'>
+        <div className='w-full px-2'>
             <div className='flex justify-between gap-4 font-righteous'>
                 <CompanyLogo />
                 <RenderNavs items={product} title={"Product"} />
@@ -22,7 +22,7 @@ const RenderAdditionals = ({ items }) => {
     const { moreLinks, links } = items;
 
     return (
-        <div className='flex gap-4 justify-center'>
+        <div className='flex gap-4 justify-around'>
             <RenderMoreLinks names={moreLinks} />
             <RenderSocials items={links} />
         </div>
@@ -30,7 +30,7 @@ const RenderAdditionals = ({ items }) => {
 }
 
 const RenderSocials = ({ items }) => {
-    const renderSocials = () => items?.map(item => <span>{item.icon}</span>)
+    const renderSocials = () => items?.map((item, idx) => <span className='flex items-center' key={idx}>{item.icon}</span>)
 
     return (
         <div className='flex gap-4 justify-between'>
@@ -51,10 +51,12 @@ const RenderMoreLinks = ({ names }) => {
 const RenderNewsLetter = ({ item }) => {
     const { title, btnTxt } = item
     return (
-        <div className=''>
+        <div className='w-1/4 flex flex-col gap-4'>
             <h2 className=''>{title}</h2>
-            <button className='p-0 px-6 py-1 text-blue-950 rounded-xl'>{btnTxt}</button>
-            <input className='py-1 rounded' type="text" placeholder='enter your email here....' />
+            <div className='relative w-full'>
+                <button className='p-0 px-6 py-1 h-11 text-blue-950 bg-lime-600 rounded-xl absolute'>{btnTxt}</button>
+                <input className='pl-44 py-1 h-11 rounded-xl w-full bg-slate-600' type="text" placeholder='enter your email here....' />
+            </div>
         </div>
     )
 }

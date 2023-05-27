@@ -1,3 +1,15 @@
+import {AiOutlineFileDone, AiFillCalendar, AiTwotoneMessage, AiTwotoneProfile, AiFillProfile, AiFillTwitterCircle, AiFillLinkedin, AiFillGithub, AiFillFacebook} from "react-icons/ai"
+import {BiLink, BiSearchAlt2} from "react-icons/bi"
+
+// import React from 'react'
+
+// export const Test = () => {
+//   return (
+//     <div>index</div>
+//   )
+// }
+
+
 export const topNavs = [
     "Home", "Services", "Projects", "Case Study", "Our Blog"
 ]
@@ -17,22 +29,22 @@ export const numFacts = [
 export const taskInfo = {
     title: {
         name: "Processing Task",
-        icon: null
+        icon: <AiOutlineFileDone />
     },
     date: {
         name: "Tue, May 23",
-        icon: null
+        icon: <AiFillCalendar />
     },
     meta: [
         {
-            icon: null,
+            icon: <AiTwotoneMessage />,
             value: 4
         }, {
-            icon: null,
+            icon: <AiTwotoneProfile />,
             value: 6
         },
         {
-            icon: null,
+            icon: <BiLink />,
             value: 8
         }
     ]
@@ -40,12 +52,12 @@ export const taskInfo = {
 
 export const weDo = [
     {
-        icon: null,
+        icon: <BiSearchAlt2 />,
         title: "Research",
         desc: "some Desc"
     },
     {
-        icon: null,
+        icon: <AiFillProfile />,
         title: "Development",
         desc: "some Desc"
     }
@@ -54,15 +66,15 @@ export const weDo = [
 export const projects = [
     {
         name: "Cross Matching",
-        url: "#"
+        url: "https://unsplash.com/photos/Oalh2MojUuk?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"
     },
     {
         name: "Corporate Leads",
-        url: "#"
+        url: "https://unsplash.com/photos/81lJcobn8kg?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"
     },
     {
         name: "Bio Technology",
-        url: "#"
+        url: "https://unsplash.com/photos/pRt3JVYlJho?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"
     }
 ]
 
@@ -89,7 +101,7 @@ export const blog = {
     date: "November 9, 2023",
     title: "Why do you need real estate enterprise solutions",
     excerpt: "Reasl estate reastr jshbchj skjdbfkjb skjdfkjf kjsksjhgfk jukdijgk jb j nhj n,cj cckfjhkxf fj",
-    url: "#"
+    url: "https://source.unsplash.com/random/1920x1080/?office,corporate"
 }
 
 export const footers = {
@@ -103,7 +115,7 @@ export const footers = {
     additionals: {
         moreLinks: ["Customer Agreement", "Imprint", "Privacy Policiy", "Terms Of Services"],
         links: [
-            { icon: null }, { icon: null }, { icon: null }, { icon: null }
+            { icon: <AiFillTwitterCircle /> }, { icon: <AiFillLinkedin /> }, { icon: <AiFillGithub /> }, { icon: <AiFillFacebook /> }
         ]
     }
 }

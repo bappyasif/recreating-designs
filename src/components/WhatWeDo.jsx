@@ -13,7 +13,7 @@ export const WhatWeDo = () => {
 const RenderInfo = () => {
     const renderfocuses = () => weDo.map(item => <RenderFocus key={item.title} item={item} />)
     return (
-        <div className='flex justify-between gap-4'>
+        <div className='flex justify-between gap-4 w-2/4 px-2'>
             {renderfocuses()}
         </div>
     )
@@ -24,7 +24,7 @@ const RenderFocus = ({ item }) => {
 
     return (
         <div className='flex flex-col gap-2 font-bold'>
-            <div>{icon}</div>
+            <div className='text-4xl'>{icon}</div>
             <h2 className='font-righteous text-4xl'>{title}</h2>
             <p>{desc}</p>
         </div>
