@@ -4,7 +4,10 @@ import { GiPlanetCore, GiRingedPlanet, GiStoneSphere } from "react-icons/gi"
 
 export const FeaturedNews = () => {
     return (
-        <div>
+        <div
+            className='bg-slate-400 text-black px-4'
+        // style={{maxHeight: "530px"}}
+        >
             <NewsMenu />
             <FeaturedArticle />
         </div>
@@ -13,7 +16,7 @@ export const FeaturedNews = () => {
 
 const FeaturedArticle = () => {
     return (
-        <div>
+        <div className=''>
             <RenderArticleView />
             <RenderMenuNavFilters />
         </div>
@@ -21,12 +24,12 @@ const FeaturedArticle = () => {
 }
 
 const RenderMenuNavFilters = () => {
-    const renderIcons = () => newsIcons.map((item, idx) => <span key={idx}>{item.icon}</span>)
+    const renderIcons = () => newsIcons.map((item, idx) => <span className='outline outline-1 outline-slate-400 p-2 rounded-lg' key={idx}>{item.icon}</span>)
 
     return (
-        <div>
-            <h2>Features..</h2>
-            <div>
+        <div className='my-4 flex justify-between items-baseline'>
+            <h2 className='text-4xl'>New Features..</h2>
+            <div className='flex gap-4 items-baseline justify-end text-4xl bg-blue-400 px-4 py-2 mx-2 opacity-80 rounded-lg'>
                 {renderIcons()}
             </div>
         </div>
@@ -35,13 +38,26 @@ const RenderMenuNavFilters = () => {
 
 const RenderArticleView = () => {
     return (
-        <div>
-            <div className='relative flex items-center'>
-                <OrbitalEen />
-                <OrbitalTwee />
+        <div className='flex flex-col gap-2'>
+            <div className='flex relative'>
+                <div style={{height: "366px", position: "relative"}}>
+                    <div 
+                        className='flex items-center self-center absolute left-2/4'
+                        style={{left: "121px"}}
+                    >
+                        <OrbitalEen />
+                        <OrbitalTwee />
+                    </div>
+                </div>
+                <div
+                    className='absolute right-0 text-5xl self-center
+                    w-2/4 flex flex-col gap-4'
+                >
+                    <h2 className='text-5xl'>Product Free And Easy</h2>
+                    <p className='text-xl w-3/5 self-end'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, doloremque, animi velit tempora enim iste dolore nihil blanditiis sapiente rerum quisquam libero explicabo! Est vel ipsa officia reprehenderit odio nulla?</p>
+                </div>
             </div>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, doloremque, animi velit tempora enim iste dolore nihil blanditiis sapiente rerum quisquam libero explicabo! Est vel ipsa officia reprehenderit odio nulla?</p>
-            <div className='flex justify-between items-center px-20'>
+            <div className='flex justify-between items-center px-20 w-2/4 self-end'>
                 <OrbitalDrie />
                 <OrbitalVier />
                 <OrbitalVijf />
@@ -54,7 +70,7 @@ const OrbitalVijf = () => {
     return (
         <div
             style={{
-                transform: "rotateY(56deg) rotateX(303deg) rotateZ(5deg)",
+                transform: "rotateY(1deg) rotateX(359deg) rotateZ(86deg)",
                 alignSelf: "flex-start"
             }}
         >
@@ -62,7 +78,7 @@ const OrbitalVijf = () => {
                 style={{ animation: "9s linear infinite orbit" }}>
                 <p className='animate-spin'>
                     <GiStoneSphere
-                        className="animate-ping w-4 h-4 text-slate-400 rounded-full"
+                        className="animate-ping w-4 h-4 text-slate-900 rounded-full"
                     />
                 </p>
             </div>
@@ -74,27 +90,29 @@ const OrbitalVier = () => {
     return (
         <div
             style={{
-                transform: "rotateY(312deg) rotateX(303deg) rotateZ(5deg)"
+                transform: "rotateY(22deg) rotateX(46deg) rotateZ(5deg)"
             }}
         >
             <div className=' relative w-16 h-16 rounded-full'
                 style={{ animation: "9s linear infinite orbit" }}>
-                <GiStoneSphere
-                    className="animate-bounce w-4 h-4 text-slate-600 rounded-full"
-                />
+                <span className='animate-bounce'>
+                    <GiStoneSphere
+                        className="animate-spin w-4 h-4 text-slate-900 rounded-full"
+                    />
+                </span>
             </div>
         </div>
     )
 }
 
-const OrbitalDrie = () => {
+export const OrbitalDrie = () => {
     return (
         <div className='relative'>
             <div className='flex items-center justify-center w-28 h-28 rounded-full outline outline-1 outline-red-800'>
                 <div className=' relative w-16 h-16 rounded-full outline outline-1 outline-red-800
         ' style={{ animation: "8s linear infinite orbit" }}>
                     <GiStoneSphere
-                        className="animate-spin w-4 h-4 text-slate-400 rounded-full"
+                        className="animate-spin w-4 h-4 text-slate-800 rounded-full"
                     />
                 </div>
             </div>
@@ -155,7 +173,7 @@ const OrbitalEen = () => {
 export const NewsMenu = () => {
     const renderMenus = () => newsMenu.map(item => <RenderNewsMenu key={item.text} item={item} />)
     return (
-        <div>
+        <div className='flex justify-between'>
             {renderMenus()}
         </div>
     )
@@ -165,9 +183,9 @@ const RenderNewsMenu = ({ item }) => {
     const { text, icon } = item;
 
     return (
-        <div>
+        <div className='flex gap-4 items-center text-2xl'>
             <span>{text}</span>
-            <span>{icon}</span>
+            <span className='text-5xl'>{icon}</span>
         </div>
     )
 }
