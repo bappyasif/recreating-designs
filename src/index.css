@@ -129,3 +129,17 @@ button:focus-visible {
     -webkit-transform: translateY(-20px);
   }
 }
+
+/* flip text upside down */
+@keyframes flipTxt {
+  from{
+    -webkit-transform: rotateX(160deg);
+    /* opacity: 10; */
+    /* animation-delay: 2s; */
+  }
+  to{
+    -webkit-transform: rotateX(0deg);
+    /* opacity: 60; */
+    animation-delay: 6s;
+  }
+}

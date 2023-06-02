@@ -6,11 +6,11 @@ import { TopMenu } from './components/TopMenu'
 
 function App() {
   return (
-    <div>
+    <div className='font-righteous'>
       <TopMenu />
-      <div className='flex w-full px-4'>
+      <div className='flex w-full max-h-full px-4'>
         <Sideview />
-        <div className='flex flex-col gap-2 w-full h-fit'>
+        <div className='flex flex-col gap-6 w-3/4'>
           <FeaturedNews />
           <CompanyFeatures />
         </div>

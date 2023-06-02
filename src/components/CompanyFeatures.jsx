@@ -7,7 +7,7 @@ import { BsGraphUpArrow } from "react-icons/bs"
 
 export const CompanyFeatures = () => {
     return (
-        <div className='flex flex-col gap-6'>
+        <div className='flex flex-col gap-0 mt-2 justify-between h-full' style={{ maxHeight: "659px" }}>
             <NewsMenu />
             <FeaturedImage />
             <FeaturedAnimations />
@@ -17,7 +17,7 @@ export const CompanyFeatures = () => {
 
 const FeaturedAnimations = () => {
     return (
-        <div className='flex justify-between px-6'>
+        <div className='flex justify-between px-6 bg-slate-400 text-slate-900 py-4'>
             <GraphAnim />
             <ProfileAnim />
             <OrbitalDouble />
@@ -30,8 +30,13 @@ const GraphAnim = () => {
     return (
         <div className='flex flex-col items-center justify-between'>
             <div
-                className='flex gap-4 items-center'
+                className='flex flex-col gap-4 items-center'
             >
+                <span className='text-6xl animate-pulse relative'>
+                    <BsGraphUpArrow className='animate-none absolute' />
+                    <BsGraphUpArrow className='animate-ping' />
+                </span>
+
                 <div
                     className='flex flex-col items-center justify-center'
                 >
@@ -42,11 +47,6 @@ const GraphAnim = () => {
                     <div className='w-3 h-4 bg-red-600 rounded-sm animate-bounce'></div>
                 </div>
 
-                <span className='text-6xl animate-pulse relative'>
-                    <BsGraphUpArrow className='animate-none absolute' />
-                    <BsGraphUpArrow className='animate-ping' />
-                </span>
-
             </div>
             <h2>Buzzing Bits</h2>
         </div>
@@ -56,10 +56,10 @@ const GraphAnim = () => {
 const ProfileAnim = () => {
     return (
         <div className='flex flex-col items-center justify-between'>
-            <div className='relative px-4 py-1 bg-slate-400 rounded-lg'>
+            <div className='relative px-4 py-1 bg-slate-600 rounded-lg'>
                 <span>
-                    <span className='absolute text-blue-400 -top-4 -right-4 text-4xl bg-slate-400 rounded-full'><BiCheckCircle /></span>
-                    <span className='absolute text-blue-400 -top-4 -right-4 text-4xl bg-slate-400 rounded-full animate-ping'><BiCheckCircle /></span>
+                    <span className='absolute text-blue-900 -top-4 -right-4 text-4xl bg-transparent rounded-full'><BiCheckCircle /></span>
+                    <span className='absolute text-blue-600 -top-4 -right-4 text-4xl bg-slate-400 rounded-full animate-ping'><BiCheckCircle /></span>
                 </span>
                 <div className='py-2 flex flex-col items-center justify-center'>
                     <span className='text-4xl'><CgProfile /></span>
@@ -86,7 +86,7 @@ const TilesMovements = () => {
 
             <div
                 className='w-full h-9 relative
-                outline outline-2 outline-red-400 rounded-full shadow-xl z-10'
+                outline outline-2 outline-red-800 rounded-full shadow-xl z-10'
                 style={{
                     // transform: "rotateY(0deg) rotateX(64deg) rotateZ(359deg)"
                     // transform: "rotateY(25deg) rotateX(101deg) rotateZ(2deg)"
@@ -137,19 +137,19 @@ const OrbitalDouble = () => {
                     style={{ animation: "4s linear infinite orbit" }}
                 >
                     <GiStoneSphere
-                        className="absolute bottom-0 animate-spin w-4 h-4 text-slate-800 rounded-full"
+                        className="absolute bottom-0 animate-spin w-4 h-4 text-slate-600 rounded-full"
                     />
                 </div>
                 <GiPlanetCore
-                    className="absolute top-0 animate-pulse w-4 h-4 text-slate-800 rounded-full"
+                    className="absolute top-0 animate-pulse w-4 h-4 text-slate-600 rounded-full"
                 />
 
                 <GiRoundStar
-                    className="absolute right-0 top-16 animate-spin w-4 h-4 text-slate-800 rounded-full"
+                    className="absolute right-0 top-16 animate-spin w-4 h-4 text-slate-600 rounded-full"
                 />
 
                 <GiStarGate
-                    className="absolute left-0 top-16 animate-bounce w-4 h-4 text-slate-800 rounded-full"
+                    className="absolute left-0 top-16 animate-bounce w-4 h-4 text-slate-600 rounded-full"
                 />
             </div>
 
@@ -167,7 +167,7 @@ const FeaturedImage = () => {
                 alt="random picture from unsplash"
                 style={{ maxHeight: "380px" }}
             />
-            <h2 className='absolute top-40 right-1/3 text-6xl'>Orbitals News</h2>
+            <h2 className='absolute top-40 right-44 text-6xl font-monoton'>Orbitals News</h2>
             <span className='text-4xl absolute bottom-0 right-0'><BiDotsHorizontal /></span>
         </div>
     )
