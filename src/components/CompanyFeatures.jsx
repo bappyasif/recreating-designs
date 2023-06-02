@@ -28,104 +28,95 @@ const FeaturedAnimations = () => {
 
 const GraphAnim = () => {
     return (
-        <div
-            className='flex gap-4 items-center'
-        >
+        <div className='flex flex-col items-center justify-between'>
             <div
-                className='flex flex-col items-center justify-center'
+                className='flex gap-4 items-center'
             >
-                <div className='bg-red-600 h-5 w-6 rounded-full'>
-                    <div className='bg-red-600 h-6 w-6 rounded-full animate-ping'>
+                <div
+                    className='flex flex-col items-center justify-center'
+                >
+                    <div className='bg-red-600 h-5 w-6 rounded-full'>
+                        <div className='bg-red-600 h-6 w-6 rounded-full animate-ping'>
+                        </div>
                     </div>
+                    <div className='w-3 h-4 bg-red-600 rounded-sm animate-bounce'></div>
                 </div>
-                <div className='w-3 h-4 bg-red-600 rounded-sm animate-bounce'></div>
-            </div>
 
-            <span className='text-6xl animate-pulse relative'>
-                <BsGraphUpArrow className='animate-none absolute' />
-                <BsGraphUpArrow className='animate-ping' />
-            </span>
+                <span className='text-6xl animate-pulse relative'>
+                    <BsGraphUpArrow className='animate-none absolute' />
+                    <BsGraphUpArrow className='animate-ping' />
+                </span>
+
+            </div>
+            <h2>Buzzing Bits</h2>
         </div>
     )
 }
 
 const ProfileAnim = () => {
     return (
-        <div className='relative px-4 py-1 bg-slate-400 rounded-lg'>
-            <span>
-                <span className='absolute text-blue-400 -top-4 -right-4 text-4xl bg-slate-400 rounded-full'><BiCheckCircle /></span>
-                <span className='absolute text-blue-400 -top-4 -right-4 text-4xl bg-slate-400 rounded-full animate-ping'><BiCheckCircle /></span>
-            </span>
-            <div className='py-2 flex flex-col items-center justify-center'>
-                <span className='text-4xl'><CgProfile /></span>
-                <span className='text-6xl'><BiAlignJustify /></span>
+        <div className='flex flex-col items-center justify-between'>
+            <div className='relative px-4 py-1 bg-slate-400 rounded-lg'>
+                <span>
+                    <span className='absolute text-blue-400 -top-4 -right-4 text-4xl bg-slate-400 rounded-full'><BiCheckCircle /></span>
+                    <span className='absolute text-blue-400 -top-4 -right-4 text-4xl bg-slate-400 rounded-full animate-ping'><BiCheckCircle /></span>
+                </span>
+                <div className='py-2 flex flex-col items-center justify-center'>
+                    <span className='text-4xl'><CgProfile /></span>
+                    <span className='text-6xl'><BiAlignJustify /></span>
+                </div>
             </div>
+            <h2>Trending Tips</h2>
         </div>
     )
 }
 
 const TilesMovements = () => {
     return (
-        <div className='relative'>
+        <div className='relative w-56 flex flex-col items-center justify-between'>
+            <div
+                className="flex gap-4 h-28 justify-center"
+            >
+                <TileEen animName={"upDown"} />
+                <TileEen animName={"downUp"} />
+
+                {/* <img className='w-1/12' src={leftTile} alt="tiles een" />
+                <img className='w-1/12' src={rightTile} alt="tiles een" /> */}
+            </div>
 
             <div
-                className='w-full h-6 
-                outline outline-2 outline-red-200 rounded-full shadow-xl z-10'
+                className='w-full h-9 relative
+                outline outline-2 outline-red-400 rounded-full shadow-xl z-10'
                 style={{
-                    transform: "rotateY(0deg) rotateX(64deg) rotateZ(359deg)"
+                    // transform: "rotateY(0deg) rotateX(64deg) rotateZ(359deg)"
+                    // transform: "rotateY(25deg) rotateX(101deg) rotateZ(2deg)"
+                    // transform: "rotateY(32deg) rotateX(239deg) rotateZ(2deg)"
+                    transform: "rotateY(32deg) rotateX(253deg) rotateZ(0deg)"
                 }}
             >
-                <div 
-                    className="flex gap-4 h-56"
-                >
-                    <TileEen />
-                    <TileEen />
 
-                    {/* <img className='w-1/12' src={leftTile} alt="tiles een" />
-                <img className='w-1/12' src={rightTile} alt="tiles een" /> */}
-                </div>
             </div>
+            <h2>Special Mentions</h2>
         </div>
     )
 }
 
-// const TilesMovements = () => {
-//     return (
-//         <div className='relative'>
-//             <div className="flex gap-4">
-//                 <TileEen />
-//                 <TileEen />
-
-//                 {/* <img className='w-1/12' src={leftTile} alt="tiles een" />
-//                 <img className='w-1/12' src={rightTile} alt="tiles een" /> */}
-//             </div>
-//             <div
-//                 className='absolute top-1/4 w-full h-6 
-//                 outline outline-2 outline-red-200 rounded-full shadow-xl z-10'
-//                 style={{
-//                     transform: "rotateY(0deg) rotateX(64deg) rotateZ(359deg)"
-//                 }}
-//             >
-
-//             </div>
-//         </div>
-//     )
-// }
-
-const TileEen = () => {
+const TileEen = ({ animName }) => {
     return (
         <div
             className='w-20 flex flex-col justify-center items-center '
+        // style={{ animation: `2s ease alternate-reverse infinite ${animName}` }}
         >
             <div
-                className='w-12 h-full py-2 
-                outline outline-2 outline-red-800 rounded-lg 
-                flex flex-col justify-around items-center gap-4 animate-bounce'
+                className='w-12 h-full py-2 rounded-lg 
+                bg-red-800 z-20
+                flex flex-col justify-around items-center gap-4'
+                style={{ animation: `1s ease alternate-reverse infinite ${animName}` }}
             >
-                <div className='bg-red-600 h-5 w-6 animate-pulse'></div>
-                <div className='h-4 w-0.5 bg-red-400 animate-bounce'></div>
-                <div className='bg-red-600 h-5 w-6 rounded-full'>
-                    <div className='bg-red-600 h-6 w-6 rounded-full animate-ping'>
+                <div className='bg-slate-900 h-5 w-6 animate-pulse'></div>
+                <div className='h-6 w-0.5 bg-slate-900 animate-bounce'></div>
+                <div className='bg-slate-900 h-5 w-6 rounded-full'>
+                    <div className='bg-slate-900 h-6 w-6 rounded-full animate-ping'>
                     </div>
                 </div>
             </div>
@@ -135,7 +126,7 @@ const TileEen = () => {
 
 const OrbitalDouble = () => {
     return (
-        <div className='relative'>
+        <div className='flex flex-col items-center justify-between'>
             <div
                 className='flex items-center justify-center w-28 h-28 rounded-full 
                 outline outline-1 outline-red-800'
@@ -161,6 +152,8 @@ const OrbitalDouble = () => {
                     className="absolute left-0 top-16 animate-bounce w-4 h-4 text-slate-800 rounded-full"
                 />
             </div>
+
+            <h2>Far And Wide</h2>
         </div>
     )
 }

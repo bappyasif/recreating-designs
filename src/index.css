@@ -110,3 +110,22 @@ button:focus-visible {
     -moz-transform: rotate(360deg)
   }
 }
+
+/* tiles up down motion */
+@keyframes upDown {
+  from{
+    -webkit-transform: translateY(-20px)
+  }
+  to{
+    -webkit-transform: translateY(20px);
+  }
+}
+
+@keyframes downUp {
+  from{
+    -webkit-transform: translateY(20px)
+  }
+  to{
+    -webkit-transform: translateY(-20px);
+  }
+}
