@@ -6,7 +6,7 @@ import { TopMenu } from './components/TopMenu'
 
 function App() {
   return (
-    <div className='font-righteous'>
+    <div className='font-righteous pr-6'>
       <TopMenu />
       <div className='flex w-full max-h-full px-4'>
         <Sideview />
