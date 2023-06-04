@@ -5,9 +5,9 @@ import Copyrights from './Copyrights'
 
 export const Footer = () => {
     const { navs, newsletter, more } = footerItems
-    
+
     return (
-        <div>
+        <div className='flex flex-col gap-9'>
             <RenderNavs navs={navs} />
             <Newsletter item={newsletter} />
             <Copyrights item={more} />
@@ -21,9 +21,11 @@ const RenderNavs = ({ navs }) => {
     const renderSocials = () => socials.map((item, idx) => <RenderSocial key={idx} item={item} />)
 
     return (
-        <div>
-            <h2>ABCD</h2>
-            <div> {renderSocials()} </div>
+        <div className='flex justify-between'>
+            <div>
+                <h2>ABCD</h2>
+                <div className='flex gap-4'> {renderSocials()} </div>
+            </div>
             <RenderLinks links={links} />
         </div>
     )
@@ -36,7 +38,7 @@ const RenderLinks = ({ links }) => {
     const renderResourcesNavs = () => resources.map(item => <RenderLink key={item} item={item} />)
 
     return (
-        <div>
+        <div className='flex justify-between w-2/3'>
             <ReUseable titTxt={"Products"}>
                 {renderProductNavs()}
             </ReUseable>

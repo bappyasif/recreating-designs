@@ -1,35 +1,37 @@
 import React from 'react'
-import {topNavs} from "../data"
+import { topNavs } from "../data"
 
 const Header = () => {
-    const {logo, navs, other} = topNavs
-  return (
-    <div>
-        <CompLogo item={logo} />
-        <RenderNavs items={navs} />
-        <RenderOther item={other} />
-    </div>
-  )
+    const { logo, navs, other } = topNavs
+    return (
+        <div className='flex justify-between'>
+            <div className='flex justify-between w-2/4'>
+                <CompLogo item={logo} />
+                <RenderNavs items={navs} />
+            </div>
+            <RenderOther item={other} />
+        </div>
+    )
 }
 
-const RenderOther = ({item}) => {
+const RenderOther = ({ item }) => {
     return (
         <div>{item}</div>
     )
 }
 
-const RenderNavs = ({items}) => {
+const RenderNavs = ({ items }) => {
     const renderItems = () => items?.map(name => <span key={name}>{name}</span>)
 
     return (
-        <div>
+        <div className='flex justify-between w-2/3'>
             {renderItems()}
         </div>
     )
 }
 
-const CompLogo = ({item}) => {
-    const {icon, name} = item
+const CompLogo = ({ item }) => {
+    const { icon, name } = item
 
     return (
         <div>

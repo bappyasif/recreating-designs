@@ -4,7 +4,7 @@ import Testimonials from './Testimonials'
 
 const FeaturesContents = () => {
   return (
-    <div>
+    <div className='flex flex-col gap-16'>
         <KeyFeatures />
         <Testimonials />
     </div>
