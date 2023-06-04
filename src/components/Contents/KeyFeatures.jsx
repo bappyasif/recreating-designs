@@ -13,11 +13,11 @@ const KeyFeatures = () => {
 }
 
 const RenderStandardFeatures = ({items}) => {
-  const {heading, keyPoints} = items
+  const {headings, keyPoints} = items
 
   return (
     <div>
-      <ReUsableHeadingElement item={heading} />
+      <ReUsableHeadingElement item={headings} />
       <RenderKeypoints items={keyPoints} />
     </div>
   )

@@ -24,8 +24,8 @@ export const heroItems = {
         }
     ],
     partners: [
-        {icon: "AA"}, {icon: "AA"}, {icon: "AA"},
-        {icon: "AA"}, {icon: "AA"}, {icon: "AA"}
+        { icon: "AA" }, { icon: "AA" }, { icon: "AA" },
+        { icon: "AA" }, { icon: "AA" }, { icon: "AA" }
     ]
 }
 
@@ -117,4 +117,26 @@ export const testimonials = [
         name: "joana rider",
         text: "some testimoniakl text that you have never heard of now go screammm"
     },
-]
+];
+
+export const footerItems = {
+    navs: {
+        socials: [
+            { icon: "AA" },
+            { icon: "AA" },
+        ],
+        links: {
+            product: ["features", "integrations", "pricing", "changelogs", "roadmap"],
+            company: ["out team", "our values", "blog"],
+            resources: ["downloads", "documentations", "contact"]
+        }
+    },
+    newsletter: {
+        titTxt: "Join our newsletter",
+        subTxt: "keep up to date with our releases"
+    },
+    more: {
+        links: ["Terms of services", "policy service", "cookie policy"],
+        copyright: "ABCD. All rights reserved"
+    }
+}

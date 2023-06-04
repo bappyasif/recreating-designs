@@ -5,9 +5,9 @@ const Header = () => {
     const {logo, navs, other} = topNavs
   return (
     <div>
-        <CompLogo />
-        <RenderNavs />
-        <RenderOther />
+        <CompLogo item={logo} />
+        <RenderNavs items={navs} />
+        <RenderOther item={other} />
     </div>
   )
 }

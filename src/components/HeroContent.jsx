@@ -1,11 +1,13 @@
 import React from 'react'
+import { heroItems } from '../data'
 
 const HeroContent = () => {
+    const {numbers, partners, texts} = heroItems
     return (
         <div>
-            <RenderTexts />
-            <RenderFigs />
-            <RenderPartners />
+            <RenderTexts item={texts} />
+            <RenderFigs items={numbers} />
+            <RenderPartners items={partners} />
         </div>
     )
 }
@@ -56,7 +58,7 @@ const RenderFig = ({ item }) => {
 
 const RenderTexts = ({ item }) => {
     const { title, subtext, btnTxt } = item;
-    reutrn(
+    return(
         <div>
             <div>{title}</div>
             <div>{subtext}</div>
