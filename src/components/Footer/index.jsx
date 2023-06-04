@@ -56,7 +56,7 @@ const RenderLinks = ({ links }) => {
 const ReUseable = ({ children, titTxt }) => {
     return (
         <div>
-            <h2>{titTxt}</h2>
+            <h2 className='text-xl'>{titTxt}</h2>
             <div>{children}</div>
         </div>
     )
@@ -72,6 +72,6 @@ const RenderSocial = ({ item }) => {
     const { icon } = item;
 
     return (
-        <div>{icon}</div>
+        <div className='text-4xl'>{icon}</div>
     )
 }

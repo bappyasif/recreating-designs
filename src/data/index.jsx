@@ -1,3 +1,6 @@
+import {IoLogoDribbble, IoLogoHackernews, IoLogoPlaystation, IoLogoXbox, IoLogoFreebsdDevil, IoLogoSlack, IoLogoBuffer, IoLogoFlickr, IoLogoVimeo, IoLogoTumblr, IoLogoReddit, IoLogoGithub, IoLogoFacebook, IoLogoLinkedin, IoLogoTwitter, IoMdSettings, IoLogoDesignernews} from "react-icons/io"
+import {BiStoreAlt} from "react-icons/bi"
+import {FaTruckMoving} from "react-icons/fa"
 export const topNavs = {
     logo: {
         icon: null,
@@ -24,8 +27,10 @@ export const heroItems = {
         }
     ],
     partners: [
-        { icon: "AA" }, { icon: "AA" }, { icon: "AA" },
-        { icon: "AA" }, { icon: "AA" }, { icon: "AA" }
+        { icon: <IoLogoDribbble /> }, { icon: <IoLogoBuffer />}, { icon: <IoLogoDesignernews /> },
+        { icon: <IoLogoFlickr /> }, { icon: <IoLogoFreebsdDevil /> }, { icon: <IoLogoHackernews /> },
+        { icon: <IoLogoPlaystation /> }, { icon: <IoLogoSlack /> }, { icon: <IoLogoTumblr /> },
+        { icon: <IoLogoVimeo /> }, { icon: <IoLogoXbox /> }, { icon: <IoLogoReddit /> }
     ]
 }
 
@@ -66,17 +71,17 @@ export const features = {
         },
         keyPoints: [
             {
-                icon: null,
+                icon: <BiStoreAlt />,
                 titTxt: "Retail and E-Commerce",
                 subTxt: "Streamline your supply chain and meet client demands on time"
             },
             {
-                icon: null,
+                icon: <IoMdSettings />,
                 titTxt: "Manufacturing and Distribution",
                 subTxt: "Optimize your logistics operations for increased productrivity and effecience"
             },
             {
-                icon: null,
+                icon: <FaTruckMoving />,
                 titTxt: "Logistics and Supply Chain",
                 subTxt: "Simplify complex process, ensure predictable flow for optimum outcome"
             }
@@ -122,8 +127,10 @@ export const testimonials = [
 export const footerItems = {
     navs: {
         socials: [
-            { icon: "AA" },
-            { icon: "AA" },
+            { icon: <IoLogoGithub /> },
+            { icon: <IoLogoFacebook /> },
+            { icon: <IoLogoLinkedin /> },
+            { icon: <IoLogoTwitter /> },
         ],
         links: {
             product: ["features", "integrations", "pricing", "changelogs", "roadmap"],

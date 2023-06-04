@@ -9,6 +9,8 @@ export default {
       fontFamily :{
         monoton: ["monoton-regular","sans-serif"],
         righteous: ["righteous-regular","sans"],
+        novaSlim: ["novaSlim-regular","sans-serif"],
+        macondo: ["macondo-regular","sans"],
       }
     },
   },

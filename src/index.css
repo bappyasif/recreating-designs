@@ -12,6 +12,16 @@
   src: url("../fonts/Monoton-Regular.ttf");
 }
 
+@font-face {
+  font-family: "macondo-regular";
+  src: url("../fonts/Macondo-Regular.ttf");
+}
+
+@font-face {
+  font-family: "novaSlim-regular";
+  src: url("../fonts/NovaSlim-Regular.ttf");
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
