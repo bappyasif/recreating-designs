@@ -1,150 +1,168 @@
-import {IoLogoDribbble, IoLogoHackernews, IoLogoPlaystation, IoLogoXbox, IoLogoFreebsdDevil, IoLogoSlack, IoLogoBuffer, IoLogoFlickr, IoLogoVimeo, IoLogoTumblr, IoLogoReddit, IoLogoGithub, IoLogoFacebook, IoLogoLinkedin, IoLogoTwitter, IoMdSettings, IoLogoDesignernews} from "react-icons/io"
-import {BiStoreAlt} from "react-icons/bi"
-import {FaTruckMoving} from "react-icons/fa"
 export const topNavs = {
     logo: {
-        icon: <FaTruckMoving />,
-        name: "ABCD"
+        icon: null,
+        text: ABCD
     },
-    navs: ["Home", "Abouts Us", "Products", "Contact Us"],
-    other: "Get In Touch"
+    navs: ["Products", "Sales", "About Us", "FAQ"],
+    more: [{ icon: AA }, { icon: AA }]
 }
 
-export const heroItems = {
-    texts: {
-        title: "Revolutionizing autonomous cargo transportation",
-        subtext: "some more text up there for showing its visibility. nothing serious just random text. some more text up there for showing its visibility. nothing serious just random text",
-        btnTxt: "Get In Touch"
-    },
-    numbers: [
-        {
-            figTxt: "98%",
-            figCap: "Eco-firendly"
-        },
-        {
-            figTxt: "10.3K",
-            figCap: "Customer-review"
+const productInfo = {
+    headings: {
+        titTxt: "CBD Oil - Mint Flavor",
+        price: "$ 65",
+        revDet: {
+            icon: "A",
+            rating: 4.9,
+            review: "20* reviews"
         }
-    ],
-    partners: [
-        { icon: <IoLogoDribbble /> }, { icon: <IoLogoBuffer />}, { icon: <IoLogoDesignernews /> },
-        { icon: <IoLogoFlickr /> }, { icon: <IoLogoFreebsdDevil /> }, { icon: <IoLogoHackernews /> },
-        { icon: <IoLogoPlaystation /> }, { icon: <IoLogoSlack /> }, { icon: <IoLogoTumblr /> },
-        { icon: <IoLogoVimeo /> }, { icon: <IoLogoXbox /> }, { icon: <IoLogoReddit /> }
-    ]
-}
-
-export const features = {
-    keyFeatures: {
-        titTxt: "elevating cargo transporation to new era",
-        subTxt: "some subtext goes here sop now gooo scream. some subtext goes here sop now gooo scream",
-        btnTxt: "Learn more"
     },
-    specialFeatures: {
-        heading: {
-            titTxt: "Unlock full power of advanced self driving with ABCD",
-            subTxt: "experience effeciency, accuracy, reliability, and all round safety"
-        },
-        keyPoints: [
-            {
-                titTxt: "Autonomous Driving",
-                clickTxt: "Harness power cutting edge self driving technology for seamless and precise navigations"
-            },
-            {
-                titTxt: "Real-time Tracking",
-                clickTxt: "Harness power cutting edge self driving technology for seamless and precise navigations"
-            },
-            {
-                titTxt: "Advanced Route Optimization",
-                clickTxt: "Harness power cutting edge self driving technology for seamless and precise navigations"
-            },
-            {
-                titTxt: "Enhanced Safety",
-                clickTxt: "Harness power cutting edge self driving technology for seamless and precise navigations"
-            }
-        ]
+    detail: {
+        descText: "Cupcake ipsum dolor sit amet. Bear claw sweet gummi bears caramels soufflé tootsie roll. Toffee fruitcake macaroon dragée pudding chocolate cake gummies tart.",
+        keypoints: ["moisturising", "vegan", "organic", "immune system"]
     },
-    standardFeatures: {
-        headings: {
-            titTxt: "Transforming cargo operations across diverse sectors",
-            subTxt: "From rental gants to manufacturing titans, ABCD empowers all industries"
-        },
-        keyPoints: [
-            {
-                icon: <BiStoreAlt />,
-                titTxt: "Retail and E-Commerce",
-                subTxt: "Streamline your supply chain and meet client demands on time"
-            },
-            {
-                icon: <IoMdSettings />,
-                titTxt: "Manufacturing and Distribution",
-                subTxt: "Optimize your logistics operations for increased productrivity and effecience"
-            },
-            {
-                icon: <FaTruckMoving />,
-                titTxt: "Logistics and Supply Chain",
-                subTxt: "Simplify complex process, ensure predictable flow for optimum outcome"
-            }
-        ]
+    cart: {
+        decr: "-",
+        incr: "+",
+        btnTxt: "Add To Cart",
+        btnIcon: "[]"
+    },
+    wishList: {
+        icon: "[]",
+        text: "Add To Wishlist"
     }
 }
 
-export const testimonials = [
+export const tabs = ["General Information", "Additional Information", "Reviews"]
+
+export const reviewRatings = {
+    customerReviews: {
+        headings: {
+            titTxt: "Customer Reviews",
+            revDet: productInfo.headings.revDet
+        },
+        numbers: [
+            {
+                fig: "33%",
+                txt: "Excellent"
+            },
+            {
+                fig: "33%",
+                txt: "Good"
+            },
+            {
+                fig: "33%",
+                txt: "Fair"
+            },
+            {
+                fig: "33%",
+                txt: "Average"
+            },
+            {
+                fig: "33%",
+                txt: "Poor"
+            },
+            {
+                fig: "33%",
+                txt: "Very Poor"
+            }
+        ]
+    },
+    positiveRatings: {
+        heading: "By positive ratings",
+        ratings: [
+            {text: "Positive", percentile: "92%"},
+            {text: "Negative", percentile: "4%"},
+            {text: "Neutral", percentile: "4%"}
+        ]
+    },
+    reviewProd: {
+        heading: "Review this product",
+        subTxt: " first to be able to rate and review",
+        btnTxt: "Write a review"
+    }
+}
+
+export const topReviews = [
     {
-        name: "jennny snijder",
-        text: "some testimoniakl text that you have never heard of now go screammm"
+        heading: {
+            user: {
+                icon: "AA",
+                name: "hoxie"
+            },
+            meta: {
+                ago: "1 week ago",
+                verified: "verified Purchase"
+            }
+        },
+        review: {
+            icon: "[]",
+            text: "Smell is fuken Eyyy"
+        }
     },
     {
-        name: "hoxiee loxiee",
-        text: "some testimoniakl text that you have never heard of now go screammm"
+        heading: {
+            user: {
+                icon: "AA",
+                name: "hoxie"
+            },
+            meta: {
+                ago: "1 week ago",
+                verified: "verified Purchase"
+            }
+        },
+        review: {
+            icon: "[]",
+            text: "Smell is fuken Eyyy"
+        }
     },
     {
-        name: "gili snijder",
-        text: "some testimoniakl text that you have never heard of now go screammm"
+        heading: {
+            user: {
+                icon: "AA",
+                name: "hoxie"
+            },
+            meta: {
+                ago: "1 week ago",
+                verified: "verified Purchase"
+            }
+        },
+        review: {
+            icon: "[]",
+            text: "Smell is fuken Eyyy"
+        }
     },
     {
-        name: "lele snijder",
-        text: "some testimoniakl text that you have never heard of now go screammm"
-    },
-    {
-        name: "lona snijder",
-        text: "some testimoniakl text that you have never heard of now go screammm"
-    },
-    {
-        name: "jerry jonsky",
-        text: "some testimoniakl text that you have never heard of now go screammm"
-    },
-    {
-        name: "remy desi",
-        text: "some testimoniakl text that you have never heard of now go screammm"
-    },
-    {
-        name: "joana rider",
-        text: "some testimoniakl text that you have never heard of now go screammm"
-    },
-];
+        heading: {
+            user: {
+                icon: "AA",
+                name: "hoxie"
+            },
+            meta: {
+                ago: "1 week ago",
+                verified: "verified Purchase"
+            }
+        },
+        review: {
+            icon: "[]",
+            text: "Smell is fuken Eyyy"
+        }
+    }
+]
 
 export const footerItems = {
-    navs: {
-        logo: topNavs.logo,
-        socials: [
-            { icon: <IoLogoGithub /> },
-            { icon: <IoLogoFacebook /> },
-            { icon: <IoLogoLinkedin /> },
-            { icon: <IoLogoTwitter /> },
-        ],
-        links: {
-            product: ["features", "integrations", "pricing", "changelogs", "roadmap"],
-            company: ["out team", "our values", "blog"],
-            resources: ["downloads", "documentations", "contact"]
-        }
+    line1: topNavs.navs,
+    line2: ["contact us", "return", "privacy", "terms & condition"],
+    line3: {
+        addr: {
+            name: "ABCD Corp",
+            txt: "New york,96 Ch-3366",
+            country: "Landon"
+        },
+        email: "abcd#corp.com",
+        mobile: "+123 456 78901"
     },
-    newsletter: {
-        titTxt: "Join our newsletter",
-        subTxt: "keep up to date with our releases"
-    },
-    more: {
-        links: ["Terms of services", "policy service", "cookie policy"],
-        copyright: "ABCD. All rights reserved"
-    }
+    socials: ["Facebook", "Twitter", "Instagram", "Mastadon"],
+    comp: topNavs.logo.text,
+    copyright: "ABCD all right is reserved"
 }
