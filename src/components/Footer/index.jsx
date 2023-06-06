@@ -2,6 +2,7 @@ import React from 'react'
 import { footerItems } from '../../data'
 import Newsletter from './Newsletter'
 import Copyrights from './Copyrights'
+import { CompLogo } from '../Header'
 
 export const Footer = () => {
     const { navs, newsletter, more } = footerItems
@@ -16,14 +17,14 @@ export const Footer = () => {
 }
 
 const RenderNavs = ({ navs }) => {
-    const { socials, links } = navs
+    const { socials, links, logo } = navs
 
     const renderSocials = () => socials.map((item, idx) => <RenderSocial key={idx} item={item} />)
 
     return (
         <div className='flex justify-between'>
             <div>
-                <h2>ABCD</h2>
+                <CompLogo item={logo} />
                 <div className='flex gap-4'> {renderSocials()} </div>
             </div>
             <RenderLinks links={links} />
@@ -56,7 +57,7 @@ const RenderLinks = ({ links }) => {
 const ReUseable = ({ children, titTxt }) => {
     return (
         <div>
-            <h2 className='text-xl'>{titTxt}</h2>
+            <h2 className='text-2xl font-monoton'>{titTxt}</h2>
             <div>{children}</div>
         </div>
     )
@@ -64,7 +65,7 @@ const ReUseable = ({ children, titTxt }) => {
 
 export const RenderLink = ({ item }) => {
     return (
-        <div>{item}</div>
+        <div className='font-macondo text-xl'>{item}</div>
     )
 }
 

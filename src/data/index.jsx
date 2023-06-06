@@ -3,7 +3,7 @@ import {BiStoreAlt} from "react-icons/bi"
 import {FaTruckMoving} from "react-icons/fa"
 export const topNavs = {
     logo: {
-        icon: null,
+        icon: <FaTruckMoving />,
         name: "ABCD"
     },
     navs: ["Home", "Abouts Us", "Products", "Contact Us"],
@@ -126,6 +126,7 @@ export const testimonials = [
 
 export const footerItems = {
     navs: {
+        logo: topNavs.logo,
         socials: [
             { icon: <IoLogoGithub /> },
             { icon: <IoLogoFacebook /> },

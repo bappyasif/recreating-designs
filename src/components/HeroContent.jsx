@@ -1,14 +1,26 @@
 import React from 'react'
 import { heroItems } from '../data'
+import heroImg from "../assets/conceptHero.jpg"
 
 const HeroContent = () => {
     const { numbers, partners, texts } = heroItems
 
     return (
         <div className='flex flex-col gap-9'>
-            <div className='flex flex-col gap-9 w-2/4'>
-                <RenderTexts item={texts} />
-                <RenderFigs items={numbers} />
+            <div className='flex justify-between'>
+                <div className='flex flex-col gap-9 w-2/4'>
+                    <RenderTexts item={texts} />
+                    <RenderFigs items={numbers} />
+                </div>
+                <img
+                    // className='absolute right-0 h-3/5 w-2/3 opacity-80' 
+                    className='h-3/6 w-3/5 opacity-80 rounded-full'
+                    src={heroImg}
+                    alt="hero image"
+                    style={{
+                        objectFit: "cover"
+                    }}
+                />
             </div>
             <RenderPartners items={partners} />
         </div>
@@ -53,8 +65,8 @@ const RenderFig = ({ item }) => {
 
     return (
         <div className='flex flex-col gap-2'>
-            <span>{figTxt}</span>
-            <span className='text-xl'>{figCap}</span>
+            <span className='font-monoton'>{figTxt}</span>
+            <span className='text-xl font-macondo'>{figCap}</span>
         </div>
     )
 }
@@ -64,9 +76,9 @@ const RenderTexts = ({ item }) => {
 
     return (
         <div className='flex flex-col gap-6'>
-            <h2 className='text-4xl w-2/4'>{title}</h2>
-            <div className='text-lg w-2/3'>{subtext}</div>
-            <button className='w-fit p-0 px-6 py-1 bg-slate-800'>{btnTxt}</button>
+            <h2 className='text-4xl w-1/2'>{title}</h2>
+            <div className='text-lg w-full'>{subtext}</div>
+            <button className='w-fit p-0 px-6 py-1 bg-slate-800 font-monoton'>{btnTxt}</button>
         </div>
     )
 }
