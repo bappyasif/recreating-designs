@@ -1,15 +1,30 @@
 import React from 'react'
+import { productInfo, star } from '../../data'
 
 export const ProductDetail = () => {
+    const {cart, detail, headings, wishList} = productInfo
     return (
-        <div>
-            <div>
-                <RenderHeading />
-                <RenderDetail />
-                <RenderCart />
-                <RenderWishlist />
+        <div className='flex gap-9 justify-between w-full'>
+            <div className='flex flex-col gap-4 w-2/4'>
+                <RenderHeading item={headings} />
+                <RenderDetail item={detail} />
+                <RenderCart item={cart} />
+                <RenderWishlist item={wishList} />
             </div>
-            {/* images */}
+            <ShowcaseImages />
+        </div>
+    )
+}
+
+const ShowcaseImages = () => {
+    return (
+        <div className='flex gap-4 justify-center w-1/2'>
+            <img className='w-1/2 h-2/3' src="https://source.unsplash.com/random/?Cryptocurrency&1" alt="" />
+            <div className='flex flex-col gap-4 items-end'>
+                <img className='w-1/2' src="https://source.unsplash.com/random/?Cryptocurrency&1" alt="" />
+                <img className='w-1/2' src="https://source.unsplash.com/random/?Cryptocurrency&1" alt="" />
+                <img className='w-1/2' src="https://source.unsplash.com/random/?Cryptocurrency&1" alt="" />
+            </div>
         </div>
     )
 }
@@ -35,7 +50,7 @@ const RenderWishlist = ({ item }) => {
     const { icon, text } = item;
 
     return (
-        <div>
+        <div className='flex gap-4'>
             <span>{icon}</span>
             <span>{text}</span>
         </div>
@@ -45,8 +60,8 @@ const RenderWishlist = ({ item }) => {
 const RenderCart = ({ item }) => {
     const { decr, incr, btnTxt, btnIcon } = item;
     return (
-        <div>
-            <div>
+        <div className='flex flex-col gap-4'>
+            <div className='flex gap-4'>
                 <span>{decr}</span>
                 <span>1</span>
                 <span>{incr}</span>
@@ -60,7 +75,7 @@ const RenderHeading = ({ item }) => {
     const { titTxt, price, revDet } = item;
 
     return (
-        <div>
+        <div className='text-2xl'>
             <h1>{titTxt}</h1>
             <p>{price}</p>
             <RenderRatingAndReview item={revDet} />
@@ -68,16 +83,23 @@ const RenderHeading = ({ item }) => {
     )
 }
 
-const RenderRatingAndReview = ({ item }) => {
+export const RenderRatingAndReview = ({ item }) => {
     const { icon, rating, review } = item;
-    const renderFiveTimes = () => [1, 2, 3, 4, 5].map(item => <span key={item}>{icon}</span>)
+    // const renderFiveTimes = () => [1, 2, 3, 4, 5].map(item => <span key={item}>{icon}</span>)
     return (
-        <div>
-            <div>
-                {renderFiveTimes()}
-            </div>
+        <div className='flex gap-4'>
+            <RenderStars />
             <span>{rating}</span>
             <span>{review}</span>
+        </div>
+    )
+}
+
+export const RenderStars = ({ }) => {
+    const renderFiveTimes = () => [1, 2, 3, 4, 5].map(item => <span key={item}>{star}</span>)
+    return (
+        <div>
+            {renderFiveTimes()}
         </div>
     )
 }

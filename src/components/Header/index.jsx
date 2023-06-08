@@ -1,15 +1,17 @@
 import React from 'react'
+import { topNavs } from '../../data'
 
 export const Header = () => {
+    const {logo, more, navs} = topNavs
     return (
-        <div>
-            <div>
-                <RenderComp />
-                <RenderNavs />
+        <div className='flex justify-between'>
+            <div className='flex gap-4 justify-between'>
+                <RenderComp item={logo} />
+                <RenderNavs items={navs} />
             </div>
-            <div>
+            <div className='flex gap-4'>
                 <Search />
-                <RenderMores />
+                <RenderMores items={more} />
             </div>
         </div>
     )
@@ -21,7 +23,7 @@ const RenderComp = ({ item }) => {
 
 const Search = () => {
     return (
-        <div>
+        <div className='flex gap-4'>
             <input type="text" placeholder='search product' />
             <span>[]</span>
         </div>
@@ -29,10 +31,10 @@ const Search = () => {
 }
 
 const RenderNavs = ({ items }) => {
-    const renderItems = () => items.map(item => <div>{item}</div>)
+    const renderItems = () => items.map(item => <div key={item}>{item}</div>)
 
     return (
-        <div>
+        <div className='flex gap-4'>
             {renderItems()}
         </div>
     )
@@ -42,7 +44,7 @@ const RenderMores = ({ items }) => {
     const renderItems = () => items.map((item, idx) => <RenderMore key={idx} item={item} />)
 
     return (
-        <div>
+        <div className='flex gap-4'>
             {renderItems()}
         </div>
     )

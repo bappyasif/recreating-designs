@@ -153,3 +153,22 @@ button:focus-visible {
     animation-delay: 6s;
   }
 }
+
+.circular-progress {
+  position: relative;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  background: conic-gradient(red 3.6deg, pink 0deg);
+}
+
+.circular-progress::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: #747bff;
+}

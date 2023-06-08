@@ -1,20 +1,20 @@
 export const topNavs = {
     logo: {
         icon: null,
-        text: ABCD
+        text: "ABCD"
     },
     navs: ["Products", "Sales", "About Us", "FAQ"],
-    more: [{ icon: AA }, { icon: AA }]
+    more: [{ icon: "AA" }, { icon: "AA" }]
 }
 
-const productInfo = {
+export const productInfo = {
     headings: {
         titTxt: "CBD Oil - Mint Flavor",
         price: "$ 65",
         revDet: {
             icon: "A",
             rating: 4.9,
-            review: "20* reviews"
+            review: "220* reviews"
         }
     },
     detail: {
@@ -43,37 +43,37 @@ export const reviewRatings = {
         },
         numbers: [
             {
-                fig: "33%",
-                txt: "Excellent"
+                fig: "76",
+                txt: "5 star"
             },
             {
-                fig: "33%",
-                txt: "Good"
+                fig: "15",
+                txt: "4 star"
             },
             {
-                fig: "33%",
-                txt: "Fair"
+                fig: "4",
+                txt: "3 star"
             },
             {
-                fig: "33%",
-                txt: "Average"
+                fig: "2",
+                txt: "2 star"
             },
             {
-                fig: "33%",
-                txt: "Poor"
+                fig: ".04",
+                txt: "1 star"
             },
             {
-                fig: "33%",
-                txt: "Very Poor"
+                fig: "0.4",
+                txt: "0 star"
             }
         ]
     },
     positiveRatings: {
         heading: "By positive ratings",
         ratings: [
-            {text: "Positive", percentile: "92%"},
-            {text: "Negative", percentile: "4%"},
-            {text: "Neutral", percentile: "4%"}
+            { text: "Positive", percentile: "92%" },
+            { text: "Negative", percentile: "4%" },
+            { text: "Neutral", percentile: "4%" }
         ]
     },
     reviewProd: {
@@ -88,15 +88,20 @@ export const topReviews = [
         heading: {
             user: {
                 icon: "AA",
-                name: "hoxie"
-            },
-            meta: {
+                name: "hoxie",
                 ago: "1 week ago",
-                verified: "verified Purchase"
+            },
+            verified: {
+                txt: "verified Purchase",
+                icon: "AA"
             }
         },
         review: {
-            icon: "[]",
+            icons: [
+                {icon: "^"},
+                {icon: "^"},
+                {icon: "#"}
+            ],
             text: "Smell is fuken Eyyy"
         }
     },
@@ -104,15 +109,20 @@ export const topReviews = [
         heading: {
             user: {
                 icon: "AA",
-                name: "hoxie"
-            },
-            meta: {
+                name: "hoxie",
                 ago: "1 week ago",
-                verified: "verified Purchase"
+            },
+            verified: {
+                txt: "verified Purchase",
+                icon: "AA"
             }
         },
         review: {
-            icon: "[]",
+            icons: [
+                {icon: "^"},
+                {icon: "^"},
+                {icon: "#"}
+            ],
             text: "Smell is fuken Eyyy"
         }
     },
@@ -120,15 +130,20 @@ export const topReviews = [
         heading: {
             user: {
                 icon: "AA",
-                name: "hoxie"
-            },
-            meta: {
+                name: "hoxie",
                 ago: "1 week ago",
-                verified: "verified Purchase"
+            },
+            verified: {
+                txt: "verified Purchase",
+                icon: "AA"
             }
         },
         review: {
-            icon: "[]",
+            icons: [
+                {icon: "^"},
+                {icon: "^"},
+                {icon: "#"}
+            ],
             text: "Smell is fuken Eyyy"
         }
     },
@@ -136,15 +151,20 @@ export const topReviews = [
         heading: {
             user: {
                 icon: "AA",
-                name: "hoxie"
-            },
-            meta: {
+                name: "hoxie",
                 ago: "1 week ago",
-                verified: "verified Purchase"
+            },
+            verified: {
+                txt: "verified Purchase",
+                icon: "AA"
             }
         },
         review: {
-            icon: "[]",
+            icons: [
+                {icon: "^"},
+                {icon: "^"},
+                {icon: "#"}
+            ],
             text: "Smell is fuken Eyyy"
         }
     }
@@ -160,9 +180,11 @@ export const footerItems = {
             country: "Landon"
         },
         email: "abcd#corp.com",
-        mobile: "+123 456 78901"
+        tele: "+123 456 78901"
     },
     socials: ["Facebook", "Twitter", "Instagram", "Mastadon"],
     comp: topNavs.logo.text,
     copyright: "ABCD all right is reserved"
 }
+
+export const star = "[]"
