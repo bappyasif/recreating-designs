@@ -11,7 +11,7 @@ import { TabsView } from './components/tabs'
 function App() {
   return (
     <div
-      className='font-serif text-slate-400 px-40 py-4 flex flex-col gap-28'
+      className='font-macondo text-slate-400 px-40 py-4 flex flex-col gap-28'
     >
       <Header />
       <ProductDetail />
