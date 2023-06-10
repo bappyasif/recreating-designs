@@ -159,7 +159,7 @@ button:focus-visible {
   height: 90px;
   width: 90px;
   border-radius: 50%;
-  background: conic-gradient(red 3.6deg, pink 0deg);
+  background: conic-gradient( rgb(152, 148, 149) 3.6deg, rgb(47, 46, 46) 0deg);
 }
 
 .circular-progress::before {
@@ -170,5 +170,6 @@ button:focus-visible {
   height: 80px;
   width: 80px;
   border-radius: 50%;
-  background-color: #747bff;
+  /* background-color: #5055b1; */
+  background-color: rgb(46 16 101);
 }

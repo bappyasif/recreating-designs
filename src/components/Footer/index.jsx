@@ -4,14 +4,14 @@ import { footerItems } from '../../data'
 export const Footer = () => {
     const { comp, copyright, line1, line2, line3, socials } = footerItems
     return (
-        <div className='flex flex-col gap-4'>
-            <div className='flex gap-4 justify-between text-xl'>
+        <div className='flex flex-col gap-11 font-novaSlim'>
+            <div className='flex gap-4 justify-between text-2xl'>
                 <RenderNavs items={line1} />
                 <RenderNavs items={line2} />
                 <RenderContctInfo item={line3} />
                 <RenderNavs items={socials} />
             </div>
-            <div className='m-auto'>{comp}</div>
+            <div className='m-auto text-7xl font-monoton'>{comp}</div>
             <RenderCopyright item={copyright} />
         </div>
     )

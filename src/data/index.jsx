@@ -1,10 +1,14 @@
+import {BiCartAdd, BiCheckShield, BiDownvote, BiMinus, BiPlus, BiStar, BiUpvote, BiUser, BiUserCircle} from "react-icons/bi"
+import {BsBagCheckFill, BsFillStarFill, BsGear, BsHearts} from "react-icons/bs"
+import {TbBrandPepsi} from "react-icons/tb"
+
 export const topNavs = {
     logo: {
-        icon: null,
+        icon: <TbBrandPepsi />,
         text: "ABCD"
     },
     navs: ["Products", "Sales", "About Us", "FAQ"],
-    more: [{ icon: "AA" }, { icon: "AA" }]
+    more: [{ icon: <BiUserCircle /> }, { icon: <BsBagCheckFill /> }]
 }
 
 export const productInfo = {
@@ -22,13 +26,13 @@ export const productInfo = {
         keypoints: ["moisturising", "vegan", "organic", "immune system"]
     },
     cart: {
-        decr: "-",
-        incr: "+",
+        decr: <BiMinus />,
+        incr: <BiPlus />,
         btnTxt: "Add To Cart",
-        btnIcon: "[]"
+        btnIcon: <BiCartAdd />
     },
     wishList: {
-        icon: "[]",
+        icon: <BsHearts />,
         text: "Add To Wishlist"
     }
 }
@@ -47,23 +51,23 @@ export const reviewRatings = {
                 txt: "5 star"
             },
             {
-                fig: "15",
+                fig: "60",
                 txt: "4 star"
             },
             {
-                fig: "4",
+                fig: "45",
                 txt: "3 star"
             },
             {
-                fig: "2",
+                fig: "33",
                 txt: "2 star"
             },
             {
-                fig: ".04",
+                fig: "29",
                 txt: "1 star"
             },
             {
-                fig: "0.4",
+                fig: "22",
                 txt: "0 star"
             }
         ]
@@ -87,85 +91,89 @@ export const topReviews = [
     {
         heading: {
             user: {
-                icon: "AA",
-                name: "hoxie",
+                icon: <BiUser />,
+                url: "https://source.unsplash.com/random/?beautifulgirl&skyler",
+                name: "Hoxie",
                 ago: "1 week ago",
             },
             verified: {
                 txt: "verified Purchase",
-                icon: "AA"
+                icon: <BiCheckShield />
             }
         },
         review: {
             icons: [
-                {icon: "^"},
-                {icon: "^"},
-                {icon: "#"}
+                {icon: <BiUpvote />},
+                {icon: <BiDownvote />},
+                {icon: <BsGear />}
             ],
-            text: "Smell is fuken Eyyy"
+            text: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
         }
     },
     {
         heading: {
             user: {
                 icon: "AA",
-                name: "hoxie",
+                url: "https://source.unsplash.com/random/?girl&loxie",
+                name: "Skyler",
                 ago: "1 week ago",
             },
             verified: {
                 txt: "verified Purchase",
-                icon: "AA"
+                icon: <BiCheckShield />
             }
         },
         review: {
             icons: [
-                {icon: "^"},
-                {icon: "^"},
-                {icon: "#"}
+                {icon: <BiUpvote />},
+                {icon: <BiDownvote />},
+                {icon: <BsGear />}
             ],
-            text: "Smell is fuken Eyyy"
+            text: "pariatur ratione dolor asperiores aliquam nemo, aut fugit perferendis numquam dolorem nihil quae."
         }
     },
     {
         heading: {
             user: {
                 icon: "AA",
-                name: "hoxie",
+                url: "https://source.unsplash.com/random/?pretty&girl",
+                name: "Gray",
                 ago: "1 week ago",
             },
             verified: {
                 txt: "verified Purchase",
-                icon: "AA"
+                icon: <BiCheckShield />
             }
         },
         review: {
             icons: [
-                {icon: "^"},
-                {icon: "^"},
-                {icon: "#"}
+                {icon: <BiUpvote />},
+                {icon: <BiDownvote />},
+                {icon: <BsGear />}
             ],
-            text: "Smell is fuken Eyyy"
+            text: "Itaque nostrum at excepturi quibusdam blanditiis amet explicabo molestiae, pariatur ratione dolor asperiores aliquam nemo."
         }
     },
     {
         heading: {
             user: {
                 icon: "AA",
-                name: "hoxie",
+                url: "https://source.unsplash.com/random/?sexy&laura",
+                name: "Laura",
                 ago: "1 week ago",
             },
             verified: {
                 txt: "verified Purchase",
-                icon: "AA"
+                icon: <BiCheckShield />
             }
         },
         review: {
             icons: [
-                {icon: "^"},
-                {icon: "^"},
-                {icon: "#"}
+                {icon: <BiUpvote />},
+                {icon: <BiDownvote />},
+                {icon: <BsGear />}
             ],
-            text: "Smell is fuken Eyyy"
+            text: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
         }
     }
 ]
@@ -187,4 +195,4 @@ export const footerItems = {
     copyright: "ABCD all right is reserved"
 }
 
-export const star = "[]"
+export const star = <BsFillStarFill />
