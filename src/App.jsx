@@ -7,7 +7,7 @@ import HeroContent from './components/HeroContent'
 function App() {
   return (
     <div 
-      className='font-novaSlim text-slate-400 px-40 py-4 flex flex-col gap-28'
+      className='font-novaSlim text-slate-400 xxs: px-2 md:px-40 py-4 flex flex-col gap-28'
     >
       <Header />
       <HeroContent />

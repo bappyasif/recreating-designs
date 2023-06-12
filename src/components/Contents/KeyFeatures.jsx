@@ -7,7 +7,7 @@ const KeyFeatures = () => {
   const { keyFeatures, specialFeatures, standardFeatures } = features
   return (
     <div className='flex flex-col gap-16'>
-      <div className='w-2/3 m-auto flex flex-col gap-16'>
+      <div className='xxs:w-full md:w-2/3 m-auto flex flex-col gap-16'>
         <RenderFeaturedItem item={keyFeatures} />
         <RenderSpecialFeatures items={specialFeatures} />
       </div>
@@ -22,7 +22,7 @@ const RenderStandardFeatures = ({ items }) => {
   return (
     <div className='flex flex-col items-center gap-6'>
       <ReUsableHeadingElement item={headings} />
-      <div className='flex gap-4'>
+      <div className='flex xxs:flex-col md:flex-row gap-4'>
         {renderKeypoints()}
       </div>
     </div>
@@ -32,7 +32,7 @@ const RenderStandardFeatures = ({ items }) => {
 const StandardFeature = ({ item }) => {
   const { icon, titTxt, subTxt } = item;
   return (
-    <div className='w-1/3 flex flex-col gap-6'>
+    <div className='xxs:w-full md:w-1/3 flex flex-col gap-6'>
       <div className='text-6xl'>{icon}</div>
       <h2 className='text-2xl font-macondo'>{titTxt}</h2>
       <p className='text-base'>{subTxt}</p>
@@ -46,9 +46,9 @@ const RenderSpecialFeatures = ({ items }) => {
   return (
     <div className='flex flex-col gap-9 items-center justify-between'>
       <ReUsableHeadingElement item={heading} />
-      <div className='flex gap-16 justify-around'>
+      <div className='flex xxs:gap-1 md:gap-16 justify-around'>
         {/* <img className='h-96' src={"https://source.unsplash.com/random/?Autnomous-driving-Truck"} alt="selfdriving truck" /> */}
-        <img className='h-96 w-2/4 object-cover rounded-xl' src={specialImg} alt="selfdriving truck" />
+        <img className='min-h-max w-2/4 object-cover rounded-xl' src={specialImg} alt="selfdriving truck" />
         <RenderKeypoints items={keyPoints} />
       </div>
     </div>

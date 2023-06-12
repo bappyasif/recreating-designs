@@ -22,7 +22,7 @@ const RenderNavs = ({ navs }) => {
     const renderSocials = () => socials.map((item, idx) => <RenderSocial key={idx} item={item} />)
 
     return (
-        <div className='flex justify-between'>
+        <div className='flex xxs:flex-col md:flex-row justify-between xxs:gap-6'>
             <div>
                 <CompLogo item={logo} />
                 <div className='flex gap-4'> {renderSocials()} </div>
@@ -39,7 +39,7 @@ const RenderLinks = ({ links }) => {
     const renderResourcesNavs = () => resources.map(item => <RenderLink key={item} item={item} />)
 
     return (
-        <div className='flex justify-between w-2/3'>
+        <div className='flex xxs:flex-col sm:flex-row xxs:gap-6 justify-between xxs:w-full md:w-2/3'>
             <ReUseable titTxt={"Products"}>
                 {renderProductNavs()}
             </ReUseable>

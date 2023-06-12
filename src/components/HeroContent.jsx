@@ -14,7 +14,7 @@ const HeroContent = () => {
                 </div>
                 <img
                     // className='absolute right-0 h-3/5 w-2/3 opacity-80' 
-                    className='h-3/6 w-3/5 opacity-80 rounded-full'
+                    className='md:h-3/6 sm:min-h-max xxs:hidden sm:block w-3/5 opacity-80 rounded-full'
                     src={heroImg}
                     alt="hero image"
                     style={{
@@ -33,7 +33,7 @@ const RenderPartners = ({ items }) => {
     return (
         <div className='flex flex-col gap-9'>
             <h2 className='text-4xl'>Trusted by more than <span className='text-blue-600'>50000+</span> companies world wide</h2>
-            <div className='flex justify-between'>
+            <div className='flex justify-between flex-wrap'>
                 {renderItems()}
             </div>
         </div>
