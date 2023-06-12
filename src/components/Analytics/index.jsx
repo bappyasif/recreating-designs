@@ -5,7 +5,7 @@ import { reviewRatings } from '../../data';
 export const AnalyticsDetails = () => {
     const { reviewProd, positiveRatings, customerReviews } = reviewRatings
     return (
-        <div className='flex flex-col gap-11 w-2/3'>
+        <div className='flex flex-col gap-11 xxs:w-full md:w-2/3'>
             <CustomerReviews item={customerReviews} />
             <PositiveRatings item={positiveRatings} />
             <ReviewProduct item={reviewProd} />
@@ -18,7 +18,7 @@ const ReviewProduct = ({ item }) => {
 
     return (
         <div className='flex flex-col gap-9 text-xl w-fit'>
-            <h2 className='text-6xl'>{heading}</h2>
+            <h2 className='xxs:text-5xl md:text-6xl'>{heading}</h2>
             <h4 className='font-novaSlim'>{subTxt}</h4>
             <button className='p-0 flex gap-4 items-center justify-center text-4xl bg-violet-950'>{btnTxt}</button>
         </div>
@@ -31,7 +31,7 @@ const PositiveRatings = ({ item }) => {
 
     return (
         <div>
-            <h2 className='text-6xl my-2'>{heading}</h2>
+            <h2 className='xxs:text-5xl md:text-6xl my-2'>{heading}</h2>
             <div className='flex flex-col gap-4 font-novaSlim'>
                 {renderRatings()}
             </div>
@@ -43,7 +43,7 @@ const RenderRating = ({ item }) => {
     const { text, percentile } = item;
 
     return (
-        <div className='w-2/4'>
+        <div className='xxs:w-full md:w-2/4'>
             <h3 className='text-2xl'><span>{text}</span> - <span>{percentile}</span></h3>
             <p className='h-3.5 bg-slate-400 rounded-full'>
                 <p className='px-2 h-full bg-slate-600 rounded-full' style={{width: `${percentile}`}}></p>
@@ -58,7 +58,7 @@ const CustomerReviews = ({ item }) => {
     return (
         <div className='flex flex-col gap-4'>
             <ShowHeadings item={headings} />
-            <div className='flex gap-4 flex-wrap w-2/3'>
+            <div className='flex gap-4 flex-wrap xxs:w-full md:w-2/3'>
                 {renderNumbers()}
             </div>
         </div>
@@ -81,7 +81,7 @@ const ShowHeadings = ({ item }) => {
     const { titTxt, revDet } = item;
     return (
         <div className='flex flex-col gap-4'>
-            <h2 className='text-6xl'>{titTxt}</h2>
+            <h2 className='xxs:text-5xl md:text-6xl'>{titTxt}</h2>
             <RenderRatingAndReview item={revDet} />
         </div>
     )

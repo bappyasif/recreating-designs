@@ -5,8 +5,11 @@ import { BiCheck } from 'react-icons/bi'
 export const ProductDetail = () => {
     const { cart, detail, headings, wishList } = productInfo
     return (
-        <div className='flex gap-9 justify-between w-full'>
-            <div className='flex flex-col gap-9 w-2/4'>
+        <div 
+            className='flex xxs:flex-col-reverse md:flex-row 
+            gap-9 justify-between w-full'
+        >
+            <div className='flex flex-col gap-9 xxs:w-full md:w-2/4'>
                 <RenderHeading item={headings} />
                 <RenderDetail item={detail} />
                 <RenderCart item={cart} />
@@ -19,15 +22,15 @@ export const ProductDetail = () => {
 
 const ShowcaseImages = () => {
     return (
-        <div className='flex gap-4 justify-center w-1/2 h-fit opacity-60'>
+        <div className='flex gap-4 justify-center xxs:w-full md:w-1/2 h-fit opacity-60'>
             <img 
-                className='w-72 rounded-lg' 
+                className='xxs:w-40 md:w-72 rounded-lg' 
                 src="https://source.unsplash.com/random/?essential&oils&&hair&product&bottle&1" alt="feature product" 
             />
             <div className='flex flex-col gap-4 items-end'>
-                <img className='w-60 h-36 rounded-xl' src="https://source.unsplash.com/random/?essential&oils&2" alt="" />
-                <img className='w-60 h-36 rounded-xl' src="https://source.unsplash.com/random/?essential&oils&3" alt="" />
-                <img className='w-60 h-40 rounded-xl' src="https://source.unsplash.com/random/?essential&oils&4" alt="" />
+                <img className='xxs:w-32 md:w-60 h-36 rounded-xl' src="https://source.unsplash.com/random/?essential&oils&2" alt="" />
+                <img className='xxs:w-32 md:w-60 h-36 rounded-xl' src="https://source.unsplash.com/random/?essential&oils&3" alt="" />
+                <img className='xxs:w-32 md:w-60 h-40 rounded-xl' src="https://source.unsplash.com/random/?essential&oils&4" alt="" />
             </div>
         </div>
     )

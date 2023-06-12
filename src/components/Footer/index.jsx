@@ -5,7 +5,7 @@ export const Footer = () => {
     const { comp, copyright, line1, line2, line3, socials } = footerItems
     return (
         <div className='flex flex-col gap-11 font-novaSlim'>
-            <div className='flex gap-4 justify-between text-2xl'>
+            <div className='flex xxs:flex-col md:flex-row gap-4 justify-between text-2xl flex-wrap'>
                 <RenderNavs items={line1} />
                 <RenderNavs items={line2} />
                 <RenderContctInfo item={line3} />

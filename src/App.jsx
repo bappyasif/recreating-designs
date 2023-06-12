@@ -11,12 +11,12 @@ import { TabsView } from './components/tabs'
 function App() {
   return (
     <div
-      className='font-macondo text-slate-400 px-40 py-4 flex flex-col gap-28'
+      className='font-macondo text-slate-400 xxs:px-2 lg:px-40 py-4 flex flex-col gap-28'
     >
       <Header />
       <ProductDetail />
       <TabsView />
-      <div className='flex gap-4 justify-between'>
+      <div className='flex xxs:flex-col md:flex-row gap-9 justify-between'>
         <AnalyticsDetails />
         <TopReviews />
       </div>

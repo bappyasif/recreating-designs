@@ -5,7 +5,7 @@ import { topReviews } from '../../data';
 export const TopReviews = () => {
     const renderAllTopReviews = () => topReviews.map((item, idx) => <RenderTopReview key={idx} item={item} />)
     return (
-        <div className='flex flex-col gap-4 w-2/4'>
+        <div className='flex flex-col gap-4 xxs:w-full md:w-2/4'>
             <h2 className='text-6xl'>Top Reviews</h2>
             <div className='flex flex-col gap-11 text-xl'>
                 {renderAllTopReviews()}
