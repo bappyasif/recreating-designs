@@ -7,7 +7,9 @@ import { BsGraphUpArrow } from "react-icons/bs"
 
 export const CompanyFeatures = () => {
     return (
-        <div className='flex flex-col gap-0 mt-2 justify-between h-full' style={{ maxHeight: "659px" }}>
+        <div className='flex flex-col gap-0 mt-2 justify-between h-1/4' 
+        // style={{ maxHeight: "659px" }}
+        >
             <NewsMenu />
             <FeaturedImage />
             <FeaturedAnimations />
@@ -17,7 +19,8 @@ export const CompanyFeatures = () => {
 
 const FeaturedAnimations = () => {
     return (
-        <div className='flex justify-between px-6 bg-slate-400 text-slate-900 py-4'>
+        <div className='flex xxs:justify-center md:justify-between px-6 
+        bg-slate-400 text-slate-900 py-4 flex-wrap gap-4'>
             <GraphAnim />
             <ProfileAnim />
             <OrbitalDouble />
@@ -162,12 +165,12 @@ const FeaturedImage = () => {
     return (
         <div className='relative'>
             <img
-                className='w-full'
-                src="https://source.unsplash.com/random/?abstract&lines&sketch"
+                className='w-full h-96'
+                src="https://source.unsplash.com/random/?abstract&lines&sketch&greybackground"
                 alt="random picture from unsplash"
-                style={{ maxHeight: "380px" }}
+                // style={{ maxHeight: "380px" }}
             />
-            <h2 className='absolute top-40 right-44 text-6xl font-monoton'>Orbitals News</h2>
+            <h2 className='absolute xxs:top-1/3 sm:top-44 md:top-40 xxs:left-2 sm:left-10 md:left-96 text-6xl font-monoton'>Orbitals News</h2>
             <span className='text-4xl absolute bottom-0 right-0'><BiDotsHorizontal /></span>
         </div>
     )

@@ -4,8 +4,8 @@ import { GiFireWave, GiSpiderWeb } from 'react-icons/gi'
 
 export const Sideview = () => {
   return (
-    <div className='w-2/5 bg-slate-950 px-6 py-4 
-    flex flex-col justify-between gap-0'
+    <div className='xxs:w-full md:w-1/4 bg-slate-950 px-6 
+    flex flex-col justify-start gap-14'
     >
         <IntroView />
         <HeroView />
@@ -32,8 +32,8 @@ const IntroView = ({item}) => {
 
 const HeroView = () => {
     return (
-        <div className='my-6 px-6 py-4 bg-slate-400'>
-            <span className='text-black'><GiFireWave size={"18.2em"} /></span>
+        <div className='my-6 px-6 py-4 bg-slate-400 h-1/2'>
+            <span className='text-black text-center flex justify-center'><GiFireWave size={"15.18em"} /></span>
             <p className='text-4xl pt-8 text-center text-black'>Productive</p>
         </div>
     )
@@ -41,7 +41,8 @@ const HeroView = () => {
 
 const TidbitsView = () => {
     return (
-        <div className='flex flex-col gap-9 my-6 bg-slate-400 text-slate-800 px-4 py-2'>
+        <div className='flex flex-col self-end gap-0
+         bg-slate-400 text-slate-800 px-4 py-2 h-full'>
             <FirstExcerpt />
             <SecondExcerpt />
         </div>

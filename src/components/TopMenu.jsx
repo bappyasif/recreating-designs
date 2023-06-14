@@ -4,11 +4,11 @@ import { BiGrid, BiSearchAlt2 } from 'react-icons/bi'
 
 export const TopMenu = () => {
     return (
-        <div className='w-full flex justify-end'>
+        <div className='w-full flex xxs:justify-start md:justify-end'>
             <div 
-                className='flex justify-between items-baseline
-                pr-6 pl-2 text-4xl py-2 bg-slate-900'
-                style={{width: "65%"}}
+                className='flex justify-between items-baseline gap-4
+                pr-6 pl-2 text-4xl py-2 bg-slate-900 xxs:w-full md:w-3/4'
+                // style={{width: "65%"}}
             >
                 <RenderLeftMenuView />
                 <RenderRightMenuView />
@@ -20,7 +20,7 @@ export const TopMenu = () => {
 const RenderRightMenuView = () => {
     const renderMenus = () => topNavs.map(name => <span key={name}>{name}</span>)
     return (
-        <div className='w-2/4 flex justify-between text-2xl'>
+        <div className='xxs:w-3/4 md:w-2/4 flex justify-between xxs:text-sm md:text-2xl'>
             {renderMenus()}
         </div>
     )
