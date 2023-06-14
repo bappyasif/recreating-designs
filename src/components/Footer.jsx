@@ -6,11 +6,14 @@ export const Footer = () => {
     const { product, company, additionals, newsletter } = footers
     return (
         <div className='w-full px-2'>
-            <div className='flex justify-between gap-4 font-righteous'>
+            <div className='flex xxs:flex-col lg:flex-row justify-between gap-4 font-righteous'>
                 <CompanyLogo />
-                <RenderNavs items={product} title={"Product"} />
-                <RenderNavs items={company} title={"Company"} />
-                <RenderNewsLetter item={newsletter} />
+                <div className='xxs:w-full lg:w-3/4 flex xxs:flex-row lg:flex-row gap-6 justify-between flex-wrap'>
+                    <RenderNavs items={product} title={"Product"} />
+                    <RenderNavs items={company} title={"Company"} />
+                    <RenderNewsLetter item={newsletter} />
+                </div>
+                {/* <RenderNewsLetter item={newsletter} /> */}
             </div>
             <p className='h-0.5 w-full bg-slate-200 my-4'></p>
             <RenderAdditionals items={additionals} />
@@ -22,7 +25,7 @@ const RenderAdditionals = ({ items }) => {
     const { moreLinks, links } = items;
 
     return (
-        <div className='flex gap-4 justify-around'>
+        <div className='flex xxs:flex-col lg:flex-row gap-4 justify-around'>
             <RenderMoreLinks names={moreLinks} />
             <RenderSocials items={links} />
         </div>
@@ -51,7 +54,7 @@ const RenderMoreLinks = ({ names }) => {
 const RenderNewsLetter = ({ item }) => {
     const { title, btnTxt } = item
     return (
-        <div className='w-1/4 flex flex-col gap-4'>
+        <div className='xxs:w-full md:w-fit lg:w-1/4 flex flex-col gap-4'>
             <h2 className=''>{title}</h2>
             <div className='relative w-full'>
                 <button className='p-0 px-6 py-1 h-11 text-blue-950 bg-lime-600 rounded-xl absolute'>{btnTxt}</button>
@@ -65,7 +68,7 @@ const RenderNavs = ({ items, title }) => {
     const renderNavs = () => items?.map(item => <RenderNav key={item} item={item} />)
 
     return (
-        <div>
+        <div className='xxs:w-1/4'>
             <h2 className='text-2xl'>{title}</h2>
             <div>
                 {renderNavs()}

@@ -3,7 +3,7 @@ import { weDo } from '../data'
 
 export const WhatWeDo = () => {
     return (
-        <div className='flex justify-between w-full py-2 my-2 mb-6'>
+        <div className='flex xxs:flex-col md:flex-row justify-between w-full py-2 my-2 mb-6 gap-4'>
             <RenderIntro />
             <RenderInfo />
         </div>
@@ -13,7 +13,7 @@ export const WhatWeDo = () => {
 const RenderInfo = () => {
     const renderfocuses = () => weDo.map(item => <RenderFocus key={item.title} item={item} />)
     return (
-        <div className='flex justify-between gap-4 w-2/4 px-6'>
+        <div className='flex  xxs:flex-col md:flex-row justify-between gap-4 xxs:w-full md:w-2/4 px-6'>
             {renderfocuses()}
         </div>
     )

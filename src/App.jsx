@@ -9,7 +9,7 @@ import { WhatWeDo } from './components/WhatWeDo'
 
 function App() {
   return (
-    <div className='flex flex-col items-center w-full px-4 py-2'>
+    <div className='flex flex-col items-center gap-11 w-full px-4 py-2'>
       <Header />
       <HeroContents />
       <WhatWeDo />

@@ -4,9 +4,9 @@ import { testimonials } from '../data'
 export const SpecialMentions = () => {
     const renderMentions = () => testimonials.map(item => <RenderTestimonial key={item.text} item={item} />)
   return (
-    <div className='flex justify-between w-full font-righteous gap-20 my-11'>
-        <h2 className='w-3/4 text-6xl text-transparent bg-clip-text bg-gradient-to-br from-slate-200 to-blue-800'>Testimonials</h2>
-        <div className='w-3/4 text-justify'>
+    <div className='flex  xxs:flex-col md:flex-row justify-between w-full font-righteous gap-20 my-11'>
+        <h2 className='xxs:w-full md:w-3/4 text-6xl text-transparent bg-clip-text bg-gradient-to-br from-slate-200 to-blue-800'>Testimonials</h2>
+        <div className='xxs:w-full md:w-3/4 text-justify'>
             {renderMentions()}
         </div>
     </div>
@@ -16,7 +16,7 @@ export const SpecialMentions = () => {
 const RenderTestimonial = ({item}) => {
     const {text, user} = item;
     return (
-        <div className='w-full'>
+        <div className='w-full xxs:mb-10'>
             <h2 className='text-2xl w-full'>{text}</h2>
             <RenderUser item={user} />
         </div>

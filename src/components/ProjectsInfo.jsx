@@ -6,7 +6,7 @@ export const ProjectsInfo = () => {
     return (
         <div className='w-full font-righteous mb-6'>
             <h2 className='font-extrabold text-6xl py-4 text-transparent bg-clip-text bg-gradient-to-br from-slate-200 to-blue-800'>Deployed Projects</h2>
-            <div className='flex justify-center gap-24 w-full flex-wrap px-2'>
+            <div className='flex xxs:justify-start md:justify-center xxs: gap-9 md:gap-24 w-full flex-wrap px-2'>
                 {renderInfo()}
             </div>
         </div>

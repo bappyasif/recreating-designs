@@ -4,8 +4,11 @@ import imgSrc from "../assets/ladyLooking.jpg"
 
 export const HeroContents = () => {
     return (
-        <div className='flex justify-between gap-6 px-4 relative'>
-            <div className='w-2/4 flex flex-col justify-center px-16' style={{minHeight: "540px"}}>
+        <div className='flex xxs:flex-col md:flex-row justify-between gap-6 px-4 relative'>
+            <div
+                className='xxs:w-full md:w-2/4 flex flex-col justify-center px-16'
+                // style={{ minHeight: "540px" }}
+            >
                 <HeadingTexts />
                 <SomeNumbers />
             </div>
@@ -16,7 +19,7 @@ export const HeroContents = () => {
 
 const HeroVisuals = () => {
     return (
-        <div className='flex items-center absolute right-20'>
+        <div className='flex xxs:flex-col lg:flex-row items-center xxs:relative md:absolute right-20'>
             <TaskView />
             <PortraitView />
         </div>
@@ -26,7 +29,7 @@ const HeroVisuals = () => {
 const PortraitView = () => {
     return (
         <div className='m-2 w-full'>
-            <img className='rounded' src={imgSrc} alt="portait view" />
+            <img className='rounded xxs:w-full md:w-60' src={imgSrc} alt="portait view" />
         </div>
         // <div className='flex justify-between gap-2'>
         //     <span className='block h-60 w-40 float-left bg-red-600 text-white' style={{clipPath: "ellipse(20px 50px at right)"}}></span>
@@ -41,7 +44,7 @@ const PortraitView = () => {
 const TaskView = () => {
     const { date, title, meta } = taskInfo
     return (
-        <div className='bg-slate-400 h-fit w-full rounded-lg opacity-60'>
+        <div className='bg-slate-400 h-fit xxs:w-fit md:w-full rounded-lg opacity-60'>
             <div className='px-4 py-4 h-28 flex flex-col justify-around'>
                 <RenderTaskTextInfo item={title} />
                 <div className='flex justify-between w-full'>
@@ -87,7 +90,7 @@ const RenderTaskTextInfo = ({ item }) => {
 const SomeNumbers = () => {
     const renderFacts = () => numFacts.map(item => <RenderFact key={item.name} item={item} />)
     return (
-        <div className='flex justify-between my-6'>
+        <div className='flex xxs:flex-col lg:flex-row gap-4 justify-between my-6'>
             {renderFacts()}
         </div>
     )

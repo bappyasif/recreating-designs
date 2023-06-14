@@ -5,7 +5,7 @@ import imgSrc from "../assets/logo.png"
 
 export const Header = () => {
   return (
-    <div className='flex justify-between w-full'>
+    <div className='flex xxs:flex-col lg:flex-row justify-between w-full'>
         <CompanyLogo />
         <RenderNavs />
     </div>
@@ -25,7 +25,7 @@ export const CompanyLogo = () => {
 const RenderNavs = () => {
     const renderNavs = () => topNavs?.map(name => <li className='px-4 py-2 font-extrabold font-righteous' key={name}>{name}</li>)
     return (
-        <ul className='flex gap-4'>
+        <ul className='flex xxs:gap-0 md:gap-4 flex-wrap'>
             {renderNavs()}
         </ul>
     )
