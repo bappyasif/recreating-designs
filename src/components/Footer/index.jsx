@@ -1,52 +1,67 @@
-import React from 'react'
-import { footerItems } from '../../data'
+import { footerItems } from "../../data"
 
 export const Footer = () => {
-    const { comp, copyright, line1, line2, line3, socials } = footerItems
-    return (
-        <div className='flex flex-col gap-11 font-novaSlim'>
-            <div className='flex gap-4 justify-between text-2xl'>
-                <RenderNavs items={line1} />
-                <RenderNavs items={line2} />
-                <RenderContctInfo item={line3} />
-                <RenderNavs items={socials} />
-            </div>
-            <div className='m-auto text-7xl font-monoton'>{comp}</div>
-            <RenderCopyright item={copyright} />
-        </div>
-    )
+  const { links, newsletter } = footerItems
+  return (
+    <div>
+      <h2>Subscribe to our newsletter to get the latest trends & news</h2>
+      <h3>Join our database NOW!</h3>
+      <ShowNewsletter items={newsletter} />
+      <ShowLinks items={links} />
+      <RenderCopyrights />
+    </div>
+  )
 }
 
-const RenderCopyright = ({ item }) => {
-    return (
-        <div className='flex gap-4 justify-center'>
-            <span>2023</span>
-            <span>{item}</span>
-        </div>
-    )
+const ShowNewsletter = ({ items }) => {
+  const renderItems = () => items.map(item => <RenderInput key={item.name} item={item} />)
+
+  return (
+    <div>
+      <div>{renderItems()}</div>
+      <button>SUBSCRIBE</button>
+    </div>
+  )
 }
 
-const RenderContctInfo = ({ item }) => {
-    const { addr, email, tele } = item;
-    const { name, txt, country } = addr;
+const RenderInput = ({ item }) => {
+  const { name, placeholder, type } = item;
 
-    return (
-        <div>
-            <div>
-                <div>{name}</div>
-                <div>{txt}</div>
-                <div>{country}</div>
-            </div>
-            <div>{email}</div>
-            <div>{tele}</div>
-        </div>
-    )
+  return (
+    <label htmlFor={name}>
+      <input type={type} id={name} placeholder={placeholder} />
+    </label>
+  )
 }
 
-const RenderNavs = ({ items }) => {
-    const renderItems = () => items.map(item => <div key={item}>{item}</div>)
+const ShowLinks = ({ items }) => {
+  const renderItems = () => items.map(item => <RenderItem key={item.title} data={item} />)
 
-    return (
-        <div>{renderItems()}</div>
-    )
+  return (
+    <div>{renderItems()}</div>
+  )
+}
+
+const RenderItem = ({ data }) => {
+  const { icon, title, line1, line2 } = data;
+
+  return (
+    <div>
+      <h2>{icon}</h2>
+      <h2>{title}</h2>
+      <div>
+        <p>{line1}</p>
+        <p>{line2}</p>
+      </div>
+    </div>
+  )
+}
+
+const RenderCopyrights = () => {
+  const getYear = () => new Date().getFullYear()
+  return (
+    <div>
+      <p>Copyright &copy;{getYear()} All rights reserved | This template is recreated by a.b. and inspired by Colorlib templates</p>
+    </div>
+  )
 }

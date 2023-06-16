@@ -1,26 +1,23 @@
 import './App.css'
-import { AnalyticsDetails } from './components/Analytics'
+import { Decorative } from './components/Decorative'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
-import { ProductDetail } from './components/Product'
-import { RelatedProducts } from './components/RelatedProducts'
-import { TopReviews } from './components/Reviews'
-import { TabsView } from './components/tabs'
-
+import { HeroComponent } from './components/Hero'
+import { LatestNews } from './components/LatestNews'
+import { PopularDestinations } from './components/PopularSpots'
+import { Testimonials } from './components/Testimonials'
 
 function App() {
   return (
     <div
-      className='font-macondo text-slate-400 px-40 py-4 flex flex-col gap-28'
+      className='font-serif text-slate-400 px-40 py-4 flex flex-col gap-28'
     >
       <Header />
-      <ProductDetail />
-      <TabsView />
-      <div className='flex gap-4 justify-between'>
-        <AnalyticsDetails />
-        <TopReviews />
-      </div>
-      <RelatedProducts />
+      <HeroComponent />
+      <Decorative />
+      <PopularDestinations />
+      <Testimonials />
+      <LatestNews />
       <Footer />
     </div>
   )

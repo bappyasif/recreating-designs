@@ -1,64 +1,53 @@
-import React from 'react'
-import { topNavs } from '../../data'
-import { BsSearch } from 'react-icons/bs'
+import { header } from "../../data"
 
 export const Header = () => {
-    const {logo, more, navs} = topNavs
+    const {call, company, navs, socials} = header
+  return (
+    <div>
+        <RenderCompany item={company} />
+        <RenderNavs navs={navs} />
+        <RenderNumber item={call} />
+        <RenderSocials items={socials} />
+    </div>
+  )
+}
+
+const RenderCompany = ({item}) => {
     return (
-        <div className='flex justify-between items-center'>
-            <div className='flex gap-4 justify-between items-baseline w-2/4'>
-                <RenderComp item={logo} />
-                <RenderNavs items={navs} />
-            </div>
-            <div className='flex gap-9 justify-center text-2xl h-fit'>
-                <Search />
-                <RenderMores items={more} />
-            </div>
-        </div>
+        <h1>{item}</h1>
     )
 }
 
-const RenderComp = ({ item }) => {
-    const { icon, text } = item
+const RenderNavs = ({navs}) => {
+    const renderItems = () => navs.map(item => <span key={item}>{item}</span>)
+
     return (
-        <div className='flex gap-2 items-baseline text-4xl font-monoton'>
-            <span className='text-3xl'>{icon}</span>
-            <span>{text}</span>
-        </div>
+        <div>{renderItems()}</div>
     )
 }
 
-const Search = () => {
+const RenderNumber = ({item}) => {
     return (
-        <div className='relative text-2xl'>
-            <input className='px-4 rounded-full h-9' type="text" placeholder='search product' />
-            <span className='absolute right-3 top-1.5'><BsSearch /></span>
-        </div>
+        <div>{item}</div>
     )
 }
 
-const RenderNavs = ({ items }) => {
-    const renderItems = () => items.map(item => <div key={item}>{item}</div>)
+const RenderSocials = ({items}) => {
+    const renderItems = () => items.map(item => <RenderSocial key={item.name} item={item} />)
 
     return (
-        <div className='flex gap-6 text-2xl font-righteous'>
+        <div>
             {renderItems()}
         </div>
     )
 }
 
-const RenderMores = ({ items }) => {
-    const renderItems = () => items.map((item, idx) => <RenderMore key={idx} item={item} />)
+const RenderSocial = ({item}) => {
+    const {name, icon} = item;
 
     return (
-        <div className='flex gap-4 items-baseline'>
-            {renderItems()}
+        <div title={name}>
+            {icon}
         </div>
     )
-}
-
-const RenderMore = ({ item }) => {
-    const { icon } = item;
-
-    return <div className='text-4xl'>{icon}</div>
 }

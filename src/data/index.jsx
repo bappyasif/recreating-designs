@@ -1,198 +1,65 @@
-import {BiCartAdd, BiCheckShield, BiDownvote, BiMinus, BiPlus, BiStar, BiUpvote, BiUser, BiUserCircle} from "react-icons/bi"
-import {BsBagCheckFill, BsFillStarFill, BsGear, BsHearts} from "react-icons/bs"
-import {TbBrandPepsi} from "react-icons/tb"
-
-export const topNavs = {
-    logo: {
-        icon: <TbBrandPepsi />,
-        text: "ABCD"
-    },
-    navs: ["Products", "Sales", "About Us", "FAQ"],
-    more: [{ icon: <BiUserCircle /> }, { icon: <BsBagCheckFill /> }]
+export const header = {
+    company: "Worldwide",
+    navs: ["Home", "About Us", "Services", "News", "Contact"],
+    call: "+12345678901",
+    socials: [
+        { name: "facebook", icon: "f" },
+        { name: "pinterest", icon: "p" },
+        { name: "twitter", icon: "t" },
+        { name: "reddit", icon: "r" },
+        { name: "facebook", icon: "f" },
+        { name: "linkedin", icon: "l" }
+    ]
 }
 
-export const productInfo = {
-    headings: {
-        titTxt: "CBD Oil - Mint Flavor",
-        price: "$ 65",
-        revDet: {
-            icon: "A",
-            rating: 4.9,
-            review: "220* reviews"
-        }
-    },
-    detail: {
-        descText: "Cupcake ipsum dolor sit amet. Bear claw sweet gummi bears caramels soufflé tootsie roll. Toffee fruitcake macaroon dragée pudding chocolate cake gummies tart.",
-        keypoints: ["moisturising", "vegan", "organic", "immune system"]
-    },
-    cart: {
-        decr: <BiMinus />,
-        incr: <BiPlus />,
-        btnTxt: "Add To Cart",
-        btnIcon: <BiCartAdd />
-    },
-    wishList: {
-        icon: <BsHearts />,
-        text: "Add To Wishlist"
-    }
+export const heroItems = {
+    search: ["City", "Departure", "Arrival", "Budget"],
+    links: ["Offers A", "Testimonials", "Latest"],
 }
 
-export const tabs = ["General Information", "Additional Information", "Reviews"]
+export const decorativeItems = [
+    {title: "Top Destinations", subtitle: "Vind goede plekken te reizen....", icon: "T"},
+    {title: "Best Prices", subtitle: "Krijg goede prijs hier met ons....", icon: "K"},
+    {title: "Amazing Services", subtitle: "Beste services altijd voor u en jouw familie....", icon: "T"}
+]
 
-export const reviewRatings = {
-    customerReviews: {
-        headings: {
-            titTxt: "Customer Reviews",
-            revDet: productInfo.headings.revDet
-        },
-        numbers: [
-            {
-                fig: "76",
-                txt: "5 star"
-            },
-            {
-                fig: "60",
-                txt: "4 star"
-            },
-            {
-                fig: "45",
-                txt: "3 star"
-            },
-            {
-                fig: "33",
-                txt: "2 star"
-            },
-            {
-                fig: "29",
-                txt: "1 star"
-            },
-            {
-                fig: "22",
-                txt: "0 star"
-            }
-        ]
-    },
-    positiveRatings: {
-        heading: "By positive ratings",
-        ratings: [
-            { text: "Positive", percentile: "92%" },
-            { text: "Negative", percentile: "4%" },
-            { text: "Neutral", percentile: "4%" }
-        ]
-    },
-    reviewProd: {
-        heading: "Review this product",
-        subTxt: " first to be able to rate and review",
-        btnTxt: "Write a review"
-    }
-}
+export const popularPlaces = [
+    {name: "Bali", subtext: "gaan naar bali voor veel leuke uitzichting", price: "from $693", special: "Special Offer"},
+    {name: "Indonisia", subtext: "gaan naar Indonisia voor veel lekkere ervaringen", price: "from $696"},
+    {name: "San Francisco", subtext: "gaan naar San Francisco voor veel pleziers", price: "from $696"},
+    {name: "Paris", subtext: "gaan naar Paris voor veel lekkere plekken", price: "from $696"},
+    {name: "Phi Phi Islands", subtext: "gaan naar Phi Phi Islands voor veel lekkere voelens", price: "from $696"},
+    {name: "Mykoons", subtext: "gaan naar Mykoons voor veel lekkere dingen", price: "from $696"},
+];
 
-export const topReviews = [
+export const testimonies = [
+    {title: "City Escape Clients", text: "somige texts hier als een testimionial. vind heel meer bij aan het clicken", name: "John Doe"},
+    {title: "Cruises Clients", text: "somige texts hier als een testimionial. vind heel meer bij aan het clicken", name: "Jane Doe"},
+    {title: "All Inclusive Clients", text: "somige texts hier als een testimionial. vind heel meer bij aan het clicken", name: "Juris Prudent"}
+];
+
+export const latestNews = [
     {
-        heading: {
-            user: {
-                icon: <BiUser />,
-                url: "https://source.unsplash.com/random/?beautifulgirl&skyler",
-                name: "Hoxie",
-                ago: "1 week ago",
-            },
-            verified: {
-                txt: "verified Purchase",
-                icon: <BiCheckShield />
-            }
-        },
-        review: {
-            icons: [
-                {icon: <BiUpvote />},
-                {icon: <BiDownvote />},
-                {icon: <BsGear />}
-            ],
-            text: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
-        }
+        dm: {date: 22, month: "June"},
+        ts: {title: "Best Tips To Travel", subtext: "LIFESTYLE & TRAVEL", text: "vinden veel meer informatie over deze onderwerpen en heel veel meer"}
+    },{
+        dm: {date: 26, month: "June"},
+        ts: {title: "Best Tips To Travel", subtext: "LIFESTYLE & TRAVEL", text: "vinden veel meer informatie over deze onderwerpen en heel veel meer"}
     },
     {
-        heading: {
-            user: {
-                icon: "AA",
-                url: "https://source.unsplash.com/random/?girl&loxie",
-                name: "Skyler",
-                ago: "1 week ago",
-            },
-            verified: {
-                txt: "verified Purchase",
-                icon: <BiCheckShield />
-            }
-        },
-        review: {
-            icons: [
-                {icon: <BiUpvote />},
-                {icon: <BiDownvote />},
-                {icon: <BsGear />}
-            ],
-            text: "pariatur ratione dolor asperiores aliquam nemo, aut fugit perferendis numquam dolorem nihil quae."
-        }
-    },
-    {
-        heading: {
-            user: {
-                icon: "AA",
-                url: "https://source.unsplash.com/random/?pretty&girl",
-                name: "Gray",
-                ago: "1 week ago",
-            },
-            verified: {
-                txt: "verified Purchase",
-                icon: <BiCheckShield />
-            }
-        },
-        review: {
-            icons: [
-                {icon: <BiUpvote />},
-                {icon: <BiDownvote />},
-                {icon: <BsGear />}
-            ],
-            text: "Itaque nostrum at excepturi quibusdam blanditiis amet explicabo molestiae, pariatur ratione dolor asperiores aliquam nemo."
-        }
-    },
-    {
-        heading: {
-            user: {
-                icon: "AA",
-                url: "https://source.unsplash.com/random/?sexy&laura",
-                name: "Laura",
-                ago: "1 week ago",
-            },
-            verified: {
-                txt: "verified Purchase",
-                icon: <BiCheckShield />
-            }
-        },
-        review: {
-            icons: [
-                {icon: <BiUpvote />},
-                {icon: <BiDownvote />},
-                {icon: <BsGear />}
-            ],
-            text: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
-        }
+        dm: {date: 29, month: "June"},
+        ts: {title: "Best Tips To Travel", subtext: "LIFESTYLE & TRAVEL", text: "vinden veel meer informatie over deze onderwerpen en heel veel meer"}
     }
 ]
 
 export const footerItems = {
-    line1: topNavs.navs,
-    line2: ["contact us", "return", "privacy", "terms & condition"],
-    line3: {
-        addr: {
-            name: "ABCD Corp",
-            txt: "New york,96 Ch-3366",
-            country: "Landon"
-        },
-        email: "abcd#corp.com",
-        tele: "+123 456 78901"
-    },
-    socials: ["Facebook", "Twitter", "Instagram", "Mastadon"],
-    comp: topNavs.logo.text,
-    copyright: "ABCD all right is reserved"
+    newsletter: [
+        {name: "name", placeholder: "your name", type: "text"},
+        {name: "email", placeholder: "your email", type: "email"}
+    ],
+    links: [
+        {icon: "G", title: "Gives Us A Call", line1: "office landline: +12213324567889", line2: "mobile: +1223455677890"},
+        {icon: "D", title: "Come And Drop By", line1: "422 lakers street, bangalees", line2: "az-23345"},
+        {icon: "M", title: "Send Us A Message", line1: "someemail@domain.com", line2: "office@worldwide.com"}
+    ]
 }
-
-export const star = <BsFillStarFill />
