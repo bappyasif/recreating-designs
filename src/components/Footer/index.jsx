@@ -3,7 +3,7 @@ import { footerItems } from "../../data"
 export const Footer = () => {
   const { links, newsletter } = footerItems
   return (
-    <div>
+    <div className='flex flex-col place-items-center gap-4 w-full'>
       <h2>Subscribe to our newsletter to get the latest trends & news</h2>
       <h3>Join our database NOW!</h3>
       <ShowNewsletter items={newsletter} />
@@ -17,8 +17,8 @@ const ShowNewsletter = ({ items }) => {
   const renderItems = () => items.map(item => <RenderInput key={item.name} item={item} />)
 
   return (
-    <div>
-      <div>{renderItems()}</div>
+    <div className='flex flex-col gap-4'>
+      <div className='flex gap-4'>{renderItems()}</div>
       <button>SUBSCRIBE</button>
     </div>
   )
@@ -38,7 +38,7 @@ const ShowLinks = ({ items }) => {
   const renderItems = () => items.map(item => <RenderItem key={item.title} data={item} />)
 
   return (
-    <div>{renderItems()}</div>
+    <div className='flex justify-between gap-4 flex-wrap'>{renderItems()}</div>
   )
 }
 

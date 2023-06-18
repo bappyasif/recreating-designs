@@ -4,9 +4,9 @@ import { decorativeItems } from '../../data'
 export const Decorative = () => {
     const renderItems = () => decorativeItems.map(item => <RenderItem key={item.title} data={item} />)
     return (
-        <div>
+        <div className='flex justify-between gap-4'>
             <LeftImage />
-            <div>
+            <div className='flex justify-between gap-4'>
                 {renderItems()}
             </div>
             <RightImage />
@@ -38,7 +38,7 @@ const RenderItem = ({ data }) => {
     const { title, subtitle, icon } = data;
 
     return (
-        <div>
+        <div className='flex gap-4'>
             <div>{icon}</div>
             <div>
                 <h2>{title}</h2>

@@ -3,7 +3,7 @@ import { testimonies } from "../../data"
 
 export const Testimonials = () => {
     return (
-        <div>
+        <div className='flex flex-col gap-4'>
             <h2>Simply Just Amazing People</h2>
             <h2>Testimonials</h2>
             <ShowPieces />
@@ -17,8 +17,8 @@ const ShowPieces = () => {
     const renderItems = () => testimonies.map((item, idx) => <RenderSlide key={item.name} item={item} currSlide={currSlide} idx={idx} />);
     const renderTitles = () => testimonies.map((item, idx) => <RenderSlideTitle key={item.title} text={item.title} handleCurrent={handleCurrent} idx={idx} />)
     return (
-        <div>
-            <div>{renderTitles()}</div>
+        <div className='flex flex-col gap-4'>
+            <div className="self-end">{renderTitles()}</div>
             <div>{renderItems()}</div>
         </div>
     )

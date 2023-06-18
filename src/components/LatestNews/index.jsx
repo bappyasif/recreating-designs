@@ -5,9 +5,16 @@ export const LatestNews = () => {
     const renderItems = () => latestNews.map(item => <RenderNews key={item.dm.date} item={item} />)
 
     return (
-        <div>
+        <div className='flex flex-col gap-4'>
             <h2>Latest News</h2>
-            <div>{renderItems()}</div>
+            <div className='flex justify-between gap-4 h-2/3'>
+                <div className='flex flex-col gap-4'>{renderItems()}</div>
+                <img
+                    className='w-96 h-auto'
+                    src="https://source.unsplash.com/random/?Travel&Banner&Portarit"
+                    alt=""
+                />
+            </div>
         </div>
     )
 }
@@ -16,9 +23,9 @@ const RenderNews = ({ item }) => {
     const { dm, ts } = item;
 
     return (
-        <div>
+        <div className='flex gap-4'>
             <RenderImage />
-            <div>
+            <div className='flex flex-col gap-4'>
                 <RenderDates item={dm} />
                 <RenderTexts item={ts} />
             </div>
@@ -30,7 +37,7 @@ const RenderDates = ({ item }) => {
     const { date, month } = item;
 
     return (
-        <div>
+        <div className='flex gap-4'>
             <h2>{date}</h2>
             <h3>{month}</h3>
         </div>

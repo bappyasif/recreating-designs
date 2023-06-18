@@ -1,9 +1,10 @@
 import { header } from "../../data"
+import {Link} from "react-router-dom"
 
 export const Header = () => {
     const {call, company, navs, socials} = header
   return (
-    <div>
+    <div className="flex justify-between items-center gap-4">
         <RenderCompany item={company} />
         <RenderNavs navs={navs} />
         <RenderNumber item={call} />
@@ -19,10 +20,10 @@ const RenderCompany = ({item}) => {
 }
 
 const RenderNavs = ({navs}) => {
-    const renderItems = () => navs.map(item => <span key={item}>{item}</span>)
+    const renderItems = () => navs.map(item => <span key={item.name}><Link to={item.to}>{item.name}</Link></span>)
 
     return (
-        <div>{renderItems()}</div>
+        <div className="flex gap-4">{renderItems()}</div>
     )
 }
 
@@ -36,7 +37,7 @@ const RenderSocials = ({items}) => {
     const renderItems = () => items.map(item => <RenderSocial key={item.name} item={item} />)
 
     return (
-        <div>
+        <div className="flex gap-4">
             {renderItems()}
         </div>
     )

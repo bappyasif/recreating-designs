@@ -1,20 +1,20 @@
 export const header = {
     company: "Worldwide",
-    navs: ["Home", "About Us", "Services", "News", "Contact"],
+    navs: [{name: "Home", to: "/"}, {name:"About Us", to: "/about-us"}, 
+    {name: "Services", to: "/services"}, {name: "News", to: "/news"}, {name: "Contact", to: "/contact"}],
     call: "+12345678901",
     socials: [
         { name: "facebook", icon: "f" },
         { name: "pinterest", icon: "p" },
         { name: "twitter", icon: "t" },
         { name: "reddit", icon: "r" },
-        { name: "facebook", icon: "f" },
         { name: "linkedin", icon: "l" }
     ]
 }
 
 export const heroItems = {
     search: ["City", "Departure", "Arrival", "Budget"],
-    links: ["Offers A", "Testimonials", "Latest"],
+    links: ["Offers A", "Testimonials A", "Latest A"],
 }
 
 export const decorativeItems = [
