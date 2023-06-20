@@ -5,10 +5,13 @@ export const PopularDestinations = () => {
     const renderPlaces = () => popularPlaces.map(item => <RenderPlace key={item.name} item={item} />)
 
     return (
-        <div className='flex flex-col gap-4'>
-            <h2>Simply Just Amazing Places</h2>
-            <h2>Popular Destinations</h2>
-            <div className='flex justify-between flex-wrap gap-4'>{renderPlaces()}</div>
+        <div id='Offers' className='flex flex-col gap-4'>
+            <div className='flex flex-col items-center gap-4'>
+                <h2>Simply Just Amazing Places</h2>
+                <h2 className='text-4xl'>Popular Destinations</h2>
+            </div>
+            {/* <div className='flex justify-between flex-wrap gap-4'>{renderPlaces()}</div> */}
+            <div className='grid grid-cols-3 gap-x-20 gap-y-9'>{renderPlaces()}</div>
         </div>
     )
 }
@@ -19,21 +22,22 @@ const RenderPlace = ({ item }) => {
     return (
         <div className='relative'>
             {special ? <h2 className='absolute'>{special}</h2> : null}
-            <RenderImage />
-            <div>
-                <h2>{name}</h2>
+            <RenderImage text={name} />
+            <div className='text-justify'>
+                <h2 className='text-4xl'>{name}</h2>
                 <p>{subtext}</p>
             </div>
-            <h2>{price}</h2>
+            <h2 className='text-2xl font-bold'>{price}</h2>
         </div>
     )
 }
 
-const RenderImage = () => {
+const RenderImage = ({ text }) => {
     return (
         <img
-            className='w-60 h-60'
-            src="" alt=""
+            className='w-full h-60'
+            src={`https://source.unsplash.com/random/?Tourism&landscape&${text}`}
+            alt=""
         />
     )
 }

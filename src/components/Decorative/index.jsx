@@ -17,8 +17,8 @@ export const Decorative = () => {
 const LeftImage = () => {
     return (
         <img
-            className='w-96 h-96'
-            src=""
+            className='w-60 h-60 bg-transparent'
+            src={`https://source.unsplash.com/random/?Boeing`}
             alt=""
         />
     )
@@ -27,8 +27,8 @@ const LeftImage = () => {
 const RightImage = () => {
     return (
         <img
-            className='w-96 h-96'
-            src=""
+            className='w-60 h-60 bg-transparent'
+            src={`https://source.unsplash.com/random/?Beach`}
             alt=""
         />
     )
@@ -38,11 +38,11 @@ const RenderItem = ({ data }) => {
     const { title, subtitle, icon } = data;
 
     return (
-        <div className='flex gap-4'>
-            <div>{icon}</div>
+        <div className='flex gap-4 text-2xl'>
+            <div className='w-1/2' style={{fontSize: "150px"}}>{icon}</div>
             <div>
                 <h2>{title}</h2>
-                <p>{subtitle}</p>
+                <p className='text-lg'>{subtitle}</p>
             </div>
         </div>
     )

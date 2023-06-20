@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 export const Header = () => {
     const {call, company, navs, socials} = header
   return (
-    <div className="flex justify-between items-center gap-4">
+    <div className="flex justify-between items-baseline gap-4">
         <RenderCompany item={company} />
         <RenderNavs navs={navs} />
         <RenderNumber item={call} />
@@ -23,13 +23,13 @@ const RenderNavs = ({navs}) => {
     const renderItems = () => navs.map(item => <span key={item.name}><Link to={item.to}>{item.name}</Link></span>)
 
     return (
-        <div className="flex gap-4">{renderItems()}</div>
+        <div className="flex gap-4 text-xl">{renderItems()}</div>
     )
 }
 
 const RenderNumber = ({item}) => {
     return (
-        <div>{item}</div>
+        <div className="text-2xl">{item}</div>
     )
 }
 
@@ -37,7 +37,7 @@ const RenderSocials = ({items}) => {
     const renderItems = () => items.map(item => <RenderSocial key={item.name} item={item} />)
 
     return (
-        <div className="flex gap-4">
+        <div className="flex gap-4 text-xl">
             {renderItems()}
         </div>
     )

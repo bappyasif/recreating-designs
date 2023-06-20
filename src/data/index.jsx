@@ -1,26 +1,31 @@
+import {TbBeach} from "react-icons/tb"
+import {GiDirectionSigns, GiMailbox, GiWalk, GiWallet} from "react-icons/gi"
+import {FaSuitcaseRolling} from "react-icons/fa"
+import {GrFacebook, GrLinkedin, GrPinterest, GrReddit, GrTwitter} from "react-icons/gr"
+
 export const header = {
     company: "Worldwide",
     navs: [{name: "Home", to: "/"}, {name:"About Us", to: "/about-us"}, 
     {name: "Services", to: "/services"}, {name: "News", to: "/news"}, {name: "Contact", to: "/contact"}],
     call: "+12345678901",
     socials: [
-        { name: "facebook", icon: "f" },
-        { name: "pinterest", icon: "p" },
-        { name: "twitter", icon: "t" },
-        { name: "reddit", icon: "r" },
-        { name: "linkedin", icon: "l" }
+        { name: "facebook", icon: <GrFacebook /> },
+        { name: "pinterest", icon: <GrPinterest /> },
+        { name: "twitter", icon: <GrTwitter /> },
+        { name: "reddit", icon: <GrReddit /> },
+        { name: "linkedin", icon: <GrLinkedin /> }
     ]
 }
 
 export const heroItems = {
     search: ["City", "Departure", "Arrival", "Budget"],
-    links: ["Offers A", "Testimonials A", "Latest A"],
+    links: ["Offers", "Testimonials", "Latest"],
 }
 
 export const decorativeItems = [
-    {title: "Top Destinations", subtitle: "Vind goede plekken te reizen....", icon: "T"},
-    {title: "Best Prices", subtitle: "Krijg goede prijs hier met ons....", icon: "K"},
-    {title: "Amazing Services", subtitle: "Beste services altijd voor u en jouw familie....", icon: "T"}
+    {title: "Top Destinations", subtitle: "Vind goede plekken te reizen....", icon: <TbBeach />},
+    {title: "Best Prices", subtitle: "Krijg goede prijs hier met ons....", icon: <GiWallet />},
+    {title: "Amazing Services", subtitle: "Beste services altijd voor u en jouw familie....", icon: <FaSuitcaseRolling />}
 ]
 
 export const popularPlaces = [
@@ -58,8 +63,8 @@ export const footerItems = {
         {name: "email", placeholder: "your email", type: "email"}
     ],
     links: [
-        {icon: "G", title: "Gives Us A Call", line1: "office landline: +12213324567889", line2: "mobile: +1223455677890"},
-        {icon: "D", title: "Come And Drop By", line1: "422 lakers street, bangalees", line2: "az-23345"},
-        {icon: "M", title: "Send Us A Message", line1: "someemail@domain.com", line2: "office@worldwide.com"}
+        {icon: <GiDirectionSigns />, title: "Gives Us A Call", line1: "office landline: +12213324567889", line2: "mobile: +1223455677890"},
+        {icon: <GiWalk />, title: "Come And Drop By", line1: "422 lakers street, bangalees", line2: "az-23345"},
+        {icon: <GiMailbox />, title: "Send Us A Message", line1: "someemail@domain.com", line2: "office@worldwide.com"}
     ]
 }
