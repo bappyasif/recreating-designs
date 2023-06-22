@@ -27,10 +27,11 @@ export const HeroComponent = () => {
 }
 
 const RenderLinks = ({ items }) => {
-    const renderItems = () => items.map(item => <a href={`#${item}`}><span>{item}</span></a>)
+    const renderItems = () => items.map(item => <a className='bg-slate-900 text-blue-400 opacity-80 px-4' href={`#${item}`}><span>{item}</span></a>)
 
     return (
-        <div className='absolute top-16 right-36 flex flex-col gap-4 text-xl text-right'>{renderItems()}</div>
+        <div className='absolute top-16 right-36
+        flex flex-col gap-4 text-xl text-right'>{renderItems()}</div>
         // <div className='absolute mt-20 col-span-1 w-full self-start flex flex-col gap-4 text-xl items-end'>{renderItems()}</div>
         // <div className='self-end flex flex-col gap-4 text-xl'>{renderItems()}</div>
     )
@@ -41,7 +42,7 @@ export const RenderSearch = ({ items }) => {
 
     return (
         <div className='col-span-3 col-start-2'>
-            <h2 className='text-7xl flex justify-center'>Let us take you away</h2>
+            <h2 className='text-7xl flex justify-center text-slate-800 font-bold'>Let us take you away</h2>
             <div className='mt-28 px-8 py-8 bg-slate-700 rounded-lg flex flex-col gap-0'>
                 <h2 className='text-4xl rounded rounded-t-xl bg-slate-800 px-8 py-4 w-fit mx-auto'>Search For Your Trip</h2>
                 <div className='flex flex-col gap-1'>

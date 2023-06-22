@@ -8,7 +8,7 @@ export const news = [
 export const categories = [
     {name: "Travel", count: 9},
     {name: "Organization", count: 49},
-    {name: "Tips && Tricks", count: 59},
+    {name: "Tips & Tricks", count: 59},
     {name: "Unrecognised", count: 22}
 ];
 

@@ -3,8 +3,17 @@ import { testimonies } from "../../data"
 
 export const Testimonials = () => {
     return (
-        <div id="Testimonials" className='flex flex-col gap-6'>
-            <div className="flex flex-col gap-4 items-center justify-center w-full">
+        <div 
+            id="Testimonials" 
+            className='flex flex-col gap-6'
+            style={{
+                backgroundImage: "url('https://source.unsplash.com/random/?abstract,blue,water,calm')",
+                backgroundSize: "100% 100%",
+                backgroundRepeat: "no-repeat",
+                objectFit: "contain"
+              }}
+        >
+            <div className="flex flex-col gap-10 items-center justify-center w-full">
                 <h2>Simply Just Amazing People</h2>
                 <h2 className="text-4xl">Testimonials</h2>
                 <ShowPieces />
@@ -24,9 +33,9 @@ const ShowPieces = () => {
     const renderTitles = () => testimonies.map((item, idx) => <RenderSlideTitle key={item.title} text={item.title} handleCurrent={handleCurrent} idx={idx} />)
     
     return (
-        <div className='grid grid-cols-2 content-center relative'>
+        <div className='grid grid-cols-2 content-center gap-y-10 relative'>
             {renderItems()}
-            <div className="absolute right-0 col-span-1 grid content-center place-items-center gap-y-4">{renderTitles()}</div>
+            <div className="absolute right-40 -top-28 col-start-1 grid content-center place-items-center gap-y-4">{renderTitles()}</div>
         </div>
     )
 }
@@ -36,7 +45,7 @@ const RenderSlideTitle = ({ text, handleCurrent, idx }) => {
         handleCurrent(idx)
     }
     return (
-        <h2 onClick={handleClick}>{text}</h2>
+        <button className="bg-slate-800 opacity-90 text-right w-full p-0 px-4" onClick={handleClick}>{text}</button>
     )
 }
 
@@ -47,10 +56,10 @@ const RenderSlide = ({ item, currSlide, idx }) => {
         currSlide === idx
             ?
             <div
-                className="col-span-2 self-end flex flex-col justify-center items-center gap-y-6"
+                className="col-span-2 self-end flex flex-col justify-center items-center gap-y-20"
             >
-                <h2 className="text-4xl w-3/4">{text} Quos, nulla quaerat. Rerum, asperiores adipisci, nesciunt ut provident pariatur dignissimos voluptatibus ea voluptate quam eius ratione voluptas voluptatem delectus repellendus est.</h2>
-                <h3 className="flex gap-2 text-2xl">
+                <h2 className="text-4xl w-3/4 bg-slate-900 opacity-80 px-4 text-justify">{text} Quos, nulla quaerat. Rerum, asperiores adipisci, nesciunt ut provident pariatur dignissimos voluptatibus ea voluptate quam eius ratione voluptas voluptatem delectus repellendus est.</h2>
+                <h3 className="flex gap-2 text-2xl bg-slate-800 opacity-80 px-4">
                     <span>{name},</span>
                     <span>client</span>
                 </h3>

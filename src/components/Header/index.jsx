@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 export const Header = () => {
     const {call, company, navs, socials} = header
   return (
-    <div className="flex justify-between items-baseline gap-4">
+    <div className="px-40 flex justify-between items-baseline gap-4">
         <RenderCompany item={company} />
         <RenderNavs navs={navs} />
         <RenderNumber item={call} />
