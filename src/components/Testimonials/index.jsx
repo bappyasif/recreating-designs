@@ -5,17 +5,17 @@ export const Testimonials = () => {
     return (
         <div 
             id="Testimonials" 
-            className='flex flex-col gap-6'
+            className='flex flex-col gap-6 py-10'
             style={{
-                backgroundImage: "url('https://source.unsplash.com/random/?abstract,blue,water,calm')",
+                backgroundImage: "url('https://source.unsplash.com/random/?abstract,blue,water,calm,lowlights')",
                 backgroundSize: "100% 100%",
                 backgroundRepeat: "no-repeat",
                 objectFit: "contain"
               }}
         >
             <div className="flex flex-col gap-10 items-center justify-center w-full">
-                <h2>Simply Just Amazing People</h2>
-                <h2 className="text-4xl">Testimonials</h2>
+                <h2 className="text-slate-900">Simply Just Amazing People</h2>
+                <h2 className="text-4xl text-slate-900 font-bold">Testimonials</h2>
                 <ShowPieces />
             </div>
             {/* <ShowPieces /> */}

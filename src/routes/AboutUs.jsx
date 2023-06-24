@@ -11,7 +11,7 @@ export const AboutUs = () => {
       className='font-serif text-slate-400 flex flex-col gap-28'
     >
       <div
-        className='px-40 py-4'
+        className='pb-9'
         style={{
           backgroundImage: "url('https://source.unsplash.com/random/?Tourism,couple,sights,tourists,greens')",
           backgroundSize: "100% 100%",
@@ -19,8 +19,10 @@ export const AboutUs = () => {
           objectFit: "contain"
         }}
       >
-        <Header />
-        <div className='grid grid-cols-5'>
+        <div className='bg-slate-800 fixed w-full z-40 py-2 opacity-80'>
+          <Header />
+        </div>
+        <div className='grid grid-cols-5 mt-40'>
           <RenderSearch items={heroItems.search} />
         </div>
       </div>

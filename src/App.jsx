@@ -24,20 +24,12 @@ function App() {
         <div className='bg-slate-800 fixed w-full z-40 py-2 opacity-80'>
           <Header />
         </div>
-        
-        {/* <Header /> */}
 
         <div className='mx-auto mt-40 w-fit relative'>
           <HeroComponent />
         </div>
+        
       </div>
-      {/* <div className='px-40 py-4 flex flex-col gap-28'>
-        <Header />
-      </div>
-
-      <div className='mx-auto w-fit relative'>
-        <HeroComponent />
-      </div> */}
 
       <div className='px-6'>
         <Decorative />
@@ -47,16 +39,16 @@ function App() {
         className='font-serif text-slate-400 px-40 py-4 flex flex-col gap-28'
       >
         <PopularDestinations />
-        {/* <Testimonials /> */}
       </div>
+
       <Testimonials />
+      
       <div
         className='font-serif text-slate-400 px-40 py-4 flex flex-col gap-28'
       >
-        {/* <PopularDestinations /> */}
-        {/* <Testimonials /> */}
         <LatestNews />
       </div>
+
       <Footer />
     </div>
   )

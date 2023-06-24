@@ -6,7 +6,7 @@ export const Footer = () => {
     <div 
       className="flex flex-col gap-16 w-full items-center"
       style={{
-        backgroundImage: "url('https://source.unsplash.com/random/?Tourism,couple,sights,tourists,greens')",
+        backgroundImage: "url('https://source.unsplash.com/random/?Tourism,couple,sights,tourists,greens,lowlighting')",
         backgroundSize: "100% 100%",
         backgroundRepeat: "no-repeat",
         objectFit: "contain"
