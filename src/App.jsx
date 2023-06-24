@@ -28,7 +28,7 @@ function App() {
         <div className='mx-auto mt-40 w-fit relative'>
           <HeroComponent />
         </div>
-        
+
       </div>
 
       <div className='px-6'>
@@ -36,7 +36,7 @@ function App() {
       </div>
 
       <div
-        className='font-serif text-slate-400 px-40 py-4 flex flex-col gap-28'
+        className='font-serif text-slate-400 xxs:px-2 lg:px-40 py-4'
       >
         <PopularDestinations />
       </div>
@@ -44,7 +44,7 @@ function App() {
       <Testimonials />
       
       <div
-        className='font-serif text-slate-400 px-40 py-4 flex flex-col gap-28'
+        className='font-serif text-slate-400 xxs:px-2 lg:px-40 py-4'
       >
         <LatestNews />
       </div>

@@ -45,7 +45,7 @@ const RenderHeadingAndSubtext = ({ item }) => {
     )
 }
 
-const RenderDateAndMonth = ({ item }) => {
+export const RenderDateAndMonth = ({ item }) => {
     const { date, month } = item;
 
     return (
@@ -60,7 +60,7 @@ export const RenderLinks = () => {
     const renderLinks = () => categories.map(item => <div className='flex justify-between'><span>{item.name}</span> <span>{item.count}</span></div>)
 
     return (
-        <div className='flex flex-col gap-4 text-4xl w-80'>{renderLinks()}</div>
+        <div className='flex flex-col gap-4 text-4xl xxs:w-full lg:w-80'>{renderLinks()}</div>
         // <div className='flex flex-col gap-4 text-4xl w-80 mr-8'>{renderLinks()}</div>
     )
 }
@@ -69,7 +69,7 @@ export const RenderSideView = () => {
     const renderArticleViews = () => sideview.map((item, idx) => <RenderSideArticleView key={idx} item={item} />)
 
     return (
-        <div className='flex flex-col gap-6 w-max'>
+        <div className='flex flex-col gap-6 xxs:w-full lg:w-max'>
             <h2 className='text-4xl'>Latest News</h2>
             <div className='flex flex-col gap-20 items-end w-full'>
                 {renderArticleViews()}
@@ -82,13 +82,13 @@ const RenderSideArticleView = ({ item }) => {
     const { img, dm, heading, subtext } = item;
 
     return (
-        <div className='flex gap-6 justify-end w-full'>
+        <div className='flex xxs:flex-col md:flex-row gap-6 xxs:justify-around lg:justify-end w-full'>
             <img
-                className='w-40'
+                className='xxs:w-full md:w-1/2 lg:w-40'
                 src={`https://source.unsplash.com/random/?${heading}&Tourism`}
                 alt={heading}
             />
-            <div className='self-end'>
+            <div className='xxs:self-start lg:self-end'>
                 <RenderDateAndMonth item={dm} />
                 <h2>{heading}</h2>
                 <p>{subtext}</p>

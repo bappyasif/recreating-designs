@@ -20,28 +20,18 @@ export const Footer = () => {
         <RenderCopyrights />
       </div>
     </div>
-    // <div className='flex flex-col gap-4 w-full'>
-    //   <div className="self-center">
-    //     <h2>Subscribe to our newsletter to get the latest trends & news</h2>
-    //     <h3>Join our database NOW!</h3>
-    //     <ShowNewsletter items={newsletter} />
-    //   </div>
-    //   <ShowLinks items={links} />
-    //   <RenderCopyrights />
-    // </div>
   )
 }
 
 const ShowNewsletter = ({ items }) => {
   const renderItems = () => items.map(item => <RenderInput key={item.name} item={item} />)
-  // className='col-span-3 flex flex-col gap-4 items-center'
+
   return (
     <div className='col-span-3'>
-      <div className='grid grid-cols-3 gap-x-4'>
+      <div className='grid xxs:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xxs:gap-y-4 gap-x-4 content-center'>
         {renderItems()}
-        <button>SUBSCRIBE</button>
+        <button className="xxs:col-span-1 md:col-span-2 lg:col-span-2 xxs:col-start-1 lg:col-start-2">SUBSCRIBE</button>
       </div>
-      {/* <button>SUBSCRIBE</button> */}
     </div>
   )
 }
@@ -50,7 +40,7 @@ const RenderInput = ({ item }) => {
   const { name, placeholder, type } = item;
 
   return (
-    <label className="col-span-1" htmlFor={name}>
+    <label className="xxs: col-span-1 lg:col-span-2" htmlFor={name}>
       <input className="h-16 w-full rounded-lg px-4 text-2xl" type={type} id={name} placeholder={placeholder} />
     </label>
   )
@@ -60,7 +50,7 @@ const ShowLinks = ({ items }) => {
   const renderItems = () => items.map(item => <RenderItem key={item.title} data={item} />)
 
   return (
-    <div className='col-span-3 flex justify-between gap-4 flex-wrap'>{renderItems()}</div>
+    <div className='col-span-3 flex xxs:flex-col lg:flex-row xxs:justify-center lg:justify-between gap-4 flex-wrap'>{renderItems()}</div>
   )
 }
 
@@ -68,7 +58,7 @@ const RenderItem = ({ data }) => {
   const { icon, title, line1, line2 } = data;
 
   return (
-    <div className="flex flex-col gap-4 items-center bg-slate-900 opacity-70 w-1/4 py-8 rounded-md">
+    <div className="flex flex-col gap-4 items-center bg-slate-900 opacity-70 xxs:w-full lg:w-1/4 py-8 rounded-md">
       <h2 className="text-white text-4xl">{icon}</h2>
       <h2 className="text-4xl">{title}</h2>
       <div className="text-xl flex flex-col gap-4">
@@ -82,6 +72,6 @@ const RenderItem = ({ data }) => {
 const RenderCopyrights = () => {
   const getYear = () => new Date().getFullYear()
   return (
-    <p className="col-span-3 mx-auto text-xl">Copyright &copy;{getYear()} All rights reserved | This template is curated by a.b. and inspired from Colorlib templates</p>
+    <p className="col-span-3 mx-auto xxs:text-xs lg:text-xl">Copyright &copy;{getYear()} All rights reserved | This template is curated by a.b. and inspired from Colorlib templates</p>
   )
 }

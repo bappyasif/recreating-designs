@@ -14,7 +14,7 @@ export const Testimonials = () => {
               }}
         >
             <div className="flex flex-col gap-10 items-center justify-center w-full">
-                <h2 className="text-slate-900">Simply Just Amazing People</h2>
+                <h2 className="text-slate-900">Simply People</h2>
                 <h2 className="text-4xl text-slate-900 font-bold">Testimonials</h2>
                 <ShowPieces />
             </div>
@@ -35,7 +35,7 @@ const ShowPieces = () => {
     return (
         <div className='grid grid-cols-2 content-center gap-y-10 relative'>
             {renderItems()}
-            <div className="absolute right-40 -top-28 col-start-1 grid content-center place-items-center gap-y-4">{renderTitles()}</div>
+            <div className="absolute xxs:right-0 md:right-2 lg:right-40 xxs:-top-44 md:-top-28 col-start-1 grid content-center place-items-center gap-y-4">{renderTitles()}</div>
         </div>
     )
 }
@@ -45,7 +45,7 @@ const RenderSlideTitle = ({ text, handleCurrent, idx }) => {
         handleCurrent(idx)
     }
     return (
-        <button className="bg-slate-800 opacity-90 text-right w-full p-0 px-4" onClick={handleClick}>{text}</button>
+        <button className="bg-slate-800 opacity-90 text-right w-full p-0 xxs:text-xs xxs:px-0 md:px-4" onClick={handleClick}>{text}</button>
     )
 }
 

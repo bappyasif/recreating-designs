@@ -21,17 +21,13 @@ export const Contacts = () => {
                 <div className='bg-slate-800 fixed w-full z-40 py-2 opacity-80'>
                     <Header />
                 </div>
-                <div className="grid grid-cols-5 mt-40">
+                <div className="grid xxs:grid-cols-1 lg:grid-cols-5 mt-40">
                     <RenderSearch items={heroItems.search} />
                 </div>
             </div>
-            {/* <Header />
-            <div className="grid grid-cols-5">
-                <RenderSearch items={heroItems.search} />
-            </div> */}
+
             <div
-                // className="flex justify-between"
-                className="px-40 grid grid-cols-4"
+                className="xxs:px-2 lg:px-40 lg:grid lg:grid-cols-4"
             >
                 <GetInTouchWithUs />
                 <MessageForm />

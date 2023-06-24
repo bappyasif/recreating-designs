@@ -6,7 +6,7 @@ export const Decorative = () => {
     return (
         <div className='flex justify-between gap-4'>
             <LeftImage />
-            <div className='flex justify-between gap-4'>
+            <div className='flex xxs:flex-col lg:flex-row xxs:items-center lg:justify-between gap-4'>
                 {renderItems()}
             </div>
             <RightImage />
@@ -17,7 +17,7 @@ export const Decorative = () => {
 const LeftImage = () => {
     return (
         <img
-            className='w-60 h-60 bg-transparent'
+            className='xxs:hidden lg:block w-60 h-60 bg-transparent'
             src={`https://source.unsplash.com/random/?Boeing`}
             alt=""
         />
@@ -27,7 +27,7 @@ const LeftImage = () => {
 const RightImage = () => {
     return (
         <img
-            className='w-60 h-60 bg-transparent'
+            className='xxs:hidden lg:block w-60 h-60 bg-transparent'
             src={`https://source.unsplash.com/random/?Beach`}
             alt=""
         />

@@ -11,7 +11,7 @@ export const PopularDestinations = () => {
                 <h2 className='text-4xl'>Popular Destinations</h2>
             </div>
             {/* <div className='flex justify-between flex-wrap gap-4'>{renderPlaces()}</div> */}
-            <div className='grid grid-cols-3 gap-x-20 gap-y-9'>{renderPlaces()}</div>
+            <div className='grid xxs:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-20 gap-y-9'>{renderPlaces()}</div>
         </div>
     )
 }
