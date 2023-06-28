@@ -1,12 +1,38 @@
+import heroImg from "../assets/heroImg.jpg"
+
 export const HeroReusable = ({ items }) => {
     const { subHeading, heading, description, socials } = items;
 
     return (
-        <div>
+        <div
+            className="relative h-1/2 w-full bg-cover opacity-70 
+            flex flex-col justify-center items-center"
+            style={{
+                // backgroundImage: "url('../assets/heroImg.jpg')"
+                backgroundImage: `url(${heroImg})`,
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                height: "690px"
+            }}
+        >
+            {/* <img
+                className="absolute -z-0 h-1/2 w-fit object-cover"
+                src={heroImg}
+                alt="hero image with a fish base dish"
+                srcset=""
+            />
+            <div className="z-10 absolute">
+                <RenderSubHeading item={subHeading} />
+                <RenderHeading item={heading} />
+                <RenderDescription item={description} />
+                <RenderSocials items={socials} />
+            </div> */}
             <RenderSubHeading item={subHeading} />
             <RenderHeading item={heading} />
             <RenderDescription item={description} />
-            <RenderSocials items={socials} />
+            <div className="absolute bottom-0 right-0">
+                <RenderSocials items={socials} />
+            </div>
         </div>
     )
 }
@@ -29,7 +55,7 @@ const RenderDescription = ({ item }) => {
     )
 }
 
-const RenderSocials = ({ items }) => {
+export const RenderSocials = ({ items }) => {
     const renderItems = () => items?.map(item => <RenderSocial key={item.name} item={item} />)
 
     return (

@@ -67,18 +67,18 @@ export const testimonials = [
 ];
 
 export const galleries = [
-    { img: "https://source.unsplash.com/random/?food,popular,dish,picture,1" },
-    { img: "https://source.unsplash.com/random/?food,popular,dish,picture,2" },
-    { img: "https://source.unsplash.com/random/?food,popular,dish,picture,3" },
-    { img: "https://source.unsplash.com/random/?food,popular,dish,picture,4" },
-    { img: "https://source.unsplash.com/random/?food,popular,dish,picture,5" },
-    { img: "https://source.unsplash.com/random/?food,popular,dish,picture,6" },
-    { img: "https://source.unsplash.com/random/?food,popular,dish,picture,7" },
-    { img: "https://source.unsplash.com/random/?food,popular,dish,picture,8" },
-    { img: "https://source.unsplash.com/random/?food,popular,dish,picture,9" },
-    { img: "https://source.unsplash.com/random/?food,popular,dish,picture,10" },
-    { img: "https://source.unsplash.com/random/?food,popular,dish,picture,11" },
-    { img: "https://source.unsplash.com/random/?food,popular,dish,picture,12" }
+    { img: "https://loremflickr.com/320/240/random=1" },
+    { img: "https://loremflickr.com/320/240/random=2" },
+    { img: "https://loremflickr.com/320/240/random=3" },
+    { img: "https://loremflickr.com/320/240/random=4" },
+    { img: "https://loremflickr.com/320/240/random=5" },
+    { img: "https://loremflickr.com/320/240/random=6" },
+    { img: "https://loremflickr.com/320/240/random=7" },
+    { img: "https://loremflickr.com/320/240/random=8" },
+    { img: "https://loremflickr.com/320/240/random=9" },
+    // { img: "https://loremflickr.com/320/240/food,popular,dish,picture,1" },
+    // { img: "https://loremflickr.com/320/240/food,popular,dish,picture,2" },
+    // { img: "https://source.unsplash.com/random/?food,popular,dish,picture,2" },
 ];
 
 export const events = {
@@ -102,7 +102,7 @@ export const booking = {
 
 export const footers = {
     about: {
-        headding: "About ABCD",
+        heading: "About ABCD",
         description: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
         connect: {
             title: "Connect",
@@ -158,15 +158,23 @@ export const menuPage = {
             { title: "Special Events", description: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean." }
         ],
         gallery: [
-            { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,1" },
-            { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,2" },
-            { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,3" },
-            { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,4" },
-            { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,5" },
-            { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,6" },
-            { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,7" },
-            { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,8" },
-            { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,9" },
+            { img: "https://loremflickr.com/320/240/random=1" },
+            { img: "https://loremflickr.com/320/240/random=2" },
+            { img: "https://loremflickr.com/320/240/random=3" },
+            { img: "https://loremflickr.com/320/240/random=4" },
+            { img: "https://loremflickr.com/320/240/random=5" },
+            { img: "https://loremflickr.com/320/240/random=6" },
+            { img: "https://loremflickr.com/320/240/random=7" },
+            { img: "https://loremflickr.com/320/240/random=8" },
+            { img: "https://loremflickr.com/320/240/random=9" },
+            // { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,2" },
+            // { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,3" },
+            // { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,4" },
+            // { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,5" },
+            // { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,6" },
+            // { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,7" },
+            // { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,8" },
+            // { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,9" },
         ],
         reasons: [
             { icon: "AA", text: "Far far away, behind the word" },

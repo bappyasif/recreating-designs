@@ -3,7 +3,7 @@ import { header } from "../data"
 
 export const Header = () => {
     return (
-        <div className="flex justify-between">
+        <div className="flex justify-between w-full">
             <Company />
             <RenderNavs navs={header.navs} />
             <BookTable />
@@ -17,11 +17,11 @@ const Company = () => {
     )
 }
 
-const RenderNavs = ({ navs }) => {
+const RenderNavs = ({ navs, subMenu }) => {
     const renderItems = () => navs.map(item => <RenderNavItem key={item} item={item} />)
 
     return (
-        <div className="flex gap-4">{renderItems()}</div>
+        <div className={`flex gap-4 ${subMenu ? "flex-col" : "flex-row"}`}>{renderItems()}</div>
     )
 }
 
@@ -36,14 +36,9 @@ const RenderNavItem = ({ item }) => {
 
     return (
         <div
-            className="relative"
-        // onMouseEnter={item === "Menu" ? handleHoverOn : null}
-        // onMouseOut={item === "Menu" ? handleHoverOut : null}
-        // onClick={(item === "Menu") ? handleToggle : null}
-        // onClick={(item === "Menu" || item === "Menu Two") ? handleToggle : null}
-        // onClick={(item === "Menu") ? handleToggle : item === "Menu Two" ? handleOpen : null}
+            className="relative flex w-max"
         >
-            <span onClick={handleClose}>{item}</span>
+            <span className="w-32 text-center" onClick={handleClose}>{item}</span>
             <span
                 // onClick={(item === "Menu") ? handleToggle : item === "Menu Two" ? handleOpen : null}
                 onClick={(item === "Menu" || item === "Menu Two") ? handleToggle : null}
@@ -54,10 +49,15 @@ const RenderNavItem = ({ item }) => {
                         : null
                 }
             </span>
-            <span>
+            <span className="relative">
                 {
                     show
-                        ? <span><RenderNavs navs={item === "Menu" ? header.subMenu : item === "Menu Two" ? header.subMenuTwo : []} /></span>
+                        ? <span
+                            className="absolute top-6 left-0.5 z-10 
+                            bg-slate-600 py-1"
+                        >
+                            <RenderNavs navs={item === "Menu" ? header.subMenu : item === "Menu Two" ? header.subMenuTwo : []} subMenu={true} />
+                        </span>
                         : null
                 }
             </span>

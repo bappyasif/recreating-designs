@@ -1,9 +1,10 @@
 import { useState } from "react"
 import { galleries, testimonials } from "../../data"
+import { useOnButtonSliders } from "../../hooks"
 
 export const Showcasing = () => {
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-center mx-auto w-2/3">
         <ShowTestimonials />
         <PhotoGalleries />
     </div>
@@ -11,24 +12,26 @@ export const Showcasing = () => {
 }
 
 const ShowTestimonials = () => {
-    const [testimony, setTestimony] = useState("Jane Doe")
+    // const [testimony, setTestimony] = useState("Jane Doe")
 
     // const renderItems = () => testimonials.map(item)
 
-    const getTestimony = () => testimonials.filter(item => item.name === testimony)[0]
+    const {handleSlide, slideName} = useOnButtonSliders("Jane Doe")
+
+    const getTestimony = () => testimonials.filter(item => item.name === slideName)[0]
 
     const getClients = () => testimonials.map(item => item.name);
 
-    const handleClient = (name) => setTestimony(name);
+    // const handleClient = (name) => setTestimony(name);
 
     // console.log(getTestimony(), getClients())
 
     return (
-        <div>
+        <div className="flex flex-col gap-6 w-2/4">
             <p>Testimonials</p>
             <h1>Satisfied Customers</h1>
             <ShowTestimonial item={getTestimony()} />
-            <TestimonyButtons clients={getClients()} handleClient={handleClient} />
+            <SliderButtons slides={getClients()} handleSlide={handleSlide} />
             
             {/* <div>
                 {renderItems()}
@@ -37,8 +40,8 @@ const ShowTestimonials = () => {
     )
 }
 
-const TestimonyButtons = ({clients, handleClient}) => {
-    const renderItems = () => clients?.map(item => <button onClick={() => handleClient(item)}>[.]</button>)
+export const SliderButtons = ({slides, handleSlide}) => {
+    const renderItems = () => slides?.map(item => <button onClick={() => handleSlide(item)}>[.]</button>)
     return (
         <div className="flex gap-4">
             {renderItems()}
@@ -63,10 +66,10 @@ const PhotoGalleries = () => {
     const renderItems = () => galleries.map((item, idx) => idx < 4 && <RenderPhoto key={idx} item={item.img} />)
 
     return (
-        <div>
+        <div className="flex flex-col gap-6">
             <p>galleries</p>
             <h2>photo galleries</h2>
-            <div className="flex gap-4 flex-wrap">
+            <div className="flex gap-10 flex-wrap">
                 {renderItems()}
             </div>
         </div>
@@ -76,7 +79,7 @@ const PhotoGalleries = () => {
 const RenderPhoto = ({item}) => {
     return (
         <img 
-            className="w-60 h-60"
+            className="w-80 h-60"
             src={item} 
             alt={item} 
         />
