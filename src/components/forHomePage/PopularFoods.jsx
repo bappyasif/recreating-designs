@@ -16,10 +16,10 @@ export const PopularFoods = () => {
         return popular.findIndex(item => item.heading === whichType) + 1
     }
 
-    console.log(whichType, getFoods())
+    // console.log(whichType, getFoods())
 
     return (
-        <div className="flex justify-center gap-10">
+        <div className="flex justify-center gap-10 w-full items-center">
             <RenderHeadings items={headings} updateType={updateType} />
             <RenderFoods items={getFoods()} idx={findIdxOfWhichTytpeFood()} type={whichType} />
         </div>
@@ -30,7 +30,7 @@ const RenderHeadings = ({ items, updateType }) => {
     const renderItems = () => items.map(item => <RenderHeading key={item} item={item} updateType={updateType} />);
 
     return (
-        <div className="flex flex-col gap-4 w-1/3 items-center">
+        <div className="flex flex-col gap-4 w-1/3 items-center" style={{minWidth: "400px"}}>
             {renderItems()}
         </div>
     )
@@ -41,7 +41,7 @@ const RenderHeading = ({ item, updateType }) => {
         updateType(item)
     }
     return (
-        <h2 className="bg-slate-600 w-60 py-2 text-center rounded-full text-4xl" onClick={handleClick}>{item}</h2>
+        <button className="bg-slate-600 w-60 py-2 text-center rounded-full text-4xl" onClick={handleClick}>{item}</button>
     )
 }
 
@@ -49,12 +49,12 @@ const RenderFoods = ({ items, type, idx }) => {
     const renderItems = () => items.map(item => <RenderFood key={item.name} item={item} />);
 
     return (
-        <div className="flex justify-center">
+        <div className="flex flex-col justify-between" style={{width: "800px"}}>
             <div className="flex justify-between">
                 <p>{type}</p>
                 <p>{idx}/4</p>
             </div>
-            <div className="flex gap-4 justify-between flex-wrap w-2/3">{renderItems()}</div>
+            <div className="flex gap-4 justify-between flex-wrap">{renderItems()}</div>
         </div>
     )
 }
@@ -63,8 +63,8 @@ const RenderFood = ({ item }) => {
     const { name, price, img } = item;
 
     return (
-        <div className="w-1/3">
-            <img className="w-80 h-80" src={img} alt={name} />
+        <div className="w-2/5 flex flex-col">
+            <img className="w-full h-60" src={img} alt={name} />
             <h2>{name}</h2>
             <h3>{price}</h3>
         </div>
@@ -75,10 +75,10 @@ export const PopularDesserts = () => {
     const renderItems = () => desserts.map(item => <RenderDessert key={item.name} item={item} />);
 
     return (
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 w-full">
             <p>Choose Desserts</p>
-            <h2>Popular Desserts</h2>
-            <div className="flex gap-6">
+            <h2 className="text-4xl">Popular Desserts</h2>
+            <div className="flex gap-6 justify-between w-3/4">
                 {renderItems()}
             </div>
         </div>
@@ -89,9 +89,9 @@ const RenderDessert = ({ item }) => {
     const { name, price, img } = item;
 
     return (
-        <div>
-            <img className="w-40 h-60" src={img} alt={name} />
-            <div>
+        <div className="flex gap-2 items-center">
+            <img className="w-32 h-20 rounded-full" src={img} alt={name} />
+            <div className="text-2xl">
                 <h2>{name}</h2>
                 <h3>{price}</h3>
             </div>

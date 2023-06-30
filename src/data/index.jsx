@@ -1,3 +1,6 @@
+import { CgFacebook } from "react-icons/cg";
+import {TiSocialFacebookCircular, TiSocialPinterestCircular, TiSocialTumblerCircular, TiSocialVimeoCircular, TiSocialInstagramCircular, TiSocialTwitterCircular} from "react-icons/ti"
+
 export const header = {
     navs: ["Home", "Menu", "Events", "Gallery", "About", "Contact"],
     subMenu: ["Elements", "Menu Two", "Menu Three"],
@@ -9,7 +12,7 @@ export const hero = {
     heading: "Treat Yourself",
     description: "Here is a fine ad lean dish for your cravings. this is curated humanely and by not dessimating nature.",
     socials: [
-        { icon: "A", name: "facebook" }, { icon: "B", name: "Twitter" }, { icon: "C", name: "Instagram" }, { icon: "D", name: "Pinterest" }, { icon: "E", name: "Reddit" }, { icon: "F", name: "Behance" }
+        { icon: <TiSocialFacebookCircular />, name: "facebook" }, { icon: <TiSocialTwitterCircular />, name: "Twitter" }, { icon: <TiSocialInstagramCircular />, name: "Instagram" }, { icon: <TiSocialPinterestCircular />, name: "Pinterest" }, { icon: <TiSocialVimeoCircular />, name: "Vimeo" }, { icon: <TiSocialTumblerCircular />, name: "Tumbler" }
     ]
 };
 
@@ -60,34 +63,43 @@ export const desserts = [
 ];
 
 export const testimonials = [
-    { name: "Jane Doe", role: "Founder", text: "some text is here to show my recommendation for this named resturant", img: "https://source.unsplash.com/random/?profile,picture,lady" },
-    { name: "Jane Daisy", role: "Founder", text: "some text is here to show my recommendation for this named resturant", img: "https://source.unsplash.com/random/?profile,picture,babe" },
-    { name: "Jolly Dolly", role: "Founder", text: "some text is here to show my recommendation for this named resturant", img: "https://source.unsplash.com/random/?profile,picture,woman" },
-    { name: "Joris Dory", role: "Founder", text: "some text is here to show my recommendation for this named resturant", img: "https://source.unsplash.com/random/?profile,picture,professional,woman" }
+    { name: "Jane Doe", role: "Founder", text: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.", img: "https://source.unsplash.com/random/?profile,picture,lady" },
+    { name: "Jane Daisy", role: "Founder", text: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.", img: "https://source.unsplash.com/random/?profile,picture,babe" },
+    { name: "Jolly Dolly", role: "Founder", text: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.", img: "https://source.unsplash.com/random/?profile,picture,woman" },
+    { name: "Joris Dory", role: "Founder", text: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.", img: "https://source.unsplash.com/random/?profile,picture,professional,woman" }
 ];
 
 export const galleries = [
-    { img: "https://loremflickr.com/320/240/random=1" },
-    { img: "https://loremflickr.com/320/240/random=2" },
-    { img: "https://loremflickr.com/320/240/random=3" },
-    { img: "https://loremflickr.com/320/240/random=4" },
-    { img: "https://loremflickr.com/320/240/random=5" },
-    { img: "https://loremflickr.com/320/240/random=6" },
-    { img: "https://loremflickr.com/320/240/random=7" },
-    { img: "https://loremflickr.com/320/240/random=8" },
-    { img: "https://loremflickr.com/320/240/random=9" },
+    // { img: "https://loremflickr.com/320/240/random=1" },
+    // { img: "https://loremflickr.com/320/240/random=2" },
+    // { img: "https://loremflickr.com/320/240/random=3" },
+    // { img: "https://loremflickr.com/320/240/random=4" },
+    // { img: "https://loremflickr.com/320/240/random=5" },
+    // { img: "https://loremflickr.com/320/240/random=6" },
+    // { img: "https://loremflickr.com/320/240/random=7" },
+    // { img: "https://loremflickr.com/320/240/random=8" },
+    // { img: "https://loremflickr.com/320/240/random=9" },
     // { img: "https://loremflickr.com/320/240/food,popular,dish,picture,1" },
     // { img: "https://loremflickr.com/320/240/food,popular,dish,picture,2" },
     // { img: "https://source.unsplash.com/random/?food,popular,dish,picture,2" },
+    { img: "https://source.unsplash.com/random/?food,popular,dish,picture,1" },
+    { img: "https://source.unsplash.com/random/?food,popular,dish,picture,2" },
+    { img: "https://source.unsplash.com/random/?food,popular,dish,picture,3" },
+    { img: "https://source.unsplash.com/random/?food,popular,dish,picture,4" },
+    { img: "https://source.unsplash.com/random/?food,popular,dish,picture,8" },
+    { img: "https://source.unsplash.com/random/?food,popular,dish,picture,7" },
+    { img: "https://source.unsplash.com/random/?food,popular,dish,picture,6" },
+    { img: "https://source.unsplash.com/random/?food,popular,dish,picture,5" },
+    { img: "https://source.unsplash.com/random/?food,popular,dish,picture,9" }
 ];
 
 export const events = {
     headings: {
         title: "Enjoy Our Events Specials",
-        description: "pleanty of thing srthat you can do from this offer. check out our details or call us at your convenience"
+        description: "pleanty of thing srthat you can do from this offer. check out our details or call us at your convenience. pleanty of thing srthat you can do from this offer. check out our details or call us at your convenience"
     },
     offers: [
-        { price: "$220", name: "Birthday Party", description: "some detail information about this offer is here. add some mroe text for better view", perks: ["this is available", "that is available", "non top fun", "engaging crowd"], img: "https://source.unsplash.com/random/?event,birthday,party,celebration" },
+        { price: "$220", name: "Birthday Party", description: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.", perks: ["this is available", "that is available", "non top fun", "engaging crowd"], img: "https://source.unsplash.com/random/?event,birthday,party,celebration" },
         { price: "$440", name: "Guest Chief Night Party", description: "some detail information about this offer is here. add some mroe text for better view", perks: ["this is available", "that is available", "non top fun", "engaging crowd"], img: "https://source.unsplash.com/random/?event,night,party,celebration" },
         { price: "$660", name: "Gala Party", description: "some detail information about this offer is here. add some mroe text for better view", perks: ["this is available", "that is available", "non top fun", "engaging crowd"], img: "https://source.unsplash.com/random/?event,gala,party,celebration" },
         { price: "$880", name: "Corporate Party", description: "some detail information about this offer is here. add some mroe text for better view", perks: ["this is available", "that is available", "non top fun", "engaging crowd"], img: "https://source.unsplash.com/random/?event,corporate,party,celebration" }
@@ -158,23 +170,23 @@ export const menuPage = {
             { title: "Special Events", description: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean." }
         ],
         gallery: [
-            { img: "https://loremflickr.com/320/240/random=1" },
-            { img: "https://loremflickr.com/320/240/random=2" },
-            { img: "https://loremflickr.com/320/240/random=3" },
-            { img: "https://loremflickr.com/320/240/random=4" },
-            { img: "https://loremflickr.com/320/240/random=5" },
-            { img: "https://loremflickr.com/320/240/random=6" },
-            { img: "https://loremflickr.com/320/240/random=7" },
-            { img: "https://loremflickr.com/320/240/random=8" },
-            { img: "https://loremflickr.com/320/240/random=9" },
-            // { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,2" },
-            // { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,3" },
-            // { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,4" },
-            // { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,5" },
-            // { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,6" },
-            // { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,7" },
-            // { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,8" },
-            // { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,9" },
+            // { img: "https://loremflickr.com/320/240/random=1" },
+            // { img: "https://loremflickr.com/320/240/random=2" },
+            // { img: "https://loremflickr.com/320/240/random=3" },
+            // { img: "https://loremflickr.com/320/240/random=4" },
+            // { img: "https://loremflickr.com/320/240/random=5" },
+            // { img: "https://loremflickr.com/320/240/random=6" },
+            // { img: "https://loremflickr.com/320/240/random=7" },
+            // { img: "https://loremflickr.com/320/240/random=8" },
+            // { img: "https://loremflickr.com/320/240/random=9" },
+            { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,2" },
+            { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,3" },
+            { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,4" },
+            { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,5" },
+            { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,6" },
+            { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,7" },
+            { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,8" },
+            { img: "https://source.unsplash.com/random/?food,popular,cuisine,picture,9" },
         ],
         reasons: [
             { icon: "AA", text: "Far far away, behind the word" },

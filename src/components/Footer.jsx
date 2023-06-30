@@ -20,7 +20,7 @@ const AboutCompany = () => {
     const { socials, title } = connect;
 
     return (
-        <div>
+        <div className='flex flex-col gap-6 justify-between'>
             <h2>{heading}</h2>
             <p>{description}</p>
             <div>
@@ -47,9 +47,9 @@ const FooterLinks = ({ item }) => {
     const renderItems = () => items.map(item => <p key={item}>{item}</p>)
 
     return (
-        <div>
-            <h2>{heading}</h2>
-            <div>{renderItems()}</div>
+        <div className='flex flex-col gap-2'>
+            <h2 className='text-2xl'>{heading}</h2>
+            <div className='flex flex-col gap-2'>{renderItems()}</div>
         </div>
     )
 }
@@ -58,7 +58,8 @@ const CompanyContacts = () => {
     const { line1, line2, line3, line4 } = footers.contact;
 
     return (
-        <div>
+        <div className='flex flex-col gap-2'>
+            <h2 className='text-2xl'>Contact</h2>
             <p>{line1}</p>
             <p>{line2}</p>
             <p>{line3}</p>

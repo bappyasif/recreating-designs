@@ -5,7 +5,7 @@ import { useOnButtonSliders } from '../../hooks'
 
 export const Perks = () => {
     return (
-        <div className='flex flex-col gap-6'>
+        <div className='flex flex-col gap-20 w-2/3'>
             <EventsHeadings />
             <EventsSliders />
         </div>
@@ -15,10 +15,10 @@ export const Perks = () => {
 const EventsHeadings = () => {
     const { title, description } = events.headings;
     return (
-        <div className='flex flex-col gap-6 items-center'>
+        <div className='flex flex-col gap-6 items-center w-3/4 mx-auto'>
             <p>Events</p>
-            <h2>{title}</h2>
-            <p>{description}</p>
+            <h2 className='text-6xl'>{title}</h2>
+            <p className=''>{description}</p>
         </div>
     )
 }
@@ -46,12 +46,20 @@ const ShowSlide = ({ item }) => {
 
     const renderPerks = () => perks.map(item => <li key={item}>{item}</li>)
 
+    const decideFlow = () => {
+        if (["Birthday Party", "Gala Party"].includes(name)) {
+            return true
+        } else {
+            return false
+        }
+    }
+
     return (
-        <div className='flex gap-6'>
-            <img className="w-40 h-40 rounded-full" src={img} alt={name} />
-            <div>
-                <h2>{price}</h2>
-                <h2>{name}</h2>
+        <div className={`flex ${decideFlow() ? "flex-row-reverse" : "flex-row"} gap-6 `}>
+            <img className="w-1/2 h-72 rounded-xl" src={img} alt={name} />
+            <div className='w-1/2 flex flex-col gap-4'>
+                <h2 className='text-2xl'>{price}</h2>
+                <h2 className='text-4xl'>{name}</h2>
                 <p>{description}</p>
                 <ul className='list-inside list-disc'>
                     {renderPerks()}

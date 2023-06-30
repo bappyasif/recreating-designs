@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { header } from "../data"
+import { CgArrowDown, CgArrowDownO } from "react-icons/cg"
 
 export const Header = () => {
     return (
@@ -36,16 +37,17 @@ const RenderNavItem = ({ item }) => {
 
     return (
         <div
-            className="relative flex w-max"
+            className="relative flex text-xl gap-2 items-baseline justify-center px-6"
         >
-            <span className="w-32 text-center" onClick={handleClose}>{item}</span>
+            <span className="w-max text-center text-2xl" onClick={handleClose}>{item}</span>
             <span
+                className=""
                 // onClick={(item === "Menu") ? handleToggle : item === "Menu Two" ? handleOpen : null}
                 onClick={(item === "Menu" || item === "Menu Two") ? handleToggle : null}
             >
                 {
                     (item === "Menu" || item === "Menu Two")
-                        ? " \\/"
+                        ? <span className="text-2xl"><CgArrowDownO /></span>
                         : null
                 }
             </span>
@@ -53,7 +55,7 @@ const RenderNavItem = ({ item }) => {
                 {
                     show
                         ? <span
-                            className="absolute top-6 left-0.5 z-10 
+                            className="absolute top-0 -left-10 z-10 
                             bg-slate-600 py-1"
                         >
                             <RenderNavs navs={item === "Menu" ? header.subMenu : item === "Menu Two" ? header.subMenuTwo : []} subMenu={true} />
@@ -67,6 +69,6 @@ const RenderNavItem = ({ item }) => {
 
 const BookTable = () => {
     return (
-        <button className="h-fit">Book Table</button>
+        <button className="h-fit p-0 px-10 py-1">Book Table</button>
     )
 }

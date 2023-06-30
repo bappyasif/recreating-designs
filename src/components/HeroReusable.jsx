@@ -70,7 +70,7 @@ const RenderSocial = ({ item }) => {
 
     return (
         <div title={name}>
-            <span>{icon}</span>
+            <span className="text-4xl">{icon}</span>
         </div>
     )
 }

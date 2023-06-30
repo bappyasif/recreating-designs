@@ -9,7 +9,7 @@ import { hero } from "../data"
 export const Home = () => {
   return (
     <div 
-      className="flex flex-col items-center gap-10"
+      className="flex flex-col items-center gap-20"
     >
         <Header />
         <HeroReusable items={hero} />
