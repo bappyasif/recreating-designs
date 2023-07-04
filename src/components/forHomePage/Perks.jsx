@@ -41,7 +41,7 @@ const EventsSliders = () => {
     )
 }
 
-const ShowSlide = ({ item }) => {
+export const ShowSlide = ({ item }) => {
     const { name, price, description, img, perks } = item;
 
     const renderPerks = () => perks.map(item => <li key={item}>{item}</li>)

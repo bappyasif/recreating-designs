@@ -19,7 +19,7 @@ export const PopularFoods = () => {
     // console.log(whichType, getFoods())
 
     return (
-        <div className="flex justify-center gap-10 w-full items-center">
+        <div className="flex justify-between gap-0 w-2/3 items-center">
             <RenderHeadings items={headings} updateType={updateType} />
             <RenderFoods items={getFoods()} idx={findIdxOfWhichTytpeFood()} type={whichType} />
         </div>
@@ -30,7 +30,7 @@ const RenderHeadings = ({ items, updateType }) => {
     const renderItems = () => items.map(item => <RenderHeading key={item} item={item} updateType={updateType} />);
 
     return (
-        <div className="flex flex-col gap-4 w-1/3 items-center" style={{minWidth: "400px"}}>
+        <div className="flex flex-col gap-4 items-center" style={{minWidth: "400px"}}>
             {renderItems()}
         </div>
     )

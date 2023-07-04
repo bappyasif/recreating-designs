@@ -4,6 +4,7 @@ import { HeroReusable } from '../components/HeroReusable'
 import { BookTable, Perks } from '../components/forHomePage/Perks'
 import { Footer } from '../components/Footer'
 import { hero } from '../data'
+import { AllEvents } from '../components/forAllOtherPages'
 
 export const Events = () => {
     return (
@@ -12,7 +13,8 @@ export const Events = () => {
         >
             <Header />
             <HeroReusable items={hero} />
-            <Perks />
+            {/* <Perks /> */}
+            <AllEvents />
             <BookTable />
             <Footer />
         </div>

@@ -1,5 +1,6 @@
-import { chefs, choose, contacts, galleries } from "../../data"
+import { chefs, choose, contacts, events, galleries } from "../../data"
 import { RenderSocials } from "../HeroReusable"
+import { ShowSlide } from "../forHomePage/Perks"
 
 export const FoodsGallery = () => {
     const renderItems = () => galleries.map(item => <img className="w-1/4 h-80 rounded-xl hover:object-cover" src={item.img} alt={item.img} key={item.img} />)
@@ -78,10 +79,10 @@ const RenderInfo = ({ item }) => {
     const { heading, line1, line2, icon } = item;
 
     return (
-        <div className="flex gap-4">
-            <div>{icon}</div>
+        <div className="flex gap-4 items-start">
+            <div className="bg-slate-600 p-2 rounded-full text-4xl">{icon}</div>
             <div>
-                <h2>{heading}</h2>
+                <h2 className="text-2xl">{heading}</h2>
                 <p>{line1}</p>
                 {line2 ? <p>{line2}</p> : null}
             </div>
@@ -107,9 +108,20 @@ const RenderField = ({ item }) => {
             <p>{label}</p>
             {
                 label === "Message"
-                    ? <textarea cols={36} rows={9} />
+                    ? <textarea placeholder="type your message here" cols={36} rows={9} />
                     : <input className="w-full" type={type} placeholder={placeholder} />
             }
+        </div>
+    )
+}
+
+export const AllEvents = () => {
+    const renderEvents = () => events.offers.map(item => <ShowSlide key={item.name} item={item} />)
+
+    return (
+        <div className="w-3/4 mx-auto">
+            <h2>All Events</h2>
+            <div className="flex flex-col gap-6">{renderEvents()}</div>
         </div>
     )
 }

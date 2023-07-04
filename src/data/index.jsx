@@ -1,5 +1,5 @@
-import { CgFacebook } from "react-icons/cg";
-import {TiSocialFacebookCircular, TiSocialPinterestCircular, TiSocialTumblerCircular, TiSocialVimeoCircular, TiSocialInstagramCircular, TiSocialTwitterCircular} from "react-icons/ti"
+import { CgFacebook, CgMail, CgPhone } from "react-icons/cg";
+import {TiSocialFacebookCircular, TiSocialPinterestCircular, TiSocialTumblerCircular, TiSocialVimeoCircular, TiSocialInstagramCircular, TiSocialTwitterCircular, TiLocation, TiTime} from "react-icons/ti"
 
 export const header = {
     navs: ["Home", "Menu", "Events", "Gallery", "About", "Contact"],
@@ -149,10 +149,10 @@ export const chefs = [
 
 export const contacts = {
     details: [
-        { heading: "Location:", line1: "43 Raymouth Rd. Baltemoer, London 3910", icon: "AA" },
-        { heading: "Open Hours:", line1: "Open Hours", line2: "11:00 AM - 2300 PM", icon: "BB" },
-        { heading: "Email:", line1: "info@abcd.com", icon: "CC" },
-        { heading: "Open Hours:", line1: "+1 1234 55488 55", icon: "DD" }
+        { heading: "Location:", line1: "43 Raymouth Rd. Baltemoer, London 3910", icon: <TiLocation /> },
+        { heading: "Open Hours:", line1: "Monday-Sunday", line2: "11:00 AM - 10:00 PM", icon: <TiTime /> },
+        { heading: "Email:", line1: "info@abcd.com", icon: <CgMail /> },
+        { heading: "Call Us:", line1: "+1 1234 55488 55", icon: <CgPhone /> }
     ],
     fields: [
         { label: "Name", placeholder: "Your Name", type: "text" },
