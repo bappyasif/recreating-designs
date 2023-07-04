@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { header } from "../data"
 import { CgArrowDown, CgArrowDownO } from "react-icons/cg"
+import { Link } from "react-router-dom"
 
 export const Header = () => {
     return (
@@ -39,7 +40,7 @@ const RenderNavItem = ({ item }) => {
         <div
             className="relative flex text-xl gap-2 items-baseline justify-center px-6"
         >
-            <span className="w-max text-center text-2xl" onClick={handleClose}>{item}</span>
+            <Link to={`/${item !== "Home" ? item.toLowerCase(): ""}`} className="w-max text-center text-2xl" onClick={handleClose}>{item}</Link>
             <span
                 className=""
                 // onClick={(item === "Menu") ? handleToggle : item === "Menu Two" ? handleOpen : null}

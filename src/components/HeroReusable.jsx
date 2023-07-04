@@ -27,9 +27,13 @@ export const HeroReusable = ({ items }) => {
                 <RenderDescription item={description} />
                 <RenderSocials items={socials} />
             </div> */}
-            <RenderSubHeading item={subHeading} />
-            <RenderHeading item={heading} />
-            <RenderDescription item={description} />
+            <div className="flex flex-col gap-6 items-center">
+                <RenderSubHeading item={subHeading} />
+                <div className="flex flex-col gap-0 items-center">
+                    <RenderHeading item={heading} />
+                    <RenderDescription item={description} />
+                </div>
+            </div>
             <div className="absolute bottom-0 right-0">
                 <RenderSocials items={socials} />
             </div>
@@ -39,19 +43,19 @@ export const HeroReusable = ({ items }) => {
 
 const RenderSubHeading = ({ item }) => {
     return (
-        <p>{item}</p>
+        <p className="text-2xl">{item}</p>
     )
 }
 
 const RenderHeading = ({ item }) => {
     return (
-        <h2>{item}</h2>
+        <h2 className="text-7xl font-bold">{item}</h2>
     )
 }
 
 const RenderDescription = ({ item }) => {
     return (
-        <p>{item}</p>
+        <p className="text-4xl w-3/5 text-center">{item}</p>
     )
 }
 

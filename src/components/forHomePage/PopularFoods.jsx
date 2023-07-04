@@ -50,7 +50,7 @@ const RenderFoods = ({ items, type, idx }) => {
 
     return (
         <div className="flex flex-col justify-between" style={{width: "800px"}}>
-            <div className="flex justify-between">
+            <div className="flex justify-between text-2xl">
                 <p>{type}</p>
                 <p>{idx}/4</p>
             </div>
@@ -63,9 +63,9 @@ const RenderFood = ({ item }) => {
     const { name, price, img } = item;
 
     return (
-        <div className="w-2/5 flex flex-col">
-            <img className="w-full h-60" src={img} alt={name} />
-            <h2>{name}</h2>
+        <div className="w-2/5 flex flex-col text-xl">
+            <img className="w-full h-60 rounded-xl" src={img} alt={name} />
+            <h2 className="">{name}</h2>
             <h3>{price}</h3>
         </div>
     )
