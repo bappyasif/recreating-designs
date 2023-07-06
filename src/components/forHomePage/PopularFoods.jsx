@@ -30,7 +30,7 @@ const RenderHeadings = ({ items, updateType }) => {
     const renderItems = () => items.map(item => <RenderHeading key={item} item={item} updateType={updateType} />);
 
     return (
-        <div className="flex flex-col gap-4 items-center" style={{minWidth: "400px"}}>
+        <div className="flex flex-col gap-4 items-baseline" style={{minWidth: "400px"}}>
             {renderItems()}
         </div>
     )

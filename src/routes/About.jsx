@@ -8,15 +8,17 @@ import { ChooseUs, OurChefs } from '../components/forAllOtherPages'
 
 export const About = () => {
   return (
-    <div 
+    <div
       className="flex flex-col items-center gap-20"
     >
+      <div className="w-full">
         <Header />
         <HeroReusable items={hero} />
-        <ChooseUs />
-        <OurChefs />
-        <BookTable />
-        <Footer />
+      </div>
+      <ChooseUs />
+      <OurChefs />
+      <BookTable />
+      <Footer />
     </div>
   )
 }

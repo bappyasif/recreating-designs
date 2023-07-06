@@ -11,8 +11,10 @@ export const Contact = () => {
         <div
             className="flex flex-col items-center gap-20"
         >
-            <Header />
-            <HeroReusable items={hero} />
+            <div className="w-full">
+                <Header />
+                <HeroReusable items={hero} />
+            </div>
             <RenderContacts />
             <BookTable />
             <Footer />

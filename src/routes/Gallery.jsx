@@ -8,14 +8,16 @@ import { FoodsGallery } from '../components/forAllOtherPages'
 
 export const Gallery = () => {
   return (
-    <div 
+    <div
       className="flex flex-col items-center gap-20"
     >
+      <div className="w-full">
         <Header />
         <HeroReusable items={hero} />
-        <FoodsGallery />
-        <Showcasing />
-        <Footer />
+      </div>
+      <FoodsGallery />
+      <Showcasing />
+      <Footer />
     </div>
   )
 }

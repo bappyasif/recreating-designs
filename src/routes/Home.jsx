@@ -8,17 +8,19 @@ import { hero } from "../data"
 
 export const Home = () => {
   return (
-    <div 
+    <div
       className="flex flex-col items-center gap-20"
     >
+      <div className="w-full">
         <Header />
         <HeroReusable items={hero} />
-        <PopularFoods />
-        <PopularDesserts />
-        <Showcasing />
-        <Perks />
-        <BookTable />
-        <Footer />
+      </div>
+      <PopularFoods />
+      <PopularDesserts />
+      <Showcasing />
+      <Perks />
+      <BookTable />
+      <Footer />
     </div>
   )
 }

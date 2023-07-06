@@ -74,9 +74,9 @@ export const BookTable = () => {
     return (
         <div className='flex flex-col items-center gap-6'>
             <p>{subHeading}</p>
-            <h2>{heading}</h2>
-            <p>{description}</p>
-            <button>Book Your Table Now</button>
+            <h2 className='text-4xl'>{heading}</h2>
+            <p className='text-xl'>{description}</p>
+            <button className='h-fit p-0 px-10 py-1 text-2xl'>Book Your Table Now</button>
         </div>
     )
 }
