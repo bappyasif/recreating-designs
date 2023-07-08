@@ -5,7 +5,7 @@ import { useOnButtonSliders } from '../../hooks'
 
 export const Perks = () => {
     return (
-        <div className='flex flex-col gap-20 w-2/3'>
+        <div className='flex flex-col gap-20 xxs:w-full lg:w-2/3'>
             <EventsHeadings />
             <EventsSliders />
         </div>
@@ -17,8 +17,8 @@ const EventsHeadings = () => {
     return (
         <div className='flex flex-col gap-6 items-center w-3/4 mx-auto'>
             <p>Events</p>
-            <h2 className='text-6xl'>{title}</h2>
-            <p className=''>{description}</p>
+            <h2 className='xxs:text-2xl lg:text-6xl'>{title}</h2>
+            <p className='xxs:text-sm lg:text-xl'>{description}</p>
         </div>
     )
 }
@@ -55,9 +55,9 @@ export const ShowSlide = ({ item }) => {
     }
 
     return (
-        <div className={`flex ${decideFlow() ? "flex-row-reverse" : "flex-row"} gap-6 `}>
-            <img className="w-1/2 h-72 rounded-xl" src={img} alt={name} />
-            <div className='w-1/2 flex flex-col gap-4'>
+        <div className={`flex xxs:flex-col ${decideFlow() ? "lg:flex-row-reverse" : "lg:flex-row"} gap-6 `}>
+            <img className="lg:w-1/2 h-72 rounded-xl" src={img} alt={name} />
+            <div className='lg:w-1/2 flex flex-col gap-4'>
                 <h2 className='text-2xl'>{price}</h2>
                 <h2 className='text-4xl'>{name}</h2>
                 <p>{description}</p>
@@ -74,9 +74,9 @@ export const BookTable = () => {
     return (
         <div className='flex flex-col items-center gap-6'>
             <p>{subHeading}</p>
-            <h2 className='text-4xl'>{heading}</h2>
-            <p className='text-xl'>{description}</p>
-            <button className='h-fit p-0 px-10 py-1 text-2xl'>Book Your Table Now</button>
+            <h2 className='xxs:text-xl lg:text-4xl'>{heading}</h2>
+            <p className='xxs:text-sm lg:text-xl'>{description}</p>
+            <button className='h-fit p-0 px-10 py-1 xxs:text-xl lg:text-2xl'>Book Your Table Now</button>
         </div>
     )
 }

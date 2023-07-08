@@ -5,7 +5,7 @@ import { RenderSocials } from './HeroReusable'
 export const Footer = () => {
     return (
         <div className='flex flex-col items-center gap-6'>
-            <div className='flex justify-between gap-4'>
+            <div className='flex xxs:flex-col lg:flex-row justify-between gap-4'>
                 <AboutCompany />
                 <RenderFooterLinks />
                 <CompanyContacts />
@@ -35,7 +35,7 @@ const RenderFooterLinks = () => {
     const renderLinks = () => footers.links.map(item => <FooterLinks key={item.heading} item={item} />)
 
     return (
-        <div className='flex gap-6 w-2/4 justify-evenly'>
+        <div className='flex xxs:flex-col lg:flex-row gap-6 xxs:w-full lg:w-2/4 justify-evenly'>
             {renderLinks()}
         </div>
     )

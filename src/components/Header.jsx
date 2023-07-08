@@ -1,14 +1,41 @@
 import { useState } from "react"
 import { header } from "../data"
-import { CgArrowDown, CgArrowDownO } from "react-icons/cg"
+import { CgArrowDown, CgArrowDownO, CgMenu } from "react-icons/cg"
 import { Link } from "react-router-dom"
 
 export const Header = () => {
     return (
         <div className="flex justify-between w-full py-4 px-2">
             <Company />
-            <RenderNavs navs={header.navs} />
-            <BookTable />
+            <span className="xxs:hidden lg:block"><RenderNavs navs={header.navs} /></span>
+            <div className="flex gap-4 place-items-end">
+                <BookTable />
+                <NavsInDropDowns />
+            </div>
+        </div>
+    )
+}
+
+const NavsInDropDowns = () => {
+    const [open, setOpen] = useState(false);
+
+    const handleToggle = () => setOpen(prev => !prev);
+
+    const renderNavItems = () => header.navs.map(item => <Link to={`/${item !== "Home" ? item.toLowerCase() : ""}`} key={item}>{item}</Link>)
+
+    const renderNavs =
+        <div className="absolute right-0 z-40 bg-slate-800 w-24 text-right px-4 py-2 flex flex-col gap-2">
+            {renderNavItems()}
+        </div>
+
+    return (
+        <div className="xxs:block lg:hidden relative">
+            <p className="text-4xl" onClick={handleToggle}><CgMenu /></p>
+            {
+                open
+                    ? renderNavs
+                    : null
+            }
         </div>
     )
 }
@@ -106,6 +133,6 @@ const ShowSubmenus = ({ show, item }) => {
 
 const BookTable = () => {
     return (
-        <button className="h-fit p-0 px-10 py-1 text-2xl">Book Table</button>
+        <button className="h-fit p-0 xxs:px-4 lg:px-10 py-1 xxs:text-xl lg:text-2xl">Book Table</button>
     )
 }

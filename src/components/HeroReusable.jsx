@@ -43,19 +43,19 @@ export const HeroReusable = ({ items }) => {
 
 const RenderSubHeading = ({ item }) => {
     return (
-        <p className="text-2xl">{item}</p>
+        <p className="xxs:text-lg lg:text-2xl">{item}</p>
     )
 }
 
 const RenderHeading = ({ item }) => {
     return (
-        <h2 className="text-7xl font-bold">{item}</h2>
+        <h2 className="xxs:text-5xl lg:text-7xl font-bold">{item}</h2>
     )
 }
 
 const RenderDescription = ({ item }) => {
     return (
-        <p className="text-4xl w-3/5 text-center">{item}</p>
+        <p className="xxs:text-sm lg:text-4xl w-3/5 text-center">{item}</p>
     )
 }
 

@@ -19,7 +19,7 @@ export const PopularFoods = () => {
     // console.log(whichType, getFoods())
 
     return (
-        <div className="flex justify-between gap-0 w-2/3 items-center">
+        <div className="flex xxs:flex-col lg:flex-row justify-between gap-0 xxs:w-full lg:w-2/3 items-center">
             <RenderHeadings items={headings} updateType={updateType} />
             <RenderFoods items={getFoods()} idx={findIdxOfWhichTytpeFood()} type={whichType} />
         </div>
@@ -30,7 +30,7 @@ const RenderHeadings = ({ items, updateType }) => {
     const renderItems = () => items.map(item => <RenderHeading key={item} item={item} updateType={updateType} />);
 
     return (
-        <div className="flex flex-col gap-4 items-baseline" style={{minWidth: "400px"}}>
+        <div className="flex xxs:flex-row flex-wrap xxs:justify-center lg:flex-col gap-4 items-baseline" style={{ minWidth: "400px" }}>
             {renderItems()}
         </div>
     )
@@ -49,13 +49,26 @@ const RenderFoods = ({ items, type, idx }) => {
     const renderItems = () => items.map(item => <RenderFood key={item.name} item={item} />);
 
     return (
-        <div className="flex flex-col justify-between" style={{width: "800px"}}>
+        <>
+            <div className="xxs:hidden lg:flex flex-col justify-between" style={{ width: "800px" }}>
+                <RenderFoodItems idx={idx} renderItems={renderItems} type={type} />
+            </div>
+            <div className="xxs:flex lg:hidden flex-col justify-between px-2">
+                <RenderFoodItems idx={idx} renderItems={renderItems} type={type} />
+            </div>
+        </>
+    )
+}
+
+const RenderFoodItems = ({ type, idx, renderItems }) => {
+    return (
+        <>
             <div className="flex justify-between text-2xl">
                 <p>{type}</p>
                 <p>{idx}/4</p>
             </div>
             <div className="flex gap-4 justify-between flex-wrap">{renderItems()}</div>
-        </div>
+        </>
     )
 }
 
@@ -64,7 +77,7 @@ const RenderFood = ({ item }) => {
 
     return (
         <div className="w-2/5 flex flex-col text-xl">
-            <img className="w-full h-60 rounded-xl" src={img} alt={name} />
+            <img className="w-full xxs:h-40 lg:h-60 rounded-xl" src={img} alt={name} />
             <h2 className="">{name}</h2>
             <h3>{price}</h3>
         </div>
@@ -78,7 +91,7 @@ export const PopularDesserts = () => {
         <div className="flex flex-col items-center gap-4 w-full">
             <p>Choose Desserts</p>
             <h2 className="text-4xl">Popular Desserts</h2>
-            <div className="flex gap-6 justify-between w-3/4">
+            <div className="flex gap-6 justify-between xxs:w-full lg:w-3/4 flex-wrap">
                 {renderItems()}
             </div>
         </div>
