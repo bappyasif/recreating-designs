@@ -1,6 +1,5 @@
 import React from 'react'
 import { compLogo, topNavs } from '../data'
-// import imgSrc from "../assets/logo1.png"
 import imgSrc from "../assets/logo.png"
 
 export const Header = () => {

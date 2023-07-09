@@ -13,7 +13,6 @@ export const Footer = () => {
                     <RenderNavs items={company} title={"Company"} />
                     <RenderNewsLetter item={newsletter} />
                 </div>
-                {/* <RenderNewsLetter item={newsletter} /> */}
             </div>
             <p className='h-0.5 w-full bg-slate-200 my-4'></p>
             <RenderAdditionals items={additionals} />

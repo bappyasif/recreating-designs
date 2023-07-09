@@ -18,7 +18,6 @@ const RenderProject = ({ item }) => {
 
     return (
         <div className='w-1/4'>
-            {/* <img src={"https://source.unsplash.com/random/1920x1080/?office,corporate?sig={{Math.round(Math.random()*3)}}"} alt={name} /> */}
             <img className='rounded-md' src={`https://source.unsplash.com/random/1920x1080/?office,corporate?sig=${name}`} alt={name} />
             <h2 className='font-monoton'>{name}</h2>
             <button className='p-0 text-blue-950 px-6 py-1'>More</button>

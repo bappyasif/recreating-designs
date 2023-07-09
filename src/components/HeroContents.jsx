@@ -7,7 +7,6 @@ export const HeroContents = () => {
         <div className='flex xxs:flex-col md:flex-row justify-between gap-6 px-4 relative'>
             <div
                 className='xxs:w-full md:w-2/4 flex flex-col justify-center px-16'
-                // style={{ minHeight: "540px" }}
             >
                 <HeadingTexts />
                 <SomeNumbers />

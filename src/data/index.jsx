@@ -1,15 +1,6 @@
 import {AiOutlineFileDone, AiFillCalendar, AiTwotoneMessage, AiTwotoneProfile, AiFillProfile, AiFillTwitterCircle, AiFillLinkedin, AiFillGithub, AiFillFacebook} from "react-icons/ai"
 import {BiLink, BiSearchAlt2} from "react-icons/bi"
 
-// import React from 'react'
-
-// export const Test = () => {
-//   return (
-//     <div>index</div>
-//   )
-// }
-
-
 export const topNavs = [
     "Home", "Services", "Projects", "Case Study", "Our Blog"
 ]
