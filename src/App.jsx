@@ -1,4 +1,3 @@
-import './App.css'
 import { LatestBlog } from './components/Blog'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
