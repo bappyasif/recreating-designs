@@ -1,21 +1,6 @@
 import React from 'react'
 import { heroItems } from '../../data'
 
-// export const HeroComponent = () => {
-//     const { links, search } = heroItems
-//     return (
-//         <div 
-//             // className='flex flex-col gap-4 justify-center items-center'
-//         >
-//             {/* <h2 className='text-7xl'>Let us take you away</h2> */}
-//             <div className='grid grid-cols-4 content-center place-items-center gap-x-4 opacity-90'>
-//                 <RenderSearch items={search} />
-//                 <RenderLinks items={links} />
-//             </div>
-//         </div>
-//     )
-// }
-
 export const HeroComponent = () => {
     const { links, search } = heroItems
     return (
@@ -35,8 +20,6 @@ const RenderLinks = ({ items }) => {
         >
             {renderItems()}
         </div>
-        // <div className='absolute mt-20 col-span-1 w-full self-start flex flex-col gap-4 text-xl items-end'>{renderItems()}</div>
-        // <div className='self-end flex flex-col gap-4 text-xl'>{renderItems()}</div>
     )
 }
 

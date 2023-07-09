@@ -18,7 +18,6 @@ export const Testimonials = () => {
                 <h2 className="text-4xl text-slate-900 font-bold">Testimonials</h2>
                 <ShowPieces />
             </div>
-            {/* <ShowPieces /> */}
         </div>
     )
 }

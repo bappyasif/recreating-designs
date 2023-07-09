@@ -26,21 +26,9 @@ const RenderNews = ({ item }) => {
         <div className='grid xxs:grid-cols-1 md:grid-cols-2 gap-x-8'>
             <RenderImage dd={dm?.date} />
             <div className='flex flex-col gap-4'>
-                {/* <RenderDates item={dm} /> */}
                 <RenderDateAndMonth item={dm} />
                 <RenderTexts item={ts} />
             </div>
-        </div>
-    )
-}
-
-const RenderDates = ({ item }) => {
-    const { date, month } = item;
-
-    return (
-        <div className='flex gap-4'>
-            <h2 className='text-6xl'>{date}</h2>
-            <h3>{month}</h3>
         </div>
     )
 }
