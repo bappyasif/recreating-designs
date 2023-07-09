@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { galleries, testimonials } from "../../data"
 import { useOnButtonSliders } from "../../hooks"
 import {CgSquare} from "react-icons/cg"

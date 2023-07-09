@@ -16,8 +16,6 @@ export const PopularFoods = () => {
         return popular.findIndex(item => item.heading === whichType) + 1
     }
 
-    // console.log(whichType, getFoods())
-
     return (
         <div className="flex xxs:flex-col lg:flex-row justify-between gap-0 xxs:w-full lg:w-2/3 items-center">
             <RenderHeadings items={headings} updateType={updateType} />

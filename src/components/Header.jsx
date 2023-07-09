@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { header } from "../data"
-import { CgArrowDown, CgArrowDownO, CgMenu } from "react-icons/cg"
+import { CgArrowDownO, CgMenu } from "react-icons/cg"
 import { Link } from "react-router-dom"
 
 export const Header = () => {

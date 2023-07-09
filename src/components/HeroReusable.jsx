@@ -15,18 +15,6 @@ export const HeroReusable = ({ items }) => {
                 height: "690px"
             }}
         >
-            {/* <img
-                className="absolute -z-0 h-1/2 w-fit object-cover"
-                src={heroImg}
-                alt="hero image with a fish base dish"
-                srcset=""
-            />
-            <div className="z-10 absolute">
-                <RenderSubHeading item={subHeading} />
-                <RenderHeading item={heading} />
-                <RenderDescription item={description} />
-                <RenderSocials items={socials} />
-            </div> */}
             <div className="flex flex-col gap-6 items-center">
                 <RenderSubHeading item={subHeading} />
                 <div className="flex flex-col gap-0 items-center">
