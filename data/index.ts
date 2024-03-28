@@ -1,10 +1,10 @@
 export const mens = [
-    "Sale", "Organic T-Shirts", "Printed T-Shirts", "Merino Layers", "Jackets", "Shirts & Tops",
+    "Organic T-Shirts", "Printed T-Shirts", "Merino Layers", "Jackets", "Shirts & Tops",
     "Fleece", "Sweats & Knits", "Jeans & Trousers", "Shorts", "Underwear & Socks", "Cycle Collection", "Run Collection"
 ]
 
 export const womens = [
-    "Sale", "Organic T-Shirts", "Printed T-Shirts", "Merino Layers", "Jackets", "Shirts & Tops & Dresses",
+    "Organic T-Shirts", "Printed T-Shirts", "Merino Layers", "Jackets", "Shirts & Tops & Dresses",
     "Fleece", "Sweats & Knits", "Jeans & Trousers", "Shorts & Skirts", "Underwear & Socks"
 ]
 
@@ -21,7 +21,7 @@ export const moreHelpAndInfo = [
 ]
 
 export const more = [
-    "Gift Cards", "Mugs"
+    "New In", "Gift Cards", "Mugs"
 ]
 
 export const mensTeesProductImage = [
