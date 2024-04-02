@@ -70,3 +70,29 @@ export const heroSlidesImages = [
         text: ""
     }
 ]
+
+export const galleryRow = [
+    {
+        text: "About Us",
+        src: "https://howies.co.uk/cdn/shop/files/HOME-Story-Blocks-about.jpg?v=1704732129"
+    },
+    {
+        text: "Our Fabrics",
+        src: "https://howies.co.uk/cdn/shop/files/HOME-Story-Blocks-fabric.jpg?v=1704732129"
+    }
+]
+
+export const featuredGallery = [
+    {
+        text: "Organic Denim",
+        src: "https://howies.co.uk/cdn/shop/files/sarnjean_0001_Layer12_540x.jpg?v=1705409776"
+    },
+    {
+        text: "Merino Wool",
+        src: "https://howies.co.uk/cdn/shop/files/merino-t-ls-m-aw23-red-ls3_540x.jpg?v=1697027875"
+    },
+    {
+        text: "Jackets",
+        src: "https://howies.co.uk/cdn/shop/files/LS_Dyfi-M-223-Sulphur_01_540x.jpg?v=1705578268"
+    }
+]

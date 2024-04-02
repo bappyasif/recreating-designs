@@ -1,58 +1,16 @@
 "use client"
 
-import { heroSlidesImages } from '@/data'
+import { galleryRow, heroSlidesImages } from '@/data'
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import RadialProgressBar from './radial-progress-bar'
+import { useForTruthToggle } from '@/hooks'
 
 export const HeroContent = () => {
   const [viewing, setViewing] = useState(0)
 
-  // const nextSlide = () => {
-  //   setViewing(prev => {
-  //     console.log(viewing, prev, "!!")
-  //     if(viewing === 2) {
-  //       return  0
-  //     } else {
-  //       return prev + 1
-  //     }
-  //   })
-  //   // setViewing(prev => {
-  //   //   console.log(viewing, prev, "!!")
-  //   //   if(prev === 2) {
-  //   //     return  0
-  //   //   } else {
-  //   //     return prev + 1
-  //   //   }
-  //   // })
-  // }
-
-  // const nextSlide = () => {
-  //   setViewing(prev => {
-  //     console.log(viewing, prev, "!!")
-  //     if (prev >= 2) {
-  //       return 0
-  //     } else {
-  //       return prev + 1
-  //     }
-  //   })
-  // }
-
-  // const nextSlide = () => {
-  //   setViewing(prev => {
-  //     console.log(viewing, prev, "!!")
-  //     if (prev >= 2) {
-  //       return 0
-  //     } else if (prev === 0) {
-  //       return 1
-  //     } else {
-  //       return prev + 1
-  //     }
-  //   })
-  // }
-
   const nextSlide = () => {
-    if(viewing === 0) {
+    if (viewing === 0) {
       setViewing(1)
     } else if (viewing === 1) {
       setViewing(2)
@@ -72,22 +30,19 @@ export const HeroContent = () => {
   }
 
   useEffect(() => {
-    // viewing >=0 && viewing < 3 && tick()
     tick()
   }, [viewing])
-
-  // useEffect(() => {
-  //   viewing === 0 && tick()
-  // }, [])
 
   const allSlides = () => heroSlidesImages.map(item => <SlideView imgSrc={item.src} idx={item.idx} heading={item.heading} text={item.text} key={item.idx} viewing={viewing} nextSlide={nextSlide} updateSlide={updateSlide} />)
 
   return (
     <div className='z-0'>
-      <ul className='w-full h-full relative'>
+      <ul className='w-full h-full relative z-10'>
         {allSlides()}
         <SlideThumbnails nextSlide={nextSlide} updateSlide={updateSlide} viewing={viewing} />
       </ul>
+
+      <GalleryRow />
     </div>
   )
 }
@@ -103,22 +58,6 @@ type Props = {
 }
 
 const SlideView = ({ imgSrc, idx, heading, text, nextSlide, updateSlide, viewing }: Props) => {
-
-  // useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     nextSlide!()
-  //   }, 4000)
-
-  //   return () => clearInterval(timer)
-  // }, [viewing])
-
-  // useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     nextSlide!(idx!)
-  //   }, 4000)
-
-  //   return () => clearInterval(timer)
-  // }, [idx])
 
   if (idx !== viewing) return
 
@@ -148,25 +87,72 @@ const SlideThumbnails = ({ nextSlide, updateSlide, viewing }: Partial<Props>) =>
 }
 
 const ThumbnailButton = ({ updateSlide, idx, nextSlide, viewing }: Partial<Props>) => {
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     nextSlide!(idx!)
-  //   }, 4000)
-
-  //   return () => clearTimeout(timer)
-  // }, [idx])
-
-  // console.log(idx === viewing, idx, viewing)
 
   return (
     <li className='w-4 h-4'>
-      {/* <RadialProgressBar /> */}
       <button className='rounded-full' onClick={() => updateSlide!(idx!)}>
-        {/* {idx} */}
-        {/* <RadialProgressBar idx={idx!}  /> */}
-        <RadialProgressBar show={idx === viewing} viewing={viewing!}  />
+        <RadialProgressBar show={idx === viewing} viewing={viewing!} />
       </button>
     </li>
   )
 }
 
+const GalleryRow = () => {
+  const showParts = () => galleryRow.map(item => <RowPart key={item.text} {...item} />)
+
+  return (
+    <div className='flex gap-x-0 justify-between z-10 h-96'>
+      {showParts()}
+    </div>
+  )
+}
+
+type PartProps = {
+  text: string;
+  src: string;
+}
+
+const RowPart = ({ ...data }: PartProps) => {
+  const { src, text } = data
+  const { handleFalsy, handleTruthy, isTrue } = useForTruthToggle()
+
+  return (
+      <div 
+        className={`w-full h-full ${true ? "overflow-clip" : ""}`}
+        onMouseEnter={handleTruthy} onMouseLeave={handleFalsy}
+      >
+        <Image src={src} alt={src} width={400} height={400} className={`w-full h-full object-cover transition-all duration-1000 ${isTrue ? "scale-105" : ""}`} />
+      </div>
+  )
+}
+
+// const RowPart = ({ ...data }: PartProps) => {
+//   const { src, text } = data
+//   const { handleFalsy, handleTruthy, isTrue } = useForTruthToggle()
+
+//   return (
+//     <div className={`w-full h-full z-0`} onMouseEnter={handleTruthy} onMouseLeave={handleFalsy}>
+//       <div 
+//         // className={`w-full h-full ${isTrue ? "-z-0" : "z-0"}`}
+//         className={`w-full h-full ${true ? "overflow-clip" : ""}`}
+//       >
+//         <Image src={src} alt={src} width={400} height={400} className={`w-full h-full object-cover ${isTrue ? "scale-105" : ""}`} />
+//         {/* <p>{text}</p> */}
+//       </div>
+//     </div>
+//   )
+// }
+
+// const RowPart = ({ ...data }: PartProps) => {
+//   const { src, text } = data
+//   const { handleFalsy, handleTruthy, isTrue } = useForTruthToggle()
+
+//   return (
+//     <div className={`w-full h-full ${isTrue ? "-z-10" : "z-0"}`}>
+//       {/* <div className='w-full'> */}
+//         <Image src={src} alt={src} width={400} height={400} className={`w-full h-full object-cover ${isTrue ? "scale-105" : ""} overflow-clip`} onMouseEnter={handleTruthy} onMouseLeave={handleFalsy} />
+//         {/* <p>{text}</p> */}
+//       {/* </div> */}
+//     </div>
+//   )
+// }
