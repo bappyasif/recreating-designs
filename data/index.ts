@@ -49,3 +49,24 @@ export const information = [
 export const menu = [
     "men", "women", "accessories", "sale", "more"
 ]
+
+export const heroSlidesImages = [
+    {
+        idx: 0,
+        src: "https://howies.co.uk/cdn/shop/files/HOME_2024_DENIM_5de2b43c-c0b6-47dc-85b1-dc070007faa1.jpg?v=1708964775",
+        heading: "Organic Denim",
+        text: "Explore our range of jeans for men and women. Built tough using the best sustainable denims."
+    },
+    {
+        idx: 1,
+        src: "https://howies.co.uk/cdn/shop/files/HOME_2024_PRINTEDTEES_6141ebcb-bd1d-4272-a194-758d2bebe4a4.jpg?v=1708944801",
+        heading: "Graphic Tees",
+        text: "In stock now; a fresh batch of printed tees for men and women. With a wide choice of designs, all hand printed on our premium 100% organic cotton t-shirt."
+    },
+    {
+        idx: 2,
+        src: "https://howies.co.uk/cdn/shop/files/HOME_2023_ESREVER.jpg?v=1701427968",
+        heading: "",
+        text: ""
+    }
+]
