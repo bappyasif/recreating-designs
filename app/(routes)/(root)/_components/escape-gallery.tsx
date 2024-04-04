@@ -5,7 +5,7 @@ import React, { useEffect, useRef, useState } from 'react'
 
 export const EscapeGallery = () => {
     return (
-        <div className='w-full'>
+        <div className='w-full flex flex-col gap-y-20 pb-28'>
             <Heading />
             <SubHeading />
             <Gallery />
@@ -105,7 +105,7 @@ const GalleryCard = ({ imgSrc }: { imgSrc: string }) => {
 
 const SubHeading = () => {
     return (
-        <p className='text-center w-1/2 mx-auto'>We're not heavy users of social media but we do enjoy seeing what our community get up to using the #howiescape hashtag. Join in if you have an escape you'd like us to see.</p>
+        <p className='text-center w-1/2 mx-auto text-lg text-slate-400'>We're not heavy users of social media but we do enjoy seeing what our community get up to using the #howiescape hashtag. Join in if you have an escape you'd like us to see.</p>
     )
 }
 

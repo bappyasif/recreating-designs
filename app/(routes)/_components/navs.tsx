@@ -60,7 +60,7 @@ const MenuHoveredOverlayItems = ({ updateActive, active }: { active: string, upd
     if (active === "sale") return
 
     return (
-        <ul className='absolute left-0 top-32 flex justify-between gap-x-11 px-20 w-full bg-gray-900 opacity-80 py-11 z-20' onMouseLeave={() => updateActive("")}>
+        <ul className='absolute left-0 top-24 flex justify-between gap-x-11 px-20 w-full bg-gray-900 opacity-80 py-11 z-20' onMouseLeave={() => updateActive("")}>
             {/* <div className='bg-gray-800 absolute opacity-80 h-full w-full'></div> */}
 
             {/* <LeftSideOverLayedMenuItems active={active} /> */}

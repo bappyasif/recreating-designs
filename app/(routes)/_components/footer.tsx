@@ -4,7 +4,7 @@ import React from 'react'
 
 export const Footer = () => {
     return (
-        <div>
+        <div className='space-y-20 text-2xl bg-slate-600 p-4'>
             <div className='flex justify-between px-4 gap-x-6'>
                 <TagLine />
                 {/* <Shop /> */}
@@ -12,7 +12,7 @@ export const Footer = () => {
                 <ReusableListItems data={information} heading='Information' />
                 <Socials />
             </div>
-            <div className='flex justify-between px-6 gap-x-6'>
+            <div className='flex justify-between px-6 gap-x-6 '>
                 <ImportantInformation />
                 <Cards />
             </div>
@@ -30,10 +30,12 @@ const Cards = () => {
 
 const ImportantInformation = () => {
     return (
-        <div>
+        <div className='space-y-4'>
             <p>&copy; {new Date().getFullYear()} notHowies ltd.</p>
+            <div className='space-y-1'>
             <p className='text-xs text-gray-400'>Building ww18, Job’s Well Road, Carmarthen, Wales WASA31 13HB</p>
             <p className='text-xs text-gray-400'>Registered in England & Wales No. WW3065954. VAT No. WW680950613</p>
+            </div>
         </div>
     )
 }
@@ -41,7 +43,7 @@ const ImportantInformation = () => {
 const Socials = () => {
     return (
         <div>
-            <p>Social</p>
+            <p className='text-3xl'>Social</p>
             <div className='space-x-4'>
                 <button className='bg-red-200 p-2 h-4'></button>
                 <button className='bg-red-200 p-2 h-4'></button>
@@ -54,9 +56,9 @@ const ReusableListItems = ({ heading, data }: { heading: string, data: string[] 
     const showAll = () => data.map(name => <li><Link href={"#"}>{name}</Link></li>)
 
     return (
-        <div>
-            <p>{heading}</p>
-            <ul className=''>{showAll()}</ul>
+        <div className='flex flex-col gap-y-2'>
+            <p className='text-3xl'>{heading}</p>
+            <ul className='space-y-1'>{showAll()}</ul>
         </div>
     )
 }

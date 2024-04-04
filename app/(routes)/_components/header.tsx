@@ -5,7 +5,7 @@ import { HeaderRightHandSide } from './header-right-hand-side'
 
 export const Header = () => {
   return (
-    <header className='flex justify-between items-center py-4 relative bg-slate-600'>
+    <header className='flex justify-between items-center relative bg-slate-600'>
       <Brand />
       <Navs />
       <HeaderRightHandSide />

@@ -2,7 +2,7 @@ import React from 'react'
 
 export const FeaturedVideo = () => {
     return (
-        <div className='w-full relative'>
+        <div className='w-full relative pb-24'>
             <video
                 // className='absolute w-full h-full'
                 className='object-cover h-[40rem]'

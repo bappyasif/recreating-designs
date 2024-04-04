@@ -9,7 +9,7 @@ import { Subscribe } from "./_components/subscribe";
 
 export default function Home() {
   return (
-    <main>
+    <main className="flex flex-col">
       <ShippingAlert />
       <Header />
       <HeroContent />
