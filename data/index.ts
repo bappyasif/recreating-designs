@@ -46,6 +46,8 @@ export const information = [
     "About Us", "Help & FAQs", "Delivery & Returns", "Contact Us", "Terms & Conditions", "Privacy Policy"
 ]
 
+export const shop = ["Men", "Women"]
+
 export const menu = [
     "men", "women", "accessories", "sale", "more"
 ]
