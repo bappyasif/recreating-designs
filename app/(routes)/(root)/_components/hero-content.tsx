@@ -63,9 +63,9 @@ const SlideView = ({ imgSrc, idx, heading, text, nextSlide, updateSlide, viewing
 
   return (
     <li className='relative'>
-      <Image src={imgSrc} alt={imgSrc} width={2000} height={1000} className='w-full h-[36rem]' />
+      <Image src={imgSrc} alt={imgSrc} width={2000} height={1000} className='w-full h-[42rem] object-cover' />
 
-      <div className='absolute bottom-4 w-1/2 space-y-6'>
+      <div className='absolute bottom-36 left-24 w-1/2 space-y-6'>
         <p className='text-7xl'>{heading}</p>
         <p className='text-2xl'>{text}</p>
       </div>
@@ -101,7 +101,7 @@ const GalleryRow = () => {
   const showParts = () => galleryRow.map(item => <RowPart key={item.text} {...item} />)
 
   return (
-    <div className='flex gap-x-0 justify-between z-10 h-96'>
+    <div className='flex gap-x-0 justify-between z-10 h-[27rem]'>
       {showParts()}
     </div>
   )
@@ -118,7 +118,7 @@ const RowPart = ({ ...data }: PartProps) => {
 
   return (
       <div 
-        className={`w-full h-full ${true ? "overflow-clip" : ""}`}
+        className={`w-full h-full ${true ? "overflow-clip" : ""} cursor-pointer`}
         onMouseEnter={handleTruthy} onMouseLeave={handleFalsy}
       >
         <Image src={src} alt={src} width={400} height={400} className={`w-full h-full object-cover transition-all duration-1000 ${isTrue ? "scale-105" : ""}`} />

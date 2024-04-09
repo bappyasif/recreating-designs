@@ -13,9 +13,9 @@ export const Subscribe = () => {
 const Email = () => {
     return (
         <div className='relative flex justify-between items-center w-96'>
-            <input className='h-10 w-full bg-transparent focus:outline-0' type="text" placeholder='Email' />
+            <input className='w-full bg-transparent focus:outline-0 h-16 text-2xl' type="text" placeholder='Email' />
             <span className='w-full h-0.5 bg-red-200 absolute bottom-0'></span>
-            <button className='p-2 bg-red-400 absolute right-0'>&rarr;</button>
+            <button className='absolute -right-3 top-0 text-6xl flex items-center h-full pb-5'>&rarr;</button>
         </div>
     )
 }

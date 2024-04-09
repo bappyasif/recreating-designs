@@ -84,7 +84,7 @@ const MenuHoveredOverlayItems = ({ updateActive, active }: { active: string, upd
     )
 }
 
-const LeftSideMenuItemsReused = ({data, label}: {label: string, data: string[]}) => {
+const LeftSideMenuItemsReused = ({ data, label }: { label: string, data: string[] }) => {
     const renderAbouts = () => data.map(item => <li key={item}><Link href={"#"}>{item}</Link></li>)
     return (
         <ul className='flex flex-col gap-y-4'>
@@ -143,11 +143,19 @@ const RightSideOverLayedMenuItemsForAccessories = () => {
 const RightSideOverLayedMenuItems = () => {
     const renderMore = () => more.map((item, idx) => <li key={idx}><Link href={"#"}>{item}</Link></li>)
     return (
-        <li className='w-1/2 px-11 flex flex-col gap-y-4'>
-            <Link href={"#"} className='uppercase text-2xl'>More</Link>
-            <ul className='flex flex-col justify-between gap-y-4'>
-                {renderMore()}
-            </ul>
+        <li className='w-4/5 flex justify-between gap-x-10'>
+            <div className='flex flex-col gap-y-4 w-full'>
+                <Link href={"#"} className='uppercase text-2xl'>More</Link>
+                <ul className='flex flex-col justify-between gap-y-4'>
+                    {renderMore()}
+                </ul>
+            </div>
+            <Image
+                src={"https://howies.co.uk/cdn/shop/files/HOME_SKWAIR_OUTLET2024_720x.gif?v=1712311283"}
+                alt='Special offer for store subscribers only'
+                width={800} height={800}
+                className='w-4/5 h-full py-2 mx-auto px-20'
+            />
         </li>
     )
 }
