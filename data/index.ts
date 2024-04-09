@@ -1,3 +1,8 @@
+import {FaCcAmex, FaApplePay, FaCcDinersClub, FaCcDiscover, FaGooglePay, FaCcMastercard, FaCcPaypal, FaCcVisa} from "react-icons/fa6"
+import {TbBrandInstagram, TbTimeDuration45} from "react-icons/tb"
+import {RxTimer} from "react-icons/rx"
+import { CgTimer } from "react-icons/cg"
+
 export const mens = [
     "Organic T-Shirts", "Printed T-Shirts", "Merino Layers", "Jackets", "Shirts & Tops",
     "Fleece", "Sweats & Knits", "Jeans & Trousers", "Shorts", "Underwear & Socks", "Cycle Collection", "Run Collection"
@@ -97,4 +102,23 @@ export const featuredGallery = [
         text: "Jackets",
         src: "https://howies.co.uk/cdn/shop/files/LS_Dyfi-M-223-Sulphur_01_540x.jpg?v=1705578268"
     }
+]
+
+export const cc = [
+    { name: "American Express", icon: FaCcAmex },
+    { name: "Apple Pay", icon: FaApplePay },
+    { name: "Diners Club", icon: FaCcDinersClub },
+    { name: "Discover", icon: FaCcDiscover },
+    { name: "Google Pay", icon: FaGooglePay },
+    // { name: "Maestro", icon: null },
+    { name: "Master Card", icon: FaCcMastercard },
+    { name: "Paypal", icon: FaCcPaypal },
+    // { name: "Shop Pay", icon: null },
+    // { name: "Union Pay", icon: null },
+    { name: "Visa", icon: FaCcVisa }
+]
+
+export const sm = [
+    {name: "Instagram", icon: TbBrandInstagram},
+    {name: "", icon: CgTimer}
 ]

@@ -1,6 +1,7 @@
-import { information, shop } from '@/data'
+import { cc, information, shop, sm } from '@/data'
 import Link from 'next/link'
 import React from 'react'
+import { IconType } from 'react-icons'
 
 export const Footer = () => {
     return (
@@ -21,10 +22,12 @@ export const Footer = () => {
 }
 
 const Cards = () => {
-    const allCards = () => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(v => <li key={v}><button className='p-2 h-6 bg-red-200 w-9 rounded-md'></button></li>)
+    // const allCards = () => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(v => <li key={v}><button className='p-2 h-6 bg-red-200 w-9 rounded-md'></button></li>)
+
+    const allCards = () => cc.map((item, idx) => <RenderBrand key={idx} icon={item.icon!} idx={idx} name={item?.name} />)
 
     return (
-        <ul className='flex gap-x-2 justify-center w-2/3'>{allCards()}</ul>
+        <ul className='flex gap-x-4 justify-center w-2/3'>{allCards()}</ul>
     )
 }
 
@@ -40,14 +43,27 @@ const ImportantInformation = () => {
     )
 }
 
+const RenderBrand = ({icon, idx, name}: {icon: IconType, idx: number, name: string}) => {
+    const Icon = icon;
+
+    return (
+        <button key={idx} className='' title={name}><Icon size={40} /></button>
+    )
+}
+
 const Socials = () => {
+    const allMedias = () => sm.map((item, idx) => <RenderBrand icon={item.icon} idx={idx} name={item.name} key={idx} />)
+
     return (
         <div>
             <p className='text-3xl'>Social</p>
-            <div className='space-x-4'>
-                <button className='bg-red-200 p-2 h-4'></button>
-                <button className='bg-red-200 p-2 h-4'></button>
+            <div className='flex gap-x-4 items-center'>
+                {allMedias()}
             </div>
+            {/* <div className='space-x-4'>
+                <button className='bg-red-200 p-2 h-4'></button>
+                <button className='bg-red-200 p-2 h-4'></button>
+            </div> */}
         </div>
     )
 }
