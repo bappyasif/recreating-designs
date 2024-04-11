@@ -69,7 +69,7 @@ const Socials = () => {
 }
 
 const ReusableListItems = ({ heading, data }: { heading: string, data: string[] }) => {
-    const showAll = () => data.map(name => <li><Link href={"#"}>{name}</Link></li>)
+    const showAll = () => data.map(name => <li key={name}><Link href={"#"}>{name}</Link></li>)
 
     return (
         <div className='flex flex-col gap-y-2'>

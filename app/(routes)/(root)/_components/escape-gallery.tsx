@@ -138,7 +138,7 @@ const CardCaption = ({isTrue}: {isTrue: boolean}) => {
 
 const SubHeading = () => {
     return (
-        <p className='text-center w-1/2 mx-auto text-lg text-slate-400'>We're not heavy users of social media but we do enjoy seeing what our community get up to using the #howiescape hashtag. Join in if you have an escape you'd like us to see.</p>
+        <p className='text-center w-1/2 mx-auto text-lg text-slate-400'>We&apos;re not heavy users of social media but we do enjoy seeing what our community get up to using the #howiescape hashtag. Join in if you have an escape you&apos;d like us to see.</p>
     )
 }
 

@@ -59,11 +59,24 @@ type Props = {
 
 const SlideView = ({ imgSrc, idx, heading, text, nextSlide, updateSlide, viewing }: Props) => {
 
+  const [show, setShow] = useState(false)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShow(true)
+    }, 200)
+
+    return () => {
+      // setShow(false)
+      clearTimeout(timer)
+    }
+  }, [imgSrc, viewing, idx])
+
   if (idx !== viewing) return
 
   return (
     <li className='relative'>
-      <Image src={imgSrc} alt={imgSrc} width={2000} height={1000} className='w-full h-[42rem] object-cover' />
+      <Image src={imgSrc} alt={imgSrc} width={2000} height={1000} className={`w-full h-[42rem] object-cover transition-all duration-200 ${show? "opacity-100" : "opacity-0"}`} />
 
       <div className='absolute bottom-36 left-24 w-1/2 space-y-6'>
         <p className='text-7xl'>{heading}</p>

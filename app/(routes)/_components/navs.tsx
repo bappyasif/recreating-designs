@@ -11,7 +11,10 @@ export const Navs = () => {
     const updateActive = (navName: string) => setActive(navName)
     const allNavs = () => menu.map(item => <RenderMenuItem key={item} name={item} updateActive={updateActive} active={active} />)
     return (
-        <nav className='flex justify-between w-1/3 px-4 font-semibold'>{allNavs()}</nav>
+        <nav 
+            className='flex justify-between w-1/3 px-4 font-semibold'
+            // className='flex justify-between w-1/3 px-4 font-semibold max-h-96 overflow-y-scroll'
+        >{allNavs()}</nav>
     )
 }
 
@@ -60,7 +63,15 @@ const MenuHoveredOverlayItems = ({ updateActive, active }: { active: string, upd
     if (active === "sale") return
 
     return (
-        <ul className='absolute left-0 top-24 flex justify-between gap-x-11 px-20 w-full bg-gray-900 opacity-95 py-11 z-20' onMouseLeave={() => updateActive("")}>
+        <ul 
+            // className='absolute left-0 top-24 flex justify-between gap-x-11 px-20 w-full bg-gray-900 opacity-95 py-11 z-20' 
+            // className='absolute left-0 top-24 flex justify-between gap-x-11 px-20 w-full py-11 z-20'
+            className='absolute left-0 top-24 flex justify-between gap-x-11 px-20 w-full py-11 z-20 max-h-[36rem] overflow-y-scroll' 
+            onMouseLeave={() => updateActive("")}
+            style={{
+                backgroundColor: "rgba(0,0,0,.9)"
+            }}
+        >
             {/* <div className='bg-gray-800 absolute opacity-80 h-full w-full'></div> */}
 
             {/* <LeftSideOverLayedMenuItems active={active} /> */}
@@ -76,7 +87,7 @@ const MenuHoveredOverlayItems = ({ updateActive, active }: { active: string, upd
                     ? <RightSideOverLayedMenuItemsForAccessories />
                     : active === "more"
                         ? <RightSideOverLayedMenuItemsForMore />
-                        : <RightSideOverLayedMenuItems />
+                        : <RightSideOverLayedMenuItems active={active} />
             }
 
             {/* <RightSideOverLayedMenuItems /> */}
@@ -131,7 +142,12 @@ const AccessoryItem = ({ imgSrc, label }: { imgSrc: string, label: string }) => 
 
 const RightSideOverLayedMenuItemsForAccessories = () => {
     return (
-        <li className='w-2/3 px-11'>
+        <li 
+        className='w-2/3 px-11'
+        // style={{
+        //     backgroundColor: "rgba(0,0,0,1)"
+        // }}
+        >
             <ul className='flex justify-between gap-x-4 w-full h-full'>
                 <AccessoryItem imgSrc="https://howies.co.uk/cdn/shop/files/sock-menu_540x.jpg?v=1698224546" label="Socks" />
                 <AccessoryItem imgSrc="https://howies.co.uk/cdn/shop/files/menu_gifts_0f2ac123-8c3b-46b9-936c-fd3a2879eecf_540x.jpg?v=1664896572" label="Gift cards" />
@@ -140,21 +156,33 @@ const RightSideOverLayedMenuItemsForAccessories = () => {
     )
 }
 
-const RightSideOverLayedMenuItems = () => {
+const RightSideOverLayedMenuItems = ({active}: {active: string}) => {
     const renderMore = () => more.map((item, idx) => <li key={idx}><Link href={"#"}>{item}</Link></li>)
     return (
-        <li className='w-4/5 flex justify-between gap-x-10'>
+        <li 
+        // className='w-4/5 flex justify-between gap-x-10 relative min-h-[36rem]'
+        className={`w-4/5 flex justify-between gap-x-10 relative ${active === "men" ? "min-h-[36rem]" : active === "women" ? "max-h-[36rem]" : ""}`}
+        >
             <div className='flex flex-col gap-y-4 w-full'>
                 <Link href={"#"} className='uppercase text-2xl'>More</Link>
                 <ul className='flex flex-col justify-between gap-y-4'>
                     {renderMore()}
                 </ul>
             </div>
+            {/* <div 
+                className='bg-slate-600 absolute w-4/5 h-96 right-0 z-40 opacity-100'
+                // style={{
+                //     backgroundColor: "rgba(0,0,0,1)"
+                // }}
+            >
+                
+            </div> */}
             <Image
                 src={"https://howies.co.uk/cdn/shop/files/HOME_SKWAIR_OUTLET2024_720x.gif?v=1712311283"}
                 alt='Special offer for store subscribers only'
                 width={800} height={800}
-                className='w-4/5 h-full py-2 mx-auto px-20'
+                // className='w-4/5 h-full py-2 mx-auto px-20'
+                className='w-4/5 h-full py-2 mx-auto px-20 absolute right-0 bottom-0'
             />
         </li>
     )

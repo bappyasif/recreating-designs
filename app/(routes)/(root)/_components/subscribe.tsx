@@ -4,7 +4,7 @@ export const Subscribe = () => {
   return (
     <div className='flex flex-col justify-center items-center gap-y-10 pb-28'>
         <h2 className='text-6xl'>Subscribe to out newsletter</h2>
-        <p>Sign up to our newsletter and we'll keep you up to date with the latest arrivals</p>
+        <p>Sign up to our newsletter and we&apos;ll keep you up to date with the latest arrivals</p>
         <Email />
     </div>
   )

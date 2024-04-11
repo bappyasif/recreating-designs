@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
+import { BiSearch } from 'react-icons/bi'
+import { CiShoppingBasket } from 'react-icons/ci'
 
 export const HeaderRightHandSide = () => {
   return (
@@ -16,9 +18,9 @@ const Account = () => {
 }
 
 const Search = () => {
-    return <Link href={"#"}>Search</Link>
+    return <Link href={"#"}><BiSearch size={27} /></Link>
 }
 
 const Basket = () => {
-    return <Link href={"#"}>Basket</Link>
+    return <Link href={"#"}><CiShoppingBasket size={27} /></Link>
 }
