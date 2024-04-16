@@ -9,6 +9,8 @@ import { useForTruthToggle } from '@/hooks'
 export const HeroContent = () => {
   const [viewing, setViewing] = useState(0)
 
+  const [timer, setTimer] = useState<any>(null)
+
   const nextSlide = () => {
     if (viewing === 0) {
       setViewing(1)
@@ -21,15 +23,24 @@ export const HeroContent = () => {
 
   const updateSlide = (idx: number) => setViewing(idx)
 
+  // const tick = () => {
+  //   const timer = setTimeout(() => {
+  //     nextSlide()
+  //   }, 11000)
+
+  //   return () => clearTimeout(timer)
+  // }
+
   const tick = () => {
-    const timer = setTimeout(() => {
+    setTimer(setTimeout(() => {
       nextSlide()
-    }, 11000)
+    }, 11000))
 
     return () => clearTimeout(timer)
   }
 
   useEffect(() => {
+    clearTimeout(timer)
     tick()
   }, [viewing])
 
