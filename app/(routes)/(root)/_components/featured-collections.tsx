@@ -1,17 +1,24 @@
 "use client"
 
 import { featuredGallery } from '@/data'
-import { useForTruthToggle } from '@/hooks'
+import useInViewPort, { useForTruthToggle } from '@/hooks'
 import Image from 'next/image'
-import React from 'react'
+import React, { useRef } from 'react'
 
 export const FeaturedCollections = () => {
+    const ref = useRef(null)
+    const show = useInViewPort(ref, { threshold: 1 })
+
     const showAll = () => featuredGallery.map(item => <ShowFeatureCard key={item.src} {...item} />)
 
     return (
-        <div className='px-11 relative flex flex-col gap-y-10 justify-center items-center py-28'>
+        <div 
+            // ref={ref}
+            className='px-11 relative flex flex-col gap-y-10 justify-center items-center py-28'
+            // className={`px-11 relative flex flex-col gap-y-10 justify-center items-center py-28 ${show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+        >
             <h2 className='text-6xl self-start'>FeaturedCollections</h2>
-            <ul className='flex gap-x-6'>{showAll()}</ul>
+            <ul ref={ref} className={`flex gap-x-6 transition-all duration-1000 ${show ? "opacity-100 translate-y-0" : "opacity-80 translate-y-2"}`}>{showAll()}</ul>
             <SliderArrows />
         </div>
     )

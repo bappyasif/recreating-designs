@@ -77,9 +77,14 @@ const SlideView = ({ imgSrc, idx, heading, text, nextSlide, updateSlide, viewing
       setShow(true)
     }, 200)
 
+    const timer2 = setTimeout(() => {
+      setShow(false)
+    }, 10800)
+
     return () => {
-      // setShow(false)
+      setShow(false)
       clearTimeout(timer)
+      clearTimeout(timer2)
     }
   }, [imgSrc, viewing, idx])
 
@@ -87,7 +92,7 @@ const SlideView = ({ imgSrc, idx, heading, text, nextSlide, updateSlide, viewing
 
   return (
     <li className='relative'>
-      <Image src={imgSrc} alt={imgSrc} width={2000} height={1000} className={`w-full h-[42rem] object-cover transition-all duration-200 ${show? "opacity-100" : "opacity-0"}`} />
+      <Image src={imgSrc} alt={imgSrc} width={2000} height={1000} className={`w-full h-[42rem] object-cover transition-all duration-500 ${show? "opacity-100" : "opacity-20"}`} />
 
       <div className='absolute bottom-36 left-24 w-1/2 space-y-6'>
         <p className='text-7xl'>{heading}</p>

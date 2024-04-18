@@ -1,11 +1,16 @@
 "use client"
 
 import { getImages } from '@/app/utils'
-import { useForTruthToggle } from '@/hooks'
+import useInViewPort, { useForTruthToggle } from '@/hooks'
 import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
 
 export const EscapeGallery = () => {
+    // const ref = useRef(null)
+    // const show = useInViewPort(ref, { threshold: 1 })
+
+    // console.log(show, "show escape!!")
+
     return (
         <div className='w-full flex flex-col gap-y-20 pb-28'>
             <Heading />
@@ -68,9 +73,16 @@ const Gallery = () => {
 
     const {handleFalsy, handleTruthy, isTrue} = useForTruthToggle()
 
+    const ref2 = useRef(null)
+    const show = useInViewPort(ref2, { threshold: 1 })
+
+    // console.log(show, "show escape!!")
+
     return (
         <div
-            className='relative flex flex-col justify-center items-center py-16'
+            ref={ref2}
+            // className='relative flex flex-col justify-center items-center py-16'
+            className={`relative flex flex-col justify-center items-center py-16 transition-all duration-1000 ${show ? "opacity-100 translate-y-0" : "opacity-80 translate-y-2"}`}
             // className='relative'
             onMouseEnter={handleTruthy}
             onMouseLeave={handleFalsy}
