@@ -10,14 +10,14 @@ import { Subscribe } from "./_components/subscribe";
 export default function Home() {
   return (
     <main className="flex flex-col">
-      <ShippingAlert />
-      <Header />
+      {/* <ShippingAlert /> */}
+      {/* <Header /> */}
       <HeroContent />
       <FeaturedCollections />
       <FeaturedVideo />
       <EscapeGallery />
       <Subscribe />
-      <Footer />
+      {/* <Footer /> */}
     </main>
   );
 }
