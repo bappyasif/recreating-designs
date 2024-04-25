@@ -18,12 +18,9 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
@@ -40,17 +37,19 @@ body {
 
   .scrollbar::-webkit-scrollbar-track {
     border-radius: 100vh;
-    background: #f7f4ed;
+    background: #554f42;
   }
 
   .scrollbar::-webkit-scrollbar-thumb {
-    background: #e0cbcb;
+    /* background: #e0cbcb;
     border-radius: 100vh;
     border: 3px solid #f6f7ed;
-    height: 40px;
+    height: 40px; */
+    background: rgb(156, 15, 15);
+    border-radius: 10px;
   }
 
   .scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #c0a0b9;
+    background: #a09d9f;
   }
 }
