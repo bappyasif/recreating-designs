@@ -1,7 +1,7 @@
 import React from 'react'
 import { HeroComponent } from './_components/hero-component'
-import { ProductSlider } from './_components/product-slider'
 import { ProductBasket } from './_components/product-basket'
+import { ProductSlider } from './_components/product-slider'
 
 const MensCollectionPage = () => {
   return (
