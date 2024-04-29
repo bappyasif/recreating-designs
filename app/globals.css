@@ -53,3 +53,20 @@ body {
     background: #a09d9f;
   }
 }
+
+.productAnimationProgress {
+  height: 4px;
+  /* animation: fillUP 4s 0s infinite; */
+  animation: 14500ms linear 0s infinite running fillUp;
+  /* animation: 4s linear 0s 2 running fillUp; */
+}
+
+@keyframes fillUp {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%
+  }
+}
