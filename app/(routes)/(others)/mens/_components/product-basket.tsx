@@ -50,26 +50,79 @@ const AddToBasket = () => {
 const Sizes = () => {
     const [text, setText] = useState("")
 
-    const updateText= (v:string) => setText(v)
+    const [
+        mousePosition,
+        setMousePosition
+    ] = useState<{ x: null | number, y: null | number }>({ x: null, y: null });
+
+    const updateText = (v: string) => setText(v)
+
+    const updateMousePosition = (ev: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        const test = ev.currentTarget.getBoundingClientRect()
+        console.log(test.x, test.y, test.top, test.left, "?!?!", ev.clientX - test.x)
+        setMousePosition({ x: ev.clientX - test.x > 0 ? ev.clientX - test.x : 0, y: ev.clientY });
+    };
+
+    // const updateMousePosition = (ev: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    //     if(ev.currentTarget) {
+    //         setMousePosition({ x: ev.clientX!, y: ev.clientY! });
+    //     }
+    // };
 
     // const allSizes = () => ["S", "M", "L", "XL", "XXL"].map(v => <div key={v} className='h-20 underline'>{v}</div>)
 
-    const allSizes = () => ["S", "M", "L", "XL", "XXL"].map(v => <SizeMarkup key={v} updateText={updateText} text={text}  v={v} />)
+    const allSizes = () => ["S", "M", "L", "XL", "XXL"].map(v => <SizeMarkup key={v} updateText={updateText} text={text} v={v} />)
+
+    // console.log(mousePosition.x, mousePosition.y, "!!")
+
+    // const prefersReducedMotion = usePrefersReducedMotion();
+    // const transform = `translate(${mousePosition.x}px, ${mousePosition.y}px)`
+
 
     return (
-        <div className='flex flex-col gap-y-4'>
+        <div className='flex flex-col gap-y-0 w-fit'>
             <p className='text-2xl font-bold'>Size</p>
-            <div className='flex gap-x-4'>
+            <div
+                className='flex gap-x-4 w-fit h-fit'
+                onMouseMove={updateMousePosition}
+            >
                 {allSizes()}
+
             </div>
+            <div
+                // className='w-full h-1 relative bg-red-400'
+                className='w-full h-1 relative'
+                // onMouseMove={e => {
+                //     updateMousePosition(e)
+                // }}
+            >
+                <span
+                    className={`w-4 h-0.5 bg-purple-600 bottom-0 absolute -top-0.5`}
+                    style={{
+                        // left: `${mousePosition.x! - 1000 > 0 ? mousePosition.x! - 1000 : 0}px`,
+                        left: `${mousePosition.x! < 146 ? mousePosition.x : "146"}px`,
+                        // top: `${mousePosition.y! - 410}px`
+
+                    }}
+                ></span>
+            </div>
+            {/* <span
+                // className={`w-4 h-1 bg-purple-600 bottom-0 left-[${mousePosition.x}px] top-[${mousePosition.y}px] absolute`}
+                className={`w-4 h-1 bg-purple-600 bottom-0 absolute`}
+                // style={{transform}}
+                style={{
+                    left: `${mousePosition.x! - 1000}px`,
+                    top: `${mousePosition.y! - 369}px`
+                }}
+            ></span> */}
         </div>
     )
 }
 
-const SizeMarkup = ({v, updateText, text}: {v: string, text: string, updateText: (d: string) => void}) => {
+const SizeMarkup = ({ v, updateText, text }: { v: string, text: string, updateText: (d: string) => void }) => {
     return (
-        <button 
-            key={v} 
+        <button
+            key={v}
             // className={`h-20 ${v === text ? "underline" : ""} text-slate-800`} 
             onClick={() => updateText(v)}
             className='flex flex-col gap-y-1 justify-center items-center min-w-4'
