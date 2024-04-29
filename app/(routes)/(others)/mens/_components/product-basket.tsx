@@ -1,12 +1,13 @@
 "use client"
 
+import { mensTeesProductImage } from '@/data'
 import { useForTruthToggle } from '@/hooks'
 import Link from 'next/link'
 import React, { useState } from 'react'
 
 export const ProductBasket = () => {
     return (
-        <div className='flex justify-between gap-x-20 px-20'>
+        <div className='flex justify-between gap-x-20 px-20 relative'>
             <LeftSide />
             <RightSide />
         </div>
@@ -92,9 +93,9 @@ const Sizes = () => {
             <div
                 // className='w-full h-1 relative bg-red-400'
                 className='w-full h-1 relative'
-                // onMouseMove={e => {
-                //     updateMousePosition(e)
-                // }}
+            // onMouseMove={e => {
+            //     updateMousePosition(e)
+            // }}
             >
                 <span
                     className={`w-4 h-0.5 bg-purple-600 bottom-0 absolute -top-0.5`}
@@ -134,10 +135,38 @@ const SizeMarkup = ({ v, updateText, text }: { v: string, text: string, updateTe
 }
 
 const LeftSide = () => {
+    mensTeesProductImage
     return (
         <div className='flex gap-x-4 w-1/2'>
-            <div className='min-h-[27rem] bg-slate-400 min-w-96'></div>
-            <div className='min-h-[27rem] bg-slate-400 min-w-96'></div>
+            <PictureCard imgSrc={mensTeesProductImage[0]} />
+            <PictureCard imgSrc={mensTeesProductImage[1]} />
+
+            {/* <div className='min-h-[27rem] bg-slate-400 min-w-96'></div> */}
+            {/* <div className='min-h-[27rem] bg-slate-400 min-w-96'></div> */}
+        </div>
+    )
+}
+
+const PictureCard = ({ imgSrc }: { imgSrc: string }) => {
+    const { handleFalsy, handleTruthy, isTrue } = useForTruthToggle()
+    return (
+        <>
+            <img src={imgSrc} alt={imgSrc} className='min-h-[27rem] bg-slate-400 min-w-96' onClick={handleTruthy} />
+            {
+                isTrue
+                    ? <ZoomedPictures handleFalsy={handleFalsy} />
+                    : null
+            }
+        </>
+    )
+}
+
+const ZoomedPictures = ({handleFalsy}: {handleFalsy: () => void}) => {
+    return (
+        <div className='fixed top-0 left-0 w-full max-h-screen overflow-y-scroll z-40 bg-slate-400 space-y-6'>
+            <img src={mensTeesProductImage[0]} alt={""} className='min-h-full bg-slate-400 min-w-full' />
+            <img src={mensTeesProductImage[1]} alt={"imgSrc"} className='min-h-full bg-slate-400 min-w-full' />
+            <button className='absolute right-4 top-2 rounded-full p-1 px-3 bg-slate-200 font-bold text-slate-900' onClick={handleFalsy}>X</button>
         </div>
     )
 }
