@@ -3,7 +3,7 @@
 import { mensTeesProductImage } from '@/data'
 import { useForTruthToggle } from '@/hooks'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 export const ProductBasket = () => {
     return (
@@ -135,7 +135,7 @@ const SizeMarkup = ({ v, updateText, text }: { v: string, text: string, updateTe
 }
 
 const LeftSide = () => {
-    mensTeesProductImage
+    // mensTeesProductImage
     return (
         <div className='flex gap-x-4 w-1/2'>
             <PictureCard imgSrc={mensTeesProductImage[0]} />
@@ -151,21 +151,41 @@ const PictureCard = ({ imgSrc }: { imgSrc: string }) => {
     const { handleFalsy, handleTruthy, isTrue } = useForTruthToggle()
     return (
         <>
-            <img src={imgSrc} alt={imgSrc} className='min-h-[27rem] bg-slate-400 min-w-96' onClick={handleTruthy} />
+            <img src={imgSrc} alt={imgSrc} className='min-h-[27rem] bg-slate-400 min-w-96 cursor-zoom-in' onClick={handleTruthy} />
             {
                 isTrue
-                    ? <ZoomedPictures handleFalsy={handleFalsy} />
+                    ? <ZoomedPictures handleFalsy={handleFalsy} imgSrc={imgSrc}  />
                     : null
             }
         </>
     )
 }
 
-const ZoomedPictures = ({handleFalsy}: {handleFalsy: () => void}) => {
+const ZoomedPictures = ({handleFalsy, imgSrc}: {handleFalsy: () => void, imgSrc: string}) => {
+
+    const ref = useRef<HTMLDivElement | null>(null)
+
+    useEffect(() => {
+        // ref.current?.scrollIntoView({behavior: "smooth",block: "center", inline: "end"})
+        // ref.current?.querySelector(`#${imgSrc}`)?.scrollIntoView({behavior: "smooth",block: "center", inline: "end"})
+
+        // ref.current?.querySelector(`.${imgSrc}`)?.scrollIntoView({behavior: "smooth",block: "center", inline: "end"})
+
+        // console.log(ref.current?.querySelector(`${imgSrc.split("v=")[1]}`), imgSrc.split("v=")[1])
+
+        // console.log(ref.current?.querySelector(`img`), imgSrc.split("v=")[1])
+
+        ref.current?.getElementsByClassName(`${imgSrc.split("v=")[1]}`)[0]?.scrollIntoView()
+
+        // console.log(ref.current?.getElementsByClassName(`${imgSrc.split("v=")[1]}`), imgSrc.split("v=")[1])
+
+    }, [imgSrc])
+
     return (
-        <div className='fixed top-0 left-0 w-full max-h-screen overflow-y-scroll z-40 bg-slate-400 space-y-6'>
-            <img src={mensTeesProductImage[0]} alt={""} className='min-h-full bg-slate-400 min-w-full' />
-            <img src={mensTeesProductImage[1]} alt={"imgSrc"} className='min-h-full bg-slate-400 min-w-full' />
+        <div className='fixed top-0 left-0 w-full max-h-screen overflow-y-scroll z-40 bg-slate-400 space-y-6' ref={ref}>
+            <img id={mensTeesProductImage[0].split("v=")[1]} src={mensTeesProductImage[0]} alt={""} className={`min-h-full bg-slate-400 min-w-full ${mensTeesProductImage[0].split("v=")[1]}`} />
+
+            <img id={mensTeesProductImage[1].split("v=")[1]} src={mensTeesProductImage[1]} alt={"imgSrc"} className={`min-h-full bg-slate-400 min-w-full ${mensTeesProductImage[1].split("v=")[1]}`} />
             <button className='absolute right-4 top-2 rounded-full p-1 px-3 bg-slate-200 font-bold text-slate-900' onClick={handleFalsy}>X</button>
         </div>
     )
