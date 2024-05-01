@@ -15,6 +15,9 @@ const config: Config = {
       },
       boxShadow: {
         onHover: "inset 0 0 150px rgba(0, 0, 0, 0.5)"
+      },
+      cursor: {
+        'fancy': 'url("./next.svg), pointer',
       }
     },
   },

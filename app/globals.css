@@ -70,3 +70,7 @@ body {
     width: 100%
   }
 }
+
+.customCursor {
+  cursor: url("/public/next.svg");
+}
