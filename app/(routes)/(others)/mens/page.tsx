@@ -11,14 +11,14 @@ const MensCollectionPage = () => {
       <div className='flex flex-col gap-y-6'>
         <ProductSlider headerText='New arrivals' />
         <ProductSlider headerText='Merino layers' />
-        <ProductSlider headerText='Shirts & tops' />
-        <ProductSlider headerText='Jeans & trousers' />
+        {/* <ProductSlider headerText='Shirts & tops' />
+        <ProductSlider headerText='Jeans & trousers' /> */}
       </div>
 
       <ProductBasket />
 
       <div className='flex flex-col gap-y-6'>
-        <ProductSlider headerText='Underwear & socks' />
+        {/* <ProductSlider headerText='Underwear & socks' /> */}
         <ProductSlider headerText='Cycle collection' />
         <ProductSlider headerText='Run collection' />
       </div>

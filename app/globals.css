@@ -28,8 +28,7 @@ body {
     text-wrap: balance;
   }
 
-  .scrollbar::-webkit-scrollbar,
-  ::-webkit-scrollbar {
+  .scrollbar::-webkit-scrollbar {
     width: 2px;
     height: 13px;
     /* margin-top: 8rem; */
