@@ -1,13 +1,41 @@
 "use client"
 
 import { mensTeesProductImage } from '@/data'
-import { useForTruthToggle } from '@/hooks'
+import useInViewPort, { useForTruthToggle } from '@/hooks'
 import React, { useEffect, useRef, useState } from 'react'
 
-export const ProductSlider = ({ headerText }: { headerText: string }) => {
+export const ProductSlider = ({ headerText, 
+    // handleTruthy, isTrue 
+}: { 
+    headerText: string, 
+    // handleTruthy?: () => void, isTrue?: boolean
+}) => {
+    const { handleFalsy, handleTruthy, isTrue } = useForTruthToggle()
+
+    const ref = useRef(null)
+
+    const test = useInViewPort(ref, { threshold: 1 })
+
+    useEffect(() => {
+        if (test && !isTrue) {
+            handleTruthy!()
+        }
+    }, [test, isTrue])
+
+    // useEffect(() => {
+    //     if(isTrue) {
+    //         handleFalsy()
+    //     }
+    // }, [isTrue])
+
+    console.log(test, "test!!", isTrue)
 
     return (
-        <div className='flex flex-col gap-y-6 ml-20 my-20'>
+        <div
+            ref={ref}
+            className={`${(isTrue) ? "opacity-100" : "opacity-40"} flex flex-col gap-y-6 ml-20 my-20`}
+        // className={`flex flex-col gap-y-6 ml-20 my-20`}
+        >
             <div className='flex justify-between gap-x-4 font-bold mr-20'>
                 <h2 className='text-4xl cursor-move'>{headerText}</h2>
                 <button className='text-xl'>View all</button>
@@ -51,6 +79,12 @@ const SliderScroller = () => {
 const ProductCard = ({ v }: { v: number }) => {
     const [currSrc, setCurrSrc] = useState(0)
 
+    const [rnd, setRnd] = useState(0.0)
+
+    useEffect(() => {
+        setRnd(Math.random())
+    }, [])
+
     const nextPicture = () => setCurrSrc((prev) => {
         if (prev >= 2) {
             return 0
@@ -62,31 +96,32 @@ const ProductCard = ({ v }: { v: number }) => {
     const initialPicture = () => setCurrSrc(0)
 
     return (
-        <div key={v} className='bg-slate-400 min-h-[27rem] min-w-96 rounded-sm relative'>
+        <div key={v} className='bg-slate-400 min-h-[27rem] min-w-96 rounded-sm relative flex items-center'>
             <span className='absolute'>{v}</span>
-            <ProductImage imgSrc={mensTeesProductImage[currSrc]} nextPicture={nextPicture} initialPicture={initialPicture} />
+            <ProductImage imgSrc={mensTeesProductImage[currSrc]} nextPicture={nextPicture} initialPicture={initialPicture} rnd={rnd} />
+            <span className={`${rnd > .5 ? "visible" : "invisible"} absolute bottom-0 w-full text-center text-xl font-bold`}>Sold out</span>
         </div>
     )
 }
 
-const ProductImage = ({ imgSrc, nextPicture, initialPicture }: { imgSrc: string, nextPicture: () => void, initialPicture: () => void }) => {
+const ProductImage = ({ imgSrc, nextPicture, initialPicture, rnd }: { imgSrc: string, nextPicture: () => void, initialPicture: () => void, rnd: number }) => {
 
     const [showNew, setShowNew] = useState(true)
 
-    const {handleFalsy, handleTruthy, isTrue} = useForTruthToggle()
+    const { handleFalsy, handleTruthy, isTrue } = useForTruthToggle()
 
     useEffect(() => {
-        if(isTrue) {
-            if(showNew) {
+        if (isTrue) {
+            if (showNew) {
                 const timer = setTimeout(() => setShowNew(false), 4000)
-    
+
                 return () => clearTimeout(timer)
             } else {
                 const timer = setTimeout(() => {
                     nextPicture()
                     setShowNew(true)
                 }, 1000)
-    
+
                 return () => clearTimeout(timer)
             }
         } else {
@@ -96,13 +131,13 @@ const ProductImage = ({ imgSrc, nextPicture, initialPicture }: { imgSrc: string,
 
     return (
         <>
-            <img 
+            <img
                 src={imgSrc} width={900} height={600}
-                className={`w-full h-full transition-all duration-1000 ${ !showNew ? "opacity-0" : "opacity-100"}`} 
+                className={`${rnd > .5 ? "opacity-60" : ""} w-full h-full transition-all duration-1000 ${!showNew ? "opacity-0" : "opacity-100"}`}
                 onMouseEnter={handleTruthy}
                 onMouseLeave={handleFalsy}
             />
-            <span 
+            <span
                 className={`bg-purple-400 absolute bottom-0 ${isTrue ? "productAnimationProgress" : ""}`}
             ></span>
         </>
