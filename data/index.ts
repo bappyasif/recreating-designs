@@ -1,6 +1,6 @@
-import {FaCcAmex, FaApplePay, FaCcDinersClub, FaCcDiscover, FaGooglePay, FaCcMastercard, FaCcPaypal, FaCcVisa} from "react-icons/fa6"
-import {TbBrandInstagram, TbTimeDuration45} from "react-icons/tb"
-import {RxTimer} from "react-icons/rx"
+import { FaCcAmex, FaApplePay, FaCcDinersClub, FaCcDiscover, FaGooglePay, FaCcMastercard, FaCcPaypal, FaCcVisa } from "react-icons/fa6"
+import { TbBrandInstagram, TbTimeDuration45 } from "react-icons/tb"
+import { RxTimer } from "react-icons/rx"
 import { CgTimer } from "react-icons/cg"
 
 export const mens = [
@@ -65,6 +65,42 @@ export const menu = [
     "men", "women", "accessories", "sale", "more"
 ]
 
+export const womensFleece = [
+    {
+        name: "Smuffler Snood",
+        images: [
+            "https://howies.co.uk/cdn/shop/files/fleece-snood_1512x.jpg?v=1695990957",
+            "https://howies.co.uk/cdn/shop/files/fleece-snood-3_1512x.jpg?v=1695991257",
+            "https://howies.co.uk/cdn/shop/files/fleece-snood-1_1512x.jpg?v=1695991257",
+            "https://howies.co.uk/cdn/shop/files/fleece-snood-2_1512x.jpg?v=1695991257",
+            // "https://howies.co.uk/cdn/shop/files/fleece-snood-4_1512x.jpg?v=1695991253",
+        ]
+    },
+    {
+        name: "Minke Mitten",
+        images: [
+            "https://howies.co.uk/cdn/shop/files/fleece-mittens-pair_1512x.jpg?v=1695990229",
+            "https://howies.co.uk/cdn/shop/files/fleece-mittens-pair-ls2_1512x.jpg?v=1695990473",
+            "https://howies.co.uk/cdn/shop/files/fleece-mittens-pair2_1512x.jpg?v=1695990473",
+            "https://howies.co.uk/cdn/shop/files/fleece-mittens-pair-ls1_1512x.jpg?v=1695990473"
+        ]
+    }
+]
+
+export const mensFleece = [
+    {
+        name: "Brening Recycled",
+        images: [
+            "https://howies.co.uk/cdn/shop/files/BRENIG_FLEECE_CHARCOAL_MARL_01_1512x.jpg?v=1694178223",
+            "https://howies.co.uk/cdn/shop/files/BRENIG_FLEECE_CHARCOAL_MARL_02_1512x.jpg?v=1694178223",
+            "https://howies.co.uk/cdn/shop/files/Brenig_1512x.jpg?v=1695215985",
+            "https://howies.co.uk/cdn/shop/files/Brenig3_1512x.jpg?v=1695215985",
+            "https://howies.co.uk/cdn/shop/files/Brenig2_1512x.jpg?v=1695202776",
+            "https://howies.co.uk/cdn/shop/files/Brenig4_1512x.jpg?v=1695202777"
+        ]
+    }
+]
+
 export const heroSlidesImages = [
     {
         idx: 0,
@@ -127,6 +163,6 @@ export const cc = [
 ]
 
 export const sm = [
-    {name: "Instagram", icon: TbBrandInstagram},
-    {name: "", icon: CgTimer}
+    { name: "Instagram", icon: TbBrandInstagram },
+    { name: "", icon: CgTimer }
 ]

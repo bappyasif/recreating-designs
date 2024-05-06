@@ -8,6 +8,7 @@ import useInViewPort, { useForTruthToggle } from '@/hooks'
 import { ReUsableProductSlider } from '../_components/reusable-product-slider'
 import { ReUsableProductBasket } from '../_components/reusable-basket'
 import { ReUsableHeroComponent } from '../_components/reuseable-hero-component'
+import { FleeceProds } from './_components/fleece-prods'
 
 const MensCollectionPage = () => {
   // const ref1 = useRef(null)
@@ -41,6 +42,8 @@ const MensCollectionPage = () => {
 
       {/* <ProductBasket /> */}
       <ReUsableProductBasket prods='mens' />
+
+      <FleeceProds />
 
       <div className='flex flex-col gap-y-6'>
         {/* <ProductSlider headerText='Underwear & socks' /> */}
