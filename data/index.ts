@@ -35,6 +35,14 @@ export const mensTeesProductImage = [
     "https://howies.co.uk/cdn/shop/files/Tees__0015_Layer10_1080x.jpg?v=1697467211"
 ]
 
+export const womensTeesProductImages = [
+    "https://howies.co.uk/cdn/shop/files/Banc-W-241-InsigniaCardinal_900x.jpg?v=1714583047",
+    "https://howies.co.uk/cdn/shop/files/lifestyle_0012_Layer8_900x.jpg?v=1714639750",
+    "https://howies.co.uk/cdn/shop/files/lifestyle_0013_Layer7_900x.jpg?v=1714639751",
+    "https://howies.co.uk/cdn/shop/files/lifestyle_0014_Layer6_900x.jpg?v=1714639750",
+    "https://howies.co.uk/cdn/shop/files/lifestyle_0015_Layer5_900x.jpg?v=1714639752"
+]
+
 export const landingPageProducrImage = [
     "https://howies.co.uk/cdn/shop/files/0001_Dyfi-M-223-MacauGreen_01_720x.jpg?v=1699007672",
     "https://howies.co.uk/cdn/shop/files/0002_Dyfi-M-223-MacauGreen_02_720x.jpg?v=1705578303",
