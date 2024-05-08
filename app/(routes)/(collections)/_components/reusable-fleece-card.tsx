@@ -75,10 +75,38 @@ const ProductImage = ({ imgSrc, nextPicture, initialPicture, rnd, images, repeat
                     setShowNew(true)
                 }, duration / 2)
 
-                return () => clearTimeout(timer)
+                return () => {
+                    // !isTrue && initialPicture()
+                    // !imgSrc && initialPicture()
+                    clearTimeout(timer)
+                }
             }
         } else {
             initialPicture()
+        }
+
+        // if(imgSrc) {
+        //     const timer = setTimeout(() => {
+        //         // !isTrue && !showNew && initialPicture()
+        //         !isTrue && !showNew && handleTruthy()
+        //         !isTrue && !showNew && console.log("flushed!!")
+        //         // console.log(imgSrc, isTrue, showNew)
+        //     }, 400)
+
+        //     return () => clearTimeout(timer)
+        // }
+
+        // console.log(imgSrc, isTrue, showNew)
+
+        if(!isTrue && !showNew && imgSrc) {
+            // handleTruthy()
+            const timer = setTimeout(() => {
+                // initialPicture()
+                setShowNew(true)
+                // console.log("flushing it!!")
+            }, 150)
+
+            return () => clearTimeout(timer)
         }
     }, [imgSrc, showNew, isTrue])
 

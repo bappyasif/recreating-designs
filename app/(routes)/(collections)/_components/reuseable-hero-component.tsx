@@ -5,7 +5,7 @@ import React from 'react'
 export const ReUsableHeroComponent = ({forWomen}: {forWomen: boolean}) => {
   return (
     <div className='px-4 flex flex-col gap-y-20'>
-        <Header />
+        <Header forWomen={forWomen} />
         <div className='flex justify-between'>
             <LeftSide />
             <RightSide forWomen={forWomen} />
@@ -41,10 +41,10 @@ const LeftSide = () => {
     )
 }
 
-const Header = () => {
+const Header = ({forWomen}: {forWomen: boolean}) => {
     const getYear = () => new Date().getFullYear().toString().split("").map((v, i) => i > 1 && v).filter(v=> v).join("")
 
     return (
-        <h2 className='text-4xl'>Men's SS/{getYear()}</h2>
+        <h2 className='text-4xl'>{forWomen ? "Women" :"Men"}&apos;s SS/{getYear()}</h2>
     )
 }
