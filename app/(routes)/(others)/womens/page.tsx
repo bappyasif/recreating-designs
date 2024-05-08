@@ -4,6 +4,7 @@ import React from 'react'
 import { ReUsableProductSlider } from '../_components/reusable-product-slider'
 import { ReUsableProductBasket } from '../_components/reusable-basket'
 import { ReUsableHeroComponent } from '../_components/reuseable-hero-component'
+import { FleeceProds } from './_components/FleeceProducts'
 
 export const WomensCollectionPage = () => { 
 
@@ -19,6 +20,8 @@ export const WomensCollectionPage = () => {
       </div>
 
       <ReUsableProductBasket prods='womens' />
+
+      <FleeceProds />
 
       <div className='flex flex-col gap-y-6'>
         <ReUsableProductSlider headerText='Cycle collection' prods='womens' />
