@@ -63,18 +63,20 @@ const ProductCard = ({ prods, images, rnd }: { prods: string, images: string[], 
     const initialPicture = () => setCurrSrc(0)
 
     return (
-        <div className='bg-slate-400 min-h-[44rem] w-full rounded-sm relative flex items-center'>
-            <ProductImage imgSrc={imgSources[currSrc]} nextPicture={nextPicture} initialPicture={initialPicture} rnd={rnd} images={imgSources.length} />
+        <div className='bg-slate-400 max-h-[40rem] w-full rounded-sm relative flex items-center'>
+            <ProductImage imgSrc={imgSources[currSrc]} nextPicture={nextPicture} initialPicture={initialPicture} rnd={rnd} images={imgSources.length} repeat={currSrc === images.length - 1} />
             <span className={`${rnd > .5 ? "visible" : "invisible"} absolute bottom-0 w-full text-center text-xl font-bold`}>Sold out</span>
         </div>
     )
 }
 
-const ProductImage = ({ imgSrc, nextPicture, initialPicture, rnd, images }: { imgSrc: string, nextPicture: () => void, initialPicture: () => void, rnd: number, images: number }) => {
+const ProductImage = ({ imgSrc, nextPicture, initialPicture, rnd, images, repeat }: { imgSrc: string, nextPicture: () => void, initialPicture: () => void, rnd: number, images: number, repeat: boolean }) => {
 
     const [showNew, setShowNew] = useState(true)
 
     const { handleFalsy, handleTruthy, isTrue } = useForTruthToggle()
+
+    const duration = 6000 / images
 
     useEffect(() => {
         if (isTrue) {
@@ -93,9 +95,11 @@ const ProductImage = ({ imgSrc, nextPicture, initialPicture, rnd, images }: { im
 
             // console.log(duration, "duraiton", 6000/images, images)
 
-            console.log(6000 / images, (6000 / images))
+            // console.log(6000 / images, (6000 / images), 5000/images)
 
-            const duration = 1000
+            // const duration = 1000
+
+            // const duration = 6000 / images
 
             if (showNew) {
                 const timer = setTimeout(() => setShowNew(false), duration)
@@ -127,20 +131,113 @@ const ProductImage = ({ imgSrc, nextPicture, initialPicture, rnd, images }: { im
     //     }
     // }, [isTrue])
 
+    // const additionals = images > 5 ? duration / 2 : images > 4 ? (duration / 3) + 40 : duration / 3
+
+    const [transitionTime, setTransitionTime] = useState<number>()
+
+    useEffect(() => {
+        const additionals = images > 5 ? duration / 2 : duration / 3
+        setTransitionTime((duration + additionals) * images)
+
+        // const timer = setTimeout(() => {
+        //     handleFalsy()
+        //     setShowNew(false)
+
+        //     console.log("tunning this!!")
+        // }, transitionTime)
+
+        // return () => clearTimeout(timer)
+    }, [images])
+
+    const [repNow, setRepNow] = useState(true)
+
+    // useEffect(() => {
+    //     if (repeat) {
+    //         console.log(isTrue, showNew)
+    //         // handleFalsy()
+    //         // handleTruthy()
+    //         // setShowNew(true)
+    //         setRepNow(false)
+
+    //         const timer = setTimeout(() => {
+    //             setRepNow(true)
+    //         }, 1500)
+
+    //         return () => clearTimeout(timer)
+    //     }
+    // }, [repeat])
+
+    useEffect(() => {
+        if (repeat) {
+            console.log(isTrue, showNew)
+            // handleFalsy()
+            // handleTruthy()
+            // setShowNew(true)
+            // const addedTime =  images >= 6 ? duration + 400 : images >= 5 ? duration : duration + 600
+
+            // const addedTime =  images <= 5 ? duration + 290 : duration
+
+            const addedTime =  images <= 4 ? duration + 290 : images === 5 ? duration + 560 : duration
+
+            const timer2 = setTimeout(() => {
+                setRepNow(false)
+            }, addedTime)
+
+            const timer = setTimeout(() => {
+                setRepNow(true)
+            }, addedTime + 200)
+
+            return () => {
+                clearTimeout(timer)
+                clearTimeout(timer2)
+            }
+        }
+    }, [repeat, images])
+
+    // useEffect(() => {
+    //     const timer = setTimeout(() => {
+    //         handleFalsy()
+    //         // setShowNew(false)
+
+    //         console.log("tunning this!!")
+    //     }, transitionTime)
+
+    //     return () => clearTimeout(timer)
+    // }, [transitionTime])
+
+    // console.log(duration, "?!?!", duration + duration / 2, additionals)
+
     return (
         <>
             <img
                 src={imgSrc} width={900} height={600}
-                className={`${rnd > .5 ? "opacity-60" : ""} w-full h-full transition-all duration-1000 ${!showNew ? "opacity-0" : "opacity-100"}`}
+                className={`${rnd > .5 ? "opacity-60" : ""} w-full h-full transition-all duration-1000 ${!showNew ? "opacity-0" : "opacity-100"} aspect-square`}
                 onMouseEnter={handleTruthy}
                 onMouseLeave={handleFalsy}
             />
             {/* <span
                 className={`bg-purple-400 absolute bottom-0 h-1.5 ${isTrue ? "transition-all duration-[9000ms] ease-linear w-full" : "w-0.5"}`}
             ></span> */}
+
+            {/* <span
+                className={`bg-purple-400 absolute bottom-0 h-1.5 ${isTrue ? `transition-all duration-[${(duration + (duration / 2)) * images}ms] ease-linear w-full` : "w-0.5"}`}
+            ></span> */}
+
+            {/* <span
+                className={`bg-purple-400 absolute bottom-0 h-1.5 ${isTrue ? `transition-all duration-[${(duration + additionals) * images}ms] ease-linear w-full` : "w-0.5"}`}
+            ></span> */}
+
+            {/* <span
+                className={`bg-purple-400 absolute bottom-0 h-1.5 ${isTrue ? `transition-all duration-[${transitionTime}ms] ease-linear w-full` : "w-0.5"}`}
+            ></span> */}
+
             <span
-                className={`bg-purple-400 absolute bottom-0 h-1.5 ${isTrue ? `transition-all duration-[${1500*images}ms] ease-linear w-full` : "w-0.5"}`}
+                className={`bg-purple-400 absolute bottom-0 h-1.5 ${isTrue && repNow ? `transition-all duration-[${transitionTime}ms] ease-linear w-full` : "w-0.5"}`}
             ></span>
+
+            {/* <span
+                className={`bg-purple-400 absolute bottom-0 h-1.5 ${isTrue ? `transition-all duration-[${1500*images}ms] ease-linear w-full` : "w-0.5"}`}
+            ></span> */}
 
             {/* <span
                 className={`bg-purple-400 absolute bottom-0 h-1.5 ${isTrue ? `transition-all duration-[${1100 * images}ms] ease-linear w-full` : "w-0.5"}`}

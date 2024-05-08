@@ -73,7 +73,7 @@ export const womensFleece = [
             "https://howies.co.uk/cdn/shop/files/fleece-snood-3_1512x.jpg?v=1695991257",
             "https://howies.co.uk/cdn/shop/files/fleece-snood-1_1512x.jpg?v=1695991257",
             "https://howies.co.uk/cdn/shop/files/fleece-snood-2_1512x.jpg?v=1695991257",
-            // "https://howies.co.uk/cdn/shop/files/fleece-snood-4_1512x.jpg?v=1695991253",
+            "https://howies.co.uk/cdn/shop/files/fleece-snood-4_1512x.jpg?v=1695991253",
         ]
     },
     {
