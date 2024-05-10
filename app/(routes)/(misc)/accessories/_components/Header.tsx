@@ -16,17 +16,17 @@ export const Filters = ({ filters, clearAll, removeFilter }: { filters: string[]
     const showFilters = () => filters.map(val => <FilterView key={val} removeFilter={removeFilter} val={val} />)
 
     const filtersMarkup = (
+        filters.filter(v => v !== "All").length
+        ?
         <div className='flex gap-4 items-center w-full justify-center'>
             <ul className='flex gap-4 justify-center'>{showFilters()}</ul>
             <button onClick={clearAll}>Clear all</button>
         </div>
+        : null
     )
 
     return (
         filtersMarkup
-        // <div>
-        //     {filtersMarkup}
-        // </div>
     )
 
 }
@@ -35,19 +35,22 @@ const FilterView = ({ val, removeFilter }: { val: string, removeFilter: (v: stri
     const handleRemove = () => removeFilter(val)
 
     return (
+        val !== "All"
+        ?
         <li className='flex gap-4 items-center'>
             <span>{val}</span>
             <button onClick={handleRemove}>x</button>
         </li>
+        : null
     )
 }
 
-export const SelectItems = ({updateOrAddFilter}: {updateOrAddFilter: (d: string, n: string) => void}) => {
+export const SelectItems = ({updateOrAddFilter, trackedFilters}: {updateOrAddFilter: (d: string, n: string) => void, trackedFilters: any}) => {
     return (
         <div className='flex gap-4 justify-center w-full'>
-            <SelectReuseable data={availability} name='Availability' updateOrAddFilter={updateOrAddFilter} />
-            <SelectReuseable data={gender} name='Gender' updateOrAddFilter={updateOrAddFilter} />
-            <SelectReuseable data={size} name='Size' updateOrAddFilter={updateOrAddFilter} />
+            <SelectReuseable data={availability} name='Availability' updateOrAddFilter={updateOrAddFilter} trackedFilters={trackedFilters} />
+            <SelectReuseable data={gender} name='Gender' updateOrAddFilter={updateOrAddFilter} trackedFilters={trackedFilters} />
+            <SelectReuseable data={size} name='Size' updateOrAddFilter={updateOrAddFilter} trackedFilters={trackedFilters} />
         </div>
     )
 }

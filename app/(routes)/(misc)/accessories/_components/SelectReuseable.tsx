@@ -1,33 +1,67 @@
-import React from 'react'
+import { useForTruthToggle } from '@/hooks'
+import React, { useRef, useState } from 'react'
 
 export const SelectReuseable = (
-    { data, name, updateOrAddFilter }
+    { data, name, updateOrAddFilter, trackedFilters }
         :
-        { data: string[], name: string, updateOrAddFilter: (d: string, n: string) => void }
+        { data: string[], name: string, updateOrAddFilter: (d: string, n: string) => void, trackedFilters: any }
 ) => {
-    const showAll = () => data.map(v => <OptionMarkup key={v} val={v} />)
+
+    // const [selectedOpt, setSlectedOpt] = useState(false)
+
+    const { handleFalsy, handleTruthy, isTrue } = useForTruthToggle()
+
+    const ref = useRef<HTMLUListElement | null>(null)
+
+    const handleClick = (v: string) => {
+        updateOrAddFilter(v, name)
+        // setSlectedOpt(v)
+        // setSlectedOpt(true)
+    }
+
+    const showAll = () => data.map(v => <li key={v} className='' onClick={() => handleClick(v)}>{v}</li>)
+
+    const openUp = () => {
+        // console.log(isTrue, "isTrue!!",)
+        if (isTrue) {
+            handleFalsy()
+        } else {
+            handleTruthy()
+        }
+    }
 
     return (
-        <div className='flex gap-4'>
-            <p>{name}</p>
-            <select name={name} id={name} onChange={e => updateOrAddFilter(e.target.value, name)}>
-                {showAll()}
-            </select>
+        <div className='flex gap-4 border-2 relative w-56' onClick={openUp}>
+            <p className=''>{name}</p>
+            {/* <p>{selectedOpt ? trackedFilters[name] : null}</p> */}
+            {/* <p>{trackedFilters[name] !== "All" ? trackedFilters[name] : null}</p> */}
+            <p>{trackedFilters[name] ? trackedFilters[name] : null}</p>
+            {
+                isTrue
+                    ? (
+                        <ul className='flex gap-4 flex-col absolute top-7 bg-slate-900 w-full'>
+                            {showAll()}
+                        </ul>
+                    ) : null
+            }
         </div>
     )
 }
 
-const OptionMarkup = (
-    { val }
-        :
-        { val: string }) => {
 
-    const handleAdd = () => {
-        console.log("clicking!!")
-        // updateOrAddFilter(val)
-    }
+// export const SelectReuseable = (
+//     { data, name, updateOrAddFilter }
+//         :
+//         { data: string[], name: string, updateOrAddFilter: (d: string, n: string) => void }
+// ) => {
+//     const showAll = () => data.map(v => <option key={v} className=''>{v}</option>)
 
-    return (
-        <option onClick={handleAdd}>{val}</option>
-    )
-}
+//     return (
+//         <div className='flex gap-4 border-2'>
+//             <p className=''>{name}</p>
+//             <select name={name} id={name} onChange={e => updateOrAddFilter(e.target.value, name)} className='w-44 bg-transparent'>
+//                 {showAll()}
+//             </select>
+//         </div>
+//     )
+// }
