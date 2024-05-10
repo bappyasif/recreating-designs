@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { Filters, Heading, SelectItems } from './_components/Header'
+import { ProductsGallery } from './_components/Gallery'
 
 const AccessoriesPage = () => {
   const [allFilters, setAllFilters] = useState([""])
@@ -41,10 +42,11 @@ const AccessoriesPage = () => {
   }, [improvedFilters])
 
   return (
-    <div className='min-h-screen space-y-10'>
+    <div className='min-h-screen space-y-10 w-4/5 mx-auto'>
       <Heading />
       <SelectItems updateOrAddFilter={updateOrAddFilter} trackedFilters={improvedFilters} />
       <Filters clearAll={clearFilters} filters={allFilters} removeFilter={removeFromFilters} />
+      <ProductsGallery />
     </div>
   )
 }

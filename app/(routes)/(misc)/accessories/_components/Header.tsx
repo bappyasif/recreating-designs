@@ -18,9 +18,9 @@ export const Filters = ({ filters, clearAll, removeFilter }: { filters: string[]
     const filtersMarkup = (
         filters.filter(v => v !== "All").length
         ?
-        <div className='flex gap-4 items-center w-full justify-center'>
+        <div className='flex gap-4 items-center w-full justify-start'>
             <ul className='flex gap-4 justify-center'>{showFilters()}</ul>
-            <button onClick={clearAll}>Clear all</button>
+            <button onClick={clearAll} className='underline'>Clear all</button>
         </div>
         : null
     )
@@ -37,7 +37,7 @@ const FilterView = ({ val, removeFilter }: { val: string, removeFilter: (v: stri
     return (
         val !== "All"
         ?
-        <li className='flex gap-4 items-center'>
+        <li className='flex gap-4 items-center bg-slate-900 rounded-full p-1.5 px-3.5'>
             <span>{val}</span>
             <button onClick={handleRemove}>x</button>
         </li>
