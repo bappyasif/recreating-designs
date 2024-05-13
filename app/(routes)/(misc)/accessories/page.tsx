@@ -7,7 +7,7 @@ import { ProductsGallery } from './_components/Gallery'
 const AccessoriesPage = () => {
   const [allFilters, setAllFilters] = useState([""])
 
-  const [improvedFilters, setImprovedFilters] = useState({Availability: "", Gender: "", Size: ""})
+  const [improvedFilters, setImprovedFilters] = useState({Availability: "All", Gender: "All", Size: "All"})
 
   // const [selectedOpt, setSlectedOpt] = useState("")
 
