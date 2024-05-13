@@ -22,7 +22,7 @@ export const Filters = ({ filters, clearAll, removeFilter }: { filters: string[]
             <ul className='flex gap-4 justify-center'>{showFilters()}</ul>
             <button onClick={clearAll} className='underline'>Clear all</button>
         </div>
-        : null
+        : <div className='h-9'></div>
     )
 
     return (

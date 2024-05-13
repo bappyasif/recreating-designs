@@ -1,4 +1,4 @@
-import { useForTruthToggle } from '@/hooks'
+import { useClickOutside, useForTruthToggle } from '@/hooks'
 import React, { useRef, useState } from 'react'
 
 export const SelectReuseable = (
@@ -11,7 +11,7 @@ export const SelectReuseable = (
 
     const { handleFalsy, handleTruthy, isTrue } = useForTruthToggle()
 
-    const ref = useRef<HTMLUListElement | null>(null)
+    const ref = useRef<HTMLDivElement | null>(null)
 
     const handleClick = (v: string) => {
         updateOrAddFilter(v, name)
@@ -30,8 +30,10 @@ export const SelectReuseable = (
         }
     }
 
+    useClickOutside(ref, handleFalsy)
+
     return (
-        <div className='flex gap-4 border-2 relative w-56' onClick={openUp}>
+        <div className='flex gap-4 border-2 relative w-56 z-10' onClick={openUp} ref={ref}>
             <p className=''>{name}</p>
             {/* <p>{selectedOpt ? trackedFilters[name] : null}</p> */}
             {/* <p>{trackedFilters[name] !== "All" ? trackedFilters[name] : null}</p> */}
