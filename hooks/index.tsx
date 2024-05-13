@@ -10,6 +10,31 @@ export const useForTruthToggle = () => {
     return { isTrue, handleFalsy, handleTruthy }
 }
 
+export const useForRepeatSliderProgressView = (images: number, duration: number, repeat: boolean) => {
+    const [repNow, setRepNow] = useState(true)
+
+    useEffect(() => {
+        if (repeat) {
+            const addedTime = images === 4 ? duration + 150 : images === 5 ? duration + 200 : duration
+
+            const timer2 = setTimeout(() => {
+                setRepNow(false)
+            }, addedTime)
+
+            const timer = setTimeout(() => {
+                setRepNow(true)
+            }, addedTime + 200)
+
+            return () => {
+                clearTimeout(timer)
+                clearTimeout(timer2)
+            }
+        }
+    }, [repeat, images])
+
+    return {repNow}
+}
+
 function useInViewPort<T extends HTMLElement>(ref: React.RefObject<T>, options?: IntersectionObserverInit) {
     const [inViewport, setInViewport] = useState(false);
     
