@@ -14,7 +14,7 @@ export const accessories = [
             "https://howies.co.uk/cdn/shop/files/FRANKLIN_U_232_MIXED_COLOURS_01_1080x.jpg?v=1697554012",
 
         ],
-        type: "unisex",
+        type: "Mens",
         sizes: ["3-6", "6-9", "9-12"],
         stock: "In stock"
     },
@@ -26,7 +26,7 @@ export const accessories = [
             "https://howies.co.uk/cdn/shop/files/MUNRO_U_232_MIXED_COLOURS_comp1_1080x.jpg?v=1697554615",
             "https://howies.co.uk/cdn/shop/files/MUNRO_U_232_MIXED_COLOURS_01_1080x.jpg?v=1697554633"
         ],
-        type: "unisex",
+        type: "Womens",
         sizes: ["3-6", "6-9", "9-12"],
         stock: "In stock"
     },
@@ -40,7 +40,7 @@ export const accessories = [
             "https://howies.co.uk/cdn/shop/files/fleece-snood-2_1512x.jpg?v=1695991257",
             "https://howies.co.uk/cdn/shop/files/fleece-snood-4_1512x.jpg?v=1695991253",
         ],
-        type: "unisex",
+        type: "Unisex",
         sizes: ["3-6", "6-9", "9-12"],
         stock: "In stock"
     },
@@ -53,7 +53,7 @@ export const accessories = [
             "https://howies.co.uk/cdn/shop/files/fleece-mittens-pair2_1512x.jpg?v=1695990473",
             "https://howies.co.uk/cdn/shop/files/fleece-mittens-pair-ls1_1512x.jpg?v=1695990473"
         ],
-        type: "unisex",
+        type: "Unisex",
         sizes: ["3-6", "6-9", "9-12"],
         stock: "In stock"
     }, 
@@ -66,7 +66,7 @@ export const accessories = [
             "https://howies.co.uk/cdn/shop/files/soc24_0007_Layer5_1080x.jpg?v=1714470403",
             "https://howies.co.uk/cdn/shop/files/soc24_0008_Layer4_1080x.jpg?v=1714470404"
         ],
-        type: "All",
+        type: "Mens",
         sizes: ["3-6", "6-9", "9-12"],
         stock: "In stock"
     },
@@ -80,7 +80,7 @@ export const accessories = [
             "https://howies.co.uk/cdn/shop/files/soc24_0000_Layer12_1080x.jpg?v=1714470283",
             "https://howies.co.uk/cdn/shop/files/soc24_0002_Layer10_1080x.jpg?v=1714470278"
         ],
-        type: "All",
+        type: "Womens",
         sizes: ["3-6", "6-9", "9-12"],
         stock: "In stock"
     },
@@ -93,7 +93,7 @@ export const accessories = [
             "https://howies.co.uk/cdn/shop/products/gary-lemon-01_1080x.jpg?v=1680702580",
             "https://howies.co.uk/cdn/shop/products/gary-lemon3_1080x.jpg?v=1680702345"
         ],
-        type: "All",
+        type: "Unisex",
         sizes: ["3-6", "6-9", "9-12"],
         stock: "Out of stock"
     },
@@ -108,8 +108,8 @@ export const accessories = [
             "https://howies.co.uk/cdn/shop/products/MUG_1_SeaFoam_1080x.jpg?v=1664884602",
             "https://howies.co.uk/cdn/shop/products/MUG_4_34DegreeSea_1080x.jpg?v=1664884602"
         ],
-        type: "All",
-        sizes: ["All"],
+        type: "Unisex",
+        sizes: ["3-6", "6-9", "9-12"],
         stock: "In stock"
     }
 ]

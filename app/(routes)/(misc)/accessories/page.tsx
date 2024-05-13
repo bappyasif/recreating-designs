@@ -27,7 +27,7 @@ const AccessoriesPage = () => {
 
   const clearFilters = () => {
     setAllFilters([])
-    setImprovedFilters({Availability: "", Gender: "", Size: ""})
+    setImprovedFilters({Availability: "All", Gender: "All", Size: "All"})
   }
 
   useEffect(() => {
@@ -46,7 +46,7 @@ const AccessoriesPage = () => {
       <Heading />
       <SelectItems updateOrAddFilter={updateOrAddFilter} trackedFilters={improvedFilters} />
       <Filters clearAll={clearFilters} filters={allFilters} removeFilter={removeFromFilters} />
-      <ProductsGallery />
+      <ProductsGallery allFilters={allFilters} />
     </div>
   )
 }

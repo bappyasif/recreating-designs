@@ -1,9 +1,19 @@
 import React, { useState } from 'react'
 import { accessories } from '../data'
 import { ImageSlideOnCardWithProgress } from '@/app/components/image-slide-on-card-with-progress'
+import { useForAccessoriesFiltering } from '@/hooks'
 
-export const ProductsGallery = () => {
-    const showAll = () => accessories.map(item => <ShowCard key={item.name} {...item} />)
+export const ProductsGallery = ({allFilters}: {allFilters: string[]}) => {
+
+    const [data, setData] = useState(accessories)
+
+    useForAccessoriesFiltering(allFilters, setData)
+
+    // const showAll = () => (filteredProducts as typeof accessories).map((item, idx) => <ShowCard key={idx} {...item} />)
+
+    console.log(allFilters, "allFilters")
+
+    const showAll = () => data.map((item, idx) => <ShowCard key={idx} {...item} />)
 
     return (
         <div className='grid grid-cols-3 gap-10'>
@@ -29,7 +39,7 @@ const ShowCard = ({ ...data }: CardProps) => {
             <ProductCard images={images} rnd={stock === "Out of stock"} />
             <div>
                 <p className='text-xl font-bold'>{name}</p>
-                <p className='text-xl font-semibold'>{stock === "Out of stock" ? "SOLD OUT" : price}</p>
+                <p className='text-xl font-semibold'>${stock === "Out of stock" ? "SOLD OUT" : price}</p>
             </div>
         </div>
     )
