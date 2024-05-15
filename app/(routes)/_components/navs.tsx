@@ -9,7 +9,8 @@ import React, { useEffect, useState } from 'react'
 export const Navs = () => {
     const [active, setActive] = useState("")
     const updateActive = (navName: string) => setActive(navName)
-    const allNavs = () => menu.map(item => <RenderMenuItem key={item} name={item} updateActive={updateActive} active={active} />)
+    // const allNavs = () => menu.map(item => <RenderMenuItem key={item} name={item} updateActive={updateActive} active={active} />)
+    const allNavs = () => menu.map(item => <RenderMenuItem key={item.name} name={item.name} path={item.path} updateActive={updateActive} active={active} />)
     return (
         <nav 
             className='flex justify-between w-1/3 px-4 font-semibold'
@@ -18,7 +19,7 @@ export const Navs = () => {
     )
 }
 
-const RenderMenuItem = ({ name, updateActive, active }: { name: string, updateActive: (d: string) => void, active: string }) => {
+const RenderMenuItem = ({ name, updateActive, active, path }: { name: string, updateActive: (d: string) => void, active: string, path: string }) => {
     // const { handleFalsy, handleTruthy, isTrue } = useForTruthToggle()
 
     // useEffect(() => {
@@ -48,7 +49,7 @@ const RenderMenuItem = ({ name, updateActive, active }: { name: string, updateAc
         // onMouseEnter={handleUpdate}
         // onMouseLeave={() => updateActive("")}
         >
-            <Link href={"#"} className='p-2'>{name}</Link>
+            <Link href={path} className='p-2'>{name}</Link>
             {
                 active === name
                     ? <MenuHoveredOverlayItems updateActive={updateActive} active={active} />

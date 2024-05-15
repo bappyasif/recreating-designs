@@ -61,8 +61,16 @@ export const information = [
 
 export const shop = ["Men", "Women"]
 
+// export const menu = [
+//     "men", "women", "accessories", "sale", "more"
+// ]
+
 export const menu = [
-    "men", "women", "accessories", "sale", "more"
+    {name: "men", path: "/mens"}, 
+    {name: "women", path: "/womens"}, 
+    {name: "accessories", path: "/accessories"}, 
+    {name: "outlet", path: "/outlet"}, 
+    {name: "more", path: "/more"}, 
 ]
 
 export const womensFleece = [
