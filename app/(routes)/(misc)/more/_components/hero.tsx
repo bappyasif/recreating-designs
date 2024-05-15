@@ -13,8 +13,8 @@ export const WearItOut = () => {
   return (
     <div className='text-xl w-2/4 mx-auto flex flex-col gap-y-6'>
       <div className='flex flex-col gap-y-2'>
-        <p className='text-2xl'>Wear it Out</p>
-        <div className='w-4 h-1.5 bg-red-950'></div>
+        <p className='text-6xl'>Wear it Out</p>
+        <div className='w-14 h-1.5 bg-red-950'></div>
       </div>
 
       <p>

@@ -10,12 +10,12 @@ export const SeparatorTwo = () => {
     )
 }
 
-export const Header = () => {
+export const Header = ({sectionName, headingText}: {sectionName: string, headingText: string}) => {
     return (
         <div className='flex flex-col gap-y-6'>
-            <p>OUR HISTORY</p>
-            <p>Do Good Shit</p>
-            <p className='w-6 h-1.5 bg-red-950'></p>
+            <p className="text-xl font-light">{sectionName}</p>
+            <p className="text-6xl font-bold">{headingText}</p>
+            <p className='w-12 h-1.5 bg-red-950'></p>
         </div>
     )
 }

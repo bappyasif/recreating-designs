@@ -5,7 +5,7 @@ export const ZigzagItems = () => {
   const showAll = () => reusables.map((item, idx) => <ShowItem key={item.text} additional={item.additional} imgSrc={item.img} swap={Boolean(idx)} text={item.text} />)
 
   return (
-    <div className='flex flex-col justify-center items-center'>
+    <div className='flex flex-col justify-center items-center w-full'>
       {showAll()}
     </div>
   )
@@ -14,28 +14,27 @@ export const ZigzagItems = () => {
 
 const ShowItem = ({ imgSrc, text, swap, additional }: { imgSrc: string, text: string, swap: boolean, additional: string }) => {
   return (
-    <div className='flex gap-x-10 items-center'>
+    <div className='flex items-center justify-center'>
       {
         swap
           ? null
-          : <p>{text}</p>
+          : <p className='w-1/2 px-16 text-xl'>{text}</p>
       }
-      <div className='w-1/2 h-96'>
-        <img src={imgSrc} alt="" className='w-full h-full' />
-      </div>
-      <div className='flex flex-col gap-y-4 w-1/2'>
-        {
-          swap
-            ? <p>{text}</p>
-            : null
-        }
 
-        {
-          additional.length
-            ? <p>{additional}</p>
-            : null
-        }
+      <div className={`${swap ? "" : "w-1/2"} h-[36rem] flex justify-center`}>
+        <img src={imgSrc} alt="" className={`w-full h-full`} />
       </div>
+
+      {
+          swap
+            ? (
+              <div className='flex flex-col gap-y-4 w-1/2 px-16 text-xl'>
+                <p>{text}</p>
+                <p>{additional}</p>
+              </div>
+          )
+            : null
+      }
     </div>
   )
 }
