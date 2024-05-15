@@ -58,6 +58,8 @@ export function useClickOutside(ref: any, onClickOutside: () => void) {
 export const useForAccessoriesFiltering = (allFilters: string[], setData: (d: any[]) => void) => {
     const onlyAlls = allFilters.filter(v => v === "All").length
 
+    const twoAndLogicalChecks = (idx1: number, idx2: number, item: any, key1: string, key2: string) => item[key1].includes(allFilters[idx1]) && item[key2].includes(allFilters[idx2])
+
     useEffect(() => {
         if (onlyAlls === 2) {
             const filteredProducts = accessories.map(item => item.sizes.includes(allFilters[2]) || item.type.includes(allFilters[1]) || item.stock.includes(allFilters[0]) ? item : null).filter(v => v)
@@ -68,21 +70,27 @@ export const useForAccessoriesFiltering = (allFilters: string[], setData: (d: an
                 let chks = null
                 if (allFilters[2] !== "All") {
                     if (allFilters[1] !== "All") {
-                        chks = item.sizes.includes(allFilters[2]) && item.type.includes(allFilters[1])
+                        // chks = item.sizes.includes(allFilters[2]) && item.type.includes(allFilters[1])
+                        chks = twoAndLogicalChecks(2, 1, item, "sizes", "type")
                     } else {
-                        chks = item.sizes.includes(allFilters[2]) && item.stock.includes(allFilters[0])
+                        // chks = item.sizes.includes(allFilters[2]) && item.stock.includes(allFilters[0])
+                        chks = twoAndLogicalChecks(2, 0, item, "sizes", "stock")
                     }
                 } else if (allFilters[1] !== "All") {
                     if (allFilters[2] !== "All") {
-                        chks = item.sizes.includes(allFilters[2]) && item.type.includes(allFilters[1])
+                        // chks = item.sizes.includes(allFilters[2]) && item.type.includes(allFilters[1])
+                        chks = twoAndLogicalChecks(2, 1, item, "sizes", "type")
                     } else {
-                        chks = item.type.includes(allFilters[1]) && item.stock.includes(allFilters[0])
+                        // chks = item.type.includes(allFilters[1]) && item.stock.includes(allFilters[0])
+                        chks = twoAndLogicalChecks(1, 0, item, "type", "stock")
                     }
                 } else if (allFilters[0] !== "All") {
                     if (allFilters[2] !== "All") {
-                        chks = item.sizes.includes(allFilters[2]) && item.stock.includes(allFilters[0])
+                        // chks = item.sizes.includes(allFilters[2]) && item.stock.includes(allFilters[0])
+                        chks = twoAndLogicalChecks(2, 0, item, "sizes", "stock")
                     } else {
-                        chks = item.type.includes(allFilters[1]) && item.stock.includes(allFilters[0])
+                        // chks = item.type.includes(allFilters[1]) && item.stock.includes(allFilters[0])
+                        chks = twoAndLogicalChecks(1, 0, item, "type", "stock")
                     }
                 }
 

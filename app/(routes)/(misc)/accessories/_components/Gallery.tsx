@@ -11,7 +11,7 @@ export const ProductsGallery = ({allFilters}: {allFilters: string[]}) => {
 
     // const showAll = () => (filteredProducts as typeof accessories).map((item, idx) => <ShowCard key={idx} {...item} />)
 
-    console.log(allFilters, "allFilters")
+    // console.log(allFilters, "allFilters")
 
     const showAll = () => data.map((item, idx) => <ShowCard key={idx} {...item} />)
 

@@ -15,8 +15,11 @@ export const Filters = ({ filters, clearAll, removeFilter }: { filters: string[]
 
     const showFilters = () => filters.map(val => <FilterView key={val} removeFilter={removeFilter} val={val} />)
 
+    const onlyAlls = filters.filter(v => v === "All").length
+
     const filtersMarkup = (
-        filters.filter(v => v !== "All").length
+        // filters.filter(v => v !== "All").length
+        onlyAlls && onlyAlls !== 3
         ?
         <div className='flex gap-4 items-center w-full justify-start'>
             <ul className='flex gap-4 justify-center'>{showFilters()}</ul>
