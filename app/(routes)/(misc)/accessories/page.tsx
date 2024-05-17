@@ -66,7 +66,7 @@ const AccessoriesPage = () => {
   }, [trackedFilters])
 
   return (
-    <div className='min-h-screen space-y-10 w-4/5 mx-auto'>
+    <div className='min-h-screen space-y-10 w-4/5 mx-auto text-[#474747] py-20'>
       <Heading />
       <SelectItems updateOrAddFilter={updateOrAddFilter} trackedFilters={trackedFilters} />
       <Filters clearAll={clearFilters} filters={allFilters} removeFilter={removeFromFilters} />

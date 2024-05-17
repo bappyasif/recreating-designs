@@ -19,7 +19,7 @@ export const SelectReuseable = (
         // setSlectedOpt(true)
     }
 
-    const showAll = () => data.map(v => <li key={v} className='' onClick={() => handleClick(v)}>{v}</li>)
+    const showAll = () => data.map(v => <li key={v} className='text-xl hover:text-[#f1f1f1]' onClick={() => handleClick(v)}>{v}</li>)
 
     const openUp = () => {
         // console.log(isTrue, "isTrue!!",)
@@ -33,15 +33,15 @@ export const SelectReuseable = (
     useClickOutside(ref, handleFalsy)
 
     return (
-        <div className='flex gap-4 border-2 relative w-56 z-10' onClick={openUp} ref={ref}>
-            <p className=''>{name}</p>
+        <div className='flex gap-4 border-2 relative w-56 z-10 text-xl py-2 px-1.5 rounded-md' onClick={openUp} ref={ref}>
+            <p className='font-bold'>{name}</p>
             {/* <p>{selectedOpt ? trackedFilters[name] : null}</p> */}
             {/* <p>{trackedFilters[name] !== "All" ? trackedFilters[name] : null}</p> */}
-            <p>{trackedFilters[name] ? trackedFilters[name] : null}</p>
+            <p className='font-light'>{trackedFilters[name] ? trackedFilters[name] : null}</p>
             {
                 isTrue
                     ? (
-                        <ul className='flex gap-4 flex-col absolute top-7 bg-slate-900 w-full'>
+                        <ul className='flex gap-4 flex-col absolute top-12 left-0 w-full bg-[#f6f6f6] p-2 shadow-lg rounded-md'>
                             {showAll()}
                         </ul>
                     ) : null

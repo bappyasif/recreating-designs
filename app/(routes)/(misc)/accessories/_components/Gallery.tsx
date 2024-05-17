@@ -35,7 +35,7 @@ const ShowCard = ({ ...data }: CardProps) => {
     const { images, name, price, sizes, stock, type } = data;
 
     return (
-        <div className='w-96 h-full rounded-sm flex flex-col gap-y-6'>
+        <div className='w-[27rem] h-[44rem] rounded-sm flex flex-col gap-y-6'>
             <ProductCard images={images} rnd={stock === "Out of stock"} />
             <div>
                 <p className='text-xl font-bold'>{name}</p>
@@ -61,7 +61,7 @@ const ProductCard = ({ images, rnd }: { images: string[], rnd: boolean }) => {
     const initialPicture = () => setCurrSrc(0)
 
     return (
-        <div className='bg-slate-400 max-h-[40rem] w-full rounded-sm relative flex items-center'>
+        <div className='bg-[#f6f6f6] min-h-[38rem] w-full rounded-sm relative flex items-center'>
             {/* <ProductImage imgSrc={imgSources[currSrc]} nextPicture={nextPicture} initialPicture={initialPicture} rnd={rnd} images={imgSources.length} repeat={currSrc === images.length - 1} /> */}
 
             <ImageSlideOnCardWithProgress images={images.length} imgSrc={imgSources[currSrc]} initialPicture={initialPicture} nextPicture={nextPicture} repeat={currSrc === images.length - 1} rnd={rnd} />

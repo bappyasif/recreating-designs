@@ -60,7 +60,7 @@ const AddToBasket = ({ rnd }: { rnd: number }) => {
                 <button className='p-4 text-4xl' onClick={increaseCount}>+</button>
             </div>
 
-            <button disabled={rnd > .5} className={`${rnd > .5 ? "bg-slate-600" : "bg-slate-400"} w-60 rounded-lg`}>{rnd > .5 ? "Out of stock" : "Add to basket"}</button>
+            <button disabled={rnd > .5} className={`${rnd > .5 ? "bg-slate-600" : "bg-[#1f1f1f] text-[#ffff] hover:text-[#1f1f1f] hover:bg-[#ffffff]"}  w-60 rounded-lg border-2`}>{rnd > .5 ? "Out of stock" : "Add to basket"}</button>
         </div>
     )
 }

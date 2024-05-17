@@ -3,7 +3,7 @@ import { Header } from '.'
 
 export const ConciousClothing = () => {
     return (
-        <div className='flex flex-col gap-y-10 px-28 text-2xl font-light'>
+        <div className='flex flex-col gap-y-10 px-28 text-2xl font-light bg-[#f3ede3] py-20'>
             {/* <Header /> */}
             <Header headingText='Functional and sustainable' sectionName='Concious clothing' />
 

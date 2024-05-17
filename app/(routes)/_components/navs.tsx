@@ -49,7 +49,7 @@ const RenderMenuItem = ({ name, updateActive, active, path }: { name: string, up
         // onMouseEnter={handleUpdate}
         // onMouseLeave={() => updateActive("")}
         >
-            <Link href={path} className='p-2'>{name}</Link>
+            <Link href={path} className='p-2 text-[#474747]'>{name}</Link>
             {
                 active === name
                     ? <MenuHoveredOverlayItems updateActive={updateActive} active={active} />
@@ -67,10 +67,10 @@ const MenuHoveredOverlayItems = ({ updateActive, active }: { active: string, upd
         <ul 
             // className='absolute left-0 top-24 flex justify-between gap-x-11 px-20 w-full bg-gray-900 opacity-95 py-11 z-20' 
             // className='absolute left-0 top-24 flex justify-between gap-x-11 px-20 w-full py-11 z-20'
-            className='absolute left-0 top-24 flex justify-between gap-x-11 px-20 w-full py-11 z-20 max-h-[36rem] overflow-y-scroll' 
+            className='absolute left-0 top-24 flex justify-between gap-x-11 px-20 w-full py-11 z-20 max-h-[36rem] overflow-y-scroll text-[#474747]' 
             onMouseLeave={() => updateActive("")}
             style={{
-                backgroundColor: "rgba(0,0,0,.9)"
+                backgroundColor: "rgba(255,255,255,.9)"
             }}
         >
             {/* <div className='bg-gray-800 absolute opacity-80 h-full w-full'></div> */}
@@ -120,7 +120,7 @@ const LeftSideOverLayedMenuItemsForMore = () => {
 const RightSideOverLayedMenuItemsForMore = () => {
     return (
         <li className='w-2/3 px-11 h-60'>
-            <ul className='flex justify-between gap-x-4 w-full h-full'>
+            <ul className='flex justify-between gap-x-4 w-full h-full text-[#fff]'>
                 <AccessoryItem imgSrc="https://howies.co.uk/cdn/shop/files/u-packaging-banner_540x.jpg?v=1664810852" label="Our Packaging" />
                 <AccessoryItem imgSrc="https://howies.co.uk/cdn/shop/files/broken-twill-header-3_540x.jpg?v=1664272202" label="Our Fabrics" />
             </ul>
@@ -144,7 +144,7 @@ const AccessoryItem = ({ imgSrc, label }: { imgSrc: string, label: string }) => 
 const RightSideOverLayedMenuItemsForAccessories = () => {
     return (
         <li 
-        className='w-2/3 px-11'
+        className='w-2/3 px-11 text-[#f1f1f1]'
         // style={{
         //     backgroundColor: "rgba(0,0,0,1)"
         // }}
@@ -178,13 +178,17 @@ const RightSideOverLayedMenuItems = ({active}: {active: string}) => {
             >
                 
             </div> */}
-            <Image
+            {
+                active !== "outlet"
+                ? <Image
                 src={"https://howies.co.uk/cdn/shop/files/HOME_SKWAIR_OUTLET2024_720x.gif?v=1712311283"}
                 alt='Special offer for store subscribers only'
                 width={800} height={800}
                 // className='w-4/5 h-full py-2 mx-auto px-20'
                 className='w-4/5 h-full py-2 mx-auto px-20 absolute right-0 bottom-0'
             />
+            : null
+            }
         </li>
     )
 }

@@ -11,7 +11,7 @@ export const Subscribe = () => {
     <div 
       ref={ref} 
       // className='flex flex-col justify-center items-center gap-y-10 pb-28'
-      className={`flex flex-col justify-center items-center gap-y-10 pb-28 transition-all duration-1000 ${show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+      className={`flex flex-col justify-center items-center gap-y-10 pb-28 transition-all duration-1000 ${show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"} text-[#474747]`}
     >
       <h2 className='text-6xl'>Subscribe to out newsletter</h2>
       <p>Sign up to our newsletter and we&apos;ll keep you up to date with the latest arrivals</p>

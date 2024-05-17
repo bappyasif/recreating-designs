@@ -7,7 +7,7 @@ import { HistorySection } from './_components/history'
 
 const MorePage = () => {
   return (
-    <div className='space-y-10 w-full mx-auto'>
+    <div className='w-full mx-auto text-[#474747]'>
         <HeroItem />
         <WearItOut />
         <ZigzagItems />

@@ -6,7 +6,7 @@ export const SeparatorOne = () => {
     const {isTrue, ref} = useForObserverIntersectionVersionTwo()
 
     return (
-        <img ref={ref} src="https://howies.co.uk/cdn/shop/files/DJI_0029_1950x.jpg?v=1661184999" alt="decorative separator image of a beach" className={`w-full h-96 transition-all duration-1000 ${isTrue ? "opacity-100 scale-100" : "opacity-40 scale-50"}`} />
+        <img ref={ref} src="https://howies.co.uk/cdn/shop/files/DJI_0029_1950x.jpg?v=1661184999" alt="decorative separator image of a beach" className={`w-full h-[31rem] transition-all duration-1000 ${isTrue ? "opacity-100 scale-100" : "opacity-40 scale-50"}`} />
     )
 }
 

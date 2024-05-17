@@ -5,7 +5,7 @@ import { CiShoppingBasket } from 'react-icons/ci'
 
 export const HeaderRightHandSide = () => {
   return (
-    <div className='flex justify-between gap-x-6 px-4'>
+    <div className='flex justify-between gap-x-6 px-4 text-[#474747]'>
         <Account />
         <Search />
         <Basket />

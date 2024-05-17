@@ -61,7 +61,7 @@ const ShowItem = ({ imgSrc, text, swap, additional }: { imgSrc: string, text: st
       {
         swap
           ? null
-          : <p className='w-1/2 px-16 text-xl'>{text}</p>
+          : <p className='w-1/2 px-16 text-xl bg-[#f3ede3] flex justify-center items-center h-[36rem]'>{text}</p>
       }
 
       <div className={`${swap ? "" : "w-1/2"} h-[36rem] flex justify-center`}>

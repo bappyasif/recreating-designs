@@ -6,7 +6,7 @@ export const HistorySection = () => {
     const showAll = () => history.map(item => <ShowItem key={item.year} text={item.text} year={item.year} />)
 
   return (
-    <div className='flex flex-col gap-y-10 px-28 text-2xl font-light'>
+    <div className='flex flex-col gap-y-10 px-28 text-2xl font-light bg-[#f3ede3] py-20'>
         {/* <Header /> */}
         <Header headingText='Do Good Shit' sectionName='OUR HISTORY' />
         <div className='flex flex-col gap-y-4'>

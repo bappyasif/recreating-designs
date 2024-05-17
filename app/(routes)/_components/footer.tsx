@@ -5,7 +5,7 @@ import { IconType } from 'react-icons'
 
 export const Footer = () => {
     return (
-        <div className='space-y-20 text-2xl bg-slate-600 p-4'>
+        <div className='space-y-20 text-2xl p-4 bg-[#474747] text-[#ffffff]'>
             <div className='flex justify-between px-4 gap-x-6'>
                 <TagLine />
                 {/* <Shop /> */}

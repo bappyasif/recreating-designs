@@ -1,13 +1,15 @@
 import React from 'react'
 import { Header } from '../_components/header'
 import { Footer } from '../_components/footer'
+import { ShippingAlert } from '../_components/shipping-alert'
 
-const MiscRoutesLayout = ({children}: {children: React.ReactNode}) => {
+const MiscRoutesLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div>
-        <Header />
-        {children}
-        <Footer />
+    <div className='bg-[#ffffff]'>
+      <ShippingAlert />
+      <Header />
+      {children}
+      <Footer />
     </div>
   )
 }
