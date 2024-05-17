@@ -1,12 +1,20 @@
+"use client"
+
+import { useForObserverIntersectionVersionTwo } from "@/hooks"
+
 export const SeparatorOne = () => {
+    const {isTrue, ref} = useForObserverIntersectionVersionTwo()
+
     return (
-        <img src="https://howies.co.uk/cdn/shop/files/DJI_0029_1950x.jpg?v=1661184999" alt="decorative separator image of a beach" className="w-full h-96" />
+        <img ref={ref} src="https://howies.co.uk/cdn/shop/files/DJI_0029_1950x.jpg?v=1661184999" alt="decorative separator image of a beach" className={`w-full h-96 transition-all duration-1000 ${isTrue ? "opacity-100 scale-100" : "opacity-40 scale-50"}`} />
     )
 }
 
 export const SeparatorTwo = () => {
+    const {isTrue, ref} = useForObserverIntersectionVersionTwo()
+
     return (
-        <img src="https://howies.co.uk/cdn/shop/files/HOME_2022_JUNE_SHORTS.jpg?v=1655467551" alt="decorative separator image of a beach" className="w-full h-[38rem]" />
+        <img ref={ref} src="https://howies.co.uk/cdn/shop/files/HOME_2022_JUNE_SHORTS.jpg?v=1655467551" alt="decorative separator image of a beach" className={`w-full h-[38rem] transition-all duration-1000 ${isTrue ? "opacity-100 scale-100" : "opacity-40 scale-50"}`} />
     )
 }
 

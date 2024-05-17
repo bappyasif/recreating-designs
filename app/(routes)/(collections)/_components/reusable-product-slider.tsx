@@ -1,30 +1,32 @@
 "use client"
 
 import { mensTeesProductImage, womensTeesProductImages } from '@/data'
-import useInViewPort, { useForTruthToggle } from '@/hooks'
+import useInViewPort, { useForObserverIntersectionJustOnce, useForTruthToggle } from '@/hooks'
 import React, { useEffect, useRef, useState } from 'react'
 
 export const ReUsableProductSlider = ({ headerText, prods }: { 
     headerText: string, prods: string
 }) => {
-    const { handleFalsy, handleTruthy, isTrue } = useForTruthToggle()
+    // const { handleFalsy, handleTruthy, isTrue } = useForTruthToggle()
 
-    const ref = useRef(null)
+    // const ref = useRef(null)
 
-    const test = useInViewPort(ref, { threshold: 1 })
+    // const test = useInViewPort(ref, { threshold: 1 })
 
-    useEffect(() => {
-        if (test && !isTrue) {
-            handleTruthy!()
-        }
-    }, [test, isTrue])
+    // useEffect(() => {
+    //     if (test && !isTrue) {
+    //         handleTruthy!()
+    //     }
+    // }, [test, isTrue])
 
-    console.log(test, "test!!", isTrue)
+    // console.log(test, "test!!", isTrue)
+
+    const {isTrue, ref} = useForObserverIntersectionJustOnce()
 
     return (
         <div
             ref={ref}
-            className={`${(isTrue) ? "opacity-100" : "opacity-40"} flex flex-col gap-y-6 ml-20 my-20`}
+            className={`transition-all duration-1000 ${isTrue ? "opacity-100 scale-100" : "opacity-40 scale-50"} flex flex-col gap-y-6 ml-20 my-20`}
         >
             <div className='flex justify-between gap-x-4 font-bold mr-20'>
                 <h2 className='text-4xl cursor-move'>{headerText}</h2>

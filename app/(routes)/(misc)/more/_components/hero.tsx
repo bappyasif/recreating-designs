@@ -4,7 +4,7 @@ export const HeroItem = () => {
   return (
     <div className='flex justify-center items-center'>
       <img src="https://howies.co.uk/cdn/shop/files/about-us-swing.jpg?v=1664269687" alt="" className='w-full h-[40rem] relative object-cover' />
-      <p className='absolute'>About Us</p>
+      <p className='absolute text-6xl font-bold'>About Us</p>
     </div>
   )
 }

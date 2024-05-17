@@ -1,5 +1,5 @@
 import { accessories } from "@/app/(routes)/(misc)/accessories/data"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 export const useForTruthToggle = () => {
     const [isTrue, setIsTrue] = useState(false)
@@ -106,6 +106,110 @@ export const useForAccessoriesFiltering = (allFilters: string[], setData: (d: an
             setData(accessories)
         }
     }, [onlyAlls, allFilters])
+}
+
+export const useForObserverIntersectionJustOnce = () => {
+    const { handleFalsy, handleTruthy, isTrue } = useForTruthToggle()
+
+    const ref = useRef(null)
+
+    const test = useInViewPort(ref, { threshold: 1 })
+
+    useEffect(() => {
+        if (test && !isTrue) {
+            handleTruthy!()
+        }
+    }, [test, isTrue])
+
+    // console.log(test, "test!!", isTrue)
+
+    return { ref, isTrue }
+}
+
+// export const useForObserverIntersectionVersionTwo = () => {
+//     const ref = useRef(null)
+    
+//     const { handleTruthy, isTrue, handleFalsy } = useForTruthToggle()
+
+//     const onIntersection = (entries: IntersectionObserverEntry[]) => {
+//         for (const entry of entries) {
+//             if (entry.isIntersecting) {
+//                 // console.log(entry);
+//                 handleTruthy()
+//             } else {
+//                 // console.log("here!!")
+//                 handleFalsy()
+//             }
+//         }
+//     };
+
+//     // const observer = new IntersectionObserver(onIntersection, {root: ref.current});
+
+//     useEffect(() => {
+//         const observer = new IntersectionObserver(onIntersection, {rootMargin: "80px"});
+
+//         if (ref.current) {
+//             observer.observe(ref.current);
+//         }
+
+//         return () => {
+//             observer.unobserve(ref.current!)
+//             // handleFalsy()
+//         }
+//     }, [ref])
+
+//     return { ref, isTrue }
+// }
+
+export const useForObserverIntersectionVersionTwo = () => {
+    const ref = useRef(null)
+    
+    const { handleTruthy, isTrue, handleFalsy } = useForTruthToggle()
+
+    const {isTrue: isDetected} = useObserverIntersectionDetector(ref)
+
+    useEffect(() => {
+        if(!isTrue && isDetected) {
+            handleTruthy()
+        }
+    }, [isDetected, isTrue])
+
+    // return { ref, isTrue: isDetected }
+
+    return { ref, isTrue }
+}
+
+export const useObserverIntersectionDetector = (ref: React.RefObject<HTMLElement>) => {
+    const { handleTruthy, isTrue, handleFalsy } = useForTruthToggle()
+
+    const onIntersection = (entries: IntersectionObserverEntry[]) => {
+        for (const entry of entries) {
+            if (entry.isIntersecting) {
+                // console.log(entry);
+                handleTruthy()
+            } else {
+                // console.log("here!!")
+                handleFalsy()
+            }
+        }
+    };
+
+    // const observer = new IntersectionObserver(onIntersection, {root: ref.current});
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(onIntersection, {rootMargin: "80px"});
+
+        if (ref.current) {
+            observer.observe(ref.current);
+        }
+
+        return () => {
+            ref.current && observer.unobserve(ref.current)
+            // handleFalsy()
+        }
+    }, [ref])
+
+    return {isTrue}
 }
 
 function useInViewPort<T extends HTMLElement>(ref: React.RefObject<T>, options?: IntersectionObserverInit) {
