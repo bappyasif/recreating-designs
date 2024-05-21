@@ -1,7 +1,11 @@
+"use client"
+
+import { useForTruthToggle } from '@/hooks'
 import Link from 'next/link'
 import React from 'react'
 import { BiSearch } from 'react-icons/bi'
 import { CiShoppingBasket } from 'react-icons/ci'
+import { SearchModal } from './search-modal'
 
 export const HeaderRightHandSide = () => {
   return (
@@ -18,7 +22,18 @@ const Account = () => {
 }
 
 const Search = () => {
-  return <Link href={"#"}><BiSearch size={27} /></Link>
+  const { handleFalsy, handleTruthy, isTrue } = useForTruthToggle()
+
+  return (
+    <>
+      <Link href={"#"} onClick={handleTruthy}><BiSearch size={27} /></Link>
+      {
+        isTrue
+        ? <SearchModal handleClose={handleFalsy} />
+        : null
+      }
+    </>
+  )
 }
 
 const Basket = () => {

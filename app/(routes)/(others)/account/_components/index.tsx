@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export const InputItem = ({ type, name }: { type: string, name: string }) => {
     return (
-        <input type={type} name={name} placeholder={name} className="text-xl p-4 w-[38rem] border-2" />
+        <input type={type} name={name} placeholder={name} className="text-xl p-4 w-[38rem] border-2 rounded" />
     )
 }
 
@@ -17,7 +17,7 @@ export const Header = ({ text }: { text: string }) => {
 
 export const ActionButton = ({ text }: { text: string }) => {
     return (
-        <button className="w-[38rem] p-4 bg-slate-900 text-slate-200">{text}</button>
+        <button className="w-[38rem] p-4 bg-[#474747] hover:bg-transparent hover:text-[#474747] border-2 rounded text-slate-200">{text}</button>
     )
 }
 
