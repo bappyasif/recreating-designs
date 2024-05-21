@@ -4,6 +4,7 @@ import { mensTeesProductImage, womensTeesProductImages } from '@/data'
 import { useForTruthToggle } from '@/hooks'
 import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
+import { AddedToBasket } from '../../_components/added-to-basket'
 
 export const ReUsableProductBasket = ({ prods }: { prods: string }) => {
     const [rnd, setRnd] = useState(0.0)
@@ -44,6 +45,8 @@ const RightSide = ({ rnd, prods }: { rnd: number, prods: string }) => {
 const AddToBasket = ({ rnd }: { rnd: number }) => {
     const [count, setCount] = useState(0)
 
+    const {handleFalsy, handleTruthy, isTrue} = useForTruthToggle()
+
     const increaseCount = () => {
         setCount(prev => prev + 1)
     }
@@ -60,7 +63,13 @@ const AddToBasket = ({ rnd }: { rnd: number }) => {
                 <button className='p-4 text-4xl' onClick={increaseCount}>+</button>
             </div>
 
-            <button disabled={rnd > .5} className={`${rnd > .5 ? "bg-slate-600" : "bg-[#1f1f1f] text-[#ffff] hover:text-[#1f1f1f] hover:bg-[#ffffff]"}  w-60 rounded-lg border-2`}>{rnd > .5 ? "Out of stock" : "Add to basket"}</button>
+            <button disabled={rnd > .5} onClick={handleTruthy} className={`${rnd > .5 ? "bg-slate-600" : "bg-[#1f1f1f] text-[#ffff] hover:text-[#1f1f1f] hover:bg-[#ffffff]"}  w-60 rounded-lg border-2`}>{rnd > .5 ? "Out of stock" : "Add to basket"}</button>
+
+            {
+                isTrue
+                ? <AddedToBasket handleClose={handleFalsy} />
+                : null
+            }
         </div>
     )
 }

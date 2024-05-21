@@ -37,5 +37,5 @@ const Search = () => {
 }
 
 const Basket = () => {
-  return <Link href={"#"}><CiShoppingBasket size={27} /></Link>
+  return <Link href={"/cart"}><CiShoppingBasket size={27} /></Link>
 }
