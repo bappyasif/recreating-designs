@@ -21,7 +21,7 @@ const ModalButtons = () => {
     return (
         <div className='w-full flex justify-between gap-x-6 py-4'>
             <Link className='bg-transparent hover:bg-[#474747] hover:text-[#ffffff] text-3xl w-1/2 text-center py-2 rounded border-2' href={"/cart"}>View basket</Link>
-            <Link href={""} className='bg-[#474747] hover:bg-transparent text-[#ffffff] hover:text-[#474747] text-3xl w-1/2 text-center py-2 rounded border-2'>chekcout</Link>
+            <Link href={"/checkout"} className='bg-[#474747] hover:bg-transparent text-[#ffffff] hover:text-[#474747] text-3xl w-1/2 text-center py-2 rounded border-2'>chekcout</Link>
         </div>
     )
 }

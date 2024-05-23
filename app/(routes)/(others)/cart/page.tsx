@@ -18,7 +18,7 @@ const CartPage = () => {
 const Checkout = () => {
     return (
         <div className='self-center flex flex-col items-center justify-center'>
-            <button className='text-xl bg-[#474747] text-[#fff] p-4 px-8 rounded-sm hover:bg-[#ffffff] hover:text-[#474747] border'>Checkout</button>
+            <Link href={"/checkout"} className='text-xl bg-[#474747] text-[#fff] p-4 px-8 rounded-sm hover:bg-[#ffffff] hover:text-[#474747] border'>Checkout</Link>
             <div className='flex items-center gap-6'>
                 <button><FaApplePay size={100} /></button>
                 <button><FaGooglePay size={100} /></button>
