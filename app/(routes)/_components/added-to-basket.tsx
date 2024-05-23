@@ -4,7 +4,7 @@ import React, { useRef } from 'react'
 import { CgRemove } from 'react-icons/cg'
 import { HiCheck } from 'react-icons/hi'
 
-export const AddedToBasket = ({handleClose}: {handleClose: () => void}) => {
+export const AddedToBasket = ({ handleClose }: { handleClose: () => void }) => {
     const ref = useRef(null)
     useClickOutside(ref, handleClose)
 
@@ -20,26 +20,28 @@ export const AddedToBasket = ({handleClose}: {handleClose: () => void}) => {
 const ModalButtons = () => {
     return (
         <div className='w-full flex justify-between gap-x-6 py-4'>
-            <Link className='bg-transparent hover:bg-[#474747] hover:text-[#ffffff] text-3xl w-1/2 text-center py-2 rounded border-2' href={"#"}>View basket</Link>
-            <Link href={"#"} className='bg-[#474747] hover:bg-transparent text-[#ffffff] hover:text-[#474747] text-3xl w-1/2 text-center py-2 rounded border-2'>chekcout</Link>
+            <Link className='bg-transparent hover:bg-[#474747] hover:text-[#ffffff] text-3xl w-1/2 text-center py-2 rounded border-2' href={"/cart"}>View basket</Link>
+            <Link href={""} className='bg-[#474747] hover:bg-transparent text-[#ffffff] hover:text-[#474747] text-3xl w-1/2 text-center py-2 rounded border-2'>chekcout</Link>
         </div>
     )
 }
 
 const ProductInfo = () => {
     return (
-        <div className='flex justify-between items-center gap-x-6'>
-            <img src="https://picsum.photos/id/26/200/300" alt="https://picsum.photos/id/26/200/200" className='w-1/2' />
-            <div className='w-1/2'>
-                <p>Product Name</p>
-                <p>Price</p>
-                <p>Size</p>
+        <div className='flex items-center gap-x-6'>
+            <div className='p-1.5 bg-slate-200'>
+                <img src="https://picsum.photos/id/26/200/300" alt="https://picsum.photos/id/26/200/200" className='w-20' />
+            </div>
+            <div className='text-xl space-y-4'>
+                <p className='text-2xl'>Product Name</p>
+                <p>$##.##</p>
+                <p className='text-slate-400'>Size: @</p>
             </div>
         </div>
     )
 }
 
-const ModalHeader = ({handleClose}: {handleClose: () => void}) => {
+const ModalHeader = ({ handleClose }: { handleClose: () => void }) => {
     return (
         <div className='w-full flex justify-between items-center'>
             <div className='flex gap-x-4 items-center'>
