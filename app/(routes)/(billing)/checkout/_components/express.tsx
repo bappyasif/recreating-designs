@@ -6,8 +6,8 @@ import { SiFampay } from 'react-icons/si'
 export const Express = () => {
 
   return (
-    <div className='text-slate-900'>
-        <p>Express Checkout</p>
+    <div className='text-slate-900 flex flex-col gap-y-6 w-1/3 mx-auto text-xl'>
+        <p className='mx-auto'>Express Checkout</p>
         <ShowOptions />
         <Divider />
     </div>
@@ -16,7 +16,7 @@ export const Express = () => {
 
 const Divider = () => {
     return (
-        <div className='flex gap-x-6 items-center'>
+        <div className='flex gap-x-2 items-center w-full mx-auto'>
             <span className='w-full h-0.5 bg-slate-800'></span>
             <span>Or</span>
             <span className='w-full h-0.5 bg-slate-800'></span>
@@ -29,11 +29,11 @@ const ShowOptions = () => {
 
     const allOptions = () => options.map(item => {
         return (
-            <button title={item.name} key={item.name} className='text-2xl '>{item.icon}</button>
+            <button title={item.name} key={item.name} className='text-6xl w-1/3 flex justify-center bg-slate-400 rounded'>{item.icon}</button>
         )
     })
 
     return (
-        <div className='flex gap-x-4'>{allOptions()}</div>
+        <div className='flex gap-x-4 mx-auto w-full justify-center'>{allOptions()}</div>
     )
 }
