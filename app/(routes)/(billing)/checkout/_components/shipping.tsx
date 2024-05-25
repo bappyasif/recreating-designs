@@ -1,77 +1,40 @@
-"use client"
+import Link from "next/link"
+import { ReusableActionButtons } from "./reusables"
 
-import React from 'react'
-import { ReusableInput, ReusableTextarea, ReusableTextarea2 } from './reusable-input'
-import Link from 'next/link'
-
-export const Shipping = () => {
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        console.log("ready submit!!")
-    }
-
+export const ShippingMethod = () => {
     return (
-        <form onSubmit={handleSubmit} className='flex flex-col gap-y-4 justify-between items-center text-[#474747]'>
-            <div className='self-start'>
-                <ReusableInput name='Email' placeholder='Your valid email here' type='email' />
-                <CheckOffers />
+        <div className="text-[#474747]">
+            <div className="border">
+                <ShippingInfo type="Contact" values="a@b.co" />
+                <div className="w-[98%] mx-auto my-2.5 h-0.5 bg-slate-200"></div>
+                <ShippingInfo type="Contact" values="Road#0, House#0 (#rd floor - front side), p.c. culture housing society, shekertek, Dhaka 1207, Bangladesh" />
             </div>
 
-            <p className='self-start my-6 text-2xl font-bold'>Shipping address</p>
-            <SelectCountry />
-            <div className='flex justify-between items-center w-full'>
-                <ReusableInput name='First name' placeholder='First name' type='text' />
-                <ReusableInput name='Last name' placeholder='Last name' type='text' />
-            </div>
-            {/* <ReusableInput name='Address' placeholder='Address' type='address' /> */}
-            <ReusableTextarea name='Address' />
+            <MethodInfo />
 
-            <ReusableTextarea2 name='Apartment, suite, etc. (optional)' />
-
-            <div className='flex justify-between items-center w-full'>
-                <ReusableInput name='City' placeholder='City' type='text' />
-                <ReusableInput name='Postal code' placeholder='Postal code' type='text' />
-            </div>
-            <div className='flex justify-between items-center w-full'>
-                <ReusableInput name='Phone' placeholder='Phone number' type='telephone' />
-                <CountryFlag />
-            </div>
-
-            <div className='flex justify-between items-center w-full'>
-                <Link href={"/cart"} className='flex gap-x-4 items-center text-xl'>
-                    <span className='text-2xl'>&lt;</span>
-                    <span>Return to basket</span>
-                </Link>
-                <button type='submit' className='p-4 w-80 bg-slate-400 rounded text-xl'>Continue to shipping</button>
-            </div>
-        </form>
+            <ReusableActionButtons continueTo="payment" href="" returnTo="information" />
+        </div>
     )
 }
 
-const CheckOffers = () => {
+const MethodInfo = () => {
     return (
-        <label htmlFor="offers">
-            <input type="checkbox" name="offers" id="offers" />
-            Email me with news and offers
-        </label>
+        <div>
+            <p className="self-start my-6 text-2xl font-bold">Shipping Method</p>
+            <p className="flex justify-between bg-slate-200 p-4 px-6 my-6 text-xl rounded">
+                <span>Standard International (14-21 working days)</span>
+                <span>Free</span>
+            </p>
+        </div>
     )
 }
 
-const CountryFlag = () => {
+const ShippingInfo = ({type, values} : {type: string, values: string}) => {
     return (
-        <div>&#127463;🇩</div>
+        <div className="flex justify-between items-center gap-x-6 min-h-16 py-2">
+            <span className="w-1/4">{type}</span>
+            <span className="w-1/2">{values}</span>
+            <Link className="w-1/4 text-center underline" href={""}>Change</Link>
+        </div>
     )
 }
-
-const SelectCountry = () => {
-    const countries = () => options.map(v => <option key={v} value={v}>{v}</option>)
-
-    return (
-        <select className='w-full py-4 border border-slate-800 rounded' name="country" id="country" required>
-            <option value="-1">Choose country</option>
-            {countries()}
-        </select>
-    )
-}
-
-const options = ["Albania", "Bangladesh", "UK", "USA"]

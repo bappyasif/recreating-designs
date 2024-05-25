@@ -4,7 +4,8 @@ import { Brand } from '../../_components/brand'
 import { Sections } from './_components/sections'
 import { Express } from './_components/express'
 import { ContactForm } from './_components/contact'
-import { Shipping } from './_components/shipping'
+import { ShippingMethod } from './_components/shipping'
+import { Information } from './_components/information'
 
 const CheckoutPage = () => {
   return (
@@ -14,14 +15,27 @@ const CheckoutPage = () => {
         <div className='flex flex-col gap-y-6 justify-center items-center w-full'>
           <Brand />
           <Sections />
-          <Express />
+          {/* <Express /> */}
         </div>
 
-        <ContactForm />
-        <Shipping />
+        {/* <ShippingInformation /> */}
+
+        <ShippingMethod />
+
+        {/* <Shipping /> */}
       </div>
 
       <Basket />
+    </div>
+  )
+}
+
+const ShippingInformation = () => {
+  return (
+    <div className='flex flex-col gap-y-6'>
+      <Express />
+      <ContactForm />
+      <Information />
     </div>
   )
 }

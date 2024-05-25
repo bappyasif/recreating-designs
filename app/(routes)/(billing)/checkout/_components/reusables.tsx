@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 export const ReusableInput = ({name, placeholder, type}: {name:string,  placeholder: string, type: string}) => {
@@ -24,5 +25,17 @@ export const ReusableTextarea2 = ({name}: {name: string}) => {
         <p>{name}</p>
         <textarea name="address2" id="address2" autoComplete='address-line2' maxLength={299} className='w-full bg-transparent border border-slate-800 rounded'></textarea>
     </section>
+  )
+}
+
+export const ReusableActionButtons = ({href="", returnTo, continueTo}: {href: string, returnTo: string, continueTo: string}) => {
+  return (
+      <div className='flex justify-between items-center w-full'>
+          <Link href={href} className='flex gap-x-4 items-center text-xl'>
+              <span className='text-2xl'>&lt;</span>
+              <span>Return to {returnTo}</span>
+          </Link>
+          <button type='submit' className='p-4 w-80 bg-slate-400 rounded text-xl'>Continue to {continueTo}</button>
+      </div>
   )
 }
