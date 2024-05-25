@@ -1,5 +1,4 @@
-import Link from "next/link"
-import { ReusableActionButtons } from "./reusables"
+import { ReusableActionButtons, ShippingInfo } from "./reusables"
 
 export const ShippingMethod = () => {
     return (
@@ -25,16 +24,6 @@ const MethodInfo = () => {
                 <span>Standard International (14-21 working days)</span>
                 <span>Free</span>
             </p>
-        </div>
-    )
-}
-
-const ShippingInfo = ({type, values} : {type: string, values: string}) => {
-    return (
-        <div className="flex justify-between items-center gap-x-6 min-h-16 py-2">
-            <span className="w-1/4">{type}</span>
-            <span className="w-1/2">{values}</span>
-            <Link className="w-1/4 text-center underline" href={""}>Change</Link>
         </div>
     )
 }

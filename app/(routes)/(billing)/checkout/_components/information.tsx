@@ -1,8 +1,7 @@
 "use client"
 
 import React from 'react'
-import { ReusableActionButtons, ReusableInput, ReusableTextarea, ReusableTextarea2 } from './reusables'
-import Link from 'next/link'
+import { ReusableActionButtons, ReusableInput, ReusableTextarea, ReusableTextarea2, SelectCountry } from './reusables'
 
 export const Information = () => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -65,15 +64,15 @@ const CountryFlag = () => {
     )
 }
 
-const SelectCountry = () => {
-    const countries = () => options.map(v => <option key={v} value={v}>{v}</option>)
+// const SelectCountry = () => {
+//     const countries = () => options.map(v => <option key={v} value={v}>{v}</option>)
 
-    return (
-        <select className='w-full py-4 border border-slate-800 rounded' name="country" id="country" required>
-            <option value="-1">Choose country</option>
-            {countries()}
-        </select>
-    )
-}
+//     return (
+//         <select className='w-full py-4 border border-slate-800 rounded' name="country" id="country" required>
+//             <option value="-1">Choose country</option>
+//             {countries()}
+//         </select>
+//     )
+// }
 
-const options = ["Albania", "Bangladesh", "UK", "USA"]
+// const options = ["Albania", "Bangladesh", "UK", "USA"]

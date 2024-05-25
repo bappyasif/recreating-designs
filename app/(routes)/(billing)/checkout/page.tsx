@@ -6,6 +6,7 @@ import { Express } from './_components/express'
 import { ContactForm } from './_components/contact'
 import { ShippingMethod } from './_components/shipping'
 import { Information } from './_components/information'
+import { PaymentDetails } from './_components/payment'
 
 const CheckoutPage = () => {
   return (
@@ -20,9 +21,9 @@ const CheckoutPage = () => {
 
         {/* <ShippingInformation /> */}
 
-        <ShippingMethod />
+        {/* <ShippingMethod /> */}
 
-        {/* <Shipping /> */}
+        <PaymentDetails />
       </div>
 
       <Basket />
