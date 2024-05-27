@@ -9,7 +9,7 @@ export const BillingAddress = () => {
     }
 
     return (
-        <section>
+        <section className='space-y-3'>
             <SameAddress updateSelected={updateSelected} />
             <DifferentAddress updateSelected={updateSelected} />
             {
@@ -23,9 +23,9 @@ export const BillingAddress = () => {
 
 const BillingAddInfo = () => {
     return (
-        <>
+        <div className='flex flex-col gap-y-4 pt-4'>
             <SelectCountry />
-            <div className='flex justify-between items-center w-full'>
+            <div className='flex justify-between items-center w-full gap-x-10'>
                 <ReusableInput name='First name' placeholder='First name' type='text' />
                 <ReusableInput name='Last name' placeholder='Last name' type='text' />
             </div>
@@ -34,15 +34,15 @@ const BillingAddInfo = () => {
 
             <ReusableTextarea2 name='Apartment, suite, etc. (optional)' />
 
-            <div className='flex justify-between items-center w-full'>
+            <div className='flex justify-between items-center w-full gap-x-10'>
                 <ReusableInput name='City' placeholder='City' type='text' />
                 <ReusableInput name='Postal code' placeholder='Postal code' type='text' />
             </div>
-            <div className='flex justify-between items-center w-full'>
+            <div className='flex justify-between items-center w-full gap-x-10'>
                 <ReusableInput name='Phone' placeholder='Phone number' type='telephone' />
-                <div>&#127463;🇩</div>
+                <div className='w-60 text-center border border-slate-600 py-5 rounded-md'>&#127463;🇩</div>
             </div>
-        </>
+        </div>
     )
 }
 
