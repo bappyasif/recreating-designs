@@ -3,7 +3,7 @@ import React from 'react'
 export const Sections = () => {
     
   return (
-    <div>
+    <div className='self-end text-center w-3/4 flex justify-center'>
         <ShowAll />
     </div>
   )

@@ -11,7 +11,7 @@ export const PaymentDetails = () => {
         setSelected(d)
     }
     return (
-        <div className='text-[#474747]'>
+        <div className='text-[#474747] flex flex-col justify-end'>
             <InfoSofar />
             <PaymentOptions selected={selected} updateSelected={updateSelected} />
             {/* {
@@ -39,7 +39,7 @@ const RememberMe = () => {
 
 const InfoSofar = () => {
     return (
-        <div className="border">
+        <div className="border w-3/4 self-end">
             <ShippingInfo type="Contact" values="a@b.co" />
             <div className="w-[98%] mx-auto my-2.5 h-0.5 bg-slate-200"></div>
             <ShippingInfo type="Ship to" values="Road#0, House#0 (#rd floor - front side), p.c. culture housing society, shekertek, Dhaka 1207, Bangladesh" />

@@ -12,8 +12,9 @@ const CheckoutPage = () => {
   return (
     <div className='min-h-screen flex justify-between'>
 
-      <div className='w-1/2 bg-[#f1f1f1] space-y-6 p-4'>
-        <div className='flex flex-col gap-y-6 justify-center items-center w-full'>
+      <div className='w-1/2 bg-[#f1f1f1] space-y-6 p-4 flex flex-col self-end'>
+        
+        <div className='flex flex-col gap-y-6 items-center justify-end'>
           <Brand />
           <Sections />
           {/* <Express /> */}

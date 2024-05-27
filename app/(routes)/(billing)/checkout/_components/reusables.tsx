@@ -7,7 +7,7 @@ export const ReusableInput = ({ name, placeholder, type }: { name: string, place
       <label className='text-sm text-slate-400' htmlFor={name}>{name}</label>
       <input type={type} id={name} placeholder={placeholder} 
       // className='text-lg px-0.5 bg-transparent placeholder:text-slate-400 placeholder:text-sm outline-none w-[20rem]' 
-      className={`text-lg bg-transparent outline-none ${name === "Phone" ? "w-full" :"w-[20rem]"}`} 
+      className={`text-lg bg-transparent outline-none ${name === "Phone" ? "w-full" :"w-[15rem]"}`} 
       required />
     </section>
   )

@@ -26,7 +26,7 @@ export const PaymentOptions = ({ updateSelected, selected }: { updateSelected: (
     // }
 
     return (
-        <div>
+        <div className='w-3/4 self-end'>
             <PaymentHeading />
             <form action="" onSubmit={handleSubmit}
             // onChange={handleChange}
