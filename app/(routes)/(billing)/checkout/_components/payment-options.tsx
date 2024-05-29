@@ -9,6 +9,7 @@ import { TbCreditCard } from 'react-icons/tb'
 import { GiUnionJack } from 'react-icons/gi'
 import { SiPaytm, SiRazorpay } from 'react-icons/si'
 import { useForTruthToggle } from '@/hooks'
+import { BiLock } from 'react-icons/bi'
 
 export const PaymentOptions = ({ updateSelected, selected }: { updateSelected: (d: string) => void, selected: string }) => {
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -26,11 +27,13 @@ export const PaymentOptions = ({ updateSelected, selected }: { updateSelected: (
     // }
 
     return (
-        <div className='w-3/4 self-end'>
+        <div className='w-3/4 self-end space-y-2'>
             <PaymentHeading />
             <form action="" onSubmit={handleSubmit}
             // onChange={handleChange}
-            className='space-y-3'
+            // className='space-y-3'
+            // className='my-0'
+            // className='bg-slate-600'
             >
                 {/* <PaymentHeading /> */}
 
@@ -42,8 +45,8 @@ export const PaymentOptions = ({ updateSelected, selected }: { updateSelected: (
                         ? (
                             <div className='space-y-6'>
                                 <div className='space-y-3'>
-                                <BillingHeading />
-                                <BillingAddress />
+                                    <BillingHeading />
+                                    <BillingAddress />
                                 </div>
                                 <RememberMe />
                             </div>
@@ -58,7 +61,7 @@ export const PaymentOptions = ({ updateSelected, selected }: { updateSelected: (
 
 const PaymentHeading = () => {
     return (
-        <div className='my-2 mt-6'>
+        <div className='mt-6'>
             <p className='text-2xl font-bold'>Payment</p>
             <p>All transactions are secure and encrypted.</p>
         </div>
@@ -103,7 +106,7 @@ const CreditCard = ({ updateSelected, selected }: { updateSelected: (d: string) 
 
     return (
         <section>
-            <div className='flex justify-between'>
+            <div className='flex justify-between p-6 py-4 border rounded-md'>
                 <label htmlFor="cc" className='flex gap-x-2'
                     // onClick={e => console.log("clicked!!")}
                     onClick={e => updateSelected("cc")}
@@ -132,14 +135,14 @@ const CreditCard = ({ updateSelected, selected }: { updateSelected: (d: string) 
 
                     {
                         isTrue
-                        ? (
-                            <div className='absolute bottom-10 right-0 bg-slate-200 flex gap-x-4 w-28 justify-center flex-wrap rounded-md'>
-                                <TbCreditCard size={31} />
-                                <TbCreditCard size={31} />
-                                <TbCreditCard size={31} />
-                                <TbCreditCard size={31} />
-                            </div>
-                        ): null
+                            ? (
+                                <div className='absolute bottom-10 right-0 bg-slate-200 flex gap-x-4 w-28 justify-center flex-wrap rounded-md'>
+                                    <TbCreditCard size={31} />
+                                    <TbCreditCard size={31} />
+                                    <TbCreditCard size={31} />
+                                    <TbCreditCard size={31} />
+                                </div>
+                            ) : null
                     }
                 </div>
             </div>
@@ -155,7 +158,7 @@ const CreditCard = ({ updateSelected, selected }: { updateSelected: (d: string) 
 
 const CardInfo = () => {
     return (
-        <div className='flex flex-col gap-y-6 p-2'>
+        <div className='flex flex-col gap-y-6 p-6 rounded-md rounded-t-none bg-slate-200'>
             <ReusableCcInput auCo='cc-number' placeholder='Card number' showIcon={true} />
             <ReusableCcInput auCo='cc-name' placeholder='Name on card' showIcon={false} />
             <div className='flex justify-between'>
@@ -167,25 +170,51 @@ const CardInfo = () => {
 }
 
 const ReusableCcInput = ({ auCo, placeholder, showIcon }: { auCo: string, placeholder: string, showIcon: boolean }) => {
+    const { handleFalsy, handleTruthy, isTrue } = useForTruthToggle()
+
     return (
         <div className='flex justify-between items-center relative'>
-            <input className='w-full' type="text" placeholder={placeholder} autoComplete={auCo} required
+            <input className='w-full text-[.9rem] p-2 ml-0.5 rounded-md' type="text" placeholder={placeholder} autoComplete={auCo} required
             // inputMode='numeric' pattern='[0-9]' 
             />
 
+            {/* <div className='flex justify-center items-center relative'>
             {
+                showIcon && auCo === "cc-number"
+                    ? <BiLock className='absolute right-2' />
+                    : showIcon && auCo === "cc-csc"
+                        ? <IoInformation className='absolute right-2' title='3-digit security code usually found on the back of your card. American Express cards have a 4-digit code located on the front' onMouseEnter={handleTruthy} onMouseLeave={handleFalsy} />
+                        : null
+            }
+            </div> */}
+
+{
+                showIcon && auCo === "cc-number"
+                    ? <BiLock className='absolute right-2 text-xl' />
+                    : showIcon && auCo === "cc-csc"
+                        ? <IoInformation className='absolute right-2 text-2xl'  onMouseEnter={handleTruthy} onMouseLeave={handleFalsy} />
+                        : null
+            }
+
+            {
+                isTrue
+                ? <span className='absolute -top-36 bg-slate-800  text-slate-200 p-2 rounded-md'>3-digit security code usually found on the back of your card. American Express cards have a 4-digit code located on the front</span>
+                : null
+            }
+
+            {/* {
                 showIcon
                     ? <IoInformation className='absolute right-0' />
                     : null
-            }
+            } */}
         </div>
     )
 }
 
 const PayPal = ({ updateSelected, selected }: { updateSelected: (d: string) => void, selected: string }) => {
     return (
-        <section >
-            <div className='flex justify-between'>
+        <section className=''>
+            <div className='flex justify-between p-6 py-4 border rounded-md'>
                 <label htmlFor="pp" className='flex gap-x-2'>
                     <input type='radio' id='pp' name='payment-type' onClick={e => updateSelected("paypal")} />
                     Paypal
@@ -200,7 +229,7 @@ const PayPal = ({ updateSelected, selected }: { updateSelected: (d: string) => v
             {
                 selected === "paypal"
                     ? (
-                        <p className='p-4'>After clicking "Pay with PayPal", you will be redirected to PayPal to complete your purchase securely.</p>
+                        <p className='p-4 bg-slate-200 px-8'>After clicking "Pay with PayPal", you will be redirected to PayPal to complete your purchase securely.</p>
                     ) : null
             }
         </section>

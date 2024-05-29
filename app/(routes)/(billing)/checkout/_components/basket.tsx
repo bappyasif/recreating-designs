@@ -45,10 +45,10 @@ const Discount = () => {
 
 const ProductCard = () => {
   return (
-    <div className='flex gap-x-10 justify-between w-[40rem]'>
+    <div className='flex gap-x-10 justify-between w-[40rem] mb-6'>
       <div className='relative'>
         <img src="https://picsum.photos/id/26/200/300" alt="https://picsum.photos/id/26/200/200" className='h-20 w-16 rounded-sm object-cover' />
-        <p className='bg-slate-400 rounded-full p-2 absolute top-0 right-0'>2</p>
+        <p className='bg-slate-600 rounded-full p-1 px-3 absolute -top-4 -right-4'>7</p>
       </div>
 
       <div className='space-y-2'>

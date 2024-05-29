@@ -36,7 +36,7 @@ export const ReusableTextarea2 = ({ name }: { name: string }) => {
 
 export const ReusableActionButtons = ({ href = "", returnTo, continueTo, radSel }: { href: string, returnTo: string, continueTo: string, radSel?: string }) => {
   return (
-    <div className='flex justify-between items-center w-full'>
+    <div className='flex justify-between items-center w-full mt-10'>
       <Link href={href} className='flex gap-x-4 items-center text-xl'>
         <span className='text-2xl'>&lt;</span>
         <span>Return to {returnTo}</span>
