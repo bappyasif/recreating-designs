@@ -5,10 +5,10 @@ export const ReusableInput = ({ name, placeholder, type }: { name: string, place
   return (
     <section className='text-[#474747] flex flex-col gap-y-0.5 border border-slate-800 rounded-md p-1.5 w-full'>
       <label className='text-sm text-slate-400' htmlFor={name}>{name}</label>
-      <input type={type} id={name} placeholder={placeholder} 
-      // className='text-lg px-0.5 bg-transparent placeholder:text-slate-400 placeholder:text-sm outline-none w-[20rem]' 
-      className={`text-lg bg-transparent outline-none ${(name === "Phone" || name === "Email") ? "w-full" :"w-[15rem]"}`} 
-      required />
+      <input type={type} id={name} placeholder={placeholder}
+        // className='text-lg px-0.5 bg-transparent placeholder:text-slate-400 placeholder:text-sm outline-none w-[20rem]' 
+        className={`text-lg bg-transparent outline-none ${(name === "Phone" || name === "Email") ? "w-full" : "w-[15rem]"}`}
+        required />
     </section>
   )
 }
@@ -26,15 +26,17 @@ export const ReusableTextarea2 = ({ name }: { name: string }) => {
   return (
     <section className='text-[#474747] w-full flex flex-col gap-y-0.5 border border-slate-800 rounded-md p-1.5'>
       <label className='text-sm text-slate-400' htmlFor={"address2"}>{name}</label>
-      <textarea name="address2" id="address2" autoComplete='address-line2' maxLength={299} 
-      // className='w-full bg-transparent border border-slate-800 rounded'
-      className='w-full bg-transparent outline-none rounded'
+      <textarea name="address2" id="address2" autoComplete='address-line2' maxLength={299}
+        // className='w-full bg-transparent border border-slate-800 rounded'
+        className='w-full bg-transparent outline-none rounded'
       ></textarea>
     </section>
   )
 }
 
-export const ReusableActionButtons = ({ href = "", returnTo, continueTo, radSel }: { href: string, returnTo: string, continueTo: string, radSel?: string }) => {
+export const ReusableActionButtons = ({ href = "", returnTo, continueTo, radSel, updateSection }: { href: string, returnTo: string, continueTo: string, radSel?: string, updateSection: (d: string) => void }) => {
+  const capitalizedSection = continueTo[0].toLocaleUpperCase() + continueTo.substring(1)
+
   return (
     <div className='flex justify-between items-center w-full mt-10'>
       <Link href={href} className='flex gap-x-4 items-center text-xl'>
@@ -46,7 +48,9 @@ export const ReusableActionButtons = ({ href = "", returnTo, continueTo, radSel 
           ? <button type='submit' className='p-4 w-80 bg-slate-400 rounded text-xl'>Pay with PayPal</button>
           : radSel === "cc"
             ? <button type='submit' className='p-4 w-80 bg-slate-400 rounded text-xl'>Pay now</button>
-            : <button type='button' className='p-4 w-80 bg-slate-400 rounded text-xl'>Continue to {continueTo}</button>
+            : continueTo === "pay now"
+              ? <Link href={"/"} className='p-4 w-80 bg-slate-400 rounded text-xl text-center'>Continue to {continueTo}</Link>
+              : <button type='button' className='p-4 w-80 bg-slate-400 rounded text-xl' onClick={() => updateSection(capitalizedSection)}>Continue to {continueTo}</button>
       }
       {/* <button type='submit' className='p-4 w-80 bg-slate-400 rounded text-xl'>Continue to {continueTo}</button> */}
     </div>
@@ -105,10 +109,10 @@ export const SelectCountry = () => {
         Country/region
       </label>
       <select
-          className='w-full pt-6 pb-1.5 outline-none bg-transparent/5 rounded-md' name="country" id="country" required>
-          <option value="-1">Choose country</option>
-          {countries()}
-        </select>
+        className='w-full pt-6 pb-1.5 outline-none bg-transparent/5 rounded-md' name="country" id="country" required>
+        <option value="-1">Choose country</option>
+        {countries()}
+      </select>
     </section>
   )
 }

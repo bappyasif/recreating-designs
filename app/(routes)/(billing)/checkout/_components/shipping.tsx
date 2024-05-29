@@ -1,6 +1,6 @@
 import { ReusableActionButtons, ShippingInfo } from "./reusables"
 
-export const ShippingMethod = () => {
+export const ShippingMethod = ({updateSection}: {updateSection: (d: string) => void}) => {
     return (
         <div className="text-[#474747] flex flex-col justify-end w-3/4 self-end">
             <div className="border">
@@ -11,7 +11,7 @@ export const ShippingMethod = () => {
 
             <MethodInfo />
 
-            <ReusableActionButtons continueTo="payment" href="" returnTo="information" />
+            <ReusableActionButtons continueTo="payment" href="" returnTo="information" updateSection={updateSection} />
         </div>
     )
 }

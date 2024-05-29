@@ -53,7 +53,7 @@ export const PaymentOptions = ({ updateSelected, selected }: { updateSelected: (
                         ) : null
                 }
 
-                <ReusableActionButtons continueTo="pay now" href="" returnTo="shipping" radSel={selected} />
+                <ReusableActionButtons continueTo="pay now" href="" returnTo="shipping" radSel={selected} updateSection={() => null} />
             </form>
         </div>
     )

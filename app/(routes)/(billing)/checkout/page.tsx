@@ -1,4 +1,6 @@
-import React from 'react'
+"use client"
+
+import React, { useState } from 'react'
 import { Basket } from './_components/basket'
 import { Brand } from '../../_components/brand'
 import { Sections } from './_components/sections'
@@ -9,22 +11,26 @@ import { Information } from './_components/information'
 import { PaymentDetails } from './_components/payment'
 
 const CheckoutPage = () => {
+  const [sectionViewing, setSectionViewing] = useState("Information")
+
+  const updateSectionViewing = (name: string) => setSectionViewing(name)
+
   return (
     <div className='min-h-screen flex justify-between'>
 
       <div className='w-1/2 bg-[#f1f1f1] p-4 flex flex-col gap-y-6'>
-        
+
         <div className='flex flex-col gap-y-6 items-center justify-end'>
           <Brand />
-          <Sections />
+          <Sections updateSection={updateSectionViewing} viewing={sectionViewing} />
           {/* <Express /> */}
         </div>
 
-        <ShippingInformation />
+        {sectionViewing === "Information" ? <ShippingInformation updateSection={updateSectionViewing} /> : null}
 
-        {/* <ShippingMethod /> */}
+        {sectionViewing === "Shipping" ? <ShippingMethod updateSection={updateSectionViewing} /> : null}
 
-        {/* <PaymentDetails /> */}
+        {sectionViewing === "Payment" ? <PaymentDetails /> : null}
       </div>
 
       <Basket />
@@ -32,12 +38,12 @@ const CheckoutPage = () => {
   )
 }
 
-const ShippingInformation = () => {
+const ShippingInformation = ({updateSection}: {updateSection: (d: string) => void}) => {
   return (
     <div className='flex flex-col gap-y-6 justify-end w-3/4 self-end'>
       <Express />
       <ContactForm />
-      <Information />
+      <Information updateSection={updateSection} />
     </div>
   )
 }

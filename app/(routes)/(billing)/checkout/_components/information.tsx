@@ -3,7 +3,7 @@
 import React from 'react'
 import { ReusableActionButtons, ReusableInput, ReusableTextarea, ReusableTextarea2, SelectCountry } from './reusables'
 
-export const Information = () => {
+export const Information = ({updateSection}: {updateSection: (d: string) => void}) => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log("ready submit!!")
@@ -11,7 +11,7 @@ export const Information = () => {
 
     return (
         <form onSubmit={handleSubmit} className='flex flex-col gap-y-4 justify-between items-center text-[#474747]'>
-            <div className='self-start w-full flex flex-col gap-y-2'>
+            <div className='self-start w-full flex flex-col gap-y-2 mb-4'>
                 <ReusableInput name='Email' placeholder='Your valid email here' type='email' />
                 <CheckOffers />
             </div>
@@ -36,7 +36,7 @@ export const Information = () => {
                 <CountryFlag />
             </div>
 
-            <ReusableActionButtons href='/cart' continueTo='shipping' returnTo='basket' />
+            <ReusableActionButtons href='/cart' continueTo='shipping' returnTo='basket' updateSection={updateSection} />
 
             {/* <div className='flex justify-between items-center w-full'>
                 <Link href={"/cart"} className='flex gap-x-4 items-center text-xl'>
