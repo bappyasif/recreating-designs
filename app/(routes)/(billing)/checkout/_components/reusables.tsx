@@ -7,7 +7,7 @@ export const ReusableInput = ({ name, placeholder, type }: { name: string, place
       <label className='text-sm text-slate-400' htmlFor={name}>{name}</label>
       <input type={type} id={name} placeholder={placeholder} 
       // className='text-lg px-0.5 bg-transparent placeholder:text-slate-400 placeholder:text-sm outline-none w-[20rem]' 
-      className={`text-lg bg-transparent outline-none ${name === "Phone" ? "w-full" :"w-[15rem]"}`} 
+      className={`text-lg bg-transparent outline-none ${(name === "Phone" || name === "Email") ? "w-full" :"w-[15rem]"}`} 
       required />
     </section>
   )
@@ -100,7 +100,7 @@ export const SelectCountry = () => {
   // )
 
   return (
-    <section className='relative'>
+    <section className='relative w-full'>
       <label className=' absolute text-sm text-slate-400 pl-1.5 w-full' htmlFor="country">
         Country/region
       </label>

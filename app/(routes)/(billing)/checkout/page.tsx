@@ -12,7 +12,7 @@ const CheckoutPage = () => {
   return (
     <div className='min-h-screen flex justify-between'>
 
-      <div className='w-1/2 bg-[#f1f1f1] space-y-6 p-4 flex flex-col self-end'>
+      <div className='w-1/2 bg-[#f1f1f1] p-4 flex flex-col gap-y-6'>
         
         <div className='flex flex-col gap-y-6 items-center justify-end'>
           <Brand />
@@ -20,11 +20,11 @@ const CheckoutPage = () => {
           {/* <Express /> */}
         </div>
 
-        {/* <ShippingInformation /> */}
+        <ShippingInformation />
 
         {/* <ShippingMethod /> */}
 
-        <PaymentDetails />
+        {/* <PaymentDetails /> */}
       </div>
 
       <Basket />
@@ -34,7 +34,7 @@ const CheckoutPage = () => {
 
 const ShippingInformation = () => {
   return (
-    <div className='flex flex-col gap-y-6'>
+    <div className='flex flex-col gap-y-6 justify-end w-3/4 self-end'>
       <Express />
       <ContactForm />
       <Information />

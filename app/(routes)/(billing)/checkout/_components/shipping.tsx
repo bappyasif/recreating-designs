@@ -2,7 +2,7 @@ import { ReusableActionButtons, ShippingInfo } from "./reusables"
 
 export const ShippingMethod = () => {
     return (
-        <div className="text-[#474747]">
+        <div className="text-[#474747] flex flex-col justify-end w-3/4 self-end">
             <div className="border">
                 <ShippingInfo type="Contact" values="a@b.co" />
                 <div className="w-[98%] mx-auto my-2.5 h-0.5 bg-slate-200"></div>

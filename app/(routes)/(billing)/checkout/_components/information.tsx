@@ -11,14 +11,14 @@ export const Information = () => {
 
     return (
         <form onSubmit={handleSubmit} className='flex flex-col gap-y-4 justify-between items-center text-[#474747]'>
-            <div className='self-start'>
+            <div className='self-start w-full flex flex-col gap-y-2'>
                 <ReusableInput name='Email' placeholder='Your valid email here' type='email' />
                 <CheckOffers />
             </div>
 
-            <p className='self-start my-6 text-2xl font-bold'>Shipping address</p>
+            <p className='self-start text-2xl font-bold'>Shipping address</p>
             <SelectCountry />
-            <div className='flex justify-between items-center w-full'>
+            <div className='flex justify-between gap-10 items-center w-full'>
                 <ReusableInput name='First name' placeholder='First name' type='text' />
                 <ReusableInput name='Last name' placeholder='Last name' type='text' />
             </div>
@@ -27,11 +27,11 @@ export const Information = () => {
 
             <ReusableTextarea2 name='Apartment, suite, etc. (optional)' />
 
-            <div className='flex justify-between items-center w-full'>
+            <div className='flex justify-between items-center gap-10 w-full'>
                 <ReusableInput name='City' placeholder='City' type='text' />
                 <ReusableInput name='Postal code' placeholder='Postal code' type='text' />
             </div>
-            <div className='flex justify-between items-center w-full'>
+            <div className='flex justify-between items-center gap-10 w-full'>
                 <ReusableInput name='Phone' placeholder='Phone number' type='telephone' />
                 <CountryFlag />
             </div>
@@ -51,8 +51,8 @@ export const Information = () => {
 
 const CheckOffers = () => {
     return (
-        <label htmlFor="offers">
-            <input type="checkbox" name="offers" id="offers" />
+        <label htmlFor="offers" className='flex gap-x-2'>
+            <input className='' type="checkbox" name="offers" id="offers" />
             Email me with news and offers
         </label>
     )
@@ -60,7 +60,7 @@ const CheckOffers = () => {
 
 const CountryFlag = () => {
     return (
-        <div>&#127463;🇩</div>
+        <div className='w-60 text-center border border-slate-600 py-5 rounded-md'>&#127463;🇩</div>
     )
 }
 
