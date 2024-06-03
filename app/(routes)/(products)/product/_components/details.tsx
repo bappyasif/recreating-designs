@@ -7,13 +7,22 @@ import { useForAccordionEffect, useForAccordionItem } from './hooks/accordion'
 
 export const Details = () => {
     return (
-        <div className='flex flex-col gap-y-10'>
+        <div className='flex flex-col gap-y-6'>
             <Reusable text='Built using 80% recycled polyester sherpa fleece, the Minke Mitten is a supremely cosy glove with a high pile fleece which traps plenty of warmth. This fleece uses 80% post-consumer and post-industrial recycled material that prevents unnecessary landfill waste.' text2='They feature an elasticated wrist to reduce heat loss and fit snuggly, with room for layering over your waterproof glove. The fast-drying fabric makes this mitt ideal for adventure on even the coldest days.' />
+            {/* <Divider /> */}
 
             <Specifications />
+
             <Fabrics />
+
             <Shipping />
         </div>
+    )
+}
+
+const Divider = () => {
+    return (
+        <p className='w-full h-0.5 bg-slate-400'></p>
     )
 }
 
@@ -25,8 +34,8 @@ const Shipping = () => {
             <ShowAccordionItem handleFalsy={handleFalsy} handleTruthy={handleTruthy} isTrue={isTrue} title='Shipping & Returns' />
 
             <div
-                // className={`mt-10 flex flex-col gap-y-10 transition-all duration-1000 ${isTrue ? "block" : "h-0 hidden opacity-0"}`}
-                className={`overflow-hidden flex flex-col gap-y-10 bg-slate-200 transition-all duration-[2000ms] ${isTrue ? `h-full mt-10 opacity-100` : `bg-transparent h-0 opacity-0`}`}
+                // className={`mt-4 flex flex-col gap-y-10 transition-all duration-1000 ${isTrue ? "block" : "h-0 hidden opacity-0"}`}
+                className={`overflow-hidden flex flex-col gap-y-10 bg-slate-200 transition-all ${isTrue ? `duration-1000 h-full mt-4 opacity-100` : `bg-transparent h-0 opacity-0 duration-500`}`}
             >
                 <p className='font-bold'>UK orders over £50 are postage free.</p>
 
@@ -41,6 +50,8 @@ const Shipping = () => {
 
                 <p>For more details and for international information please see our full shipping & returns policies <a href="#">here</a>.</p>
             </div>
+
+            <Divider />
         </div>
     )
 }
@@ -51,13 +62,18 @@ const Fabrics = () => {
     return (
         <div className='flex flex-col'>
             <ShowAccordionItem handleFalsy={handleFalsy} handleTruthy={handleTruthy} isTrue={isTrue} title='Fabrics & Care' />
-            <ul
 
-                className={`overflow-hidden list-disc list-inside bg-slate-200 transition-all duration-[2000ms] ${isTrue ? `h-fit mt-10 opacity-100` : `bg-transparent h-0 opacity-0`}`}
+            <ul
+                // className='list-disc list-inside'
+                className={`overflow-hidden flex flex-col gap-y-1.5 bg-slate-200 transition-all ${isTrue ? `duration-1000 h-full mt-4 opacity-100` : `bg-transparent h-0 opacity-0 duration-500`} list-disc list-inside`}
             >
-                <li>80% recycled polyester, 20% polyester</li>
+                <li>80% recycled polyester, 20% polyester</li>            
                 <li>Machine wash</li>
             </ul>
+
+            {/* <Divider /> */}
+
+            <p className='w-full h-[0.1rem] bg-slate-400'></p>
         </div>
     )
 }
@@ -68,8 +84,10 @@ const Specifications = () => {
     return (
         <div className='flex flex-col'>
             <ShowAccordionItem handleFalsy={handleFalsy} handleTruthy={handleTruthy} isTrue={isTrue} title='Specifications' />
+
             <ul
-                className={`overflow-hidden list-disc list-inside bg-slate-200 transition-all duration-[2000ms] ${isTrue ? `h-fit mt-10 opacity-100` : `bg-transparent h-0 opacity-0`}`}
+                // className='list-disc list-inside'
+                className={`overflow-hidden flex flex-col gap-y-1.5 bg-slate-200 transition-all ${isTrue ? `duration-1000 h-full mt-4 opacity-100` : `bg-transparent h-0 opacity-0 duration-500`} list-disc list-inside`}
             >
                 <li>80% recycled polyester, 20% polyester</li>
                 <li>Warm sherpa fleece</li>
@@ -83,6 +101,7 @@ const Specifications = () => {
                 <li>One size fits all</li>
                 <li>Made in China</li>
             </ul>
+            <Divider />
         </div>
     )
 }
@@ -94,13 +113,19 @@ const Reusable = ({ text, text2 }: { text: string, text2: string }) => {
         <div className='flex flex-col'>
             <ShowAccordionItem handleFalsy={handleFalsy} handleTruthy={handleTruthy} isTrue={isTrue} title='Full description' />
 
-            <div 
-                // className={`mt-10 flex flex-col gap-y-10 transition-all duration-1000 ${isTrue ? "block" : "h-0 hidden opacity-0"}`}
-                className={`overflow-hidden flex flex-col gap-y-10 bg-slate-200 transition-all duration-[2000ms] ${isTrue ? `h-fit mt-10 opacity-100` : `bg-transparent h-0 opacity-0`}`}
+            <div
+                // className={`mt-4 flex flex-col gap-y-10 transition-all duration-1000 ${isTrue ? "block" : "h-0 hidden opacity-0"}`}
+
+                // className={`overflow-hidden flex flex-col gap-y-10 bg-slate-200 transition-all duration-1000 ${isTrue ? `h-full mt-4 opacity-100` : `bg-transparent h-0 opacity-0`}`}
+
+                className={`overflow-hidden flex flex-col gap-y-10 bg-slate-200 transition-all ${isTrue ? `duration-1000 h-full mt-4 opacity-100` : `bg-transparent h-0 opacity-0 duration-500`}`}
             >
+
                 <p>{text}</p>
                 <p>{text2}</p>
             </div>
+
+            <Divider />
         </div>
     )
 }
@@ -110,7 +135,7 @@ const ShowAccordionItem = ({ isTrue, handleFalsy, handleTruthy, title }: { isTru
 
     return (
         <button
-            className='z-20 flex gap-x-4 items-center'
+            className='z-20 flex gap-x-4 items-center text-xl'
             onClick={isTrue ? handleFalsy : handleTruthy}
         // onClick={() => isTrue ? handleFalsy() : handleTruthy()}
         >
