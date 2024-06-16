@@ -3,6 +3,7 @@ import { Images } from '../_components/images'
 import { Specefics } from '../_components/specefics'
 import { Details } from '../_components/details'
 import { YouMayAlsoLike } from '../_components/ymal'
+import { FabricType } from '../_components/fabric-type'
 
 const ProductDetailPage = ({ params }: { params: { name: string } }) => {
   return (
@@ -12,6 +13,7 @@ const ProductDetailPage = ({ params }: { params: { name: string } }) => {
         <Specefics />
       </div>
       {/* <Details /> */}
+      <FabricType />
       <YouMayAlsoLike />
     </div>
   )

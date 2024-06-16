@@ -69,7 +69,7 @@ const SizeDiv = ({setHovered, idx, v, updateMoveBy}: {setHovered: (i: number) =>
 const ThumbnailSlider = ({hovIdx}: {hovIdx: number}) => {
     return (
         <p className='w-full h-1.5 bg-slate-200 absolute -bottom-2'>
-            <span className={`h-1.5 w-8 bg-slate-400 absolute z-20 ${hovIdx === 0 ? "translate-x-8": hovIdx === 1 ? "translate-x-16": "translate-x-36"}`} 
+            <span className={`h-1.5 w-12 bg-slate-400 absolute z-20 transition-all duration-200 ${hovIdx === 0 ? "translate-x-0 w-[3.17rem]": hovIdx === 1 ? "translate-x-[4.61rem] w-[3.21rem]": "translate-x-[9.29rem] w-[3.71rem]"}`} 
             // style={{transform: `translate(${hovIdx}px)` }}
             ></span>
         </p>
